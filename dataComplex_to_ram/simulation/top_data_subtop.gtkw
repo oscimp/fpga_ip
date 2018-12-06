@@ -1,0 +1,58 @@
+[*]
+[*] GTKWave Analyzer v3.3.87 (w)1999-2017 BSI
+[*] Tue Nov 27 20:18:19 2018
+[*]
+[dumpfile] "/home/gwe/projets/ggm_fpga_ip/dataComplex_to_ram/simulation/simu/top_data_subtop_tb.ghw"
+[dumpfile_mtime] "Tue Nov 27 20:18:15 2018"
+[dumpfile_size] 64448
+[savefile] "/home/gwe/projets/ggm_fpga_ip/dataComplex_to_ram/simulation/top_data_subtop.gtkw"
+[timestart] 613100000
+[size] 1364 746
+[pos] -1 -1
+*-27.000000 95000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.top_data_subtop_tb.
+[treeopen] top.top_data_subtop_tb.dut.
+[sst_width] 243
+[signals_width] 174
+[sst_expanded] 1
+[sst_vpaned_height] 308
+@28
+top.top_data_subtop_tb.dut.cpu_clk_i
+top.top_data_subtop_tb.dut.cpu_rst_i
+top.top_data_subtop_tb.dut.start_acq_i
+top.top_data_subtop_tb.dut.data_en_i
+top.top_data_subtop_tb.dut.start_acq2_s
+top.top_data_subtop_tb.dut.start_acq4_s
+top.top_data_subtop_tb.dut.start_acq_s
+top.top_data_subtop_tb.dut.busy_s
+top.top_data_subtop_tb.dut.busy_sync_s
+top.top_data_subtop_tb.dut.data_en_s
+@24
+#{top.top_data_subtop_tb.dut.data_i_i[15:0]} top.top_data_subtop_tb.dut.data_i_i[15] top.top_data_subtop_tb.dut.data_i_i[14] top.top_data_subtop_tb.dut.data_i_i[13] top.top_data_subtop_tb.dut.data_i_i[12] top.top_data_subtop_tb.dut.data_i_i[11] top.top_data_subtop_tb.dut.data_i_i[10] top.top_data_subtop_tb.dut.data_i_i[9] top.top_data_subtop_tb.dut.data_i_i[8] top.top_data_subtop_tb.dut.data_i_i[7] top.top_data_subtop_tb.dut.data_i_i[6] top.top_data_subtop_tb.dut.data_i_i[5] top.top_data_subtop_tb.dut.data_i_i[4] top.top_data_subtop_tb.dut.data_i_i[3] top.top_data_subtop_tb.dut.data_i_i[2] top.top_data_subtop_tb.dut.data_i_i[1] top.top_data_subtop_tb.dut.data_i_i[0]
+#{top.top_data_subtop_tb.dut.sample_cpt_s[4:0]} top.top_data_subtop_tb.dut.sample_cpt_s[4] top.top_data_subtop_tb.dut.sample_cpt_s[3] top.top_data_subtop_tb.dut.sample_cpt_s[2] top.top_data_subtop_tb.dut.sample_cpt_s[1] top.top_data_subtop_tb.dut.sample_cpt_s[0]
+@200
+-process_read
+@420
+top.top_data_subtop_tb.state_read_s
+@200
+-process_write
+@420
+top.top_data_subtop_tb.state_read_s
+@28
+top.top_data_subtop_tb.data_next_en_s
+@22
+#{top.top_data_subtop_tb.data_next_s[31:0]} top.top_data_subtop_tb.data_next_s[31] top.top_data_subtop_tb.data_next_s[30] top.top_data_subtop_tb.data_next_s[29] top.top_data_subtop_tb.data_next_s[28] top.top_data_subtop_tb.data_next_s[27] top.top_data_subtop_tb.data_next_s[26] top.top_data_subtop_tb.data_next_s[25] top.top_data_subtop_tb.data_next_s[24] top.top_data_subtop_tb.data_next_s[23] top.top_data_subtop_tb.data_next_s[22] top.top_data_subtop_tb.data_next_s[21] top.top_data_subtop_tb.data_next_s[20] top.top_data_subtop_tb.data_next_s[19] top.top_data_subtop_tb.data_next_s[18] top.top_data_subtop_tb.data_next_s[17] top.top_data_subtop_tb.data_next_s[16] top.top_data_subtop_tb.data_next_s[15] top.top_data_subtop_tb.data_next_s[14] top.top_data_subtop_tb.data_next_s[13] top.top_data_subtop_tb.data_next_s[12] top.top_data_subtop_tb.data_next_s[11] top.top_data_subtop_tb.data_next_s[10] top.top_data_subtop_tb.data_next_s[9] top.top_data_subtop_tb.data_next_s[8] top.top_data_subtop_tb.data_next_s[7] top.top_data_subtop_tb.data_next_s[6] top.top_data_subtop_tb.data_next_s[5] top.top_data_subtop_tb.data_next_s[4] top.top_data_subtop_tb.data_next_s[3] top.top_data_subtop_tb.data_next_s[2] top.top_data_subtop_tb.data_next_s[1] top.top_data_subtop_tb.data_next_s[0]
+@24
+#{top.top_data_subtop_tb.read_i_s[15:0]} top.top_data_subtop_tb.read_i_s[15] top.top_data_subtop_tb.read_i_s[14] top.top_data_subtop_tb.read_i_s[13] top.top_data_subtop_tb.read_i_s[12] top.top_data_subtop_tb.read_i_s[11] top.top_data_subtop_tb.read_i_s[10] top.top_data_subtop_tb.read_i_s[9] top.top_data_subtop_tb.read_i_s[8] top.top_data_subtop_tb.read_i_s[7] top.top_data_subtop_tb.read_i_s[6] top.top_data_subtop_tb.read_i_s[5] top.top_data_subtop_tb.read_i_s[4] top.top_data_subtop_tb.read_i_s[3] top.top_data_subtop_tb.read_i_s[2] top.top_data_subtop_tb.read_i_s[1] top.top_data_subtop_tb.read_i_s[0]
+#{top.top_data_subtop_tb.read_q_s[15:0]} top.top_data_subtop_tb.read_q_s[15] top.top_data_subtop_tb.read_q_s[14] top.top_data_subtop_tb.read_q_s[13] top.top_data_subtop_tb.read_q_s[12] top.top_data_subtop_tb.read_q_s[11] top.top_data_subtop_tb.read_q_s[10] top.top_data_subtop_tb.read_q_s[9] top.top_data_subtop_tb.read_q_s[8] top.top_data_subtop_tb.read_q_s[7] top.top_data_subtop_tb.read_q_s[6] top.top_data_subtop_tb.read_q_s[5] top.top_data_subtop_tb.read_q_s[4] top.top_data_subtop_tb.read_q_s[3] top.top_data_subtop_tb.read_q_s[2] top.top_data_subtop_tb.read_q_s[1] top.top_data_subtop_tb.read_q_s[0]
+@200
+-internal_read_part
+@22
+#{top.top_data_subtop_tb.dut.result_addr_i[5:0]} top.top_data_subtop_tb.dut.result_addr_i[5] top.top_data_subtop_tb.dut.result_addr_i[4] top.top_data_subtop_tb.dut.result_addr_i[3] top.top_data_subtop_tb.dut.result_addr_i[2] top.top_data_subtop_tb.dut.result_addr_i[1] top.top_data_subtop_tb.dut.result_addr_i[0]
+#{top.top_data_subtop_tb.dut.int_addr_s[5:0]} top.top_data_subtop_tb.dut.int_addr_s[4] top.top_data_subtop_tb.dut.int_addr_s[3] top.top_data_subtop_tb.dut.int_addr_s[2] top.top_data_subtop_tb.dut.int_addr_s[1] top.top_data_subtop_tb.dut.int_addr_s[0]
+@25
+#{top.top_data_subtop_tb.read_i_s[15:0]} top.top_data_subtop_tb.read_i_s[15] top.top_data_subtop_tb.read_i_s[14] top.top_data_subtop_tb.read_i_s[13] top.top_data_subtop_tb.read_i_s[12] top.top_data_subtop_tb.read_i_s[11] top.top_data_subtop_tb.read_i_s[10] top.top_data_subtop_tb.read_i_s[9] top.top_data_subtop_tb.read_i_s[8] top.top_data_subtop_tb.read_i_s[7] top.top_data_subtop_tb.read_i_s[6] top.top_data_subtop_tb.read_i_s[5] top.top_data_subtop_tb.read_i_s[4] top.top_data_subtop_tb.read_i_s[3] top.top_data_subtop_tb.read_i_s[2] top.top_data_subtop_tb.read_i_s[1] top.top_data_subtop_tb.read_i_s[0]
+#{top.top_data_subtop_tb.read_q_s[15:0]} top.top_data_subtop_tb.read_q_s[15] top.top_data_subtop_tb.read_q_s[14] top.top_data_subtop_tb.read_q_s[13] top.top_data_subtop_tb.read_q_s[12] top.top_data_subtop_tb.read_q_s[11] top.top_data_subtop_tb.read_q_s[10] top.top_data_subtop_tb.read_q_s[9] top.top_data_subtop_tb.read_q_s[8] top.top_data_subtop_tb.read_q_s[7] top.top_data_subtop_tb.read_q_s[6] top.top_data_subtop_tb.read_q_s[5] top.top_data_subtop_tb.read_q_s[4] top.top_data_subtop_tb.read_q_s[3] top.top_data_subtop_tb.read_q_s[2] top.top_data_subtop_tb.read_q_s[1] top.top_data_subtop_tb.read_q_s[0]
+[pattern_trace] 1
+[pattern_trace] 0
