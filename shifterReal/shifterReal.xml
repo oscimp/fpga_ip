@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component name="shifterReal" version="1.0">
+    <description>
+        shifterReal 
+    </description>
+
+    <generics>
+		<generic name="DATA_IN_SIZE" public="true" value="31" type="natural" match="\d+" destination="both" />
+		<generic name="DATA_OUT_SIZE" public="true" value="14" type="natural" match="\d+" destination="both" />
+    </generics>
+
+    <hdl_files>
+        <hdl_file filename="shifterReal.vhd" scope="both" istop="1" />
+    </hdl_files>
+	<interfaces>
+		<interface name="data_in" class="gls" >
+			<ports>
+				<port name="data_i" type="DATA" size="DATA_IN_SIZE" dir="in" />
+				<port name="data_en_i" type="ENABLE" size="1" dir="in" />
+				<port name="data_eof_i" type="EOF" size="1" dir="in" optional="true" />
+				<port name="data_clk_i" type="CLK" size="1" dir="in" />
+				<port name="data_rst_i" type="RST" size="1" dir="in" />
+			</ports>
+		</interface>
+		<interface name="data_out" class="gls" >
+			<ports>
+				<port name="data_o" type="DATA" size="DATA_OUT_SIZE" dir="out" />
+				<port name="data_en_o" type="ENABLE" size="1" dir="out" />
+				<port name="data_eof_o" type="EOF" size="1" dir="out" optional="true"/>
+				<port name="data_clk_o" type="CLK" size="1" dir="out" />
+				<port name="data_rst_o" type="RST" size="1" dir="out" />
+			</ports>
+		</interface>
+    </interfaces>
+</component>
