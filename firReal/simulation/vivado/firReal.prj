@@ -1,0 +1,6 @@
+vhdl work ../../hdl/firReal_ram.vhd
+vhdl work ../../hdl/firReal_proc.vhd
+vhdl work ../../hdl/firReal_top.vhd
+vhdl work ../ram_storage16.vhd
+vhdl work ../readFromFile.vhd
+vhdl work ../top_enable_tb.vhd
