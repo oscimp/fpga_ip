@@ -16,3 +16,4 @@ OscillatorIMP ecosystem FPGA IP sources
 |expanderReal         |Add Most Significant Bits (real value) |data_in    |data_out            |DATA_IN_SIZE(16), DATA_OUT_SIZE(16) | none | |
 |nco_counter          |NCO (DDS=sine, OUT=square)             |none       |data_dds, data_out  |COUNTER_SIZE(28), DATA_SIZE(16) |nco_counter|nco_counter_send_conf|
 |mixer_sin            |mixer                                  |data_in,nco_in|data_out         |DATA_SIZE(16), NCO_SIZE(16)|none||
+|prn20b               | 20-bit pseudo random number sequence (LFSR)|none | data_out | none | none | none | |
