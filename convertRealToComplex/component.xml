@@ -6,7 +6,7 @@
   <spirit:version>1.0</spirit:version>
   <spirit:busInterfaces>
     <spirit:busInterface>
-      <spirit:name>data1_in</spirit:name>
+      <spirit:name>dataI_in</spirit:name>
       <spirit:busType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="real" spirit:version="1.0"/>
       <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="real_rtl" spirit:version="1.0"/>
       <spirit:slave/>
@@ -16,7 +16,7 @@
             <spirit:name>DATA</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
-            <spirit:name>data1_i</spirit:name>
+            <spirit:name>dataI_i</spirit:name>
           </spirit:physicalPort>
         </spirit:portMap>
         <spirit:portMap>
@@ -24,7 +24,7 @@
             <spirit:name>DATA_EOF</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
-            <spirit:name>data1_eof_i</spirit:name>
+            <spirit:name>dataI_eof_i</spirit:name>
           </spirit:physicalPort>
         </spirit:portMap>
         <spirit:portMap>
@@ -32,7 +32,7 @@
             <spirit:name>DATA_EN</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
-            <spirit:name>data1_en_i</spirit:name>
+            <spirit:name>dataI_en_i</spirit:name>
           </spirit:physicalPort>
         </spirit:portMap>
         <spirit:portMap>
@@ -40,7 +40,7 @@
             <spirit:name>DATA_CLK</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
-            <spirit:name>data1_clk_i</spirit:name>
+            <spirit:name>dataI_clk_i</spirit:name>
           </spirit:physicalPort>
         </spirit:portMap>
         <spirit:portMap>
@@ -48,13 +48,13 @@
             <spirit:name>DATA_RST</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
-            <spirit:name>data1_rst_i</spirit:name>
+            <spirit:name>dataI_rst_i</spirit:name>
           </spirit:physicalPort>
         </spirit:portMap>
       </spirit:portMaps>
     </spirit:busInterface>
     <spirit:busInterface>
-      <spirit:name>data2_in</spirit:name>
+      <spirit:name>dataQ_in</spirit:name>
       <spirit:busType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="real" spirit:version="1.0"/>
       <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="real_rtl" spirit:version="1.0"/>
       <spirit:slave/>
@@ -64,7 +64,7 @@
             <spirit:name>DATA</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
-            <spirit:name>data2_i</spirit:name>
+            <spirit:name>dataQ_i</spirit:name>
           </spirit:physicalPort>
         </spirit:portMap>
         <spirit:portMap>
@@ -72,7 +72,7 @@
             <spirit:name>DATA_EOF</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
-            <spirit:name>data2_eof_i</spirit:name>
+            <spirit:name>dataQ_eof_i</spirit:name>
           </spirit:physicalPort>
         </spirit:portMap>
         <spirit:portMap>
@@ -80,7 +80,7 @@
             <spirit:name>DATA_EN</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
-            <spirit:name>data2_en_i</spirit:name>
+            <spirit:name>dataQ_en_i</spirit:name>
           </spirit:physicalPort>
         </spirit:portMap>
         <spirit:portMap>
@@ -88,7 +88,7 @@
             <spirit:name>DATA_CLK</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
-            <spirit:name>data2_clk_i</spirit:name>
+            <spirit:name>dataQ_clk_i</spirit:name>
           </spirit:physicalPort>
         </spirit:portMap>
         <spirit:portMap>
@@ -96,7 +96,7 @@
             <spirit:name>DATA_RST</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
-            <spirit:name>data2_rst_i</spirit:name>
+            <spirit:name>dataQ_rst_i</spirit:name>
           </spirit:physicalPort>
         </spirit:portMap>
       </spirit:portMaps>
@@ -209,7 +209,7 @@
     </spirit:views>
     <spirit:ports>
       <spirit:port>
-        <spirit:name>data1_i</spirit:name>
+        <spirit:name>dataI_i</spirit:name>
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
@@ -226,7 +226,7 @@
         </spirit:wire>
       </spirit:port>
       <spirit:port>
-        <spirit:name>data1_en_i</spirit:name>
+        <spirit:name>dataI_en_i</spirit:name>
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:wireTypeDefs>
@@ -239,7 +239,7 @@
         </spirit:wire>
       </spirit:port>
       <spirit:port>
-        <spirit:name>data1_eof_i</spirit:name>
+        <spirit:name>dataI_eof_i</spirit:name>
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:wireTypeDefs>
@@ -255,7 +255,7 @@
         </spirit:wire>
       </spirit:port>
       <spirit:port>
-        <spirit:name>data1_rst_i</spirit:name>
+        <spirit:name>dataI_rst_i</spirit:name>
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:wireTypeDefs>
@@ -268,7 +268,7 @@
         </spirit:wire>
       </spirit:port>
       <spirit:port>
-        <spirit:name>data1_clk_i</spirit:name>
+        <spirit:name>dataI_clk_i</spirit:name>
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:wireTypeDefs>
@@ -281,7 +281,7 @@
         </spirit:wire>
       </spirit:port>
       <spirit:port>
-        <spirit:name>data2_i</spirit:name>
+        <spirit:name>dataQ_i</spirit:name>
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
@@ -301,7 +301,7 @@
         </spirit:wire>
       </spirit:port>
       <spirit:port>
-        <spirit:name>data2_en_i</spirit:name>
+        <spirit:name>dataQ_en_i</spirit:name>
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:wireTypeDefs>
@@ -317,7 +317,7 @@
         </spirit:wire>
       </spirit:port>
       <spirit:port>
-        <spirit:name>data2_rst_i</spirit:name>
+        <spirit:name>dataQ_rst_i</spirit:name>
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:wireTypeDefs>
@@ -333,7 +333,7 @@
         </spirit:wire>
       </spirit:port>
       <spirit:port>
-        <spirit:name>data2_eof_i</spirit:name>
+        <spirit:name>dataQ_eof_i</spirit:name>
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:wireTypeDefs>
@@ -349,7 +349,7 @@
         </spirit:wire>
       </spirit:port>
       <spirit:port>
-        <spirit:name>data2_clk_i</spirit:name>
+        <spirit:name>dataQ_clk_i</spirit:name>
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:wireTypeDefs>
