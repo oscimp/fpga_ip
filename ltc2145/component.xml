@@ -6,7 +6,7 @@
   <spirit:version>1.0</spirit:version>
   <spirit:busInterfaces>
     <spirit:busInterface>
-      <spirit:name>data_a</spirit:name>
+      <spirit:name>dataA_out</spirit:name>
       <spirit:busType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="real" spirit:version="1.0"/>
       <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="real_rtl" spirit:version="1.0"/>
       <spirit:master/>
@@ -46,7 +46,7 @@
       </spirit:portMaps>
     </spirit:busInterface>
     <spirit:busInterface>
-      <spirit:name>data_b</spirit:name>
+      <spirit:name>dataB_out</spirit:name>
       <spirit:busType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="real" spirit:version="1.0"/>
       <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="real_rtl" spirit:version="1.0"/>
       <spirit:master/>
@@ -171,7 +171,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>ASSOCIATED_BUSIF</spirit:name>
-          <spirit:value spirit:id="BUSIFPARAM_VALUE.ADC_CLK.ASSOCIATED_BUSIF">data_a:data_b</spirit:value>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.ADC_CLK.ASSOCIATED_BUSIF">dataA_out:dataB_out</spirit:value>
         </spirit:parameter>
       </spirit:parameters>
     </spirit:busInterface>
