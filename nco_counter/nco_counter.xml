@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component name="nco_counter" version="1.0">
+    <description>
+        Component for nco_counter.
+    </description>
+
+    <generics>
+		<generic name="id" public="true" value="1" match="\d+" type="natural" destination="both" />
+		<generic name="DATA_SIZE" public="true" value="14" match="\d+"  type="natural" destination="both" />
+		<generic name="LUT_SIZE" public="true" value="14" match="\d+"  type="natural" destination="both" />
+		<generic name="COUNTER_SIZE" public="true" value="10" match="\d+"  type="natural" destination="both" />
+		<generic name="C_S00_AXI_DATA_WIDTH" public="true" value="32" match="\d+" type="integer" destination="both" />
+		<generic name="C_S00_AXI_ADDR_WIDTH" public="true" value="2" match="\d+" type="integer" destination="both" />
+    </generics>
+
+    <hdl_files>
+        <hdl_file filename="nco_counter.vhd" scope="both" istop="1" />
+        <hdl_file filename="wb_nco_counter.vhd" scope="both" istop="0" />
+        <hdl_file filename="nco_counter_cos_rom.vhd" scope="both" istop="0" />
+        <hdl_file filename="nco_counter_cos_rom_a12_d16.vhd" scope="both" istop="0" />
+        <hdl_file filename="nco_counter_handcomm.vhd" scope="both" istop="0" />
+        <hdl_file filename="nco_counter_logic.vhd" scope="both" istop="0" />
+    </hdl_files>
+	<interfaces>
+		<interface name="axis" class="slave" bus="axi4lite" data_size="32" addr_size="2">
+			<registers>
+				<register name="REG_ID" offset="0x0" size="32" rows="1" />
+				<register name="REG_PINC" offset="0x1" size="32" rows="1" />
+				<register name="REG_POFF" offset="0x2" size="32" rows="1" />
+				<register name="REG_CTRL" offset="0x3" size="32" rows="1" />
+			</registers>
+			<ports>
+				<port name="s00_axi_aclk" type="CLK" size="1" dir="in" />
+				<port name="s00_axi_reset" type="RST" size="1" dir="in" />
+ 				<port name="s00_axi_araddr" type="ARADR" size="2" dir="in" />
+                <port name="s00_axi_arprot" type="ARPROT" size="3" dir="in" />
+                <port name="s00_axi_arready" type="ARREADY" size="1" dir="out" />
+                <port name="s00_axi_arvalid" type="ARVALID" size="1" dir="in" />
+                <port name="s00_axi_awaddr" type="AWADR" size="2" dir="in" />
+                <port name="s00_axi_awprot" type="AWPROT" size="3" dir="in" />
+                <port name="s00_axi_awready" type="AWREADY" size="1" dir="out" />
+                <port name="s00_axi_awvalid" type="AWVALID" size="1" dir="in" />
+                <port name="s00_axi_bready" type="BREADY" size="1" dir="in" />
+                <port name="s00_axi_bresp" type="BRESP" size="2" dir="out" />
+                <port name="s00_axi_bvalid" type="BVALID" size="1" dir="out" />
+                <port name="s00_axi_rdata" type="RDATA" size="32" dir="out" />
+                <port name="s00_axi_rready" type="RREADY" size="1" dir="in" />
+                <port name="s00_axi_rresp" type="RRESP" size="2" dir="out" />
+                <port name="s00_axi_rvalid" type="RVALID" size="1" dir="out" />
+                <port name="s00_axi_wdata" type="WDATA" size="32" dir="in" />
+                <port name="s00_axi_wready" type="WREADY" size="1" dir="out" />
+                <port name="s00_axi_wstrb" type="WSTRB" size="4" dir="in" />
+                <port name="s00_axi_wvalid" type="WVALID" size="1" dir="in" />
+			</ports>
+		</interface>
+		<interface name="processing_clk" class="gls" >
+			<ports>
+				<port name="processing_clk_i" type="CLK" size="1" dir="in" />
+			</ports>
+		</interface>
+		<interface name="pinc_in" class="gls" >
+			<ports>
+				<port name="pinc_i" type="DATA_I" size="COUNTER_SIZE" dir="in" />
+				<port name="pinc_en_i" type="ENABLE" size="1" dir="in" />
+				<port name="pinc_clk_i" type="CLK" size="1" dir="in" />
+			</ports>
+		</interface>
+		<interface name="poff_in" class="gls" >
+			<ports>
+				<port name="poff_i" type="DATA_I" size="LUT_SIZE" dir="in" />
+				<port name="poff_en_i" type="ENABLE" size="1" dir="in" />
+				<port name="poff_clk_i" type="CLK" size="1" dir="in" />
+			</ports>
+		</interface>
+		<interface name="dds_out" class="gls" >
+			<ports>
+				<port name="dds_cos_o" type="DATA_I" size="DATA_SIZE" dir="out" />
+				<port name="dds_sin_o" type="DATA_Q" size="DATA_SIZE" dir="out" />
+				<port name="dds_en_o" type="ENABLE" size="1" dir="out" />
+				<port name="dds_clk_o" type="CLK" size="1" dir="out" />
+			</ports>
+		</interface>
+		<interface name="square_out" class="gls" >
+			<ports>
+				<port name="cos_fake_o" type="DATA_I" size="1" dir="out" />
+				<port name="sin_fake_o" type="DATA_Q" size="1" dir="out" />
+				<port name="wave_en_o" type="ENABLE" size="1" dir="out" />
+				<port name="wave_clk_o" type="CLK" size="1" dir="out" />
+			</ports>
+		</interface>
+		<interface name="test" class="gls" >
+			<ports>
+				<port name="test_o" type="EXPORT" size="1" dir="out" />
+			</ports>
+		</interface>
+    </interfaces>
+</component>
