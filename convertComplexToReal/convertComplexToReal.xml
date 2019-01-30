@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component name="convertComplexToReal" version="1.0">
+    <description>
+        Component for convertComplexToReal.
+    </description>
+
+    <generics>
+		<generic name="DATA_SIZE" public="true" value="14" match="\d+"  type="natural" destination="both" />
+    </generics>
+
+    <hdl_files>
+        <hdl_file filename="convertComplexToReal.vhd" scope="both" istop="1" />
+    </hdl_files>
+	<interfaces>
+		<interface name="data_in" class="gls" >
+			<ports>
+				<port name="data_i_i" type="DATA_I" size="DATA_SIZE" dir="in" />
+				<port name="data_q_i" type="DATA_Q" size="DATA_SIZE" dir="in" />
+				<port name="data_eof_i" type="EOF" size="1" dir="in" optional="true"/>
+				<port name="data_en_i" type="ENABLE" size="1" dir="in" />
+				<port name="data_clk_i" type="CLK" size="1" dir="in" />
+			</ports>
+		</interface>
+		<interface name="data1_out" class="gls" >
+			<ports>
+				<port name="data1_o" type="DATA" size="DATA_SIZE" dir="out" />
+				<port name="data1_eof_o" type="EOF" size="1" dir="out" optional="true"/>
+				<port name="data1_en_o" type="ENABLE" size="1" dir="out" />
+				<port name="data1_clk_o" type="CLK" size="1" dir="out" />
+			</ports>
+		</interface>
+		<interface name="data2_out" class="gls" >
+			<ports>
+				<port name="data2_o" type="DATA" size="DATA_SIZE" dir="out" />
+				<port name="data2_eof_o" type="EOF" size="1" dir="out" optional="true"/>
+				<port name="data2_en_o" type="ENABLE" size="1" dir="out" />
+				<port name="data2_clk_o" type="CLK" size="1" dir="out" />
+			</ports>
+		</interface>
+    </interfaces>
+</component>
