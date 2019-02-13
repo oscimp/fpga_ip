@@ -39,6 +39,9 @@ force_bin:
 	mv $(BIT_FILE).bin .
 	@rm -f $(BIF_FILE)
 
+xml:$(TARGET_PRJ)
+	$(VIVADO) $(OSCIMP_DIGITAL_IP)/scripts/gen_module_generator_xml.tcl -tclargs $(NAME)
+
 install:$(BIN_FILE)
 	if [ ! -d $(INSTALL_DIR) ]; then mkdir -p $(INSTALL_DIR); fi
 	cp $(BIN_FILE) $(INSTALL_DIR)
