@@ -1,0 +1,71 @@
+[*]
+[*] GTKWave Analyzer v3.3.79 (w)1999-2017 BSI
+[*] Mon Aug 21 13:18:48 2017
+[*]
+[dumpfile] "/home/gwe/projets/oscimp/fpga_ip/mean_vector_axi/simulation/simu/top_mean_vector_tb.ghw"
+[dumpfile_mtime] "Mon Aug 21 12:52:41 2017"
+[dumpfile_size] 18140130
+[savefile] "/home/gwe/projets/oscimp/fpga_ip/mean_vector_axi/simulation/top_mean_vector.gtkw"
+[timestart] 0
+[size] 1678 1028
+[pos] -1 -1
+*-28.000000 4500000000 51270000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.top_mean_vector_tb.
+[treeopen] top.top_mean_vector_tb.mult_const_inst.
+[sst_width] 204
+[signals_width] 214
+[sst_expanded] 1
+[sst_vpaned_height] 463
+@28
+top.top_mean_vector_tb.reset
+top.top_mean_vector_tb.clk
+top.top_mean_vector_tb.start_prod
+top.top_mean_vector_tb.cpt_s
+@200
+-input
+@24
+#{top.top_mean_vector_tb.shift_val_s[1:0]} top.top_mean_vector_tb.shift_val_s[1] top.top_mean_vector_tb.shift_val_s[0]
+#{top.top_mean_vector_tb.nb_iter_s[3:0]} top.top_mean_vector_tb.nb_iter_s[3] top.top_mean_vector_tb.nb_iter_s[2] top.top_mean_vector_tb.nb_iter_s[1] top.top_mean_vector_tb.nb_iter_s[0]
+@28
+top.top_mean_vector_tb.data_in_en_s
+@24
+#{top.top_mean_vector_tb.data_in_i_s[31:0]} top.top_mean_vector_tb.data_in_i_s[31] top.top_mean_vector_tb.data_in_i_s[30] top.top_mean_vector_tb.data_in_i_s[29] top.top_mean_vector_tb.data_in_i_s[28] top.top_mean_vector_tb.data_in_i_s[27] top.top_mean_vector_tb.data_in_i_s[26] top.top_mean_vector_tb.data_in_i_s[25] top.top_mean_vector_tb.data_in_i_s[24] top.top_mean_vector_tb.data_in_i_s[23] top.top_mean_vector_tb.data_in_i_s[22] top.top_mean_vector_tb.data_in_i_s[21] top.top_mean_vector_tb.data_in_i_s[20] top.top_mean_vector_tb.data_in_i_s[19] top.top_mean_vector_tb.data_in_i_s[18] top.top_mean_vector_tb.data_in_i_s[17] top.top_mean_vector_tb.data_in_i_s[16] top.top_mean_vector_tb.data_in_i_s[15] top.top_mean_vector_tb.data_in_i_s[14] top.top_mean_vector_tb.data_in_i_s[13] top.top_mean_vector_tb.data_in_i_s[12] top.top_mean_vector_tb.data_in_i_s[11] top.top_mean_vector_tb.data_in_i_s[10] top.top_mean_vector_tb.data_in_i_s[9] top.top_mean_vector_tb.data_in_i_s[8] top.top_mean_vector_tb.data_in_i_s[7] top.top_mean_vector_tb.data_in_i_s[6] top.top_mean_vector_tb.data_in_i_s[5] top.top_mean_vector_tb.data_in_i_s[4] top.top_mean_vector_tb.data_in_i_s[3] top.top_mean_vector_tb.data_in_i_s[2] top.top_mean_vector_tb.data_in_i_s[1] top.top_mean_vector_tb.data_in_i_s[0]
+#{top.top_mean_vector_tb.data_in_q_s[31:0]} top.top_mean_vector_tb.data_in_q_s[31] top.top_mean_vector_tb.data_in_q_s[30] top.top_mean_vector_tb.data_in_q_s[29] top.top_mean_vector_tb.data_in_q_s[28] top.top_mean_vector_tb.data_in_q_s[27] top.top_mean_vector_tb.data_in_q_s[26] top.top_mean_vector_tb.data_in_q_s[25] top.top_mean_vector_tb.data_in_q_s[24] top.top_mean_vector_tb.data_in_q_s[23] top.top_mean_vector_tb.data_in_q_s[22] top.top_mean_vector_tb.data_in_q_s[21] top.top_mean_vector_tb.data_in_q_s[20] top.top_mean_vector_tb.data_in_q_s[19] top.top_mean_vector_tb.data_in_q_s[18] top.top_mean_vector_tb.data_in_q_s[17] top.top_mean_vector_tb.data_in_q_s[16] top.top_mean_vector_tb.data_in_q_s[15] top.top_mean_vector_tb.data_in_q_s[14] top.top_mean_vector_tb.data_in_q_s[13] top.top_mean_vector_tb.data_in_q_s[12] top.top_mean_vector_tb.data_in_q_s[11] top.top_mean_vector_tb.data_in_q_s[10] top.top_mean_vector_tb.data_in_q_s[9] top.top_mean_vector_tb.data_in_q_s[8] top.top_mean_vector_tb.data_in_q_s[7] top.top_mean_vector_tb.data_in_q_s[6] top.top_mean_vector_tb.data_in_q_s[5] top.top_mean_vector_tb.data_in_q_s[4] top.top_mean_vector_tb.data_in_q_s[3] top.top_mean_vector_tb.data_in_q_s[2] top.top_mean_vector_tb.data_in_q_s[1] top.top_mean_vector_tb.data_in_q_s[0]
+@28
+top.top_mean_vector_tb.data_in_eof_s
+@200
+-output
+@28
+top.top_mean_vector_tb.data_out_en_s
+@24
+#{top.top_mean_vector_tb.data_out_i_s[31:0]} top.top_mean_vector_tb.data_out_i_s[31] top.top_mean_vector_tb.data_out_i_s[30] top.top_mean_vector_tb.data_out_i_s[29] top.top_mean_vector_tb.data_out_i_s[28] top.top_mean_vector_tb.data_out_i_s[27] top.top_mean_vector_tb.data_out_i_s[26] top.top_mean_vector_tb.data_out_i_s[25] top.top_mean_vector_tb.data_out_i_s[24] top.top_mean_vector_tb.data_out_i_s[23] top.top_mean_vector_tb.data_out_i_s[22] top.top_mean_vector_tb.data_out_i_s[21] top.top_mean_vector_tb.data_out_i_s[20] top.top_mean_vector_tb.data_out_i_s[19] top.top_mean_vector_tb.data_out_i_s[18] top.top_mean_vector_tb.data_out_i_s[17] top.top_mean_vector_tb.data_out_i_s[16] top.top_mean_vector_tb.data_out_i_s[15] top.top_mean_vector_tb.data_out_i_s[14] top.top_mean_vector_tb.data_out_i_s[13] top.top_mean_vector_tb.data_out_i_s[12] top.top_mean_vector_tb.data_out_i_s[11] top.top_mean_vector_tb.data_out_i_s[10] top.top_mean_vector_tb.data_out_i_s[9] top.top_mean_vector_tb.data_out_i_s[8] top.top_mean_vector_tb.data_out_i_s[7] top.top_mean_vector_tb.data_out_i_s[6] top.top_mean_vector_tb.data_out_i_s[5] top.top_mean_vector_tb.data_out_i_s[4] top.top_mean_vector_tb.data_out_i_s[3] top.top_mean_vector_tb.data_out_i_s[2] top.top_mean_vector_tb.data_out_i_s[1] top.top_mean_vector_tb.data_out_i_s[0]
+#{top.top_mean_vector_tb.data_out_q_s[31:0]} top.top_mean_vector_tb.data_out_q_s[31] top.top_mean_vector_tb.data_out_q_s[30] top.top_mean_vector_tb.data_out_q_s[29] top.top_mean_vector_tb.data_out_q_s[28] top.top_mean_vector_tb.data_out_q_s[27] top.top_mean_vector_tb.data_out_q_s[26] top.top_mean_vector_tb.data_out_q_s[25] top.top_mean_vector_tb.data_out_q_s[24] top.top_mean_vector_tb.data_out_q_s[23] top.top_mean_vector_tb.data_out_q_s[22] top.top_mean_vector_tb.data_out_q_s[21] top.top_mean_vector_tb.data_out_q_s[20] top.top_mean_vector_tb.data_out_q_s[19] top.top_mean_vector_tb.data_out_q_s[18] top.top_mean_vector_tb.data_out_q_s[17] top.top_mean_vector_tb.data_out_q_s[16] top.top_mean_vector_tb.data_out_q_s[15] top.top_mean_vector_tb.data_out_q_s[14] top.top_mean_vector_tb.data_out_q_s[13] top.top_mean_vector_tb.data_out_q_s[12] top.top_mean_vector_tb.data_out_q_s[11] top.top_mean_vector_tb.data_out_q_s[10] top.top_mean_vector_tb.data_out_q_s[9] top.top_mean_vector_tb.data_out_q_s[8] top.top_mean_vector_tb.data_out_q_s[7] top.top_mean_vector_tb.data_out_q_s[6] top.top_mean_vector_tb.data_out_q_s[5] top.top_mean_vector_tb.data_out_q_s[4] top.top_mean_vector_tb.data_out_q_s[3] top.top_mean_vector_tb.data_out_q_s[2] top.top_mean_vector_tb.data_out_q_s[1] top.top_mean_vector_tb.data_out_q_s[0]
+@28
+top.top_mean_vector_tb.data_out_eof_s
+@200
+-internal
+@28
+top.top_mean_vector_tb.mult_const_inst.rst_i
+top.top_mean_vector_tb.mult_const_inst.data_eof_i
+top.top_mean_vector_tb.mult_const_inst.data_en_i
+top.top_mean_vector_tb.mult_const_inst.ready_s
+top.top_mean_vector_tb.mult_const_inst.first_data_en_s
+@22
+#{top.top_mean_vector_tb.mult_const_inst.data_i_i[31:0]} top.top_mean_vector_tb.mult_const_inst.data_i_i[31] top.top_mean_vector_tb.mult_const_inst.data_i_i[30] top.top_mean_vector_tb.mult_const_inst.data_i_i[29] top.top_mean_vector_tb.mult_const_inst.data_i_i[28] top.top_mean_vector_tb.mult_const_inst.data_i_i[27] top.top_mean_vector_tb.mult_const_inst.data_i_i[26] top.top_mean_vector_tb.mult_const_inst.data_i_i[25] top.top_mean_vector_tb.mult_const_inst.data_i_i[24] top.top_mean_vector_tb.mult_const_inst.data_i_i[23] top.top_mean_vector_tb.mult_const_inst.data_i_i[22] top.top_mean_vector_tb.mult_const_inst.data_i_i[21] top.top_mean_vector_tb.mult_const_inst.data_i_i[20] top.top_mean_vector_tb.mult_const_inst.data_i_i[19] top.top_mean_vector_tb.mult_const_inst.data_i_i[18] top.top_mean_vector_tb.mult_const_inst.data_i_i[17] top.top_mean_vector_tb.mult_const_inst.data_i_i[16] top.top_mean_vector_tb.mult_const_inst.data_i_i[15] top.top_mean_vector_tb.mult_const_inst.data_i_i[14] top.top_mean_vector_tb.mult_const_inst.data_i_i[13] top.top_mean_vector_tb.mult_const_inst.data_i_i[12] top.top_mean_vector_tb.mult_const_inst.data_i_i[11] top.top_mean_vector_tb.mult_const_inst.data_i_i[10] top.top_mean_vector_tb.mult_const_inst.data_i_i[9] top.top_mean_vector_tb.mult_const_inst.data_i_i[8] top.top_mean_vector_tb.mult_const_inst.data_i_i[7] top.top_mean_vector_tb.mult_const_inst.data_i_i[6] top.top_mean_vector_tb.mult_const_inst.data_i_i[5] top.top_mean_vector_tb.mult_const_inst.data_i_i[4] top.top_mean_vector_tb.mult_const_inst.data_i_i[3] top.top_mean_vector_tb.mult_const_inst.data_i_i[2] top.top_mean_vector_tb.mult_const_inst.data_i_i[1] top.top_mean_vector_tb.mult_const_inst.data_i_i[0]
+#{top.top_mean_vector_tb.mult_const_inst.data_q_i[31:0]} top.top_mean_vector_tb.mult_const_inst.data_q_i[31] top.top_mean_vector_tb.mult_const_inst.data_q_i[30] top.top_mean_vector_tb.mult_const_inst.data_q_i[29] top.top_mean_vector_tb.mult_const_inst.data_q_i[28] top.top_mean_vector_tb.mult_const_inst.data_q_i[27] top.top_mean_vector_tb.mult_const_inst.data_q_i[26] top.top_mean_vector_tb.mult_const_inst.data_q_i[25] top.top_mean_vector_tb.mult_const_inst.data_q_i[24] top.top_mean_vector_tb.mult_const_inst.data_q_i[23] top.top_mean_vector_tb.mult_const_inst.data_q_i[22] top.top_mean_vector_tb.mult_const_inst.data_q_i[21] top.top_mean_vector_tb.mult_const_inst.data_q_i[20] top.top_mean_vector_tb.mult_const_inst.data_q_i[19] top.top_mean_vector_tb.mult_const_inst.data_q_i[18] top.top_mean_vector_tb.mult_const_inst.data_q_i[17] top.top_mean_vector_tb.mult_const_inst.data_q_i[16] top.top_mean_vector_tb.mult_const_inst.data_q_i[15] top.top_mean_vector_tb.mult_const_inst.data_q_i[14] top.top_mean_vector_tb.mult_const_inst.data_q_i[13] top.top_mean_vector_tb.mult_const_inst.data_q_i[12] top.top_mean_vector_tb.mult_const_inst.data_q_i[11] top.top_mean_vector_tb.mult_const_inst.data_q_i[10] top.top_mean_vector_tb.mult_const_inst.data_q_i[9] top.top_mean_vector_tb.mult_const_inst.data_q_i[8] top.top_mean_vector_tb.mult_const_inst.data_q_i[7] top.top_mean_vector_tb.mult_const_inst.data_q_i[6] top.top_mean_vector_tb.mult_const_inst.data_q_i[5] top.top_mean_vector_tb.mult_const_inst.data_q_i[4] top.top_mean_vector_tb.mult_const_inst.data_q_i[3] top.top_mean_vector_tb.mult_const_inst.data_q_i[2] top.top_mean_vector_tb.mult_const_inst.data_q_i[1] top.top_mean_vector_tb.mult_const_inst.data_q_i[0]
+@28
+top.top_mean_vector_tb.mult_const_inst.prep_next_tr_s
+top.top_mean_vector_tb.mult_const_inst.last_frame_s
+top.top_mean_vector_tb.mult_const_inst.data_eof_next_s
+top.top_mean_vector_tb.mult_const_inst.data_eof_s
+top.top_mean_vector_tb.mult_const_inst.data_en_s
+@22
+#{top.top_mean_vector_tb.mult_const_inst.nb_iter_i[3:0]} top.top_mean_vector_tb.mult_const_inst.nb_iter_i[3] top.top_mean_vector_tb.mult_const_inst.nb_iter_i[2] top.top_mean_vector_tb.mult_const_inst.nb_iter_i[1] top.top_mean_vector_tb.mult_const_inst.nb_iter_i[0]
+#{top.top_mean_vector_tb.mult_const_inst.count_frame_s[3:0]} top.top_mean_vector_tb.mult_const_inst.count_frame_s[3] top.top_mean_vector_tb.mult_const_inst.count_frame_s[2] top.top_mean_vector_tb.mult_const_inst.count_frame_s[1] top.top_mean_vector_tb.mult_const_inst.count_frame_s[0]
+@28
+top.top_mean_vector_tb.mult_const_inst.count_s
+top.top_mean_vector_tb.mult_const_inst.data_eof_o
+top.top_mean_vector_tb.mult_const_inst.data_en_o
+[pattern_trace] 1
+[pattern_trace] 0
