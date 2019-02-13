@@ -1,0 +1,28 @@
+[*]
+[*] GTKWave Analyzer v3.3.64 (w)1999-2014 BSI
+[*] Tue Jun 16 14:02:05 2015
+[*]
+[dumpfile] "/home/gwe/projets/fpga/zynq/gen_radar/simulation/simu/top_enable_tb.ghw"
+[dumpfile_mtime] "Tue Jun 16 14:02:02 2015"
+[dumpfile_size] 9895063
+[savefile] "/home/gwe/projets/fpga/zynq/gen_radar/simulation/top_enable.gtkw"
+[timestart] 98811800000
+[size] 1366 732
+[pos] -1 -1
+*-26.677189 305000000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[sst_width] 196
+[signals_width] 126
+[sst_expanded] 1
+[sst_vpaned_height] 204
+@29
+top.top_enable_tb.adc_clk
+@28
+top.top_enable_tb.switchn_s
+top.top_enable_tb.switch_s
+top.top_enable_tb.result2_en_s
+top.top_enable_tb.result_eof_s
+top.top_enable_tb.result_en_s
+top.top_enable_tb.data_en_s
+[pattern_trace] 1
+[pattern_trace] 0
