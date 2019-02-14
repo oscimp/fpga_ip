@@ -365,8 +365,10 @@
         <xilinx:taxonomy>/BaseIP</xilinx:taxonomy>
       </xilinx:taxonomies>
       <xilinx:displayName>shifterComplex_v1_0</xilinx:displayName>
-      <xilinx:coreRevision>5</xilinx:coreRevision>
+      <xilinx:definitionSource>package_project</xilinx:definitionSource>
       <xilinx:vendorDisplayName>Gwenhael Goavec-Merou</xilinx:vendorDisplayName>
+      <xilinx:vendorURL>http://www.trabucayre.com</xilinx:vendorURL>
+      <xilinx:coreRevision>5</xilinx:coreRevision>
       <xilinx:coreCreationDateTime>2016-12-01T07:57:34Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
         <xilinx:tag xilinx:name="ggm:cogen:shifterComplex:1.0_ARCHIVE_LOCATION">/home/gwe/projets/oscimp/fpga_ip/shifterComplex</xilinx:tag>
