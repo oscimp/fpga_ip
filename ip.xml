@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ips>
+	<ip name="check_valid_burst"
+		driver="fpgagen" />
+	<ip name="dataComplex_to_ram"
+		driver="data_to_ram" />
+	<ip name="dataReal_to_ram"
+		driver="data_to_ram" />
+	<ip name="extract_data_from_burst"
+		driver="edfb" />
+	<ip name="firReal"
+		driver="fir" />
+	<ip name="gen_radar_prog"
+		driver="fpgagen" />
+	<ip name="mean_vector_axi"
+		driver="fpgagen" />
+	<ip name="nco_counter"
+		driver="nco_counter" />
+	<ip name="prn20b"
+		driver="fpgagen" />
+	<ip name="switchComplex"
+		driver="switch" />
+	<ip name="switchReal"
+		driver="switch" />
+</ips>
