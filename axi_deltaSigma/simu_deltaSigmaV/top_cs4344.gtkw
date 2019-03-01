@@ -1,0 +1,39 @@
+[*]
+[*] GTKWave Analyzer v3.3.87 (w)1999-2017 BSI
+[*] Fri Feb  1 17:23:51 2019
+[*]
+[dumpfile] "/home/gwe/projets/pipistrello/libs/sound_gen/simu_deltaSigmaV/simu/top_cs4344_tb.vcd"
+[dumpfile_mtime] "Fri Feb  1 17:23:45 2019"
+[dumpfile_size] 616903
+[savefile] "/home/gwe/projets/pipistrello/libs/sound_gen/simu_deltaSigmaV/top_cs4344.gtkw"
+[timestart] 5480000
+[size] 1364 746
+[pos] -1 -1
+*-21.136065 187000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top_cs4344_tb.
+[sst_width] 210
+[signals_width] 190
+[sst_expanded] 1
+[sst_vpaned_height] 304
+@200
+-top
+@28
+top_cs4344_tb.clk
+top_cs4344_tb.rst_s
+top_cs4344_tb.data_en_s
+@24
+top_cs4344_tb.cpt_s[15:0]
+@22
+top_cs4344_tb.data_s[7:0]
+@28
+top_cs4344_tb.dac_s
+@200
+-deltaSigma
+@22
+top_cs4344_tb.dS_inst.data_in_s[9:0]
+top_cs4344_tb.dS_inst.deltaB[9:0]
+top_cs4344_tb.dS_inst.deltaAdder[9:0]
+@29
+top_cs4344_tb.dS_inst.dac_out_s
+[pattern_trace] 1
+[pattern_trace] 0

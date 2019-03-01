@@ -1,0 +1,43 @@
+[*]
+[*] GTKWave Analyzer v3.3.87 (w)1999-2017 BSI
+[*] Sun Feb 24 17:52:10 2019
+[*]
+[dumpfile] "/home/gwe/projets/ggm_fpga_ip/axi_deltaSigma/simu_dma_fifo/simu/top_dma_fifo_tb.ghw"
+[dumpfile_mtime] "Sun Feb 24 17:51:19 2019"
+[dumpfile_size] 84455
+[savefile] "/home/gwe/projets/ggm_fpga_ip/axi_deltaSigma/simu_dma_fifo/top_dma_fifo.gtkw"
+[timestart] 2566400000
+[size] 1366 748
+[pos] -1 -1
+*-25.000000 2636000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.top_dma_fifo_tb.
+[treeopen] top.top_dma_fifo_tb.dma_fifo_inst.
+[sst_width] 243
+[signals_width] 246
+[sst_expanded] 1
+[sst_vpaned_height] 308
+@28
+top.top_dma_fifo_tb.clk
+top.top_dma_fifo_tb.reset
+top.top_dma_fifo_tb.rstn
+top.top_dma_fifo_tb.start_prod_s
+top.top_dma_fifo_tb.fifo_in_ack_s
+top.top_dma_fifo_tb.fifo_in_stb_s
+@24
+#{top.top_dma_fifo_tb.fifo_in_data_s[31:0]} top.top_dma_fifo_tb.fifo_in_data_s[31] top.top_dma_fifo_tb.fifo_in_data_s[30] top.top_dma_fifo_tb.fifo_in_data_s[29] top.top_dma_fifo_tb.fifo_in_data_s[28] top.top_dma_fifo_tb.fifo_in_data_s[27] top.top_dma_fifo_tb.fifo_in_data_s[26] top.top_dma_fifo_tb.fifo_in_data_s[25] top.top_dma_fifo_tb.fifo_in_data_s[24] top.top_dma_fifo_tb.fifo_in_data_s[23] top.top_dma_fifo_tb.fifo_in_data_s[22] top.top_dma_fifo_tb.fifo_in_data_s[21] top.top_dma_fifo_tb.fifo_in_data_s[20] top.top_dma_fifo_tb.fifo_in_data_s[19] top.top_dma_fifo_tb.fifo_in_data_s[18] top.top_dma_fifo_tb.fifo_in_data_s[17] top.top_dma_fifo_tb.fifo_in_data_s[16] top.top_dma_fifo_tb.fifo_in_data_s[15] top.top_dma_fifo_tb.fifo_in_data_s[14] top.top_dma_fifo_tb.fifo_in_data_s[13] top.top_dma_fifo_tb.fifo_in_data_s[12] top.top_dma_fifo_tb.fifo_in_data_s[11] top.top_dma_fifo_tb.fifo_in_data_s[10] top.top_dma_fifo_tb.fifo_in_data_s[9] top.top_dma_fifo_tb.fifo_in_data_s[8] top.top_dma_fifo_tb.fifo_in_data_s[7] top.top_dma_fifo_tb.fifo_in_data_s[6] top.top_dma_fifo_tb.fifo_in_data_s[5] top.top_dma_fifo_tb.fifo_in_data_s[4] top.top_dma_fifo_tb.fifo_in_data_s[3] top.top_dma_fifo_tb.fifo_in_data_s[2] top.top_dma_fifo_tb.fifo_in_data_s[1] top.top_dma_fifo_tb.fifo_in_data_s[0]
+@200
+-read_part
+@28
+top.top_dma_fifo_tb.fifo_out_ack_s
+top.top_dma_fifo_tb.fifo_out_stb_s
+@24
+#{top.top_dma_fifo_tb.fifo_out_data_right_s[31:0]} top.top_dma_fifo_tb.fifo_out_data_right_s[31] top.top_dma_fifo_tb.fifo_out_data_right_s[30] top.top_dma_fifo_tb.fifo_out_data_right_s[29] top.top_dma_fifo_tb.fifo_out_data_right_s[28] top.top_dma_fifo_tb.fifo_out_data_right_s[27] top.top_dma_fifo_tb.fifo_out_data_right_s[26] top.top_dma_fifo_tb.fifo_out_data_right_s[25] top.top_dma_fifo_tb.fifo_out_data_right_s[24] top.top_dma_fifo_tb.fifo_out_data_right_s[23] top.top_dma_fifo_tb.fifo_out_data_right_s[22] top.top_dma_fifo_tb.fifo_out_data_right_s[21] top.top_dma_fifo_tb.fifo_out_data_right_s[20] top.top_dma_fifo_tb.fifo_out_data_right_s[19] top.top_dma_fifo_tb.fifo_out_data_right_s[18] top.top_dma_fifo_tb.fifo_out_data_right_s[17] top.top_dma_fifo_tb.fifo_out_data_right_s[16] top.top_dma_fifo_tb.fifo_out_data_right_s[15] top.top_dma_fifo_tb.fifo_out_data_right_s[14] top.top_dma_fifo_tb.fifo_out_data_right_s[13] top.top_dma_fifo_tb.fifo_out_data_right_s[12] top.top_dma_fifo_tb.fifo_out_data_right_s[11] top.top_dma_fifo_tb.fifo_out_data_right_s[10] top.top_dma_fifo_tb.fifo_out_data_right_s[9] top.top_dma_fifo_tb.fifo_out_data_right_s[8] top.top_dma_fifo_tb.fifo_out_data_right_s[7] top.top_dma_fifo_tb.fifo_out_data_right_s[6] top.top_dma_fifo_tb.fifo_out_data_right_s[5] top.top_dma_fifo_tb.fifo_out_data_right_s[4] top.top_dma_fifo_tb.fifo_out_data_right_s[3] top.top_dma_fifo_tb.fifo_out_data_right_s[2] top.top_dma_fifo_tb.fifo_out_data_right_s[1] top.top_dma_fifo_tb.fifo_out_data_right_s[0]
+#{top.top_dma_fifo_tb.fifo_out_data_left_s[31:0]} top.top_dma_fifo_tb.fifo_out_data_left_s[31] top.top_dma_fifo_tb.fifo_out_data_left_s[30] top.top_dma_fifo_tb.fifo_out_data_left_s[29] top.top_dma_fifo_tb.fifo_out_data_left_s[28] top.top_dma_fifo_tb.fifo_out_data_left_s[27] top.top_dma_fifo_tb.fifo_out_data_left_s[26] top.top_dma_fifo_tb.fifo_out_data_left_s[25] top.top_dma_fifo_tb.fifo_out_data_left_s[24] top.top_dma_fifo_tb.fifo_out_data_left_s[23] top.top_dma_fifo_tb.fifo_out_data_left_s[22] top.top_dma_fifo_tb.fifo_out_data_left_s[21] top.top_dma_fifo_tb.fifo_out_data_left_s[20] top.top_dma_fifo_tb.fifo_out_data_left_s[19] top.top_dma_fifo_tb.fifo_out_data_left_s[18] top.top_dma_fifo_tb.fifo_out_data_left_s[17] top.top_dma_fifo_tb.fifo_out_data_left_s[16] top.top_dma_fifo_tb.fifo_out_data_left_s[15] top.top_dma_fifo_tb.fifo_out_data_left_s[14] top.top_dma_fifo_tb.fifo_out_data_left_s[13] top.top_dma_fifo_tb.fifo_out_data_left_s[12] top.top_dma_fifo_tb.fifo_out_data_left_s[11] top.top_dma_fifo_tb.fifo_out_data_left_s[10] top.top_dma_fifo_tb.fifo_out_data_left_s[9] top.top_dma_fifo_tb.fifo_out_data_left_s[8] top.top_dma_fifo_tb.fifo_out_data_left_s[7] top.top_dma_fifo_tb.fifo_out_data_left_s[6] top.top_dma_fifo_tb.fifo_out_data_left_s[5] top.top_dma_fifo_tb.fifo_out_data_left_s[4] top.top_dma_fifo_tb.fifo_out_data_left_s[3] top.top_dma_fifo_tb.fifo_out_data_left_s[2] top.top_dma_fifo_tb.fifo_out_data_left_s[1] top.top_dma_fifo_tb.fifo_out_data_left_s[0]
+@25
+#{top.top_dma_fifo_tb.data_left_s[31:0]} top.top_dma_fifo_tb.data_left_s[31] top.top_dma_fifo_tb.data_left_s[30] top.top_dma_fifo_tb.data_left_s[29] top.top_dma_fifo_tb.data_left_s[28] top.top_dma_fifo_tb.data_left_s[27] top.top_dma_fifo_tb.data_left_s[26] top.top_dma_fifo_tb.data_left_s[25] top.top_dma_fifo_tb.data_left_s[24] top.top_dma_fifo_tb.data_left_s[23] top.top_dma_fifo_tb.data_left_s[22] top.top_dma_fifo_tb.data_left_s[21] top.top_dma_fifo_tb.data_left_s[20] top.top_dma_fifo_tb.data_left_s[19] top.top_dma_fifo_tb.data_left_s[18] top.top_dma_fifo_tb.data_left_s[17] top.top_dma_fifo_tb.data_left_s[16] top.top_dma_fifo_tb.data_left_s[15] top.top_dma_fifo_tb.data_left_s[14] top.top_dma_fifo_tb.data_left_s[13] top.top_dma_fifo_tb.data_left_s[12] top.top_dma_fifo_tb.data_left_s[11] top.top_dma_fifo_tb.data_left_s[10] top.top_dma_fifo_tb.data_left_s[9] top.top_dma_fifo_tb.data_left_s[8] top.top_dma_fifo_tb.data_left_s[7] top.top_dma_fifo_tb.data_left_s[6] top.top_dma_fifo_tb.data_left_s[5] top.top_dma_fifo_tb.data_left_s[4] top.top_dma_fifo_tb.data_left_s[3] top.top_dma_fifo_tb.data_left_s[2] top.top_dma_fifo_tb.data_left_s[1] top.top_dma_fifo_tb.data_left_s[0]
+#{top.top_dma_fifo_tb.data_right_s[31:0]} top.top_dma_fifo_tb.data_right_s[31] top.top_dma_fifo_tb.data_right_s[30] top.top_dma_fifo_tb.data_right_s[29] top.top_dma_fifo_tb.data_right_s[28] top.top_dma_fifo_tb.data_right_s[27] top.top_dma_fifo_tb.data_right_s[26] top.top_dma_fifo_tb.data_right_s[25] top.top_dma_fifo_tb.data_right_s[24] top.top_dma_fifo_tb.data_right_s[23] top.top_dma_fifo_tb.data_right_s[22] top.top_dma_fifo_tb.data_right_s[21] top.top_dma_fifo_tb.data_right_s[20] top.top_dma_fifo_tb.data_right_s[19] top.top_dma_fifo_tb.data_right_s[18] top.top_dma_fifo_tb.data_right_s[17] top.top_dma_fifo_tb.data_right_s[16] top.top_dma_fifo_tb.data_right_s[15] top.top_dma_fifo_tb.data_right_s[14] top.top_dma_fifo_tb.data_right_s[13] top.top_dma_fifo_tb.data_right_s[12] top.top_dma_fifo_tb.data_right_s[11] top.top_dma_fifo_tb.data_right_s[10] top.top_dma_fifo_tb.data_right_s[9] top.top_dma_fifo_tb.data_right_s[8] top.top_dma_fifo_tb.data_right_s[7] top.top_dma_fifo_tb.data_right_s[6] top.top_dma_fifo_tb.data_right_s[5] top.top_dma_fifo_tb.data_right_s[4] top.top_dma_fifo_tb.data_right_s[3] top.top_dma_fifo_tb.data_right_s[2] top.top_dma_fifo_tb.data_right_s[1] top.top_dma_fifo_tb.data_right_s[0]
+@200
+-internal
+[pattern_trace] 1
+[pattern_trace] 0
