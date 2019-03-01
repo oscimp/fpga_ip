@@ -26,10 +26,14 @@ OscillatorIMP ecosystem FPGA IP sources
 
 For the pulse RADAR application:
 
+|     Block name      |    Function                           | Input(s)  | Output(s)          | Parameter(s)   | Driver | Library function(s) (liboscimp) |
+|---------------------|---------------------------------------|-----------|--------------------|----------------|--------|---------------------------------|
 |check_valid_burst      |
 |extract_data_from_burst|
 |gen_radar_prog         |
 
 For the pulse PlutoSDR demonstration and audio output/sigma-delta DAC with DC component output in general:
 
+|     Block name      |    Function                           | Input(s)  | Output(s)          | Parameter(s)   | Driver | Library function(s) (liboscimp) |
+|---------------------|---------------------------------------|-----------|--------------------|----------------|--------|---------------------------------|
 |axi_deltaSigma         |
