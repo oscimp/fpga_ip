@@ -211,7 +211,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>ASSOCIATED_RESET</spirit:name>
-          <spirit:value spirit:id="BUSIFPARAM_VALUE.S00_AXI_SIGNAL_CLOCK.ASSOCIATED_RESET">s00_axi_reset</spirit:value>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.S00_AXI_SIGNAL_CLOCK.ASSOCIATED_RESET">s00_axi_reset:s00_axi_signal_reset</spirit:value>
         </spirit:parameter>
       </spirit:parameters>
     </spirit:busInterface>
@@ -378,7 +378,7 @@
             <spirit:name>DATA_EN</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
-            <spirit:name>pinc_en_o</spirit:name>
+            <spirit:name>pinc_en_i</spirit:name>
           </spirit:physicalPort>
         </spirit:portMap>
         <spirit:portMap>
@@ -386,7 +386,7 @@
             <spirit:name>DATA_CLK</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
-            <spirit:name>pinc_clk_o</spirit:name>
+            <spirit:name>pinc_clk_i</spirit:name>
           </spirit:physicalPort>
         </spirit:portMap>
         <spirit:portMap>
@@ -394,7 +394,7 @@
             <spirit:name>DATA_RST</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
-            <spirit:name>pinc_rst_o</spirit:name>
+            <spirit:name>pinc_rst_i</spirit:name>
           </spirit:physicalPort>
         </spirit:portMap>
       </spirit:portMaps>
@@ -418,7 +418,7 @@
             <spirit:name>DATA_EN</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
-            <spirit:name>poff_en_o</spirit:name>
+            <spirit:name>poff_en_i</spirit:name>
           </spirit:physicalPort>
         </spirit:portMap>
         <spirit:portMap>
@@ -426,7 +426,7 @@
             <spirit:name>DATA_CLK</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
-            <spirit:name>poff_clk_o</spirit:name>
+            <spirit:name>poff_clk_i</spirit:name>
           </spirit:physicalPort>
         </spirit:portMap>
         <spirit:portMap>
@@ -434,7 +434,7 @@
             <spirit:name>DATA_RST</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
-            <spirit:name>poff_rst_o</spirit:name>
+            <spirit:name>poff_rst_i</spirit:name>
           </spirit:physicalPort>
         </spirit:portMap>
       </spirit:portMaps>
@@ -466,7 +466,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>0c43c28d</spirit:value>
+            <spirit:value>4c080e49</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -482,7 +482,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>679ed51e</spirit:value>
+            <spirit:value>4c080e49</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1162,7 +1162,7 @@
       <spirit:modelParameter xsi:type="spirit:nameValueTypeType" spirit:dataType="integer">
         <spirit:name>id</spirit:name>
         <spirit:displayName>Id</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.id" spirit:minimum="0">1</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.id" spirit:minimum="0" spirit:rangeType="long">1</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="boolean">
         <spirit:name>RESET_ACCUM</spirit:name>
@@ -1172,22 +1172,22 @@
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>DEFAULT_RST_ACCUM_VAL</spirit:name>
         <spirit:displayName>Default Rst Accum Val</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DEFAULT_RST_ACCUM_VAL" spirit:minimum="0">25</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DEFAULT_RST_ACCUM_VAL" spirit:minimum="0" spirit:rangeType="long">25</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>DATA_SIZE</spirit:name>
         <spirit:displayName>Data Size</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DATA_SIZE" spirit:minimum="0">16</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DATA_SIZE" spirit:minimum="0" spirit:rangeType="long">16</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>LUT_SIZE</spirit:name>
         <spirit:displayName>Lut Size</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.LUT_SIZE" spirit:minimum="0">10</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.LUT_SIZE" spirit:minimum="0" spirit:rangeType="long">10</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>COUNTER_SIZE</spirit:name>
         <spirit:displayName>Counter Size</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.COUNTER_SIZE" spirit:minimum="0">28</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.COUNTER_SIZE" spirit:minimum="0" spirit:rangeType="long">28</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_S00_AXI_DATA_WIDTH</spirit:name>
@@ -1371,15 +1371,15 @@
       <xilinx:vendorDisplayName>Gwenhael Goavec-Merou</xilinx:vendorDisplayName>
       <xilinx:vendorURL>http://www.trabucayre.com</xilinx:vendorURL>
       <xilinx:coreRevision>1</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2019-03-07T07:07:34Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2019-03-07T11:19:31Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2018.2.1</xilinx:xilinxVersion>
-      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="4d9788cc"/>
+      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="b9db9ff7"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="871c369d"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="29069400"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="76a9e462"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="9895c25a"/>
-      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="6e6d77f4"/>
+      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="0d07e564"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="c73a91a4"/>
     </xilinx:packagingInfo>
   </spirit:vendorExtensions>
