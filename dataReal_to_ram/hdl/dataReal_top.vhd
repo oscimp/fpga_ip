@@ -59,6 +59,8 @@ architecture Behavioral of dataReal_to_ram_top is
 	constant HLF_WAY         : natural := NB_WAY/2;
 
 	signal busy_s            : std_logic_vector(NB_WAY-1 downto 0);
+	signal busy_out_s        : std_logic;
+	signal start_s           : std_logic;
 	type res_tab is array (natural range <>) of std_logic_vector(AXI_SIZE-1 downto 0);
 	signal res_s             : res_tab(NB_WAY-1 downto 0);
 	signal mux_complex_s     : res_tab(NB_WAY-1 downto 0);
@@ -140,7 +142,20 @@ begin
         end if;
     end process;
 
-	busy_o <= '0' when busy_s = (NB_WAY-1 downto 0 => '0') else '1'; 
+	busy_o <= busy_out_s or start_s;
+	busy_out_s <= '0' when busy_s = (NB_WAY-1 downto 0 => '0') else '1';
+
+	process(cpu_clk_i) begin
+		if rising_edge(cpu_clk_i) then
+			if (busy_out_s or rst_i) = '1' then
+				start_s <= '0';
+			elsif start_acquisition_i = '1' then
+				start_s <= '1';
+			else
+				start_s <= start_s;
+			end if;
+		end if;
+	end process;
 	
 	subtop_loop : for i in 0 to NB_WAY-1 generate
 		data_subtop_inst : entity work.dataReal_to_ram_subtop
