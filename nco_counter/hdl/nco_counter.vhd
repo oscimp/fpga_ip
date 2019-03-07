@@ -128,25 +128,25 @@ begin
 
 	--- synchro ---
 	pinc_syn : entity work.nco_counter_synchronizer_bit
-	port map (clk_i => ref_clk_i,
+	port map (ref_clk_i => s00_axi_aclk, clk_i => ref_clk_i,
 		bit_i => pinc_sw_s, bit_o => pinc_sw_sync_s);
 	poff_syn : entity work.nco_counter_synchronizer_bit
-	port map (clk_i => ref_clk_i,
+	port map (ref_clk_i => s00_axi_aclk, clk_i => ref_clk_i,
 		bit_i => poff_sw_s, bit_o => poff_sw_sync_s);
 	max_acc_syn : entity work.nco_counter_synchronizer_vector
 	generic map (DATA => COUNTER_SIZE)
-	port map (clk_i => ref_clk_i,
+	port map (ref_clk_i => s00_axi_aclk, clk_i => ref_clk_i,
 		bit_i => max_accum_s, bit_o => max_accum_sync_s);
 	cpt_off_syn : entity work.nco_counter_synchronizer_vector
 	generic map (DATA => LUT_SIZE)
-	port map (clk_i => ref_clk_i,
+	port map (ref_clk_i => s00_axi_aclk, clk_i => ref_clk_i,
 		bit_i => cpt_off_s, bit_o => cpt_off_sync_s);
 	cpt_step_syn : entity work.nco_counter_synchronizer_vector
 	generic map (DATA => COUNTER_SIZE)
-	port map (clk_i => ref_clk_i,
+	port map (ref_clk_i => s00_axi_aclk, clk_i => ref_clk_i,
 		bit_i => cpt_step_s, bit_o => cpt_step_sync_s);
 	enable_syn : entity work.nco_counter_synchronizer_bit
-	port map (clk_i => ref_clk_i,
+	port map (ref_clk_i => s00_axi_aclk, clk_i => ref_clk_i,
 		bit_i => enable_s, bit_o => enable_sync_s);
 	---------------
 

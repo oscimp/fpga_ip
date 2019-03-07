@@ -83,7 +83,7 @@ begin
 		port map (data_i => data_i, data_o => data_s);
 	
 	busy_sync: entity work.dataReal_sync
-	port map (clk_i => cpu_clk_i,
+	port map (ref_clk_i => data_clk_i, clk_i => cpu_clk_i,
 		bit_i => busy_s, bit_o => busy_sync_s
 	);
 
@@ -101,7 +101,7 @@ begin
 	end process;
 
 	sync_start: entity work.dataReal_sync
-	port map (clk_i => data_clk_i,
+	port map (ref_clk_i => cpu_clk_i, clk_i => data_clk_i,
 		bit_i => start_acq2_s, bit_o => start_acq4_s
 	);
 	with_eof: if USE_EOF = true generate
