@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component name="add_constReal" version="1.0">
+    <description>
+        Component for add_constReal.
+    </description>
+
+    <generics>
+		<generic name="id" public="true" value="1" match="\d+" type="natural" destination="both" />
+		<!--<generic name="coeff_format" public="true" value="14" match="\d+"  type="natural" destination="both" />-->
+		<generic name="add_val" public="true" value="0" match="\d+"  type="natural" destination="both" />
+		<generic name="DATA_IN_SIZE" public="true" value="14" match="\d+"  type="natural" destination="both" />
+		<generic name="DATA_OUT_SIZE" public="true" value="14" match="\d+"  type="natural" destination="both" />
+		<generic name="C_S00_AXI_DATA_WIDTH" public="true" value="32" match="\d+" type="integer" destination="both" />
+		<generic name="C_S00_AXI_ADDR_WIDTH" public="true" value="2" match="\d+" type="integer" destination="both" />
+    </generics>
+
+    <hdl_files>
+		<hdl_file filename="add_constReal.vhd" scope="both" istop="1" />
+		<hdl_file filename="add_constReal_handComm.vhd" scope="both" istop="0" />
+		<hdl_file filename="add_constReal_logic.vhd" scope="both" istop="0" />
+		<hdl_file filename="add_constReal_rst.vhd" scope="both" istop="0" />
+		<hdl_file filename="wb_add_constReal.vhd" scope="both" istop="0" />
+    </hdl_files>
+	<interfaces>
+		<interface name="axis" class="slave" bus="axi4lite" data_size="32" addr_size="2">
+			<registers>
+				<register name="id" offset="0x00" size="32" rows="1" />
+				<register name="REG_DATA_A" offset="0x01" size="32" rows="1" />
+				<register name="REG_DATA_B" offset="0x02" size="32" rows="1" />
+			</registers>
+			<ports>
+				<port name="s00_axi_aclk" type="CLK" size="1" dir="in" />
+				<port name="s00_axi_reset" type="RST" size="1" dir="in" />
+ 				<port name="s00_axi_araddr" type="ARADR" size="2" dir="in" />
+                <port name="s00_axi_arprot" type="ARPROT" size="3" dir="in" />
+                <port name="s00_axi_arready" type="ARREADY" size="1" dir="out" />
+                <port name="s00_axi_arvalid" type="ARVALID" size="1" dir="in" />
+                <port name="s00_axi_awaddr" type="AWADR" size="2" dir="in" />
+                <port name="s00_axi_awprot" type="AWPROT" size="3" dir="in" />
+                <port name="s00_axi_awready" type="AWREADY" size="1" dir="out" />
+                <port name="s00_axi_awvalid" type="AWVALID" size="1" dir="in" />
+                <port name="s00_axi_bready" type="BREADY" size="1" dir="in" />
+                <port name="s00_axi_bresp" type="BRESP" size="2" dir="out" />
+                <port name="s00_axi_bvalid" type="BVALID" size="1" dir="out" />
+                <port name="s00_axi_rdata" type="RDATA" size="32" dir="out" />
+                <port name="s00_axi_rready" type="RREADY" size="1" dir="in" />
+                <port name="s00_axi_rresp" type="RRESP" size="2" dir="out" />
+                <port name="s00_axi_rvalid" type="RVALID" size="1" dir="out" />
+                <port name="s00_axi_wdata" type="WDATA" size="32" dir="in" />
+                <port name="s00_axi_wready" type="WREADY" size="1" dir="out" />
+                <port name="s00_axi_wstrb" type="WSTRB" size="4" dir="in" />
+                <port name="s00_axi_wvalid" type="WVALID" size="1" dir="in" />
+			</ports>
+		</interface>
+		<interface name="data_in" class="gls" >
+			<ports>
+				<port name="data_i" type="DATA" size="DATA_IN_SIZE" dir="in" />
+				<port name="data_en_i" type="ENABLE" size="1" dir="in" />
+				<port name="data_clk_i" type="CLK" size="1" dir="in" />
+				<port name="data_rst_i" type="RST" size="1" dir="in" />
+			</ports>
+		</interface>
+		<interface name="data_out" class="gls" >
+			<ports>
+				<port name="data_o" type="DATA" size="DATA_OUT_SIZE" dir="out" />
+				<port name="data_en_o" type="ENABLE" size="1" dir="out" />
+				<port name="data_clk_o" type="CLK" size="1" dir="out" />
+				<port name="data_rst_o" type="RST" size="1" dir="out" />
+			</ports>
+		</interface>
+    </interfaces>
+</component>
