@@ -1025,10 +1025,10 @@
       <xilinx:vendorDisplayName>Gwenhael Goavec-Merou</xilinx:vendorDisplayName>
       <xilinx:vendorURL>http://www.trabucayre.com</xilinx:vendorURL>
       <xilinx:coreRevision>1</xilinx:coreRevision>
+      <xilinx:upgrades>
+        <xilinx:canUpgradeFrom>ggm:cogen:addComplex_const:1.0</xilinx:canUpgradeFrom>
+      </xilinx:upgrades>
       <xilinx:coreCreationDateTime>2019-04-19T08:22:02Z</xilinx:coreCreationDateTime>
-	  <xilinx:upgrades>
-	  	<xilinx:canUpgradeFrom>ggm:cogen:addComplex_const:1.0</xilinx:canUpgradeFrom>
-	  </xilinx:upgrades>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2018.3.1</xilinx:xilinxVersion>
