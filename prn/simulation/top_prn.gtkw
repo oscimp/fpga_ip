@@ -1,0 +1,36 @@
+[*]
+[*] GTKWave Analyzer v3.3.99 (w)1999-2019 BSI
+[*] Mon May 20 05:38:59 2019
+[*]
+[dumpfile] "/home/gwe/projets/ggm_fpga_ip/prn7/simulation/simu/top_prn_tb.ghw"
+[dumpfile_mtime] "Mon May 20 05:37:44 2019"
+[dumpfile_size] 14774
+[savefile] "/home/gwe/projets/ggm_fpga_ip/prn7/simulation/top_prn.gtkw"
+[timestart] 0
+[size] 1366 748
+[pos] -1 -1
+*-28.063171 31250000000 51270000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.top_prn_tb.
+[treeopen] top.top_prn_tb.dut.
+[sst_width] 196
+[signals_width] 219
+[sst_expanded] 1
+[sst_vpaned_height] 285
+@28
+top.top_prn_tb.clk
+top.top_prn_tb.reset
+top.top_prn_tb.prn_s
+@200
+-internal
+@29
+top.top_prn_tb.dut.period_s[0]
+@28
+top.top_prn_tb.dut.xor0_6
+top.top_prn_tb.dut.tick_int_s
+top.top_prn_tb.dut.prn_o
+top.top_prn_tb.dut.tick_i
+top.top_prn_tb.dut.reset
+top.top_prn_tb.dut.clk
+[pattern_trace] 1
+[pattern_trace] 0
