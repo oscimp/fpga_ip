@@ -1,0 +1,39 @@
+[*]
+[*] GTKWave Analyzer v3.3.64 (w)1999-2014 BSI
+[*] Wed Dec  9 08:39:17 2015
+[*]
+[dumpfile] "/home/gwe/projets/oscimp/fpga_ip/meanComplex/simulation/simu/top_meanComplex_tb.ghw"
+[dumpfile_mtime] "Wed Dec  9 08:39:11 2015"
+[dumpfile_size] 867183
+[savefile] "/home/gwe/projets/oscimp/fpga_ip/meanComplex/simulation/top_meanComplex.gtkw"
+[timestart] 13372390000
+[size] 1366 732
+[pos] -1 -1
+*-20.921112 238900000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.top_meanComplex_tb.
+[treeopen] top.top_meanComplex_tb.moy_inst.
+[sst_width] 196
+[signals_width] 158
+[sst_expanded] 1
+[sst_vpaned_height] 305
+@28
+top.top_meanComplex_tb.reset
+top.top_meanComplex_tb.clk
+top.top_meanComplex_tb.data_en_s
+@24
+#{top.top_meanComplex_tb.data_i_s[15:0]} top.top_meanComplex_tb.data_i_s[15] top.top_meanComplex_tb.data_i_s[14] top.top_meanComplex_tb.data_i_s[13] top.top_meanComplex_tb.data_i_s[12] top.top_meanComplex_tb.data_i_s[11] top.top_meanComplex_tb.data_i_s[10] top.top_meanComplex_tb.data_i_s[9] top.top_meanComplex_tb.data_i_s[8] top.top_meanComplex_tb.data_i_s[7] top.top_meanComplex_tb.data_i_s[6] top.top_meanComplex_tb.data_i_s[5] top.top_meanComplex_tb.data_i_s[4] top.top_meanComplex_tb.data_i_s[3] top.top_meanComplex_tb.data_i_s[2] top.top_meanComplex_tb.data_i_s[1] top.top_meanComplex_tb.data_i_s[0]
+#{top.top_meanComplex_tb.data_q_s[15:0]} top.top_meanComplex_tb.data_q_s[15] top.top_meanComplex_tb.data_q_s[14] top.top_meanComplex_tb.data_q_s[13] top.top_meanComplex_tb.data_q_s[12] top.top_meanComplex_tb.data_q_s[11] top.top_meanComplex_tb.data_q_s[10] top.top_meanComplex_tb.data_q_s[9] top.top_meanComplex_tb.data_q_s[8] top.top_meanComplex_tb.data_q_s[7] top.top_meanComplex_tb.data_q_s[6] top.top_meanComplex_tb.data_q_s[5] top.top_meanComplex_tb.data_q_s[4] top.top_meanComplex_tb.data_q_s[3] top.top_meanComplex_tb.data_q_s[2] top.top_meanComplex_tb.data_q_s[1] top.top_meanComplex_tb.data_q_s[0]
+@28
+top.top_meanComplex_tb.data_en_o
+@24
+#{top.top_meanComplex_tb.data_i_o[15:0]} top.top_meanComplex_tb.data_i_o[15] top.top_meanComplex_tb.data_i_o[14] top.top_meanComplex_tb.data_i_o[13] top.top_meanComplex_tb.data_i_o[12] top.top_meanComplex_tb.data_i_o[11] top.top_meanComplex_tb.data_i_o[10] top.top_meanComplex_tb.data_i_o[9] top.top_meanComplex_tb.data_i_o[8] top.top_meanComplex_tb.data_i_o[7] top.top_meanComplex_tb.data_i_o[6] top.top_meanComplex_tb.data_i_o[5] top.top_meanComplex_tb.data_i_o[4] top.top_meanComplex_tb.data_i_o[3] top.top_meanComplex_tb.data_i_o[2] top.top_meanComplex_tb.data_i_o[1] top.top_meanComplex_tb.data_i_o[0]
+#{top.top_meanComplex_tb.data_q_o[15:0]} top.top_meanComplex_tb.data_q_o[15] top.top_meanComplex_tb.data_q_o[14] top.top_meanComplex_tb.data_q_o[13] top.top_meanComplex_tb.data_q_o[12] top.top_meanComplex_tb.data_q_o[11] top.top_meanComplex_tb.data_q_o[10] top.top_meanComplex_tb.data_q_o[9] top.top_meanComplex_tb.data_q_o[8] top.top_meanComplex_tb.data_q_o[7] top.top_meanComplex_tb.data_q_o[6] top.top_meanComplex_tb.data_q_o[5] top.top_meanComplex_tb.data_q_o[4] top.top_meanComplex_tb.data_q_o[3] top.top_meanComplex_tb.data_q_o[2] top.top_meanComplex_tb.data_q_o[1] top.top_meanComplex_tb.data_q_o[0]
+@200
+-meanComplex
+@22
+#{top.top_meanComplex_tb.moy_inst.data_q_o[15:0]} top.top_meanComplex_tb.moy_inst.data_q_o[15] top.top_meanComplex_tb.moy_inst.data_q_o[14] top.top_meanComplex_tb.moy_inst.data_q_o[13] top.top_meanComplex_tb.moy_inst.data_q_o[12] top.top_meanComplex_tb.moy_inst.data_q_o[11] top.top_meanComplex_tb.moy_inst.data_q_o[10] top.top_meanComplex_tb.moy_inst.data_q_o[9] top.top_meanComplex_tb.moy_inst.data_q_o[8] top.top_meanComplex_tb.moy_inst.data_q_o[7] top.top_meanComplex_tb.moy_inst.data_q_o[6] top.top_meanComplex_tb.moy_inst.data_q_o[5] top.top_meanComplex_tb.moy_inst.data_q_o[4] top.top_meanComplex_tb.moy_inst.data_q_o[3] top.top_meanComplex_tb.moy_inst.data_q_o[2] top.top_meanComplex_tb.moy_inst.data_q_o[1] top.top_meanComplex_tb.moy_inst.data_q_o[0]
+@23
+#{top.top_meanComplex_tb.moy_inst.data_q_i[15:0]} top.top_meanComplex_tb.moy_inst.data_q_i[15] top.top_meanComplex_tb.moy_inst.data_q_i[14] top.top_meanComplex_tb.moy_inst.data_q_i[13] top.top_meanComplex_tb.moy_inst.data_q_i[12] top.top_meanComplex_tb.moy_inst.data_q_i[11] top.top_meanComplex_tb.moy_inst.data_q_i[10] top.top_meanComplex_tb.moy_inst.data_q_i[9] top.top_meanComplex_tb.moy_inst.data_q_i[8] top.top_meanComplex_tb.moy_inst.data_q_i[7] top.top_meanComplex_tb.moy_inst.data_q_i[6] top.top_meanComplex_tb.moy_inst.data_q_i[5] top.top_meanComplex_tb.moy_inst.data_q_i[4] top.top_meanComplex_tb.moy_inst.data_q_i[3] top.top_meanComplex_tb.moy_inst.data_q_i[2] top.top_meanComplex_tb.moy_inst.data_q_i[1] top.top_meanComplex_tb.moy_inst.data_q_i[0]
+[pattern_trace] 1
+[pattern_trace] 0
