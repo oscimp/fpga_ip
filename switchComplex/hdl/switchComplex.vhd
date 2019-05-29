@@ -16,14 +16,14 @@ entity switchComplex is
 		data1_q_i	: in std_logic_vector(DATA_SIZE-1 downto 0);
 		data1_en_i	: in std_logic;
 		data1_clk_i	: in std_logic;
-		data1_eof_i	: in std_logic;
+		data1_eof_i	: in std_logic := '0';
 		data1_rst_i	: in std_logic;
 
 		data2_i_i	: in std_logic_vector(DATA_SIZE-1 downto 0);
 		data2_q_i	: in std_logic_vector(DATA_SIZE-1 downto 0);
 		data2_en_i	: in std_logic;
 		data2_clk_i	: in std_logic;
-		data2_eof_i	: in std_logic;
+		data2_eof_i	: in std_logic := '0';
 		data2_rst_i	: in std_logic;
 
 		data_i_o	: out std_logic_vector(DATA_SIZE-1 downto 0);
@@ -62,25 +62,19 @@ architecture Behavioral of switchComplex is
 	signal addr_s : std_logic_vector(1 downto 0);
 	signal write_en_s, read_en_s : std_logic;
 	signal witchIn : std_logic;
-	signal witchIn1, witchIn2, witchIn3: std_logic;
+	signal witchIn_sync: std_logic;
 begin
 
-	data_i_o <= data1_i_i when witchIn3 = '0' else data2_i_i;	
-	data_q_o <= data1_q_i when witchIn3 = '0' else data2_q_i;	
-	data_en_o <= data1_en_i when witchIn3 = '0' else data2_en_i;
-	data_eof_o <= data1_eof_i when witchIn3 = '0' else data2_eof_i;
+	data_i_o <= data1_i_i when witchIn_sync = '0' else data2_i_i;
+	data_q_o <= data1_q_i when witchIn_sync = '0' else data2_q_i;
+	data_en_o <= data1_en_i when witchIn_sync = '0' else data2_en_i;
+	data_eof_o <= data1_eof_i when witchIn_sync = '0' else data2_eof_i;
 	data_rst_o <= data1_rst_i;
 	data_clk_o <= data1_clk_i;
 
-
-	process(data1_clk_i)
-	begin
-		if rising_edge(data1_clk_i) then
-			witchIn1 <= witchIn;
-			witchIn2 <= witchIn1;
-			witchIn3 <= witchIn2;
-		end if;
-	end process;
+	switch_sync : entity work.switchComplex_synch
+	port map (ref_clk_i => s00_axi_aclk, clk_i => data1_clk_i,
+		bit_i => witchIn, bit_o => witchIn_sync);
 
 	switchComplexWb_inst : entity work.switchComplex_wb
     generic map(

@@ -934,6 +934,10 @@
     <spirit:fileSet>
       <spirit:name>xilinx_anylanguagesynthesis_view_fileset</spirit:name>
       <spirit:file>
+        <spirit:name>axi_deltaSigma_constr.xdc</spirit:name>
+        <spirit:userFileType>xdc</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
         <spirit:name>hdl/deltaSigma.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>

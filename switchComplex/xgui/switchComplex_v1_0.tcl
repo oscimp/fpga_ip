@@ -3,11 +3,16 @@ proc init_gui { IPINST } {
   ipgui::add_param $IPINST -name "Component_Name"
   #Adding Page
   set Page_0 [ipgui::add_page $IPINST -name "Page 0"]
-  ipgui::add_param $IPINST -name "C_S00_AXI_ADDR_WIDTH" -parent ${Page_0}
-  ipgui::add_param $IPINST -name "C_S00_AXI_DATA_WIDTH" -parent ${Page_0}
-  ipgui::add_param $IPINST -name "DATA_SIZE" -parent ${Page_0}
-  ipgui::add_param $IPINST -name "DEFAULT_INPUT" -parent ${Page_0}
-  ipgui::add_param $IPINST -name "ID" -parent ${Page_0}
+  set C_S00_AXI_ADDR_WIDTH [ipgui::add_param $IPINST -name "C_S00_AXI_ADDR_WIDTH" -parent ${Page_0}]
+  set_property tooltip {Width of the S_AXI addr bus.} ${C_S00_AXI_ADDR_WIDTH}
+  set C_S00_AXI_DATA_WIDTH [ipgui::add_param $IPINST -name "C_S00_AXI_DATA_WIDTH" -parent ${Page_0}]
+  set_property tooltip {Width of the S_AXI data bus.} ${C_S00_AXI_DATA_WIDTH}
+  set DATA_SIZE [ipgui::add_param $IPINST -name "DATA_SIZE" -parent ${Page_0}]
+  set_property tooltip {Size of data busses.} ${DATA_SIZE}
+  set DEFAULT_INPUT [ipgui::add_param $IPINST -name "DEFAULT_INPUT" -parent ${Page_0}]
+  set_property tooltip {Default input interface.} ${DEFAULT_INPUT}
+  set ID [ipgui::add_param $IPINST -name "ID" -parent ${Page_0}]
+  set_property tooltip {Component id.} ${ID}
 
 
 }
