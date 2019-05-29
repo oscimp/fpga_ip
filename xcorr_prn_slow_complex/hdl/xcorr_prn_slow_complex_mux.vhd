@@ -3,7 +3,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.numeric_std.all;
 use IEEE.math_real.all;
 
-entity xcorr_gps_slow_complex_mux is
+entity xcorr_prn_slow_complex_mux is
 	generic (
 		NB_BLK : natural := 8;
 		IN_SIZE : natural := 16;
@@ -27,7 +27,7 @@ entity xcorr_gps_slow_complex_mux is
     );
 end entity;
 
-architecture rtl of xcorr_gps_slow_complex_mux is
+architecture rtl of xcorr_prn_slow_complex_mux is
 	constant ALL_ZERO : std_logic_vector := (NB_BLK -1 downto 0 => '0');
 	constant CPT_SZ : natural := natural(ceil(log2(real(NB_BLK))));
 	-- accum
@@ -128,7 +128,7 @@ begin
 	accum_mux_q_s <= accum_q_s when clear_accum_s = '0'
 		else (OUT_SIZE-1 downto 0 => '0');
 
-	correl_i_inst: entity work.xcorr_gps_slow_complex_correl
+	correl_i_inst: entity work.xcorr_prn_slow_complex_correl
 	generic map (IN_SIZE => IN_SIZE, OUT_SIZE => OUT_SIZE)
 	port map (end_cross_i => mux_end_cross_s,
 		data_en_i => data_en_s, accum_i => accum_mux_i_s,
@@ -137,7 +137,7 @@ begin
 		data_end_o => data_end_i_s,
 		data_en_o => wr_en_i_s, data_o => accum_next_i_s
 	);
-	correl_q_inst: entity work.xcorr_gps_slow_complex_correl
+	correl_q_inst: entity work.xcorr_prn_slow_complex_correl
 	generic map (IN_SIZE => IN_SIZE, OUT_SIZE => OUT_SIZE)
 	port map (end_cross_i => mux_end_cross_s,
 		data_en_i => data_en_s, accum_i => accum_mux_q_s,
@@ -233,7 +233,7 @@ begin
 		end if;
 	end process;
 
-	ram_i_inst : entity work.xcorr_gps_slow_complex_ram
+	ram_i_inst : entity work.xcorr_prn_slow_complex_ram
 	generic map (DATA => OUT_SIZE, ADDR => CPT_SZ)
   	port map(
     	clk_a => clk, clk_b => clk,
@@ -242,7 +242,7 @@ begin
     	addr_b => rd_addr_s, dout_b => accum_i_s
     );
 
-	ram_q_inst : entity work.xcorr_gps_slow_complex_ram
+	ram_q_inst : entity work.xcorr_prn_slow_complex_ram
 	generic map (DATA => OUT_SIZE, ADDR => CPT_SZ)
   	port map(
     	clk_a => clk, clk_b => clk,

@@ -2,7 +2,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.numeric_std.all;
 
-entity xcorr_gps_slow_complex_correl is
+entity xcorr_prn_slow_complex_correl is
 	generic (
 		IN_SIZE : natural := 16;
 		OUT_SIZE : natural := 32
@@ -23,7 +23,7 @@ entity xcorr_gps_slow_complex_correl is
     );
 end entity;
 
-architecture rtl of xcorr_gps_slow_complex_correl is
+architecture rtl of xcorr_prn_slow_complex_correl is
 	-- add/sub
 	signal val_sub_s, val_add_s, val_s : signed(IN_SIZE-1 downto 0);
 begin

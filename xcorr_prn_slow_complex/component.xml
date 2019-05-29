@@ -2,7 +2,7 @@
 <spirit:component xmlns:xilinx="http://www.xilinx.com" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <spirit:vendor>ggm</spirit:vendor>
   <spirit:library>cogen</spirit:library>
-  <spirit:name>xcorr_gps_slow_complex</spirit:name>
+  <spirit:name>xcorr_prn_slow_complex</spirit:name>
   <spirit:version>1.0</spirit:version>
   <spirit:busInterfaces>
     <spirit:busInterface>
@@ -109,7 +109,7 @@
         <spirit:displayName>Synthesis</spirit:displayName>
         <spirit:envIdentifier>:vivado.xilinx.com:synthesis</spirit:envIdentifier>
         <spirit:language>VHDL</spirit:language>
-        <spirit:modelName>xcorr_gps_slow_complex</spirit:modelName>
+        <spirit:modelName>xcorr_prn_slow_complex</spirit:modelName>
         <spirit:fileSetRef>
           <spirit:localName>xilinx_anylanguagesynthesis_view_fileset</spirit:localName>
         </spirit:fileSetRef>
@@ -125,7 +125,7 @@
         <spirit:displayName>Simulation</spirit:displayName>
         <spirit:envIdentifier>:vivado.xilinx.com:simulation</spirit:envIdentifier>
         <spirit:language>VHDL</spirit:language>
-        <spirit:modelName>xcorr_gps_slow_complex</spirit:modelName>
+        <spirit:modelName>xcorr_prn_slow_complex</spirit:modelName>
         <spirit:fileSetRef>
           <spirit:localName>xilinx_anylanguagebehavioralsimulation_view_fileset</spirit:localName>
         </spirit:fileSetRef>
@@ -368,25 +368,25 @@
     <spirit:fileSet>
       <spirit:name>xilinx_anylanguagesynthesis_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>xcorr_gps_slow_complex.xdc</spirit:name>
+        <spirit:name>xcorr_prn_slow_complex.xdc</spirit:name>
         <spirit:userFileType>xdc</spirit:userFileType>
         <spirit:userFileType>USED_IN_implementation</spirit:userFileType>
         <spirit:userFileType>USED_IN_synthesis</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/xcorr_gps_slow_complex_ram.vhd</spirit:name>
+        <spirit:name>hdl/xcorr_prn_slow_complex_ram.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/xcorr_gps_slow_complex_correl.vhd</spirit:name>
+        <spirit:name>hdl/xcorr_prn_slow_complex_correl.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/xcorr_gps_slow_complex_mux.vhd</spirit:name>
+        <spirit:name>hdl/xcorr_prn_slow_complex_mux.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/xcorr_gps_slow_complex.vhd</spirit:name>
+        <spirit:name>hdl/xcorr_prn_slow_complex.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>CHECKSUM_93c8cb11</spirit:userFileType>
       </spirit:file>
@@ -394,33 +394,33 @@
     <spirit:fileSet>
       <spirit:name>xilinx_anylanguagebehavioralsimulation_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>hdl/xcorr_gps_slow_complex_ram.vhd</spirit:name>
+        <spirit:name>hdl/xcorr_prn_slow_complex_ram.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/xcorr_gps_slow_complex_correl.vhd</spirit:name>
+        <spirit:name>hdl/xcorr_prn_slow_complex_correl.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/xcorr_gps_slow_complex_mux.vhd</spirit:name>
+        <spirit:name>hdl/xcorr_prn_slow_complex_mux.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/xcorr_gps_slow_complex.vhd</spirit:name>
+        <spirit:name>hdl/xcorr_prn_slow_complex.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
       <spirit:name>xilinx_xpgui_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>xgui/xcorr_gps_slow_complex_v1_0.tcl</spirit:name>
+        <spirit:name>xgui/xcorr_prn_slow_complex_v1_0.tcl</spirit:name>
         <spirit:fileType>tclSource</spirit:fileType>
         <spirit:userFileType>CHECKSUM_81ed6619</spirit:userFileType>
         <spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
   </spirit:fileSets>
-  <spirit:description>xcorr_gps_slow_complex_v1_0</spirit:description>
+  <spirit:description>xcorr_prn_slow_complex_v1_0</spirit:description>
   <spirit:parameters>
     <spirit:parameter>
       <spirit:name>NB_BLK</spirit:name>
@@ -447,7 +447,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Component_Name</spirit:name>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Component_Name" spirit:order="1">xcorr_gps_slow_complex_v1_0</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Component_Name" spirit:order="1">xcorr_prn_slow_complex_v1_0</spirit:value>
     </spirit:parameter>
   </spirit:parameters>
   <spirit:vendorExtensions>
@@ -462,7 +462,7 @@
       <xilinx:taxonomies>
         <xilinx:taxonomy>/BaseIP</xilinx:taxonomy>
       </xilinx:taxonomies>
-      <xilinx:displayName>xcorr_gps_slow_complex_v1_0</xilinx:displayName>
+      <xilinx:displayName>xcorr_prn_slow_complex_v1_0</xilinx:displayName>
       <xilinx:definitionSource>package_project</xilinx:definitionSource>
       <xilinx:vendorDisplayName>Gwenhael Goavec-Merou</xilinx:vendorDisplayName>
       <xilinx:vendorURL>http://www.trabucayre.com</xilinx:vendorURL>

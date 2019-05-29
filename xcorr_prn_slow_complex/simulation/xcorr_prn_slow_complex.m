@@ -1,4 +1,4 @@
-function g=xcorr_gps_slow_complex(sv,fs)
+function g=xcorr_prn_slow_complex(sv,fs)
 % function G=CACODE(SV,FS) 
 % Generates 1023 length C/A Codes for GPS PRNs 1-37
 %
@@ -12,9 +12,9 @@ function g=xcorr_gps_slow_complex(sv,fs)
 %
 %
 % For example to generate the C/A codes for PRN 6 and PRN 12 use:
-% g=xcorr_gps_slow_complex([6 12]),
+% g=xcorr_prn_slow_complex([6 12]),
 % and to generate the C/A codes for PRN 6 and PRN 12 at 5 MHz use
-% g=xcorr_gps_slow_complex([6 12],5/1.023)
+% g=xcorr_prn_slow_complex([6 12],5/1.023)
 % 
 %
 % For more information refer to the "GPS SPS Signal Specification"

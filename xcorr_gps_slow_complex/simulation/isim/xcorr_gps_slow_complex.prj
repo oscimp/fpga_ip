@@ -1,8 +1,0 @@
-vhdl work ../../hdl/xcorr_gps_slow_complex_ram.vhd
-vhdl work ../../hdl/xcorr_gps_slow_complex_correl.vhd
-vhdl work ../../hdl/xcorr_gps_slow_complex_mux.vhd
-vhdl work ../../hdl/xcorr_gps_slow_complex.vhd
-vhdl work /home/gwe/oscimp/fpga_ip/cacode/hdl/cacode_g1_gen.vhd
-vhdl work /home/gwe/oscimp/fpga_ip/cacode/hdl/cacode_g2_gen.vhd
-vhdl work /home/gwe/oscimp/fpga_ip/cacode/hdl/cacode.vhd
-vhdl work ../top_xcorr_gps_slow_complex_tb.vhd

@@ -4,10 +4,10 @@ use IEEE.numeric_std.all;
 use IEEE.math_real.all;
 USE std.textio.ALL;
 
-entity top_xcorr_gps_slow_complex_tb is
-end entity top_xcorr_gps_slow_complex_tb;
+entity top_xcorr_prn_slow_complex_tb is
+end entity top_xcorr_prn_slow_complex_tb;
 
-architecture RTL of top_xcorr_gps_slow_complex_tb is
+architecture RTL of top_xcorr_prn_slow_complex_tb is
 	file final_result_file: text open write_mode is "./result.txt";
 
 	signal reset : std_logic;
@@ -70,7 +70,7 @@ begin
 	--end generate gen_loop;
 	truc_s <= gold_code_s(0);
 
-	xcorr_gps_slow_complex_inst : entity work.xcorr_gps_slow_complex
+	xcorr_prn_slow_complex_inst : entity work.xcorr_prn_slow_complex
 	generic map (NB_BLK=> 85,
 		LENGTH => 1023, IN_SIZE => IN_SIZE, OUT_SIZE => OUT_SIZE)
 	port map (data_rst_i => reset, data_clk_i => clk,

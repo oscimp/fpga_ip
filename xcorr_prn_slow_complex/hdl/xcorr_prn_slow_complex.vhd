@@ -3,7 +3,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.numeric_std.all;
 use IEEE.math_real.all;
 
-entity xcorr_gps_slow_complex is
+entity xcorr_prn_slow_complex is
 	generic (
 		NB_BLK : natural := 25;
 		LENGTH : natural := 1023;
@@ -30,7 +30,7 @@ entity xcorr_gps_slow_complex is
     );
 end entity;
 
-architecture rtl of xcorr_gps_slow_complex is
+architecture rtl of xcorr_prn_slow_complex is
 	constant V1 : natural := LENGTH/NB_BLK;
 	constant V2 : natural := LENGTH - (V1 * NB_BLK);
 
@@ -81,7 +81,7 @@ begin
 	end process;
 
 	xcorr_loop: for i in 0 to NB_BLK-1 generate
-		xcorr_i_inst : entity work.xcorr_gps_slow_complex_mux
+		xcorr_i_inst : entity work.xcorr_prn_slow_complex_mux
 		generic map (NB_BLK=> V1, IN_SIZE => IN_SIZE, OUT_SIZE => OUT_SIZE)
 		port map (clk => data_clk_i, reset => data_rst_i,
 			clear_accum_i => ext_rst_i,
@@ -95,7 +95,7 @@ begin
 		);
 	end generate xcorr_loop;
 
-	xcorr_last_inst : entity work.xcorr_gps_slow_complex_mux
+	xcorr_last_inst : entity work.xcorr_prn_slow_complex_mux
 	generic map (NB_BLK=> V2, IN_SIZE => IN_SIZE, OUT_SIZE => OUT_SIZE)
 	port map (clk => data_clk_i, reset => data_rst_i,
 		clear_accum_i => ext_rst_i,

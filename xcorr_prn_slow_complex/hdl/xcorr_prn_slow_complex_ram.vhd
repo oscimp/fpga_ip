@@ -2,7 +2,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.numeric_std.all;
 
-entity xcorr_gps_slow_complex_ram is
+entity xcorr_prn_slow_complex_ram is
 generic (
     DATA    : integer := 72;
     ADDR    : integer := 10
@@ -19,7 +19,7 @@ generic (
     );
 end entity;
  
-architecture rtl of xcorr_gps_slow_complex_ram is
+architecture rtl of xcorr_prn_slow_complex_ram is
     -- Shared memory
     type mem_type is array ( (2**ADDR)-1 downto 0 ) of std_logic_vector(DATA-1 downto 0);
     signal mem : mem_type := (others => (others => '0'));

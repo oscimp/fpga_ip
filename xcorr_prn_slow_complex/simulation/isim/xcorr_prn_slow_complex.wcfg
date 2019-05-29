@@ -3,130 +3,130 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="xcorr_gps_slow_complex.wdb" id="1" type="auto">
+      <db_ref path="xcorr_prn_slow_complex.wdb" id="1" type="auto">
          <top_modules>
             <top_module name="math_real" />
             <top_module name="numeric_std" />
             <top_module name="std_logic_1164" />
             <top_module name="textio" />
-            <top_module name="top_xcorr_gps_slow_complex_tb" />
+            <top_module name="top_xcorr_prn_slow_complex_tb" />
          </top_modules>
       </db_ref>
    </db_ref_list>
    <WVObjectSize size="28" />
-   <wvobject fp_name="/top_xcorr_gps_slow_complex_tb/reset" type="logic" db_ref_id="1">
+   <wvobject fp_name="/top_xcorr_prn_slow_complex_tb/reset" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">reset</obj_property>
       <obj_property name="ObjectShortName">reset</obj_property>
    </wvobject>
-   <wvobject fp_name="/top_xcorr_gps_slow_complex_tb/clk" type="logic" db_ref_id="1">
+   <wvobject fp_name="/top_xcorr_prn_slow_complex_tb/clk" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
    </wvobject>
-   <wvobject fp_name="/top_xcorr_gps_slow_complex_tb/truc_s" type="logic" db_ref_id="1">
+   <wvobject fp_name="/top_xcorr_prn_slow_complex_tb/truc_s" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">truc_s</obj_property>
       <obj_property name="ObjectShortName">truc_s</obj_property>
    </wvobject>
-   <wvobject fp_name="/top_xcorr_gps_slow_complex_tb/gold_code_s" type="array" db_ref_id="1">
+   <wvobject fp_name="/top_xcorr_prn_slow_complex_tb/gold_code_s" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">gold_code_s[31:0]</obj_property>
       <obj_property name="ObjectShortName">gold_code_s[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/top_xcorr_gps_slow_complex_tb/data_en_s" type="logic" db_ref_id="1">
+   <wvobject fp_name="/top_xcorr_prn_slow_complex_tb/data_en_s" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">data_en_s</obj_property>
       <obj_property name="ObjectShortName">data_en_s</obj_property>
    </wvobject>
-   <wvobject fp_name="/top_xcorr_gps_slow_complex_tb/data_i_s" type="array" db_ref_id="1">
+   <wvobject fp_name="/top_xcorr_prn_slow_complex_tb/data_i_s" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">data_i_s[31:0]</obj_property>
       <obj_property name="ObjectShortName">data_i_s[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/top_xcorr_gps_slow_complex_tb/data_q_s" type="array" db_ref_id="1">
+   <wvobject fp_name="/top_xcorr_prn_slow_complex_tb/data_q_s" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">data_q_s[31:0]</obj_property>
       <obj_property name="ObjectShortName">data_q_s[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/top_xcorr_gps_slow_complex_tb/cpt_s" type="other" db_ref_id="1">
+   <wvobject fp_name="/top_xcorr_prn_slow_complex_tb/cpt_s" type="other" db_ref_id="1">
       <obj_property name="ElementShortName">cpt_s</obj_property>
       <obj_property name="ObjectShortName">cpt_s</obj_property>
    </wvobject>
-   <wvobject fp_name="/top_xcorr_gps_slow_complex_tb/stop_s" type="logic" db_ref_id="1">
+   <wvobject fp_name="/top_xcorr_prn_slow_complex_tb/stop_s" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">stop_s</obj_property>
       <obj_property name="ObjectShortName">stop_s</obj_property>
    </wvobject>
-   <wvobject fp_name="/top_xcorr_gps_slow_complex_tb/test_s" type="array" db_ref_id="1">
+   <wvobject fp_name="/top_xcorr_prn_slow_complex_tb/test_s" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">test_s[9:0]</obj_property>
       <obj_property name="ObjectShortName">test_s[9:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/top_xcorr_gps_slow_complex_tb/tick_s" type="logic" db_ref_id="1">
+   <wvobject fp_name="/top_xcorr_prn_slow_complex_tb/tick_s" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">tick_s</obj_property>
       <obj_property name="ObjectShortName">tick_s</obj_property>
    </wvobject>
-   <wvobject fp_name="/top_xcorr_gps_slow_complex_tb/cpt_delay_s" type="other" db_ref_id="1">
+   <wvobject fp_name="/top_xcorr_prn_slow_complex_tb/cpt_delay_s" type="other" db_ref_id="1">
       <obj_property name="ElementShortName">cpt_delay_s</obj_property>
       <obj_property name="ObjectShortName">cpt_delay_s</obj_property>
    </wvobject>
-   <wvobject fp_name="/top_xcorr_gps_slow_complex_tb/fake_data_s" type="array" db_ref_id="1">
+   <wvobject fp_name="/top_xcorr_prn_slow_complex_tb/fake_data_s" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">fake_data_s[15:0]</obj_property>
       <obj_property name="ObjectShortName">fake_data_s[15:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/top_xcorr_gps_slow_complex_tb/fake_data2_s" type="array" db_ref_id="1">
+   <wvobject fp_name="/top_xcorr_prn_slow_complex_tb/fake_data2_s" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">fake_data2_s[15:0]</obj_property>
       <obj_property name="ObjectShortName">fake_data2_s[15:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/top_xcorr_gps_slow_complex_tb/start_prod_s" type="logic" db_ref_id="1">
+   <wvobject fp_name="/top_xcorr_prn_slow_complex_tb/start_prod_s" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">start_prod_s</obj_property>
       <obj_property name="ObjectShortName">start_prod_s</obj_property>
    </wvobject>
-   <wvobject fp_name="/top_xcorr_gps_slow_complex_tb/ext_rst_s" type="logic" db_ref_id="1">
+   <wvobject fp_name="/top_xcorr_prn_slow_complex_tb/ext_rst_s" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">ext_rst_s</obj_property>
       <obj_property name="ObjectShortName">ext_rst_s</obj_property>
    </wvobject>
-   <wvobject fp_name="/top_xcorr_gps_slow_complex_tb/half_period" type="other" db_ref_id="1">
+   <wvobject fp_name="/top_xcorr_prn_slow_complex_tb/half_period" type="other" db_ref_id="1">
       <obj_property name="ElementShortName">half_period</obj_property>
       <obj_property name="ObjectShortName">half_period</obj_property>
    </wvobject>
-   <wvobject fp_name="/top_xcorr_gps_slow_complex_tb/in_size" type="other" db_ref_id="1">
+   <wvobject fp_name="/top_xcorr_prn_slow_complex_tb/in_size" type="other" db_ref_id="1">
       <obj_property name="ElementShortName">in_size</obj_property>
       <obj_property name="ObjectShortName">in_size</obj_property>
    </wvobject>
-   <wvobject fp_name="/top_xcorr_gps_slow_complex_tb/out_size" type="other" db_ref_id="1">
+   <wvobject fp_name="/top_xcorr_prn_slow_complex_tb/out_size" type="other" db_ref_id="1">
       <obj_property name="ElementShortName">out_size</obj_property>
       <obj_property name="ObjectShortName">out_size</obj_property>
    </wvobject>
-   <wvobject fp_name="/top_xcorr_gps_slow_complex_tb/accum_size" type="other" db_ref_id="1">
+   <wvobject fp_name="/top_xcorr_prn_slow_complex_tb/accum_size" type="other" db_ref_id="1">
       <obj_property name="ElementShortName">accum_size</obj_property>
       <obj_property name="ObjectShortName">accum_size</obj_property>
    </wvobject>
-   <wvobject fp_name="/top_xcorr_gps_slow_complex_tb/delay" type="other" db_ref_id="1">
+   <wvobject fp_name="/top_xcorr_prn_slow_complex_tb/delay" type="other" db_ref_id="1">
       <obj_property name="ElementShortName">delay</obj_property>
       <obj_property name="ObjectShortName">delay</obj_property>
    </wvobject>
-   <wvobject fp_name="/top_xcorr_gps_slow_complex_tb/data_i_s" type="array" db_ref_id="1">
+   <wvobject fp_name="/top_xcorr_prn_slow_complex_tb/data_i_s" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">data_i_s[31:0]</obj_property>
       <obj_property name="ObjectShortName">data_i_s[31:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/top_xcorr_gps_slow_complex_tb/data_q_s" type="array" db_ref_id="1">
+   <wvobject fp_name="/top_xcorr_prn_slow_complex_tb/data_q_s" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">data_q_s[31:0]</obj_property>
       <obj_property name="ObjectShortName">data_q_s[31:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/top_xcorr_gps_slow_complex_tb/xcorr_gps_slow_complex_inst/delay_end_next_s" type="array" db_ref_id="1">
+   <wvobject fp_name="/top_xcorr_prn_slow_complex_tb/xcorr_prn_slow_complex_inst/delay_end_next_s" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">delay_end_next_s[1022:0]</obj_property>
       <obj_property name="ObjectShortName">delay_end_next_s[1022:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/top_xcorr_gps_slow_complex_tb/xcorr_gps_slow_complex_inst/cpt_s" type="array" db_ref_id="1">
+   <wvobject fp_name="/top_xcorr_prn_slow_complex_tb/xcorr_prn_slow_complex_inst/cpt_s" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">cpt_s[9:0]</obj_property>
       <obj_property name="ObjectShortName">cpt_s[9:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/top_xcorr_gps_slow_complex_tb/xcorr_gps_slow_complex_inst/cpt_store_next_s" type="array" db_ref_id="1">
+   <wvobject fp_name="/top_xcorr_prn_slow_complex_tb/xcorr_prn_slow_complex_inst/cpt_store_next_s" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">cpt_store_next_s[9:0]</obj_property>
       <obj_property name="ObjectShortName">cpt_store_next_s[9:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/top_xcorr_gps_slow_complex_tb/data_en_s" type="logic" db_ref_id="1">
+   <wvobject fp_name="/top_xcorr_prn_slow_complex_tb/data_en_s" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">data_en_s</obj_property>
       <obj_property name="ObjectShortName">data_en_s</obj_property>
    </wvobject>
-   <wvobject fp_name="/top_xcorr_gps_slow_complex_tb/xcorr_gps_slow_complex_inst/data_en_next" type="logic" db_ref_id="1">
+   <wvobject fp_name="/top_xcorr_prn_slow_complex_tb/xcorr_prn_slow_complex_inst/data_en_next" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">data_en_next</obj_property>
       <obj_property name="ObjectShortName">data_en_next</obj_property>
    </wvobject>

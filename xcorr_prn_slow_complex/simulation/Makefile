@@ -1,4 +1,4 @@
-PROJECT=top_xcorr_gps_slow_complex
+PROJECT=top_xcorr_prn_slow_complex
 SIMTOP =$(PROJECT)_tb
 TESTBENCH_FILE=$(SIMTOP).vhd
 
@@ -7,10 +7,10 @@ GHDLFLAGS=--workdir=simu --work=work
 GHDLRUNFLAGS=--assert-level=error
 GHDL_SIMU_FLAGS = --ieee=synopsys --warn-no-vital-generic --warn-default-binding
 
-FILES=../hdl/xcorr_gps_slow_complex_ram.vhd \
-	../hdl/xcorr_gps_slow_complex_correl.vhd \
-	../hdl/xcorr_gps_slow_complex_mux.vhd \
-	../hdl/xcorr_gps_slow_complex.vhd
+FILES=../hdl/xcorr_prn_slow_complex_ram.vhd \
+	../hdl/xcorr_prn_slow_complex_correl.vhd \
+	../hdl/xcorr_prn_slow_complex_mux.vhd \
+	../hdl/xcorr_prn_slow_complex.vhd
 FILES+=../../cacode/hdl/cacode_g1_gen.vhd  ../../cacode/hdl/cacode_g2_gen.vhd  ../../cacode/hdl/cacode.vhd
 
 SIMDIR=simu
