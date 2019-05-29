@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ips>
+	<ip name="add_constReal"
+		driver="add_const" />
 	<ip name="check_valid_burst"
 		driver="fpgagen" />
 	<ip name="dataComplex_to_ram"
@@ -17,6 +19,8 @@
 	<ip name="nco_counter"
 		driver="nco_counter" />
 	<ip name="prn20b"
+		driver="fpgagen" />
+	<ip name="slv_to_sl_axi"
 		driver="fpgagen" />
 	<ip name="switchComplex"
 		driver="switch" />
