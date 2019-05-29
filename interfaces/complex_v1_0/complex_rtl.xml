@@ -62,6 +62,23 @@
 			</spirit:wire>
 		</spirit:port>
 		<spirit:port>
+			<spirit:logicalName>DATA_SOF</spirit:logicalName>
+			<spirit:description>DATA_SOF</spirit:description>
+			<spirit:wire>
+				<spirit:onMaster>
+					<spirit:presence>optional</spirit:presence>
+					<spirit:width>1</spirit:width>
+					<spirit:direction>out</spirit:direction>
+				</spirit:onMaster>
+				<spirit:onSlave>
+					<spirit:presence>optional</spirit:presence>
+					<spirit:width>1</spirit:width>
+					<spirit:direction>in</spirit:direction>
+				</spirit:onSlave>
+				<spirit:defaultValue>0</spirit:defaultValue>
+			</spirit:wire>
+		</spirit:port>
+		<spirit:port>
 			<spirit:logicalName>DATA_EOF</spirit:logicalName>
 			<spirit:description>DATA_EOF</spirit:description>
 			<spirit:wire>
