@@ -1,0 +1,28 @@
+[*]
+[*] GTKWave Analyzer v3.3.87 (w)1999-2017 BSI
+[*] Thu Jun 14 05:06:06 2018
+[*]
+[dumpfile] "/home/gwe/projets/oscimp/fpga_ip/slv_to_sl_axi/simulation/simu/top_slv_to_sl_axi_tb.ghw"
+[dumpfile_mtime] "Thu Jun 14 05:04:51 2018"
+[dumpfile_size] 706
+[savefile] "/home/gwe/projets/oscimp/fpga_ip/slv_to_sl_axi/simulation/top_slv_to_sl_axi.gtkw"
+[timestart] 0
+[size] 1364 746
+[pos] -679 -369
+*-25.000000 112500000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.top_slv_to_sl_axi_tb.
+[sst_width] 196
+[signals_width] 219
+[sst_expanded] 1
+[sst_vpaned_height] 308
+@28
+top.top_slv_to_sl_axi_tb.reset
+top.top_slv_to_sl_axi_tb.clk
+@22
+#{top.top_slv_to_sl_axi_tb.slv_s[31:0]} top.top_slv_to_sl_axi_tb.slv_s[31] top.top_slv_to_sl_axi_tb.slv_s[30] top.top_slv_to_sl_axi_tb.slv_s[29] top.top_slv_to_sl_axi_tb.slv_s[28] top.top_slv_to_sl_axi_tb.slv_s[27] top.top_slv_to_sl_axi_tb.slv_s[26] top.top_slv_to_sl_axi_tb.slv_s[25] top.top_slv_to_sl_axi_tb.slv_s[24] top.top_slv_to_sl_axi_tb.slv_s[23] top.top_slv_to_sl_axi_tb.slv_s[22] top.top_slv_to_sl_axi_tb.slv_s[21] top.top_slv_to_sl_axi_tb.slv_s[20] top.top_slv_to_sl_axi_tb.slv_s[19] top.top_slv_to_sl_axi_tb.slv_s[18] top.top_slv_to_sl_axi_tb.slv_s[17] top.top_slv_to_sl_axi_tb.slv_s[16] top.top_slv_to_sl_axi_tb.slv_s[15] top.top_slv_to_sl_axi_tb.slv_s[14] top.top_slv_to_sl_axi_tb.slv_s[13] top.top_slv_to_sl_axi_tb.slv_s[12] top.top_slv_to_sl_axi_tb.slv_s[11] top.top_slv_to_sl_axi_tb.slv_s[10] top.top_slv_to_sl_axi_tb.slv_s[9] top.top_slv_to_sl_axi_tb.slv_s[8] top.top_slv_to_sl_axi_tb.slv_s[7] top.top_slv_to_sl_axi_tb.slv_s[6] top.top_slv_to_sl_axi_tb.slv_s[5] top.top_slv_to_sl_axi_tb.slv_s[4] top.top_slv_to_sl_axi_tb.slv_s[3] top.top_slv_to_sl_axi_tb.slv_s[2] top.top_slv_to_sl_axi_tb.slv_s[1] top.top_slv_to_sl_axi_tb.slv_s[0]
+#{top.top_slv_to_sl_axi_tb.offset_s[4:0]} top.top_slv_to_sl_axi_tb.offset_s[4] top.top_slv_to_sl_axi_tb.offset_s[3] top.top_slv_to_sl_axi_tb.offset_s[2] top.top_slv_to_sl_axi_tb.offset_s[1] top.top_slv_to_sl_axi_tb.offset_s[0]
+@28
+top.top_slv_to_sl_axi_tb.sl_s
+[pattern_trace] 1
+[pattern_trace] 0
