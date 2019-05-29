@@ -3,9 +3,12 @@ proc init_gui { IPINST } {
   ipgui::add_param $IPINST -name "Component_Name"
   #Adding Page
   set Page_0 [ipgui::add_page $IPINST -name "Page 0"]
-  ipgui::add_param $IPINST -name "format" -parent ${Page_0}
-  ipgui::add_param $IPINST -name "DATA_IN_SIZE" -parent ${Page_0}
-  ipgui::add_param $IPINST -name "DATA_OUT_SIZE" -parent ${Page_0}
+  set DATA_IN_SIZE [ipgui::add_param $IPINST -name "DATA_IN_SIZE" -parent ${Page_0}]
+  set_property tooltip {Size of input data bus.} ${DATA_IN_SIZE}
+  set DATA_OUT_SIZE [ipgui::add_param $IPINST -name "DATA_OUT_SIZE" -parent ${Page_0}]
+  set_property tooltip {Size of output data bus.} ${DATA_OUT_SIZE}
+  set format [ipgui::add_param $IPINST -name "format" -parent ${Page_0}]
+  set_property tooltip {Data Format (signed/unsigned.} ${format}
 
 
 }

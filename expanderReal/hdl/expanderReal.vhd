@@ -17,12 +17,14 @@ Entity expanderReal is
 		-- input data
 		data_i				: in std_logic_vector(DATA_IN_SIZE-1 downto 0);
 		data_en_i			: in std_logic;
+		data_sof_i			: in std_logic;
 		data_eof_i			: in std_logic;
 		data_rst_i			: in std_logic;
 		data_clk_i			: in std_logic;
 		-- for the next component
 		data_o				: out std_logic_vector(DATA_OUT_SIZE-1 downto 0);		
 		data_en_o			: out std_logic;
+		data_sof_o			: out std_logic;
 		data_eof_o			: out std_logic;
 		data_rst_o			: out std_logic;
 		data_clk_o			: out std_logic
@@ -32,6 +34,7 @@ Architecture expanderReal_1 of expanderReal is
 begin
 	data_clk_o <= data_clk_i;
 	data_eof_o <= data_eof_i;
+	data_sof_o <= data_sof_i;
 	data_rst_o <= data_rst_i;
 	data_en_o <= data_en_i;
 
