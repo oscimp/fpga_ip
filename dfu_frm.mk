@@ -30,8 +30,8 @@ image:
 	mkdir -p image
 
 dfu_frm: |image
-	(cd image; cp $(IMG_DIR)/*.dtb $(IMG_DIR)/rootfs* $(IMG_DIR)/zImage .; \
-		$(POST_SCRIPT) . $(BIT_FILE))
+	(cd image; cp $(IMG_DIR)/*.dtb $(IMG_DIR)/rootfs* $(IMG_DIR)/zImage $(BIT_FILE) .; \
+		$(POST_SCRIPT) .)
 
 flash_dfu_frm:
 	ssh root@$(IP) "device_reboot sf"; sleep 10;
