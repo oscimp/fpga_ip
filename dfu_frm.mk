@@ -34,7 +34,7 @@ image:
 
 dfu_frm: |image
 	(cd image; cp $(IMG_DIR)/*.dtb $(IMG_DIR)/rootfs* $(IMG_DIR)/zImage $(BIT_FILE) .; \
-		$(POST_SCRIPT) .)
+		PATH=$(PATH):$(BR_DIR)/output/host/bin $(POST_SCRIPT) .)
 
 flash_dfu_frm:
 	ssh root@$(IP) "device_reboot sf"; sleep 10;
