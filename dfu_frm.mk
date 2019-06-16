@@ -24,6 +24,9 @@ ifneq ($(IS_ABS_PATH),)
 	# include mk build by buildroot with all br2_external variables
 	include $(OUTPUT_DIR)/.br-external.mk
 endif
+ifeq ($(BOARD_NAME),plutosdr)
+POST_SCRIPT=$(BR2_EXTERNAL_PLUTOSDR_PATH)/board/pluto/post_image.sh
+endif
 
 .PHONY: image dfu_frm flash_dfu_frm
 image:
