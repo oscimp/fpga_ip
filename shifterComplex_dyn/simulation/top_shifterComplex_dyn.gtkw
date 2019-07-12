@@ -1,0 +1,37 @@
+[*]
+[*] GTKWave Analyzer v3.3.99 (w)1999-2019 BSI
+[*] Mon Jul  8 14:51:18 2019
+[*]
+[dumpfile] "/home/gwe/projets/oscimp/fpga_ip/shifterComplex_dyn/simulation/simu/top_shifterComplex_dyn_tb.ghw"
+[dumpfile_mtime] "Mon Jul  8 14:50:05 2019"
+[dumpfile_size] 3469906
+[savefile] "/home/gwe/projets/oscimp/fpga_ip/shifterComplex_dyn/simulation/top_shifterComplex_dyn.gtkw"
+[timestart] 23049000000
+[size] 1366 748
+[pos] -1 -1
+*-26.000000 23200000000 51270000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.top_shifterComplex_dyn_tb.
+[sst_width] 204
+[signals_width] 214
+[sst_expanded] 1
+[sst_vpaned_height] 223
+@28
+top.top_shifterComplex_dyn_tb.clk
+top.top_shifterComplex_dyn_tb.reset
+top.top_shifterComplex_dyn_tb.start_prod
+top.top_shifterComplex_dyn_tb.state_s
+@22
+#{top.top_shifterComplex_dyn_tb.shift_val_s[3:0]} top.top_shifterComplex_dyn_tb.shift_val_s[3] top.top_shifterComplex_dyn_tb.shift_val_s[2] top.top_shifterComplex_dyn_tb.shift_val_s[1] top.top_shifterComplex_dyn_tb.shift_val_s[0]
+@28
+top.top_shifterComplex_dyn_tb.data_in_en_s
+@421
+#{top.top_shifterComplex_dyn_tb.data_in_i_s[31:0]} top.top_shifterComplex_dyn_tb.data_in_i_s[31] top.top_shifterComplex_dyn_tb.data_in_i_s[30] top.top_shifterComplex_dyn_tb.data_in_i_s[29] top.top_shifterComplex_dyn_tb.data_in_i_s[28] top.top_shifterComplex_dyn_tb.data_in_i_s[27] top.top_shifterComplex_dyn_tb.data_in_i_s[26] top.top_shifterComplex_dyn_tb.data_in_i_s[25] top.top_shifterComplex_dyn_tb.data_in_i_s[24] top.top_shifterComplex_dyn_tb.data_in_i_s[23] top.top_shifterComplex_dyn_tb.data_in_i_s[22] top.top_shifterComplex_dyn_tb.data_in_i_s[21] top.top_shifterComplex_dyn_tb.data_in_i_s[20] top.top_shifterComplex_dyn_tb.data_in_i_s[19] top.top_shifterComplex_dyn_tb.data_in_i_s[18] top.top_shifterComplex_dyn_tb.data_in_i_s[17] top.top_shifterComplex_dyn_tb.data_in_i_s[16] top.top_shifterComplex_dyn_tb.data_in_i_s[15] top.top_shifterComplex_dyn_tb.data_in_i_s[14] top.top_shifterComplex_dyn_tb.data_in_i_s[13] top.top_shifterComplex_dyn_tb.data_in_i_s[12] top.top_shifterComplex_dyn_tb.data_in_i_s[11] top.top_shifterComplex_dyn_tb.data_in_i_s[10] top.top_shifterComplex_dyn_tb.data_in_i_s[9] top.top_shifterComplex_dyn_tb.data_in_i_s[8] top.top_shifterComplex_dyn_tb.data_in_i_s[7] top.top_shifterComplex_dyn_tb.data_in_i_s[6] top.top_shifterComplex_dyn_tb.data_in_i_s[5] top.top_shifterComplex_dyn_tb.data_in_i_s[4] top.top_shifterComplex_dyn_tb.data_in_i_s[3] top.top_shifterComplex_dyn_tb.data_in_i_s[2] top.top_shifterComplex_dyn_tb.data_in_i_s[1] top.top_shifterComplex_dyn_tb.data_in_i_s[0]
+#{top.top_shifterComplex_dyn_tb.data_in_q_s[31:0]} top.top_shifterComplex_dyn_tb.data_in_q_s[31] top.top_shifterComplex_dyn_tb.data_in_q_s[30] top.top_shifterComplex_dyn_tb.data_in_q_s[29] top.top_shifterComplex_dyn_tb.data_in_q_s[28] top.top_shifterComplex_dyn_tb.data_in_q_s[27] top.top_shifterComplex_dyn_tb.data_in_q_s[26] top.top_shifterComplex_dyn_tb.data_in_q_s[25] top.top_shifterComplex_dyn_tb.data_in_q_s[24] top.top_shifterComplex_dyn_tb.data_in_q_s[23] top.top_shifterComplex_dyn_tb.data_in_q_s[22] top.top_shifterComplex_dyn_tb.data_in_q_s[21] top.top_shifterComplex_dyn_tb.data_in_q_s[20] top.top_shifterComplex_dyn_tb.data_in_q_s[19] top.top_shifterComplex_dyn_tb.data_in_q_s[18] top.top_shifterComplex_dyn_tb.data_in_q_s[17] top.top_shifterComplex_dyn_tb.data_in_q_s[16] top.top_shifterComplex_dyn_tb.data_in_q_s[15] top.top_shifterComplex_dyn_tb.data_in_q_s[14] top.top_shifterComplex_dyn_tb.data_in_q_s[13] top.top_shifterComplex_dyn_tb.data_in_q_s[12] top.top_shifterComplex_dyn_tb.data_in_q_s[11] top.top_shifterComplex_dyn_tb.data_in_q_s[10] top.top_shifterComplex_dyn_tb.data_in_q_s[9] top.top_shifterComplex_dyn_tb.data_in_q_s[8] top.top_shifterComplex_dyn_tb.data_in_q_s[7] top.top_shifterComplex_dyn_tb.data_in_q_s[6] top.top_shifterComplex_dyn_tb.data_in_q_s[5] top.top_shifterComplex_dyn_tb.data_in_q_s[4] top.top_shifterComplex_dyn_tb.data_in_q_s[3] top.top_shifterComplex_dyn_tb.data_in_q_s[2] top.top_shifterComplex_dyn_tb.data_in_q_s[1] top.top_shifterComplex_dyn_tb.data_in_q_s[0]
+@28
+top.top_shifterComplex_dyn_tb.data_out_en_s
+@420
+#{top.top_shifterComplex_dyn_tb.data_out_i_s[15:0]} top.top_shifterComplex_dyn_tb.data_out_i_s[15] top.top_shifterComplex_dyn_tb.data_out_i_s[14] top.top_shifterComplex_dyn_tb.data_out_i_s[13] top.top_shifterComplex_dyn_tb.data_out_i_s[12] top.top_shifterComplex_dyn_tb.data_out_i_s[11] top.top_shifterComplex_dyn_tb.data_out_i_s[10] top.top_shifterComplex_dyn_tb.data_out_i_s[9] top.top_shifterComplex_dyn_tb.data_out_i_s[8] top.top_shifterComplex_dyn_tb.data_out_i_s[7] top.top_shifterComplex_dyn_tb.data_out_i_s[6] top.top_shifterComplex_dyn_tb.data_out_i_s[5] top.top_shifterComplex_dyn_tb.data_out_i_s[4] top.top_shifterComplex_dyn_tb.data_out_i_s[3] top.top_shifterComplex_dyn_tb.data_out_i_s[2] top.top_shifterComplex_dyn_tb.data_out_i_s[1] top.top_shifterComplex_dyn_tb.data_out_i_s[0]
+#{top.top_shifterComplex_dyn_tb.data_out_q_s[15:0]} top.top_shifterComplex_dyn_tb.data_out_q_s[15] top.top_shifterComplex_dyn_tb.data_out_q_s[14] top.top_shifterComplex_dyn_tb.data_out_q_s[13] top.top_shifterComplex_dyn_tb.data_out_q_s[12] top.top_shifterComplex_dyn_tb.data_out_q_s[11] top.top_shifterComplex_dyn_tb.data_out_q_s[10] top.top_shifterComplex_dyn_tb.data_out_q_s[9] top.top_shifterComplex_dyn_tb.data_out_q_s[8] top.top_shifterComplex_dyn_tb.data_out_q_s[7] top.top_shifterComplex_dyn_tb.data_out_q_s[6] top.top_shifterComplex_dyn_tb.data_out_q_s[5] top.top_shifterComplex_dyn_tb.data_out_q_s[4] top.top_shifterComplex_dyn_tb.data_out_q_s[3] top.top_shifterComplex_dyn_tb.data_out_q_s[2] top.top_shifterComplex_dyn_tb.data_out_q_s[1] top.top_shifterComplex_dyn_tb.data_out_q_s[0]
+[pattern_trace] 1
+[pattern_trace] 0
