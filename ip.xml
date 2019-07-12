@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ips>
+	<ip name="axi_to_dac"
+		driver="axi_to_dac" />
 	<ip name="add_constReal"
 		driver="add_const" />
 	<ip name="check_valid_burst"
@@ -19,6 +21,10 @@
 	<ip name="nco_counter"
 		driver="nco_counter" />
 	<ip name="prn20b"
+		driver="fpgagen" />
+	<ip name="shiterComplex_dyn"
+		driver="fpgagen" />
+	<ip name="shiterReal_dyn"
 		driver="fpgagen" />
 	<ip name="slv_to_sl_axi"
 		driver="fpgagen" />
