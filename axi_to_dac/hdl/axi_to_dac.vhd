@@ -4,15 +4,21 @@ use IEEE.numeric_std.ALL;
 
 entity axi_to_dac is
 	generic (
-		DATA_SIZE : natural := 14;
+		DATA_SIZE            : natural := 14;
+		DATAA_DEFAULT_OUT    : integer := 0;
+		DATAA_EN_ALWAYS_HIGH : boolean := false;
+		DATAB_DEFAULT_OUT    : integer := 0;
+		DATAB_EN_ALWAYS_HIGH : boolean := false;
+		SYNCHRONIZE_CHAN     : boolean := false;
 		id : natural := 1;
 		-- Parameters of Axi Slave Bus Interface S00_AXI
-		C_S00_AXI_DATA_WIDTH	: integer	:= 32;
-		C_S00_AXI_ADDR_WIDTH	: integer	:= 4
+		C_S00_AXI_DATA_WIDTH  : integer	:= 32;
+		C_S00_AXI_ADDR_WIDTH  : integer	:= 4
 	);
 	port (
 		-- Syscon signals
-		processing_clk_i : in std_logic;
+		ref_clk_i : in std_logic;
+		ref_rst_i : in std_logic;
 		-- Wishbone signals
 		s00_axi_aclk	: in std_logic;
 		s00_axi_reset	: in std_logic;
@@ -36,69 +42,126 @@ entity axi_to_dac is
 		s00_axi_rvalid	: out std_logic;
 		s00_axi_rready	: in std_logic;
 		-- output
-		data_a_o	: out std_logic_vector(DATA_SIZE-1 downto 0);
-		data_a_en_o : out std_logic;
-		data_b_o	: out std_logic_vector(DATA_SIZE-1 downto 0);
-		data_b_en_o	: out std_logic
+		dataA_o	 : out std_logic_vector(DATA_SIZE-1 downto 0);
+		dataA_en_o  : out std_logic;
+		dataA_eof_o : out std_logic;
+		dataA_clk_o : out std_logic;
+		dataA_rst_o : out std_logic;
+		dataB_o     : out std_logic_vector(DATA_SIZE-1 downto 0);
+		dataB_en_o	: out std_logic;
+		dataB_eof_o : out std_logic;
+		dataB_clk_o : out std_logic;
+		dataB_rst_o : out std_logic
 	);
 end axi_to_dac;
 
 architecture Behavioral of axi_to_dac is
-	signal data1_a_s : std_logic_vector(C_S00_AXI_DATA_WIDTH-1 downto 0);
-	signal data1_b_s : std_logic_vector(C_S00_AXI_DATA_WIDTH-1 downto 0);
-	signal data2_a_s : std_logic_vector(DATA_SIZE-1 downto 0);
-	signal data2_b_s : std_logic_vector(DATA_SIZE-1 downto 0);
-	signal data1_a_en_s: std_logic;
-	signal data1_b_en_s: std_logic;
+	signal data_a_en_always_high_s      : std_logic;
+	signal data_a_en_always_high_sync_s : std_logic;
+	signal data_b_en_always_high_s      : std_logic;
+	signal data_b_en_always_high_sync_s : std_logic;
+	signal synchronize_chan_s           : std_logic;
+	signal synchronize_chan_sync_s      : std_logic;
+	signal data_a_s      : std_logic_vector(DATA_SIZE-1 downto 0);
+	signal data_a_sync_s : std_logic_vector(DATA_SIZE-1 downto 0);
+	signal data_a_out_s  : std_logic_vector(DATA_SIZE-1 downto 0);
+	signal data_a_en_s      : std_logic;
+	signal data_a_en_sync_s : std_logic;
+	signal data_a_en_next_s : std_logic;
+	signal data_b_s      : std_logic_vector(DATA_SIZE-1 downto 0);
+	signal data_b_sync_s : std_logic_vector(DATA_SIZE-1 downto 0);
+	signal data_b_out_s  : std_logic_vector(DATA_SIZE-1 downto 0);
+	signal data_b_en_s      : std_logic;
+	signal data_b_en_sync_s : std_logic;
 	-- comm
 	signal addr_s : std_logic_vector(1 downto 0);
 	signal write_en_s, read_en_s : std_logic;
 begin
-    data_a_o <= data2_a_s;
-    data_b_o <= data2_b_s;
+	dataA_o <= data_a_out_s;
+	dataA_eof_o <= '0';
+	dataA_clk_o <= ref_clk_i;
+	dataA_rst_o <= ref_rst_i;
+	dataB_o <= data_b_out_s;
+	dataB_eof_o <= '0';
+	dataB_clk_o <= ref_clk_i;
+	dataB_rst_o <= ref_rst_i;
 
-	process(processing_clk_i, s00_axi_reset)
+	data_a_en_next_s <= (data_a_en_sync_s and not synchronize_chan_sync_s) or
+						(data_b_en_sync_s and synchronize_chan_sync_s);
+
+	process(ref_clk_i)
 	begin
-		if s00_axi_reset = '1' then
-			data2_a_s <= (others => '0');
-			data_a_en_o <= '0';
-			data2_b_s <= (others => '0');
-			data_b_en_o <= '0';
-		elsif rising_edge(processing_clk_i) then
-			data2_a_s <= data2_a_s;
-			data_a_en_o <= '0';
-			data2_b_s <= data2_b_s;
-			data_b_en_o <= '0';
-			if data1_a_en_s = '1' then
-				data2_a_s <= data1_a_s(DATA_SIZE-1 downto 0);
-				data_a_en_o <= '1';
+		if rising_edge(ref_clk_i) then
+			if ref_rst_i = '1' then
+				data_a_out_s <= std_logic_vector(to_signed(DATAA_DEFAULT_OUT, DATA_SIZE));
+				dataA_en_o <= '0';
+			elsif data_a_en_next_s = '1' then
+				data_a_out_s <= data_a_sync_s;
+				dataA_en_o <= '1';
+			else
+				data_a_out_s <= data_a_out_s;
+				dataA_en_o <= data_a_en_always_high_sync_s;
 			end if;
-			if data1_b_en_s = '1' then
-				data2_b_s <= data1_b_s(DATA_SIZE-1 downto 0);
-				data_b_en_o <= '1';
+			
+			if ref_rst_i = '1' then
+				data_b_out_s <= std_logic_vector(to_signed(DATAB_DEFAULT_OUT, DATA_SIZE));
+				dataB_en_o <= '0';
+			elsif data_b_en_sync_s = '1' then
+				data_b_out_s <= data_b_sync_s;
+				dataB_en_o <= '1';
+			else
+				data_b_out_s <= data_b_out_s;
+				dataB_en_o <= data_b_en_always_high_sync_s;
 			end if;
 		end if;
 	end process;
 
+	dataA_sync: entity work.axi_to_dac_sync_vect
+	generic map (DATA => DATA_SIZE)
+	port map (ref_clk_i => s00_axi_aclk, clk_i => ref_clk_i,
+		bit_i => data_a_s, bit_o => data_a_sync_s);
+	dataB_sync: entity work.axi_to_dac_sync_vect
+	generic map (DATA => DATA_SIZE)
+	port map (ref_clk_i => s00_axi_aclk, clk_i => ref_clk_i,
+		bit_i => data_b_s, bit_o => data_b_sync_s);
+	conf_sync: entity work.axi_to_dac_sync_vect
+	generic map (DATA => 5)
+	port map (ref_clk_i => s00_axi_aclk, clk_i => ref_clk_i,
+		bit_i => data_a_en_s & data_b_en_s 
+				& data_a_en_always_high_s 
+				& data_b_en_always_high_s & synchronize_chan_s,
+		bit_o(4) => data_a_en_sync_s, bit_o(3) => data_b_en_sync_s,
+		bit_o(2) => data_a_en_always_high_sync_s,
+		bit_o(1) => data_b_en_always_high_sync_s,
+		bit_o(0) => synchronize_chan_sync_s);
+
 	wb_atd_inst : entity work.wb_axi_to_dac
     generic map(
-        id        => id,
-        wb_size   => C_S00_AXI_DATA_WIDTH -- Data port size for wishbone
+        id        => id, DATA_SIZE => DATA_SIZE,
+		DATA_A_EN_ALWAYS_HIGH => DATAA_EN_ALWAYS_HIGH,
+		DATA_B_EN_ALWAYS_HIGH => DATAB_EN_ALWAYS_HIGH,
+		SYNCHRONIZE_CHAN   => SYNCHRONIZE_CHAN,
+        BUS_SIZE  => C_S00_AXI_DATA_WIDTH -- Data port size for wishbone
     )
     port map(
 		-- Syscon signals
 		reset     => s00_axi_reset,
 		clk       => s00_axi_aclk,
-		-- Wishbone signals
-		wbs_add       => addr_s,       
-		wbs_write     => write_en_s,     
-		wbs_writedata => s00_axi_wdata, 
-		wbs_read     => read_en_s,     
-		wbs_readdata  => s00_axi_rdata,  
-		data_a_o => data1_a_s,
-		data_a_en_o => data1_a_en_s,
-		data_b_o => data1_b_s,
-		data_b_en_o => data1_b_en_s
+		-- comm signals
+		addr_i        => addr_s,
+		wbs_write     => write_en_s,
+		wbs_writedata => s00_axi_wdata,
+		wbs_read     => read_en_s,
+		wbs_readdata  => s00_axi_rdata,
+		-- config
+		data_a_en_always_high_o => data_a_en_always_high_s,
+		data_b_en_always_high_o => data_b_en_always_high_s,
+		synchronize_chan_o => synchronize_chan_s,
+		-- data
+		data_a_o => data_a_s,
+		data_a_en_o => data_a_en_s,
+		data_b_o => data_b_s,
+		data_b_en_o => data_b_en_s
     );
 
 	-- Instantiation of Axi Bus Interface S00_AXI
