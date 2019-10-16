@@ -10,14 +10,15 @@ use IEEE.numeric_std.ALL;
 entity mixer_sin is
 	generic (
 		NCO_SIZE : natural := 16;
-		DATA_SIZE : natural := 16
+		DATA_IN_SIZE : natural := 16;
+		DATA_OUT_SIZE: natural := 16
 	);
 	port (
 		-- ADC interface
 		data_en_i : in std_logic;
 		data_clk_i : in std_logic;
 		data_rst_i : in std_logic;
-		data_i: in std_logic_vector(DATA_SIZE-1 downto 0);
+		data_i: in std_logic_vector(DATA_IN_SIZE-1 downto 0);
 		-- NCO interface
 		nco_i_i : in std_logic_vector(NCO_SIZE-1 downto 0);
 		nco_q_i : in std_logic_vector(NCO_SIZE-1 downto 0);
@@ -28,26 +29,23 @@ entity mixer_sin is
 		data_en_o : out std_logic;
 		data_clk_o : out std_logic;
 		data_rst_o : out std_logic;
-		data_i_o : out std_logic_vector(DATA_SIZE-1 downto 0);
-		data_q_o : out std_logic_vector(DATA_SIZE-1 downto 0)
+		data_i_o : out std_logic_vector(DATA_OUT_SIZE-1 downto 0);
+		data_q_o : out std_logic_vector(DATA_OUT_SIZE-1 downto 0)
 	);
 end mixer_sin;
 
 architecture Behavioral of mixer_sin is
 	-- input latches
-	signal nco_i_s : std_logic_vector(NCO_SIZE-1 downto 0);
-	signal nco_q_s : std_logic_vector(NCO_SIZE-1 downto 0);
+	signal nco_i_s : signed(NCO_SIZE-1 downto 0);
+	signal nco_q_s : signed(NCO_SIZE-1 downto 0);
 	signal data_en_s : std_logic;
-	signal data_s : std_logic_vector(DATA_SIZE-1 downto 0);
+	signal data_s  : signed(DATA_IN_SIZE-1 downto 0);
 	-- multiplication
-	constant MULT_SIZE : natural := NCO_SIZE + DATA_SIZE;
-	signal res_i_s, res_q_s : std_logic_vector(MULT_SIZE-1 downto 0);
+	constant MULT_SIZE      : natural := NCO_SIZE + DATA_IN_SIZE;
+	signal res_i_s, res_q_s : signed(MULT_SIZE-1 downto 0);
 	-- output latches
 	constant POST_MULT_SIZE : natural := MULT_SIZE-1;
-	signal data_en_out_s : std_logic;
-	signal data_i_out_s, data_q_out_s : std_logic_vector(POST_MULT_SIZE-1 downto 0);
-	-- reset
-	signal rst_s : std_logic;
+	signal data_i_s, data_q_s : std_logic_vector(POST_MULT_SIZE-1 downto 0);
 begin
 	data_clk_o <= data_clk_i;
 	data_rst_o <= data_rst_i;
@@ -58,13 +56,12 @@ begin
 			if nco_rst_i = '1' then
 				nco_i_s <= (others => '0');
 				nco_q_s <= (others => '0');
+			elsif nco_en_i = '1' then
+				nco_i_s <= signed(nco_i_i);
+				nco_q_s <= signed(nco_q_i);
 			else
 				nco_i_s <= nco_i_s;
 				nco_q_s <= nco_q_s;
-				if nco_en_i = '1' then
-					nco_i_s <= nco_i_i;
-					nco_q_s <= nco_q_i;
-				end if;
 			end if;
 		end if;
 	end process;
@@ -72,47 +69,32 @@ begin
 	process(data_clk_i)
 	begin
 		if rising_edge(data_clk_i) then
-			if rst_s = '1' then
+			if data_rst_i = '1' then
 				data_s <= (others => '0');
 				data_en_s <= '0';
+			elsif data_en_i = '1' then
+				data_s    <= signed(data_i);
+				data_en_s <= '1';
 			else
-				data_s <= data_s;
-				data_en_s <= data_en_s;
-				if data_en_i = '1' then
-					data_s <= data_i;
-					data_en_s <= data_en_i;
-				end if;
+				data_s    <= data_s;
+				data_en_s <= '0';
 			end if;
 		end if;
 	end process;
 
-	res_i_s <= std_logic_vector(signed(nco_i_s) * signed(data_s));
-	res_q_s <= std_logic_vector(signed(nco_q_s) * signed(data_s));
+	res_i_s <= nco_i_s * data_s;
+	res_q_s <= nco_q_s * data_s;
 
-	process(data_clk_i)
-	begin
-		if rising_edge(data_clk_i) then
-			if rst_s = '1' then
-				data_i_out_s <= (others => '0');
-				data_q_out_s <= (others => '0');
-				data_en_out_s <= '0';
-			else
-				data_i_out_s <= data_i_out_s;
-				data_q_out_s <= data_q_out_s;
-				data_en_out_s <= '0';
-				if data_en_s = '1' then
-					data_i_out_s <= res_i_s(POST_MULT_SIZE-1 downto 0);
-					data_q_out_s <= res_q_s(POST_MULT_SIZE-1 downto 0);
-					data_en_out_s <= '1';
-				end if;
-			end if;
-		end if;
-	end process;
+	data_i_s <= std_logic_vector(res_i_s(POST_MULT_SIZE-1 downto 0));
+	data_q_s <= std_logic_vector(res_q_s(POST_MULT_SIZE-1 downto 0));
 
-	data_i_o <= data_i_out_s(POST_MULT_SIZE-1 downto POST_MULT_SIZE-DATA_SIZE);
-	data_q_o <= data_q_out_s(POST_MULT_SIZE-1 downto POST_MULT_SIZE-DATA_SIZE);
-	data_en_o <= data_en_out_s;
-
-	rst_s <= data_rst_i;
+	resize_inst: entity work.mixer_redim
+	generic map (SIGNED_FORMAT => true,
+		IN_SZ => POST_MULT_SIZE, OUT_SZ => DATA_OUT_SIZE
+	)
+	port map (clk_i => data_clk_i, rst_i => data_rst_i,
+		data_en_i => data_en_s, data_i_i => data_i_s, data_q_i => data_q_s,
+		data_en_o => data_en_o, data_i_o => data_i_o, data_q_o => data_q_o
+	);
 
 end Behavioral;
