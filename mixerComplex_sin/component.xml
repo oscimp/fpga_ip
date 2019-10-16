@@ -164,7 +164,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>0a6a3c3d</spirit:value>
+            <spirit:value>a86e5b73</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -180,7 +180,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>0a6a3c3d</spirit:value>
+            <spirit:value>a86e5b73</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -194,7 +194,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>0241f4a5</spirit:value>
+            <spirit:value>49f1fede</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -244,7 +244,7 @@
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.DATA_SIZE&apos;)) - 1)">15</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.DATA_IN_SIZE&apos;)) - 1)">15</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -261,7 +261,7 @@
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.DATA_SIZE&apos;)) - 1)">15</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.DATA_IN_SIZE&apos;)) - 1)">15</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -390,7 +390,7 @@
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.DATA_SIZE&apos;)) - 1)">15</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.DATA_OUT_SIZE&apos;)) - 1)">15</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -407,7 +407,7 @@
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.DATA_SIZE&apos;)) - 1)">15</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.DATA_OUT_SIZE&apos;)) - 1)">15</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -427,9 +427,14 @@
         <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.NCO_SIZE" spirit:minimum="0">16</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
-        <spirit:name>DATA_SIZE</spirit:name>
-        <spirit:displayName>Data Size</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DATA_SIZE" spirit:minimum="0">16</spirit:value>
+        <spirit:name>DATA_IN_SIZE</spirit:name>
+        <spirit:displayName>Data In Size</spirit:displayName>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DATA_IN_SIZE" spirit:minimum="0">16</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>DATA_OUT_SIZE</spirit:name>
+        <spirit:displayName>Data Out Size</spirit:displayName>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DATA_OUT_SIZE" spirit:minimum="0">16</spirit:value>
       </spirit:modelParameter>
     </spirit:modelParameters>
   </spirit:model>
@@ -437,13 +442,21 @@
     <spirit:fileSet>
       <spirit:name>xilinx_anylanguagesynthesis_view_fileset</spirit:name>
       <spirit:file>
+        <spirit:name>hdl/mixerComplex_redim.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
         <spirit:name>hdl/mixerComplex_sin.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_0a6a3c3d</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_8aede13d</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
       <spirit:name>xilinx_anylanguagebehavioralsimulation_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>hdl/mixerComplex_redim.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+      </spirit:file>
       <spirit:file>
         <spirit:name>hdl/mixerComplex_sin.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
@@ -454,7 +467,7 @@
       <spirit:file>
         <spirit:name>xgui/mixerComplex_sin_v1_0.tcl</spirit:name>
         <spirit:fileType>tclSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_0241f4a5</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_49f1fede</spirit:userFileType>
         <spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
@@ -468,10 +481,16 @@
       <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.NCO_SIZE" spirit:minimum="0" spirit:rangeType="long">16</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
-      <spirit:name>DATA_SIZE</spirit:name>
-      <spirit:displayName>Data Size</spirit:displayName>
+      <spirit:name>DATA_IN_SIZE</spirit:name>
+      <spirit:displayName>Data In Size</spirit:displayName>
       <spirit:description>Size of input data bus.</spirit:description>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.DATA_SIZE" spirit:minimum="0" spirit:rangeType="long">16</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.DATA_IN_SIZE" spirit:minimum="0" spirit:rangeType="long">16</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>DATA_OUT_SIZE</spirit:name>
+      <spirit:displayName>Data Out Size</spirit:displayName>
+      <spirit:description>Size of output data bus.</spirit:description>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.DATA_OUT_SIZE" spirit:minimum="0" spirit:rangeType="long">16</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Component_Name</spirit:name>
@@ -495,15 +514,15 @@
       <xilinx:vendorDisplayName>Gwenhael Goavec-Merou</xilinx:vendorDisplayName>
       <xilinx:vendorURL>http://www.trabucayre.com</xilinx:vendorURL>
       <xilinx:coreRevision>1</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2019-04-02T13:29:56Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2019-10-16T15:59:01Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
-      <xilinx:xilinxVersion>2018.2.1</xilinx:xilinxVersion>
+      <xilinx:xilinxVersion>2018.3.1</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="abd9dfd8"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="48282ef5"/>
-      <xilinx:checksum xilinx:scope="ports" xilinx:value="753150f3"/>
-      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="661aa422"/>
-      <xilinx:checksum xilinx:scope="parameters" xilinx:value="9fbb2e6c"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="7234f747"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="36d4617b"/>
+      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="9f199f1f"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="d6174ba6"/>
     </xilinx:packagingInfo>
   </spirit:vendorExtensions>
 </spirit:component>

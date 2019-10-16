@@ -1,34 +1,19 @@
-PROJECT=top_mixerComplex_sin
-TESTBENCH_FILE=$(PROJECT)_tb.vhd
-SIMTOP =$(PROJECT)_tb
+TOPLEVEL_LANG ?= vhdl
+SIM = ghdl
 
-GHDL=ghdl
-GHDLFLAGS=--workdir=simu --work=work
-GHDLRUNFLAGS=--assert-level=error
-GHDL_SIMU_FLAGS = --ieee=synopsys --warn-no-vital-generic --warn-default-binding
-FILES=../hdl/mixerComplex_sin.vhd
-SIMDIR=simu
+PWD=$(shell pwd)
+WPWD=$(shell pwd)
+PLUSARGS=--vcdgz=$(WPWD)/build/waveform.vcdgz --wave=$(WPWD)/build/waveform.ghw
 
-VIEW_CMD = gtkwave
+VHDL_SOURCES=$(WPWD)/../hdl/mixerComplex_sin.vhd $(WPWD)/../hdl/mixerComplex_redim.vhd
 
-all : run
+VHDL_SOURCES+=$(WPWD)/top_mixerComplex_sin.vhd
+# TOPLEVEL is the name of the toplevel module in your Verilog or VHDL file:
+TOPLEVEL=top_shiftercomplex
+# MODULE is the name of the Python test file:
+MODULE=top_mixerComplex_sin_tb
+include $(shell cocotb-config --makefiles)/Makefile.inc
+include $(shell cocotb-config --makefiles)/Makefile.sim
 
-# Run target
-run:$(SIMDIR)/$(SIMTOP).ghw
-$(SIMDIR)/$(SIMTOP).ghw: $(SIMDIR)/work-obj93.cf
-	$(GHDL) -c $(GHDLFLAGS) -e $(SIMTOP)
-	$(GHDL) -c $(GHDLFLAGS) -r $(SIMTOP) $(GHDLRUNFLAGS) \
-		--vcdgz=$(SIMDIR)/$(SIMTOP).vcdgz --wave=$(SIMDIR)/$(SIMTOP).ghw
-
-# Targets to analyze libraries
-$(SIMDIR)/work-obj93.cf:$(FILES) $(TESTBENCH_FILE)
-	mkdir -p $(SIMDIR)
-	$(GHDL) -a $(GHDLFLAGS) $(GHDL_SIMU_FLAGS) $(FILES) $(TESTBENCH_FILE)
-
-ghdl-view: $(SIMDIR)/$(SIMTOP).ghw
-	$(VIEW_CMD) $(SIMDIR)/$(SIMTOP).ghw -a $(PROJECT).gtkw
-
-clean:
-	$(GHDL) --clean --workdir=simu
-	-rm -rf simu
-force:
+ghdl_view:
+	gtkwave -a top_mixerComplex_sin.gtkw build/waveform.ghw
