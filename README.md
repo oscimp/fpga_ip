@@ -1,4 +1,11 @@
 # fpga_ip
+
+In order to allow for pipelined processing of datastreams with no latency introduced by FIFOs or glue between blocks, dedicated
+custom interfaces have been introduced: real and complex numbers and associated control signals. These interfaces are of varying,
+user defined, bit width. A complex number is two real numbers processed in parallel.
+
+
+
 OscillatorIMP ecosystem FPGA IP sources
 
 |     Block name      |    Function                           | Input(s)  | Output(s)          | Parameter(s)   | Driver | Library function(s) (liboscimp) |
