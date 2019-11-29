@@ -4,7 +4,7 @@ In order to allow for pipelined processing of datastreams with no latency introd
 custom interfaces have been introduced: real and complex numbers and associated control signals. These interfaces are of varying,
 user defined, bit width. A complex number is two real numbers processed in parallel.
 
-
+![Data structure](https://github.com/oscimp/oscimpDigital/blob/master/doc/conferences/gnuradioDays2019/img/displayIf.png)
 
 OscillatorIMP ecosystem FPGA IP sources
 
@@ -20,12 +20,12 @@ OscillatorIMP ecosystem FPGA IP sources
 |firReal              |                                       |data_in    |data_out            |DATA_SIZE(16), NB_COEFF(128), DECIMATE_FACTOR(32), DATA_OUT_SIZE(32), COEFF_SIZE(16)|fir| |
 |ltc2145              |Redpitaya ADC                          |none       |dataA_out,dataB_out |none            |none    | |
 |redpitaya_adc_dac_clk|Repitaya clock distribution (ADC & DAC)|none       |none                |none            |none    | |
-|shifterReal          |Bit shift (real values)                |data_in    |data_out            |DATA_IN_SIZE(32), DATA_OUT_SIZE(16)   |none    | |
-|shifterComplex       |Bit shift (complex values)             |data_in    |data_out            |DATA_IN_SIZE(32), DATA_OUT_SIZE(16)   |none    | |
+|[shifterReal](https://github.com/oscimp/oscimpDigital/blob/master/doc/IP/shifter.md)          |Bit shift (real values)                |data_in    |data_out            |DATA_IN_SIZE(32), DATA_OUT_SIZE(16)   |none    | |
+|[shifterComplex](https://github.com/oscimp/oscimpDigital/blob/master/doc/IP/shifter.md)       |Bit shift (complex values)             |data_in    |data_out            |DATA_IN_SIZE(32), DATA_OUT_SIZE(16)   |none    | |
 |expanderComplex      |Add Most Significant Bits (complex)    |data_in    |data_out            |DATA_IN_SIZE(16), DATA_OUT_SIZE(16) | none | |
 |expanderReal         |Add Most Significant Bits (real value) |data_in    |data_out            |DATA_IN_SIZE(16), DATA_OUT_SIZE(16) | none | |
 |nco_counter          |NCO (sine & square = complex values)   |none       |sine_out, square_out |COUNTER_SIZE(28), DATA_SIZE(16) |nco_counter|nco_counter_send_conf|
-|mixer_sin            |mixer                                  |data_in,nco_in|data_out         |DATA_SIZE(16), NCO_SIZE(16)|none||
+|[mixer_sin](https://github.com/oscimp/oscimpDigital/blob/master/doc/IP/mixer.md) |mixer                                  |data_in,nco_in|data_out         |DATA_SIZE(16), NCO_SIZE(16)|none||
 |prn20b               | 20-bit pseudo random number sequence (LFSR)|none | data_out | none | none | none | |
 |switchComplex        |Complex stream multiplexer             |data1_in,data2_in   | data_out  |DATA_SIZE(16),DEFAULT_INPUT(0) |switch   | switch_conf       |
 |switchReal           |Real stream multiplexer                |data1_in,data2_in   | data_out  |DATA_SIZE(16),DEFAULT_INPUT(0) |switch   | switch_conf       |
