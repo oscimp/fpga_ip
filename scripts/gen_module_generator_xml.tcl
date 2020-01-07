@@ -4,17 +4,16 @@ open_project tmp/$project_name.xpr
 open_bd_design tmp/$project_name.srcs/sources_1/bd/$project_name/$project_name.bd
 
 set list_addr [get_bd_addr_spaces]
-puts [get_bd_addr_segs]
+set list_seg [lsearch -all -inline [get_bd_addr_segs] "*SEG*"]
+
 set max [llength $list_addr]
 set my_list []
 set list_ip {}
 
 for {set i 0} {$i < $max} {incr i} {
 	set obj [lindex $list_addr $i]
-	set base_name [lindex [split $obj "/"] 1]
-	if {[get_property VLNV -object [get_bd_cells "/$base_name"]] == "xilinx.com:ip:processing_system7:5.5"} {
-		set PS_name $obj
-	} else {
+	set base_name [join [lrange [split $obj "/"] 1 end-1] "/"]
+	if {([get_property VLNV -object [get_bd_cells "/$base_name"]] ne "xilinx.com:ip:processing_system7:5.5")} {
 		set itf_type [get_property VLNV -object [get_bd_intf_pins $obj]]
 		set itf_mode [get_property MODE -object [get_bd_intf_pins $obj]]
 		if {$itf_type == "xilinx.com:interface:aximm_rtl:1.0"} {
@@ -27,12 +26,8 @@ for {set i 0} {$i < $max} {incr i} {
 }
 
 set uniqueList [lsort -unique $list_ip]
-
-puts $PS_name
-
 set max_ip [llength $uniqueList]
 set max_inst [llength $my_list]
-
 if {$max_inst == 0} {
 	exit
 }
@@ -52,11 +47,11 @@ for {set i 0} {$i < $max_ip} {incr i} {
 		set base_name [lindex $my_list $ii]
 		set inst_type [get_property VLNV -object [get_bd_cells $base_name]]
 		if {$ip_type == $inst_type} {
-			set addr_seg [get_bd_addr_segs -of_objects [get_bd_cells $base_name]]
-			set inst_name [lindex [split $addr_seg "/"] 1]
-			set reg_name [lindex [split $addr_seg "/"] 3]
-			set base_addr [get_property OFFSET [get_bd_addr_segs "$PS_name/SEG_${inst_name}_$reg_name" ]]
-			puts $fd "\t\t\t<instance name=\"$base_name\" id=\"$id\" base_addr=\"$base_addr\" addr_size=\"0xffff\" />"
+			set inst_name [lindex [split $base_name "/"] end]
+			set seg_name [lsearch -inline $list_seg "*${inst_name}*"]
+			set base_addr [get_property OFFSET [get_bd_addr_segs $seg_name ]]
+			puts $fd "\t\t\t<instance name=\"$inst_name\" id=\"$id\""
+			puts $fd "\t\t\t\tbase_addr=\"$base_addr\" addr_size=\"0xffff\" />"
 			incr id
 		}
 	}
