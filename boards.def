@@ -1,0 +1,35 @@
+# Fix some var according to
+# FPGA model and board
+ifeq ($(BOARD_NAME), de0nanosoc)
+OUT_BIN     = rbf
+USE_QSYS    = y
+FAMILY      = "Cyclone V"
+PART        = 5CSEMA4U23C6
+BD_PRESET   = $(OSCIMP_DIGITAL_IP)/preset/de0nanoSoc_qsys_preset.tcl
+PRJ_PRESET  = $(OSCIMP_DIGITAL_IP)/preset/de0nanoSoc_prj_preset.tcl
+TOOLS       = quartus
+endif
+ifeq ($(BOARD_NAME), redpitaya)
+OUT_BIN     = bit.bin
+USE_BD      = y
+PART        = "xc7z010clg400-1"
+PRJ_PRESET  = ""
+BD_PRESET   = "${OSCIMP_DIGITAL_IP}/preset/redpitaya_preset.xml"
+TOOLS       = vivado
+endif
+ifeq ($(BOARD_NAME), redpitaya)
+OUT_BIN     = bit.bin
+USE_BD      = y
+PART        = "xc7z020clg400-1"
+PRJ_PRESET  = ""
+BD_PRESET   = "${OSCIMP_DIGITAL_IP}/preset/redpitaya16_preset.xml"
+TOOLS       = vivado
+endif
+
+ifeq ($(BOARD_NAME),)
+all: fail_rule
+fail_rule:
+	@echo $(BOARD_NAME)
+	@echo "BOARD_NAME not known or missing"
+	@/bin/false
+endif
