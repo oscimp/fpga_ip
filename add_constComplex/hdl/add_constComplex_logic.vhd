@@ -27,11 +27,8 @@ Entity add_constComplex_logic is
 end entity;
 Architecture bhv of add_constComplex_logic is
 	signal data_in_i_s, data_i_s : std_logic_vector(DATA_OUT_SIZE-1 downto 0);
-	signal data_in_resize_s : std_logic_vector(DATA_IN_SIZE-1 downto 0);
 	signal add_val_s,add_val2_s : std_logic_vector(DATA_IN_SIZE-1 downto 0);
 begin
-    data_in_resize_s <= data_i;
-
 	process(clk_i) begin
 		if rising_edge(clk_i) then
 			add_val_s <= add_val;
