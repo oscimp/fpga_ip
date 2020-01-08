@@ -1,7 +1,10 @@
 set vivado_prj_root_path [lindex $argv 0]
 set project_name [lindex $argv 1]
 
-set bd_name [lindex $argv 2]
+if {$argc == 2} {
+	set bd_name [lindex $argv 2]
+} else {
+	set bd_name $project_name
 
 open_project $vivado_prj_root_path/$project_name.xpr
 open_bd_design $vivado_prj_root_path/$project_name.srcs/sources_1/bd/$bd_name/$bd_name.bd
