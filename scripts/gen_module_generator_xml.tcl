@@ -1,8 +1,10 @@
 set vivado_prj_root_path [lindex $argv 0]
 set project_name [lindex $argv 1]
 
+set bd_name [lindex $argv 2]
+
 open_project $vivado_prj_root_path/$project_name.xpr
-open_bd_design $vivado_prj_root_path/$project_name.srcs/sources_1/bd/$project_name/$project_name.bd
+open_bd_design $vivado_prj_root_path/$project_name.srcs/sources_1/bd/$bd_name/$bd_name.bd
 
 set list_addr [get_bd_addr_spaces]
 set list_seg [lsearch -all -inline [get_bd_addr_segs] "*SEG*"]
