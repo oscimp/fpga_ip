@@ -42,4 +42,4 @@ force_bin: $(BIF_FILE)
 	bootgen -w -image $(BIF_FILE) -arch zynq -process_bitstream bin
 
 xml:$(PRJ_FILE)
-	$(VIVADO) $(OSCIMP_DIGITAL_IP)/scripts/gen_module_generator_xml.tcl -tclargs $(PRJ)
+	$(VIVADO) $(OSCIMP_DIGITAL_IP)/scripts/gen_module_generator_xml.tcl -tclargs tmp $(PRJ)
