@@ -18,7 +18,7 @@ OscillatorIMP ecosystem FPGA IP sources
 |axiStreamToComplex   | Xilinx AXI Stream to complex stream   |  TODO     | TODO               | TODO           | TODO   |          TODO                   |                  
 |axiStreamToReal      |Xilinx AXI Stream to real stream       |  TODO     | TODO               | TODO           | TODO   |          TODO                   |                  
 |axi_deltaSigma       |Slow DAC output (Sigma-Delta)          |  TODO     | TODO               | TODO           | TODO   |          TODO                   |                  
-|axi_to_dac           |AXI value to DAC                       |  TODO     | TODO               | TODO           | TODO   |          TODO                   |                  
+|[axi_to_dac](https://github.com/oscimp/oscimpDigital/blob/master/doc/IP/axi_to_dac.md)           |AXI value to DAC                       |  none     | dataA_out, dataB_out     | DATA_SIZE(14)   | axi_to_dac   | axi_to_dac_full_conf                   |                  
 |cacode               |GPS Gold Code generator                |  TODO     | TODO               | TODO           | TODO   |          TODO                   |                  
 |convertComplexToReal |Complex -> real values                 |data_in   | dataI_out,dataQ_out |DATA_SIZE(8)    |none    | none                            |
 |convertRealToComplex |Real -> complex values                 |dataI_in,dataQ_in|data_out      |DATA_SIZE(8)    |none    |                                 |
