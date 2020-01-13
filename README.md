@@ -13,8 +13,8 @@ OscillatorIMP ecosystem FPGA IP sources
 |ad9767               |Redpitaya DAC (obsolete: see redpitaya_converters) |dataA_in,dataB_in| none |none        |none    |                                 |
 |add_constComplex     | Add a constant to complex value stream| data_i    | data_o             | DATA_IN_SIZE(16), DATA_OUT_SIZE(18) | TODO   |   TODO     |                  
 |add_constReal        | Add a constant to real value stream   | data_i   | data_o             | DATA_IN_SIZE(16), DATA_OUT_SIZE(18)            | TODO   |          TODO                   |                  
-|adder_substracter_complex| Sum or difference of complex values| TODO     | TODO               | TODO           | TODO   |          TODO                   |                  
-|adder_substracter_real| Sum or difference of real values     |  TODO     | TODO               | TODO           | TODO   |          TODO                   |                  
+|[adder_substracter_complex](https://github.com/oscimp/oscimpDigital/blob/master/doc/IP/adder_subtractor.md)| Sum or difference of complex values| data1_i, data2_i  | data_o   | DATA_SIZE(16)   | none   |          none                   |                  
+|[adder_substracter_real](https://github.com/oscimp/oscimpDigital/blob/master/doc/IP/adder_subtractor.md)| Sum or difference of real values     |  data1_i, data2_i  | data_o   | DATA_SIZE(16)   | none   |          none                   |                  
 |axiStreamToComplex   | Xilinx AXI Stream to complex stream   |  TODO     | TODO               | TODO           | TODO   |          TODO                   |                  
 |axiStreamToReal      |Xilinx AXI Stream to real stream       |  TODO     | TODO               | TODO           | TODO   |          TODO                   |                  
 |axi_deltaSigma       |Slow DAC output (Sigma-Delta)          |  TODO     | TODO               | TODO           | TODO   |          TODO                   |                  
