@@ -11,8 +11,8 @@ OscillatorIMP ecosystem FPGA IP sources
 |     Block name      |    Function                           | Input(s)  | Output(s)          | Parameter(s)   | Driver | Library function(s) (liboscimp) |
 |---------------------|---------------------------------------|-----------|--------------------|----------------|--------|---------------------------------|
 |ad9767               |Redpitaya DAC (obsolete: see redpitaya_converters) |dataA_in,dataB_in| none |none        |none    |                                 |
-|add_constComplex     | Add a constant to complex value stream| data_i    | data_o             | DATA_IN_SIZE(16), DATA_OUT_SIZE(18) | TODO   |   TODO     |                  
-|add_constReal        | Add a constant to real value stream   | data_i   | data_o             | DATA_IN_SIZE(16), DATA_OUT_SIZE(18)            | TODO   |          TODO                   |                  
+|add_constComplex     | Add a constant to complex value stream| data_in    | data_out             | DATA_IN_SIZE(16), DATA_OUT_SIZE(18) | add_const   |   add_const_set_offset, add_const_get_offset, add_constMulti_set_offset     |                  
+|add_constReal        | Add a constant to real value stream   | data_in   | data_out             | DATA_IN_SIZE(16), DATA_OUT_SIZE(18) | add_const   |   add_const_set_offset, add_const_get_offset, add_constMulti_set_offset     |                  
 |[adder_substracter_complex](https://github.com/oscimp/oscimpDigital/blob/master/doc/IP/adder_subtractor.md)| Sum or difference of complex values| data1_i, data2_i  | data_o   | DATA_SIZE(16)   | none   |          none    |none           |                  
 |[adder_substracter_real](https://github.com/oscimp/oscimpDigital/blob/master/doc/IP/adder_subtractor.md)| Sum or difference of real values     |  data1_i, data2_i  | data_o   | DATA_SIZE(16)   | none   |          none                   |                  
 |axiStreamToComplex   | Xilinx AXI Stream to complex stream   |  TODO     | TODO               | TODO           | TODO   |          TODO                   |                  
