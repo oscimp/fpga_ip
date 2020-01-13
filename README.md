@@ -13,7 +13,7 @@ OscillatorIMP ecosystem FPGA IP sources
 |ad9767               |Redpitaya DAC (obsolete: see redpitaya_converters) |dataA_in,dataB_in| none |none        |none    |                                 |
 |add_constComplex     | Add a constant to complex value stream| data_i    | data_o             | DATA_IN_SIZE(16), DATA_OUT_SIZE(18) | TODO   |   TODO     |                  
 |add_constReal        | Add a constant to real value stream   | data_i   | data_o             | DATA_IN_SIZE(16), DATA_OUT_SIZE(18)            | TODO   |          TODO                   |                  
-|[adder_substracter_complex](https://github.com/oscimp/oscimpDigital/blob/master/doc/IP/adder_subtractor.md)| Sum or difference of complex values| data1_i, data2_i  | data_o   | DATA_SIZE(16)   | none   |          none                   |                  
+|[adder_substracter_complex](https://github.com/oscimp/oscimpDigital/blob/master/doc/IP/adder_subtractor.md)| Sum or difference of complex values| data1_i, data2_i  | data_o   | DATA_SIZE(16)   | none   |          none    |none           |                  
 |[adder_substracter_real](https://github.com/oscimp/oscimpDigital/blob/master/doc/IP/adder_subtractor.md)| Sum or difference of real values     |  data1_i, data2_i  | data_o   | DATA_SIZE(16)   | none   |          none                   |                  
 |axiStreamToComplex   | Xilinx AXI Stream to complex stream   |  TODO     | TODO               | TODO           | TODO   |          TODO                   |                  
 |axiStreamToReal      |Xilinx AXI Stream to real stream       |  TODO     | TODO               | TODO           | TODO   |          TODO                   |                  
@@ -37,7 +37,7 @@ OscillatorIMP ecosystem FPGA IP sources
 |nco_counter          |NCO (sine & square = complex values)   |none       |sine_out, square_out |COUNTER_SIZE(28), DATA_SIZE(16) |nco_counter|nco_counter_send_conf|
 |prn20b               | 20-bit pseudo random number sequence (LFSR)|none  | data_out           | none           | none   | none |                          |
 |redpitaya_adc_dac_clk|Repitaya clock distribution (ADC & DAC)|none       |none                |none            |none                                    | |
-|redpitaya_converters | Redpitaya ADC/DAC converters          | TODO      | TODO               | TODO           | TODO                                     |
+|redpitaya_converters | Redpitaya ADC/DAC converters | dataA_in, dataB_in | dataA_out, dataB_out| ADC_EN(true), DAC_EN(true), ADC_SIZE(14)          | none            | none             |
 |[shifterReal](https://github.com/oscimp/oscimpDigital/blob/master/doc/IP/shifter.md)          |Bit shift (real values)   |data_in |data_out |DATA_IN_SIZE(32), DATA_OUT_SIZE(16)   |none    | |
 |[shifterComplex](https://github.com/oscimp/oscimpDigital/blob/master/doc/IP/shifter.md)       |Bit shift (complex values)|data_in |data_out |DATA_IN_SIZE(32), DATA_OUT_SIZE(16)   |none    | |
 |[switchComplex](https://github.com/oscimp/oscimpDigital/blob/master/doc/IP/switch.md)        |Complex stream multiplexer             |data1_in,data2_in   | data_out  |DATA_SIZE(16),DEFAULT_INPUT(0) |switch   | switch_conf     |
