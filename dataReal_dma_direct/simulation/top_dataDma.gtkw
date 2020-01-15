@@ -1,0 +1,53 @@
+[*]
+[*] GTKWave Analyzer v3.3.99 (w)1999-2019 BSI
+[*] Wed Jan  8 11:18:14 2020
+[*]
+[dumpfile] "/home/gwe/projets/oscimp/fpga_ip/dataReal_dma_direct/simulation/build/waveform.ghw"
+[dumpfile_mtime] "Wed Jan  8 11:16:42 2020"
+[dumpfile_size] 4102
+[savefile] "/home/gwe/projets/oscimp/fpga_ip/dataReal_dma_direct/simulation/top_dataDma.gtkw"
+[timestart] 0
+[size] 1366 748
+[pos] -1 -1
+*-26.674149 150000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.top_dut.
+[sst_width] 340
+[signals_width] 198
+[sst_expanded] 1
+[sst_vpaned_height] 292
+@28
+top.top_dut.clk_i
+top.top_dut.rst_i
+@200
+-config_ctrl
+@28
+top.top_dut.select_input_i[0]
+top.top_dut.start_acquisition_i
+top.top_dut.enable_i
+top.top_dut.busy_o
+@200
+-input_data_stream
+@28
+top.top_dut.data_en_i
+@24
+#{top.top_dut.data1_i[31:0]} top.top_dut.data1_i[31] top.top_dut.data1_i[30] top.top_dut.data1_i[29] top.top_dut.data1_i[28] top.top_dut.data1_i[27] top.top_dut.data1_i[26] top.top_dut.data1_i[25] top.top_dut.data1_i[24] top.top_dut.data1_i[23] top.top_dut.data1_i[22] top.top_dut.data1_i[21] top.top_dut.data1_i[20] top.top_dut.data1_i[19] top.top_dut.data1_i[18] top.top_dut.data1_i[17] top.top_dut.data1_i[16] top.top_dut.data1_i[15] top.top_dut.data1_i[14] top.top_dut.data1_i[13] top.top_dut.data1_i[12] top.top_dut.data1_i[11] top.top_dut.data1_i[10] top.top_dut.data1_i[9] top.top_dut.data1_i[8] top.top_dut.data1_i[7] top.top_dut.data1_i[6] top.top_dut.data1_i[5] top.top_dut.data1_i[4] top.top_dut.data1_i[3] top.top_dut.data1_i[2] top.top_dut.data1_i[1] top.top_dut.data1_i[0]
+@200
+-axi_stream
+@28
+top.top_dut.m_axis_tvalid
+@24
+#{top.top_dut.m_axis_tdata[31:0]} top.top_dut.m_axis_tdata[31] top.top_dut.m_axis_tdata[30] top.top_dut.m_axis_tdata[29] top.top_dut.m_axis_tdata[28] top.top_dut.m_axis_tdata[27] top.top_dut.m_axis_tdata[26] top.top_dut.m_axis_tdata[25] top.top_dut.m_axis_tdata[24] top.top_dut.m_axis_tdata[23] top.top_dut.m_axis_tdata[22] top.top_dut.m_axis_tdata[21] top.top_dut.m_axis_tdata[20] top.top_dut.m_axis_tdata[19] top.top_dut.m_axis_tdata[18] top.top_dut.m_axis_tdata[17] top.top_dut.m_axis_tdata[16] top.top_dut.m_axis_tdata[15] top.top_dut.m_axis_tdata[14] top.top_dut.m_axis_tdata[13] top.top_dut.m_axis_tdata[12] top.top_dut.m_axis_tdata[11] top.top_dut.m_axis_tdata[10] top.top_dut.m_axis_tdata[9] top.top_dut.m_axis_tdata[8] top.top_dut.m_axis_tdata[7] top.top_dut.m_axis_tdata[6] top.top_dut.m_axis_tdata[5] top.top_dut.m_axis_tdata[4] top.top_dut.m_axis_tdata[3] top.top_dut.m_axis_tdata[2] top.top_dut.m_axis_tdata[1] top.top_dut.m_axis_tdata[0]
+@28
+top.top_dut.dut_inst.stop_acquisition_s
+top.top_dut.dut_inst.tlast_next_s
+top.top_dut.dut_inst.axis_tlast_delay
+top.top_dut.m_axis_tlast
+@200
+-internal
+@28
+top.top_dut.dut_inst.start_acquisition_i
+@29
+top.top_dut.dut_inst.enable_s
+[pattern_trace] 1
+[pattern_trace] 0
