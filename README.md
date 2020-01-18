@@ -28,7 +28,7 @@ OscillatorIMP ecosystem FPGA IP sources
 |dupplComplex_1_to_2  |Splits a complex value stream          |data_in    |data1_out,data2_out |DATA_SIZE(8)    |none    |                                 |
 |expanderComplex      |Add Most Significant Bits (complex)    |data_in    |data_out            |DATA_IN_SIZE(16), DATA_OUT_SIZE(16) | none |               |
 |expanderReal         |Add Most Significant Bits (real value) |data_in    |data_out            |DATA_IN_SIZE(16), DATA_OUT_SIZE(16) | none |               |
-|firReal              |                                       |data_in    |data_out            |DATA_SIZE(16), NB_COEFF(128), DECIMATE_FACTOR(32), DATA_OUT_SIZE(32), COEFF_SIZE(16)|fir| |
+|firReal              | Finite Impulse Response (FIR) with coefficients provided from the processor |data_in    |data_out            |DATA_SIZE(16), NB_COEFF(128), DECIMATE_FACTOR(32), DATA_OUT_SIZE(32), COEFF_SIZE(16)|fir| |
 |ltc2145              |Redpitaya ADC (obsolete: see redpitaya_converters) |none |dataA_out,dataB_out |none      |none    |                                 |
 |meanComplex          |outputs the mean value of the complex valued input stream |  data_in | data_out               | INPUT_DATA_SIZE(16), OUTPUT_DATA_SIZE(18), nb_accum(8), shift(3)          | none   |          none                   |                  
 |meanReal             |outputs the mean value of the real valued input stream    |  data_in | data_out               | INPUT_DATA_SIZE(16), OUTPUT_DATA_SIZE(18), nb_accum(8), shift(3)           | none   |          none              |                  
