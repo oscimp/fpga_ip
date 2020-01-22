@@ -60,13 +60,14 @@ architecture Behavioral of nco_counter_logic is
 	constant MAX_TRIG : natural := 3;
 	signal trig_cpt_s : natural range 0 to MAX_TRIG;
 	signal counter_old_s, reinit_counter_s : std_logic;
+	constant sin_static_offset_s : unsigned(COUNTER_SIZE-2 downto 0) := '1' & (COUNTER_SIZE-3 downto 0 => '0');
 begin
 	int_rst_s <= (not enable_i) or rst_i;
 	-- in fact the enable signal is alwais true
 	wave_en_o <= enable_i;
 
 	counter_sin_s <=
-		std_logic_vector(unsigned(counter_s)-(2**(COUNTER_SIZE-2)));
+		std_logic_vector(unsigned(counter_s)-sin_static_offset_s);
 	cos_next <= counter_s(COUNTER_SIZE-1);
 	sin_next <= counter_sin_s(COUNTER_SIZE-1);
 
