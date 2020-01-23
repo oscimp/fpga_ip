@@ -19,10 +19,10 @@ architecture RTL of top_meanComplex_tb is
 begin
 
 	moy_inst: Entity work.meanComplex
-	generic map (format => "signed",
-		nb_accum => 8, shift => 3,
-		OUTPUT_DATA_SIZE => DATA_SIZE,
-		INPUT_DATA_SIZE => DATA_SIZE)
+	generic map (SIGNED_FORMAT => true,
+		NB_ACCUM => 8, SHIFT => 3,
+		DATA_IN_SIZE => DATA_SIZE,
+		DATA_OUT_SIZE => DATA_SIZE)
 	port map (rst_i => reset, clk_i => clk,
 		data_i_i => data_i_s, data_q_i => data_q_s,
 		data_en_i => data_en_s,

@@ -30,8 +30,8 @@ OscillatorIMP ecosystem FPGA IP sources
 |expanderReal         |Add Most Significant Bits (real value) |data_in    |data_out            |DATA_IN_SIZE(16), DATA_OUT_SIZE(16) | none |               |
 |firReal              | Finite Impulse Response (FIR) filter with real coefficients provided from the processor, applied to real input stream |data_in    |data_out            |DATA_SIZE(16), NB_COEFF(128), DECIMATE_FACTOR(32), DATA_OUT_SIZE(32), COEFF_SIZE(16)|fir| |
 |ltc2145              |Redpitaya ADC (obsolete: see redpitaya_converters) |none |dataA_out,dataB_out |none      |none    |                                 |
-|meanComplex          |outputs the mean value of the complex valued input stream |  data_in | data_out               | INPUT_DATA_SIZE(16), OUTPUT_DATA_SIZE(18), nb_accum(8), shift(3)          | none   |          none                   |                  
-|meanReal             |outputs the mean value of the real valued input stream    |  data_in | data_out               | INPUT_DATA_SIZE(16), OUTPUT_DATA_SIZE(18), nb_accum(8), shift(3)           | none   |          none              |                  
+|meanComplex          |outputs the mean value of the complex valued input stream |  data_in | data_out               | DATA_IN_SIZE(16), DATA_OUT_SIZE(18), NB_ACCUM(8), SHIFT(3), SIGNED_FORMAT(true)          | none   |          none                   |                  
+|meanReal             |outputs the mean value of the real valued input stream    |  data_in | data_out               | DATA_IN_SIZE(16), DATA_OUT_SIZE(18), NB_ACCUM(8), SHIFT(3), SIGNED_FORMAT(true)           | none   |          none              |                  
 |mean_vector_axi      |Average complex input stream (ADDR_SIZE=burst length) |data_in| data_out|DATA_SIZE(14),MAX_NB_ACCUM(1024),ADDR_SIZE(10)|   |        |
 |[mixer_sin](https://github.com/oscimp/oscimpDigital/blob/master/doc/IP/mixer.md) |mixer                        |data_in,nco_in|data_out |DATA_SIZE(16), NCO_SIZE(16)|none||
 |nco_counter          |NCO (sine & square = complex values)   |none       |sine_out, square_out |COUNTER_SIZE(28), DATA_SIZE(16) |nco_counter|nco_counter_send_conf|
