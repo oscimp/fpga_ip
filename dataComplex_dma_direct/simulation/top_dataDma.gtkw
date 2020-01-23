@@ -1,0 +1,106 @@
+[*]
+[*] GTKWave Analyzer v3.3.99 (w)1999-2019 BSI
+[*] Sun Nov  3 13:37:29 2019
+[*]
+[dumpfile] "/home/gwe/projets/oscimp/fpga_ip/dataComplex_dma_direct/simulation/build/waveform.ghw"
+[dumpfile_mtime] "Sun Nov  3 13:25:44 2019"
+[dumpfile_size] 21839
+[savefile] "/home/gwe/projets/oscimp/fpga_ip/dataComplex_dma_direct/simulation/top_dataDma.gtkw"
+[timestart] 394300000
+[size] 1366 747
+[pos] -1 -1
+*-26.674149 150000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.top_dut.
+[treeopen] top.top_dut.pulse_logic_inst.
+[sst_width] 340
+[signals_width] 198
+[sst_expanded] 1
+[sst_vpaned_height] 292
+@28
+top.top_dut.clk_i
+top.top_dut.rst_i
+@200
+-config_ctrl
+@28
+top.top_dut.select_input_i[0]
+top.top_dut.start_acquisition_i
+top.top_dut.enable_i
+top.top_dut.busy_o
+top.top_dut.trig_s
+@200
+-input_data_stream
+@28
+top.top_dut.data_en_i
+@24
+#{top.top_dut.data1_i[31:0]} top.top_dut.data1_i[31] top.top_dut.data1_i[30] top.top_dut.data1_i[29] top.top_dut.data1_i[28] top.top_dut.data1_i[27] top.top_dut.data1_i[26] top.top_dut.data1_i[25] top.top_dut.data1_i[24] top.top_dut.data1_i[23] top.top_dut.data1_i[22] top.top_dut.data1_i[21] top.top_dut.data1_i[20] top.top_dut.data1_i[19] top.top_dut.data1_i[18] top.top_dut.data1_i[17] top.top_dut.data1_i[16] top.top_dut.data1_i[15] top.top_dut.data1_i[14] top.top_dut.data1_i[13] top.top_dut.data1_i[12] top.top_dut.data1_i[11] top.top_dut.data1_i[10] top.top_dut.data1_i[9] top.top_dut.data1_i[8] top.top_dut.data1_i[7] top.top_dut.data1_i[6] top.top_dut.data1_i[5] top.top_dut.data1_i[4] top.top_dut.data1_i[3] top.top_dut.data1_i[2] top.top_dut.data1_i[1] top.top_dut.data1_i[0]
+#{top.top_dut.data2_i[31:0]} top.top_dut.data2_i[31] top.top_dut.data2_i[30] top.top_dut.data2_i[29] top.top_dut.data2_i[28] top.top_dut.data2_i[27] top.top_dut.data2_i[26] top.top_dut.data2_i[25] top.top_dut.data2_i[24] top.top_dut.data2_i[23] top.top_dut.data2_i[22] top.top_dut.data2_i[21] top.top_dut.data2_i[20] top.top_dut.data2_i[19] top.top_dut.data2_i[18] top.top_dut.data2_i[17] top.top_dut.data2_i[16] top.top_dut.data2_i[15] top.top_dut.data2_i[14] top.top_dut.data2_i[13] top.top_dut.data2_i[12] top.top_dut.data2_i[11] top.top_dut.data2_i[10] top.top_dut.data2_i[9] top.top_dut.data2_i[8] top.top_dut.data2_i[7] top.top_dut.data2_i[6] top.top_dut.data2_i[5] top.top_dut.data2_i[4] top.top_dut.data2_i[3] top.top_dut.data2_i[2] top.top_dut.data2_i[1] top.top_dut.data2_i[0]
+@28
+top.top_dut.data_sof_i
+top.top_dut.data_eof_i
+@200
+-intermediaire
+@28
+#{top.top_dut.select_input_i[1:0]} top.top_dut.select_input_i[1] top.top_dut.select_input_i[0]
+@24
+#{top.top_dut.cpt_s[31:0]} top.top_dut.cpt_s[31] top.top_dut.cpt_s[30] top.top_dut.cpt_s[29] top.top_dut.cpt_s[28] top.top_dut.cpt_s[27] top.top_dut.cpt_s[26] top.top_dut.cpt_s[25] top.top_dut.cpt_s[24] top.top_dut.cpt_s[23] top.top_dut.cpt_s[22] top.top_dut.cpt_s[21] top.top_dut.cpt_s[20] top.top_dut.cpt_s[19] top.top_dut.cpt_s[18] top.top_dut.cpt_s[17] top.top_dut.cpt_s[16] top.top_dut.cpt_s[15] top.top_dut.cpt_s[14] top.top_dut.cpt_s[13] top.top_dut.cpt_s[12] top.top_dut.cpt_s[11] top.top_dut.cpt_s[10] top.top_dut.cpt_s[9] top.top_dut.cpt_s[8] top.top_dut.cpt_s[7] top.top_dut.cpt_s[6] top.top_dut.cpt_s[5] top.top_dut.cpt_s[4] top.top_dut.cpt_s[3] top.top_dut.cpt_s[2] top.top_dut.cpt_s[1] top.top_dut.cpt_s[0]
+@28
+top.top_dut.mux_data_en_s
+top.top_dut.mux_data_sof_s
+top.top_dut.mux_data_eof_s
+@24
+#{top.top_dut.mux_data1_s[31:0]} top.top_dut.mux_data1_s[31] top.top_dut.mux_data1_s[30] top.top_dut.mux_data1_s[29] top.top_dut.mux_data1_s[28] top.top_dut.mux_data1_s[27] top.top_dut.mux_data1_s[26] top.top_dut.mux_data1_s[25] top.top_dut.mux_data1_s[24] top.top_dut.mux_data1_s[23] top.top_dut.mux_data1_s[22] top.top_dut.mux_data1_s[21] top.top_dut.mux_data1_s[20] top.top_dut.mux_data1_s[19] top.top_dut.mux_data1_s[18] top.top_dut.mux_data1_s[17] top.top_dut.mux_data1_s[16] top.top_dut.mux_data1_s[15] top.top_dut.mux_data1_s[14] top.top_dut.mux_data1_s[13] top.top_dut.mux_data1_s[12] top.top_dut.mux_data1_s[11] top.top_dut.mux_data1_s[10] top.top_dut.mux_data1_s[9] top.top_dut.mux_data1_s[8] top.top_dut.mux_data1_s[7] top.top_dut.mux_data1_s[6] top.top_dut.mux_data1_s[5] top.top_dut.mux_data1_s[4] top.top_dut.mux_data1_s[3] top.top_dut.mux_data1_s[2] top.top_dut.mux_data1_s[1] top.top_dut.mux_data1_s[0]
+#{top.top_dut.mux_data2_s[31:0]} top.top_dut.mux_data2_s[31] top.top_dut.mux_data2_s[30] top.top_dut.mux_data2_s[29] top.top_dut.mux_data2_s[28] top.top_dut.mux_data2_s[27] top.top_dut.mux_data2_s[26] top.top_dut.mux_data2_s[25] top.top_dut.mux_data2_s[24] top.top_dut.mux_data2_s[23] top.top_dut.mux_data2_s[22] top.top_dut.mux_data2_s[21] top.top_dut.mux_data2_s[20] top.top_dut.mux_data2_s[19] top.top_dut.mux_data2_s[18] top.top_dut.mux_data2_s[17] top.top_dut.mux_data2_s[16] top.top_dut.mux_data2_s[15] top.top_dut.mux_data2_s[14] top.top_dut.mux_data2_s[13] top.top_dut.mux_data2_s[12] top.top_dut.mux_data2_s[11] top.top_dut.mux_data2_s[10] top.top_dut.mux_data2_s[9] top.top_dut.mux_data2_s[8] top.top_dut.mux_data2_s[7] top.top_dut.mux_data2_s[6] top.top_dut.mux_data2_s[5] top.top_dut.mux_data2_s[4] top.top_dut.mux_data2_s[3] top.top_dut.mux_data2_s[2] top.top_dut.mux_data2_s[1] top.top_dut.mux_data2_s[0]
+@200
+-genPulse
+@28
+top.top_dut.pulse_logic_inst.ext_trig_i
+@29
+top.top_dut.pulse_logic_inst.pulse_d1_s
+@28
+top.top_dut.pulse_logic_inst.pulse_d0_s
+top.top_dut.pulse_logic_inst.pulse_s
+top.top_dut.pulse_logic_inst.pulse_o
+top.top_dut.pulse_logic_inst.start_tx_s
+@24
+#{top.top_dut.pulse_logic_inst.cpt_data_s[3:0]} top.top_dut.pulse_logic_inst.cpt_data_s[3] top.top_dut.pulse_logic_inst.cpt_data_s[2] top.top_dut.pulse_logic_inst.cpt_data_s[1] top.top_dut.pulse_logic_inst.cpt_data_s[0]
+@28
+top.top_dut.pulse_logic_inst.data_en_o
+top.top_dut.pulse_logic_inst.data_sof_o
+top.top_dut.pulse_logic_inst.data_eof_o
+@24
+#{top.top_dut.pulse_logic_inst.data1_i_o[15:0]} top.top_dut.pulse_logic_inst.data1_i_o[15] top.top_dut.pulse_logic_inst.data1_i_o[14] top.top_dut.pulse_logic_inst.data1_i_o[13] top.top_dut.pulse_logic_inst.data1_i_o[12] top.top_dut.pulse_logic_inst.data1_i_o[11] top.top_dut.pulse_logic_inst.data1_i_o[10] top.top_dut.pulse_logic_inst.data1_i_o[9] top.top_dut.pulse_logic_inst.data1_i_o[8] top.top_dut.pulse_logic_inst.data1_i_o[7] top.top_dut.pulse_logic_inst.data1_i_o[6] top.top_dut.pulse_logic_inst.data1_i_o[5] top.top_dut.pulse_logic_inst.data1_i_o[4] top.top_dut.pulse_logic_inst.data1_i_o[3] top.top_dut.pulse_logic_inst.data1_i_o[2] top.top_dut.pulse_logic_inst.data1_i_o[1] top.top_dut.pulse_logic_inst.data1_i_o[0]
+#{top.top_dut.pulse_logic_inst.data1_q_o[15:0]} top.top_dut.pulse_logic_inst.data1_q_o[15] top.top_dut.pulse_logic_inst.data1_q_o[14] top.top_dut.pulse_logic_inst.data1_q_o[13] top.top_dut.pulse_logic_inst.data1_q_o[12] top.top_dut.pulse_logic_inst.data1_q_o[11] top.top_dut.pulse_logic_inst.data1_q_o[10] top.top_dut.pulse_logic_inst.data1_q_o[9] top.top_dut.pulse_logic_inst.data1_q_o[8] top.top_dut.pulse_logic_inst.data1_q_o[7] top.top_dut.pulse_logic_inst.data1_q_o[6] top.top_dut.pulse_logic_inst.data1_q_o[5] top.top_dut.pulse_logic_inst.data1_q_o[4] top.top_dut.pulse_logic_inst.data1_q_o[3] top.top_dut.pulse_logic_inst.data1_q_o[2] top.top_dut.pulse_logic_inst.data1_q_o[1] top.top_dut.pulse_logic_inst.data1_q_o[0]
+#{top.top_dut.pulse_logic_inst.data2_i_o[15:0]} top.top_dut.pulse_logic_inst.data2_i_o[15] top.top_dut.pulse_logic_inst.data2_i_o[14] top.top_dut.pulse_logic_inst.data2_i_o[13] top.top_dut.pulse_logic_inst.data2_i_o[12] top.top_dut.pulse_logic_inst.data2_i_o[11] top.top_dut.pulse_logic_inst.data2_i_o[10] top.top_dut.pulse_logic_inst.data2_i_o[9] top.top_dut.pulse_logic_inst.data2_i_o[8] top.top_dut.pulse_logic_inst.data2_i_o[7] top.top_dut.pulse_logic_inst.data2_i_o[6] top.top_dut.pulse_logic_inst.data2_i_o[5] top.top_dut.pulse_logic_inst.data2_i_o[4] top.top_dut.pulse_logic_inst.data2_i_o[3] top.top_dut.pulse_logic_inst.data2_i_o[2] top.top_dut.pulse_logic_inst.data2_i_o[1] top.top_dut.pulse_logic_inst.data2_i_o[0]
+#{top.top_dut.pulse_logic_inst.data2_q_o[15:0]} top.top_dut.pulse_logic_inst.data2_q_o[15] top.top_dut.pulse_logic_inst.data2_q_o[14] top.top_dut.pulse_logic_inst.data2_q_o[13] top.top_dut.pulse_logic_inst.data2_q_o[12] top.top_dut.pulse_logic_inst.data2_q_o[11] top.top_dut.pulse_logic_inst.data2_q_o[10] top.top_dut.pulse_logic_inst.data2_q_o[9] top.top_dut.pulse_logic_inst.data2_q_o[8] top.top_dut.pulse_logic_inst.data2_q_o[7] top.top_dut.pulse_logic_inst.data2_q_o[6] top.top_dut.pulse_logic_inst.data2_q_o[5] top.top_dut.pulse_logic_inst.data2_q_o[4] top.top_dut.pulse_logic_inst.data2_q_o[3] top.top_dut.pulse_logic_inst.data2_q_o[2] top.top_dut.pulse_logic_inst.data2_q_o[1] top.top_dut.pulse_logic_inst.data2_q_o[0]
+@200
+-axi_stream
+@28
+top.top_dut.m_axis_tvalid
+@24
+#{top.top_dut.m_axis_tdata[31:0]} top.top_dut.m_axis_tdata[31] top.top_dut.m_axis_tdata[30] top.top_dut.m_axis_tdata[29] top.top_dut.m_axis_tdata[28] top.top_dut.m_axis_tdata[27] top.top_dut.m_axis_tdata[26] top.top_dut.m_axis_tdata[25] top.top_dut.m_axis_tdata[24] top.top_dut.m_axis_tdata[23] top.top_dut.m_axis_tdata[22] top.top_dut.m_axis_tdata[21] top.top_dut.m_axis_tdata[20] top.top_dut.m_axis_tdata[19] top.top_dut.m_axis_tdata[18] top.top_dut.m_axis_tdata[17] top.top_dut.m_axis_tdata[16] top.top_dut.m_axis_tdata[15] top.top_dut.m_axis_tdata[14] top.top_dut.m_axis_tdata[13] top.top_dut.m_axis_tdata[12] top.top_dut.m_axis_tdata[11] top.top_dut.m_axis_tdata[10] top.top_dut.m_axis_tdata[9] top.top_dut.m_axis_tdata[8] top.top_dut.m_axis_tdata[7] top.top_dut.m_axis_tdata[6] top.top_dut.m_axis_tdata[5] top.top_dut.m_axis_tdata[4] top.top_dut.m_axis_tdata[3] top.top_dut.m_axis_tdata[2] top.top_dut.m_axis_tdata[1] top.top_dut.m_axis_tdata[0]
+@28
+top.top_dut.dut_inst.stop_acquisition_s
+top.top_dut.dut_inst.tlast_next_s
+top.top_dut.dut_inst.axis_tlast_delay
+top.top_dut.m_axis_tlast
+@200
+-gene
+@28
+top.top_dut.update_presc_i
+@22
+#{top.top_dut.prescaler_i[31:0]} top.top_dut.prescaler_i[31] top.top_dut.prescaler_i[30] top.top_dut.prescaler_i[29] top.top_dut.prescaler_i[28] top.top_dut.prescaler_i[27] top.top_dut.prescaler_i[26] top.top_dut.prescaler_i[25] top.top_dut.prescaler_i[24] top.top_dut.prescaler_i[23] top.top_dut.prescaler_i[22] top.top_dut.prescaler_i[21] top.top_dut.prescaler_i[20] top.top_dut.prescaler_i[19] top.top_dut.prescaler_i[18] top.top_dut.prescaler_i[17] top.top_dut.prescaler_i[16] top.top_dut.prescaler_i[15] top.top_dut.prescaler_i[14] top.top_dut.prescaler_i[13] top.top_dut.prescaler_i[12] top.top_dut.prescaler_i[11] top.top_dut.prescaler_i[10] top.top_dut.prescaler_i[9] top.top_dut.prescaler_i[8] top.top_dut.prescaler_i[7] top.top_dut.prescaler_i[6] top.top_dut.prescaler_i[5] top.top_dut.prescaler_i[4] top.top_dut.prescaler_i[3] top.top_dut.prescaler_i[2] top.top_dut.prescaler_i[1] top.top_dut.prescaler_i[0]
+@28
+top.top_dut.start_i
+top.top_dut.trig_i
+top.top_dut.mux_data_en_s
+top.top_dut.mux_data_sof_s
+top.top_dut.mux_data_eof_s
+top.top_dut.gen_data_en_s
+top.top_dut.gen_data_sof_s
+top.top_dut.gen_data_eof_s
+@24
+#{top.top_dut.gen_data_i_s[31:0]} top.top_dut.gen_data_i_s[31] top.top_dut.gen_data_i_s[30] top.top_dut.gen_data_i_s[29] top.top_dut.gen_data_i_s[28] top.top_dut.gen_data_i_s[27] top.top_dut.gen_data_i_s[26] top.top_dut.gen_data_i_s[25] top.top_dut.gen_data_i_s[24] top.top_dut.gen_data_i_s[23] top.top_dut.gen_data_i_s[22] top.top_dut.gen_data_i_s[21] top.top_dut.gen_data_i_s[20] top.top_dut.gen_data_i_s[19] top.top_dut.gen_data_i_s[18] top.top_dut.gen_data_i_s[17] top.top_dut.gen_data_i_s[16] top.top_dut.gen_data_i_s[15] top.top_dut.gen_data_i_s[14] top.top_dut.gen_data_i_s[13] top.top_dut.gen_data_i_s[12] top.top_dut.gen_data_i_s[11] top.top_dut.gen_data_i_s[10] top.top_dut.gen_data_i_s[9] top.top_dut.gen_data_i_s[8] top.top_dut.gen_data_i_s[7] top.top_dut.gen_data_i_s[6] top.top_dut.gen_data_i_s[5] top.top_dut.gen_data_i_s[4] top.top_dut.gen_data_i_s[3] top.top_dut.gen_data_i_s[2] top.top_dut.gen_data_i_s[1] top.top_dut.gen_data_i_s[0]
+#{top.top_dut.gen_data_q_s[31:0]} top.top_dut.gen_data_q_s[31] top.top_dut.gen_data_q_s[30] top.top_dut.gen_data_q_s[29] top.top_dut.gen_data_q_s[28] top.top_dut.gen_data_q_s[27] top.top_dut.gen_data_q_s[26] top.top_dut.gen_data_q_s[25] top.top_dut.gen_data_q_s[24] top.top_dut.gen_data_q_s[23] top.top_dut.gen_data_q_s[22] top.top_dut.gen_data_q_s[21] top.top_dut.gen_data_q_s[20] top.top_dut.gen_data_q_s[19] top.top_dut.gen_data_q_s[18] top.top_dut.gen_data_q_s[17] top.top_dut.gen_data_q_s[16] top.top_dut.gen_data_q_s[15] top.top_dut.gen_data_q_s[14] top.top_dut.gen_data_q_s[13] top.top_dut.gen_data_q_s[12] top.top_dut.gen_data_q_s[11] top.top_dut.gen_data_q_s[10] top.top_dut.gen_data_q_s[9] top.top_dut.gen_data_q_s[8] top.top_dut.gen_data_q_s[7] top.top_dut.gen_data_q_s[6] top.top_dut.gen_data_q_s[5] top.top_dut.gen_data_q_s[4] top.top_dut.gen_data_q_s[3] top.top_dut.gen_data_q_s[2] top.top_dut.gen_data_q_s[1] top.top_dut.gen_data_q_s[0]
+[pattern_trace] 1
+[pattern_trace] 0
