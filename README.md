@@ -33,7 +33,7 @@ OscillatorIMP ecosystem FPGA IP sources
 |meanComplex          |outputs the mean value of the complex valued input stream |  data_in | data_out               | DATA_IN_SIZE(16), DATA_OUT_SIZE(18), NB_ACCUM(8), SHIFT(3), SIGNED_FORMAT(true)          | none   |          none                   |                  
 |meanReal             |outputs the mean value of the real valued input stream    |  data_in | data_out               | DATA_IN_SIZE(16), DATA_OUT_SIZE(18), NB_ACCUM(8), SHIFT(3), SIGNED_FORMAT(true)           | none   |          none              |                  
 |mean_vector_axi      |Average complex input stream (ADDR_SIZE=burst length) |data_in| data_out|DATA_SIZE(14),MAX_NB_ACCUM(1024),ADDR_SIZE(10)|   |        |
-|[mixer_sin](https://github.com/oscimp/oscimpDigital/blob/master/doc/IP/mixer.md) |mixer                        |data_in,nco_in|data_out |DATA_SIZE(16), NCO_SIZE(16)|none||
+|[mixer_sin](https://github.com/oscimp/oscimpDigital/blob/master/doc/IP/mixer.md) |mixer                        |data_in,nco_in|data_out |DATA_IN_SIZE(16), DATA_OUT_SIZE(16), NCO_SIZE(16)|none||
 |nco_counter          |NCO (sine & square = complex values)   |none       |sine_out, square_out |COUNTER_SIZE(28), DATA_SIZE(16) |nco_counter|nco_counter_send_conf|
 |prn20b               | 20-bit pseudo random number sequence (LFSR)|none  | data_out           | none           | none   | none |                          |
 |redpitaya_adc_dac_clk|Repitaya clock distribution (ADC & DAC)|none       |none                |none            |none                                    | |
