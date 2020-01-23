@@ -1,0 +1,37 @@
+[*]
+[*] GTKWave Analyzer v3.3.99 (w)1999-2019 BSI
+[*] Wed Oct 23 14:28:21 2019
+[*]
+[dumpfile] "(null)"
+[savefile] "/home/gwe/projets/oscimp/fpga_ip/syncTrigStream/simulation/top_syncTrigStream.gtkw"
+[timestart] 8170
+[size] 1366 747
+[pos] -1 -1
+*-11.674149 10750 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.top_genpulsetwowaycplx.
+[treeopen] top.top_genpulsetwowaycplx.lt_sz_inst.
+[sst_width] 340
+[signals_width] 190
+[sst_expanded] 1
+[sst_vpaned_height] 292
+@200
+-
+-pulse
+@28
+top.top_genpulsetwowaycplx.pulse_o
+@200
+-data
+@28
+top.top_genpulsetwowaycplx.data_en_i
+@25
+#{top.top_genpulsetwowaycplx.data1_i_i[15:0]} top.top_genpulsetwowaycplx.data1_i_i[15] top.top_genpulsetwowaycplx.data1_i_i[14] top.top_genpulsetwowaycplx.data1_i_i[13] top.top_genpulsetwowaycplx.data1_i_i[12] top.top_genpulsetwowaycplx.data1_i_i[11] top.top_genpulsetwowaycplx.data1_i_i[10] top.top_genpulsetwowaycplx.data1_i_i[9] top.top_genpulsetwowaycplx.data1_i_i[8] top.top_genpulsetwowaycplx.data1_i_i[7] top.top_genpulsetwowaycplx.data1_i_i[6] top.top_genpulsetwowaycplx.data1_i_i[5] top.top_genpulsetwowaycplx.data1_i_i[4] top.top_genpulsetwowaycplx.data1_i_i[3] top.top_genpulsetwowaycplx.data1_i_i[2] top.top_genpulsetwowaycplx.data1_i_i[1] top.top_genpulsetwowaycplx.data1_i_i[0]
+@28
+top.top_genpulsetwowaycplx.data_en_o
+@24
+#{top.top_genpulsetwowaycplx.data1_i_o[15:0]} top.top_genpulsetwowaycplx.data1_i_o[15] top.top_genpulsetwowaycplx.data1_i_o[14] top.top_genpulsetwowaycplx.data1_i_o[13] top.top_genpulsetwowaycplx.data1_i_o[12] top.top_genpulsetwowaycplx.data1_i_o[11] top.top_genpulsetwowaycplx.data1_i_o[10] top.top_genpulsetwowaycplx.data1_i_o[9] top.top_genpulsetwowaycplx.data1_i_o[8] top.top_genpulsetwowaycplx.data1_i_o[7] top.top_genpulsetwowaycplx.data1_i_o[6] top.top_genpulsetwowaycplx.data1_i_o[5] top.top_genpulsetwowaycplx.data1_i_o[4] top.top_genpulsetwowaycplx.data1_i_o[3] top.top_genpulsetwowaycplx.data1_i_o[2] top.top_genpulsetwowaycplx.data1_i_o[1] top.top_genpulsetwowaycplx.data1_i_o[0]
+@28
+top.top_genpulsetwowaycplx.data_sof_o
+top.top_genpulsetwowaycplx.data_eof_o
+[pattern_trace] 1
+[pattern_trace] 0
