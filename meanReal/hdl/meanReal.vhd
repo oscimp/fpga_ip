@@ -4,7 +4,7 @@ use IEEE.numeric_std.all;
 
 Entity meanReal is 
 	generic (
-		SIGNED_FORMAT : bool := true;
+		SIGNED_FORMAT : boolean := true;
 		NB_ACCUM : natural := 8;
 		SHIFT : natural := 3;
 		DATA_OUT_SIZE: natural := 18;
