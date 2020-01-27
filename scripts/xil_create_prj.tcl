@@ -1,6 +1,6 @@
 # source common function
-variable ggm_ip    $::env(GGM_FPGA_IP)
-source $ggm_ip/scripts/xil_prj.tcl
+variable oscimp_digital_ip    $::env(OSCIMP_DIGITAL_IP)
+source $oscimp_digital_ip/scripts/xil_prj.tcl
 
 set project_name [lindex $argv 0]
 set top_name     [lindex $argv 1]
@@ -41,7 +41,7 @@ if {$prj_preset != ""} {
 }
 
 # Set Path for the custom IP cores
-#set_property IP_REPO_PATHS [list ${repo_path} ${osc_fpga_ip} ${ggm_ip}] [current_project]
+#set_property IP_REPO_PATHS [list ${repo_path} ${osc_fpga_ip} ${oscimp_digital_ip}] [current_project]
 set_property IP_REPO_PATHS ${list_ip_repo_path} [current_project]
 update_ip_catalog
 
