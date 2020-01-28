@@ -2,35 +2,43 @@
 import sys
 
 from ipyxact.ipyxact import Component
-# need package color
-import color
+# need package colored
+import colored
+from colored import stylize
+
+def printRed(key, value):
+    print(key + stylize(value, colored.fg("red")))
+def printGreen(key, value):
+    print(key + stylize(value, colored.fg("green")))
+def printBlue(key, value):
+    print(key + stylize(value, colored.fg("blue")))
 
 def get_modelParameters(parameters):
-    print(color.blue("\nParameters:"))
-    print(color.blue("-----------"))
+    print(stylize("\nParameters:", colored.fg("blue")))
+    print(stylize("-----------", colored.fg("blue")))
     for parameter in parameters.parameter:
-        print("name: "+ color.red('{}'.format(parameter.name)))
+        printRed("name: ", "{}".format(parameter.name))
         if parameter.displayName == "":
-            print('  name          : '+color.green('{}'.format(parameter.name)))
+            printGreen('  name          : ', '{}'.format(parameter.name))
         else:
-            print('  display name  : '+color.green('{}'.format(parameter.displayName)))
-        print('  default value : ' + color.green('{}'.format(parameter.value)))
+            printGreen('  display name  : ', '{}'.format(parameter.displayName))
+        printGreen('  default value : ', '{}'.format(parameter.value))
 
 def get_businterfaces(busInterfaces, quiet=True):
     ifs = []
     print()
-    print(color.blue("Interfaces:"))
-    print(color.blue("-----------"))
+    printBlue("", "Interfaces:")
+    printBlue("", "-----------")
     for busInterface in busInterfaces.busInterface:
-        print('name: ' + color.red(busInterface.name))
-        print('  type      : ' + color.green(busInterface.busType.name))
+        printRed('name: ', busInterface.name)
+        printGreen('  type      : ', busInterface.busType.name)
         print('  direction : ', end='')
         if busInterface.slave is not None:
-            print(color.green("in"))
+            printGreen("", "in")
         elif busInterface.master is not None:
-            print(color.green("out"))
+            printGreen("out")
         else:
-            print(color.green("unknown"))
+            printGreen("unknown")
         if (quiet == False):
             _vendor  = busInterface.busType.vendor
             _library = busInterface.busType.library
@@ -68,14 +76,14 @@ if __name__ == "__main__":
 
     component = Component()
     component.load(f)
-    print(color.blue('component:'))
-    print(color.blue('----------'))
-    print('name        : ' + color.green('{}'.format(component.name)))
-    print('VLNV        : ' + color.green('{}:{}:{}:{}'.format(component.vendor,
-                                        component.library,
-                                        component.name,
-                                        component.version)))
-    print('description : ' + color.green('{}'.format(component.description)))
+    printBlue("", 'component:')
+    printBlue("", '----------')
+    printGreen('name        : ', '{}'.format(component.name))
+    printGreen('VLNV        : ', '{}:{}:{}:{}'.format(component.vendor,
+                                                      component.library,
+                                                      component.name,
+                                                      component.version))
+    printGreen('description : ', '{}'.format(component.description))
 
     if component.parameters is not None:
         get_modelParameters(component.parameters)
@@ -94,14 +102,14 @@ if __name__ == "__main__":
     port_alone = list(set(list_port) - set(list_if))
 
     print()
-    print(color.blue("Ports:"))
-    print(color.blue("------"))
+    printBlue("", "Ports:")
+    printBlue("", "------")
     for port in (port for port in component.model.ports.port if port.name in port_alone):
-        print("name: " + color.red(port.name))
-        print("  direction : " + color.green(port.wire.direction))
+        printRed("name: ", port.name)
+        printGreen("  direction : ", port.wire.direction)
         if port.wire.wireTypeDefs is not None:
             for wtd in port.wire.wireTypeDefs.wireTypeDef:
-                print("  type      : " + color.green(wtd.typeName))
+                printGreen("  type      : ", wtd.typeName)
     print()
 
     f.close()
