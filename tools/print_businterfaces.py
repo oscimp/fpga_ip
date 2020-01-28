@@ -11,7 +11,7 @@ def printRed(key, value):
 def printGreen(key, value):
     print(key + stylize(value, colored.fg("green")))
 def printBlue(key, value):
-    print(key + stylize(value, colored.fg("blue")))
+    print(key + stylize(value, colored.fg("steel_blue_1a")))
 
 def get_modelParameters(parameters):
     print(stylize("\nParameters:", colored.fg("blue")))
