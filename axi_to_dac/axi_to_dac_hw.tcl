@@ -86,6 +86,12 @@ set_parameter_property DATAB_EN_ALWAYS_HIGH DISPLAY_NAME DATAB_EN_ALWAYS_HIGH
 set_parameter_property DATAB_EN_ALWAYS_HIGH TYPE BOOLEAN
 set_parameter_property DATAB_EN_ALWAYS_HIGH UNITS None
 set_parameter_property DATAB_EN_ALWAYS_HIGH HDL_PARAMETER true
+add_parameter SYNCHRONIZE_CHAN BOOLEAN false
+set_parameter_property SYNCHRONIZE_CHAN DEFAULT_VALUE false
+set_parameter_property SYNCHRONIZE_CHAN DISPLAY_NAME SYNCHRONIZE_CHAN
+set_parameter_property SYNCHRONIZE_CHAN TYPE BOOLEAN
+set_parameter_property SYNCHRONIZE_CHAN UNITS None
+set_parameter_property SYNCHRONIZE_CHAN HDL_PARAMETER true
 add_parameter id NATURAL 1
 set_parameter_property id DEFAULT_VALUE 1
 set_parameter_property id DISPLAY_NAME id
@@ -237,8 +243,8 @@ add_interface_port dataA_out dataA_rst_o DATA_RST Output 1
 # connection point dataB_out
 # 
 add_interface dataB_out conduit end
-set_interface_property dataB_out associatedClock ref_clk_i
-set_interface_property dataB_out associatedReset ref_rst_i
+set_interface_property dataB_out associatedClock ""
+set_interface_property dataB_out associatedReset ""
 set_interface_property dataB_out ENABLED true
 set_interface_property dataB_out EXPORT_OF ""
 set_interface_property dataB_out PORT_NAME_MAP ""
