@@ -85,6 +85,9 @@ rbf: $(RBF_FILE)
 rpd: $(RDP_FILE)
 svf: $(SVF_FILE)
 
+xml: |tmp
+	qsys-script --script=$(OSCIMP_DIGITAL_IP)/scripts/gen_module_generator_xml_quartus.tcl \
+		-system-file=tmp/$(TOP).qsys
 # flash or install bitstream
 flash_rpd: rpd
 	cycloader -b $(BOARD_NAME) $(RDP_FILE)
