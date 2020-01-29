@@ -17,7 +17,11 @@ proc connect_to_fpga_pins {inst_name inst_bus fpga_pins} {
 	set_interface_property $fpga_pins EXPORT_OF $inst_name.$inst_bus
 }
 
-proc connect_proc {inst_name axi_bus axi_clock axi_rst base_addr} {
+proc connect_proc {inst_name axi_bus base_addr} {
+	set axi_clock [get_instance_interface_parameter_value $inst_name $axi_bus associatedClock]
+	set axi_rst [get_instance_interface_parameter_value $inst_name $axi_bus associatedReset]
+	set class_name [get_instance_property $inst_name CLASS_NAME]
+
 	add_connection hps.h2f_user0_clock $inst_name.$axi_clock
 	add_connection hps.h2f_reset $inst_name.$axi_rst
 	add_connection hps.h2f_lw_axi_master $inst_name.$axi_bus

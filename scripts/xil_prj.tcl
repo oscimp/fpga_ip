@@ -20,14 +20,12 @@ proc connect_intf {src_name src_if dest_name dest_if} {
   # search if src is an interface or simple signal
   set src_inst_if [get_bd_intf_pins $src_name/$src_if -quiet]
   if {$src_inst_if == ""} {
-	puts "$src_name/$src_if is not intf"
 	set src_is_intf 0
     set src_inst_if [get_bd_pins $src_name/$src_if -quiet]
   }
   # search if dest is an interface or simple signal
   set dest_inst_if [get_bd_intf_pins $dest_name/$dest_if -quiet]
   if {$dest_inst_if == ""} {
-	puts "$dest_name/$dest_if is not intf"
 	set dest_is_intf 0
     set dest_inst_if [get_bd_pins $dest_name/$dest_if -quiet]
   }
@@ -103,7 +101,26 @@ proc __create_ps7_axi {} {
 	return $ps7_axi
 }
 
-proc connect_proc {inst_name axi_bus axi_clock axi_rst {base_addr ""}} {
+proc connect_proc {inst_name axi_bus {base_addr ""}} {
+	set axi_clock ""
+	set axi_rst ""
+	set listIF [get_bd_pins -of_objects [get_bd_cells $inst_name]]
+	foreach {intf} $listIF {
+		set intf_pins [get_bd_pins $intf]
+		set intf_type [get_property TYPE $intf_pins]
+		set intf_name [get_property NAME $intf_pins]
+		if {$intf_type == "clk"} {
+			set assoc_bus [get_property CONFIG.ASSOCIATED_BUSIF $intf_pins]
+			if {$assoc_bus == $axi_bus} {
+				set axi_clock $intf_name
+				set axi_rst [get_property CONFIG.ASSOCIATED_RESET $intf_pins]
+			}
+		}
+	}
+	if {$axi_clock == ""} {
+		puts "associated clock not found for interface : $inst_name/$axi_bus"
+		exit
+	}
 
 	if {$base_addr == ""} {
 		apply_bd_automation -rule xilinx.com:bd_rule:axi4 \
