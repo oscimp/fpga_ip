@@ -22,16 +22,25 @@ proc connect_intf {src_name src_if dest_name dest_if} {
   if {$src_inst_if == ""} {
 	set src_is_intf 0
     set src_inst_if [get_bd_pins $src_name/$src_if -quiet]
+	if {$src_inst_if == ""} {
+		puts "$src_name/$src_if not found!"
+		exit
+	}
   }
   # search if dest is an interface or simple signal
   set dest_inst_if [get_bd_intf_pins $dest_name/$dest_if -quiet]
   if {$dest_inst_if == ""} {
 	set dest_is_intf 0
     set dest_inst_if [get_bd_pins $dest_name/$dest_if -quiet]
+	if {$dest_inst_if == ""} {
+		puts "$dest_name/$dest_if not found!"
+		exit
+	}
   }
 
   if {$src_is_intf != $dest_is_intf} {
 	  puts "connect_intf errror: try to connect a mix interface and pins"
+	  puts "$src_name $src_if $dest_name $dest_if"
 	  exit
 	  return
   }
