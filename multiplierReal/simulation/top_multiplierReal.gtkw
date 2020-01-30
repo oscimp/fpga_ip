@@ -1,0 +1,58 @@
+[*]
+[*] GTKWave Analyzer v3.3.99 (w)1999-2019 BSI
+[*] Thu Jan 30 16:37:38 2020
+[*]
+[dumpfile] "/home/gwe/projets/oscimp/pourGithub/oscimpDigital/fpga_ip/multiplierReal/simulation/build/waveform.ghw"
+[dumpfile_mtime] "Thu Jan 30 16:22:31 2020"
+[dumpfile_size] 2893690
+[savefile] "/home/gwe/projets/oscimp/pourGithub/oscimpDigital/fpga_ip/multiplierReal/simulation/top_multiplierReal.gtkw"
+[timestart] 255842
+[size] 1366 748
+[pos] -684 -375
+*-9.000000 256850 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.top_multiplierreal.
+[treeopen] top.top_multiplierreal.lt_sz_inst.
+[sst_width] 340
+[signals_width] 190
+[sst_expanded] 1
+[sst_vpaned_height] 300
+@200
+-unsigned
+@28
+top.top_multiplierreal.clk_i
+top.top_multiplierreal.rst_i
+top.top_multiplierreal.data1_en_i
+@22
+#{top.top_multiplierreal.data1_i[15:0]} top.top_multiplierreal.data1_i[15] top.top_multiplierreal.data1_i[14] top.top_multiplierreal.data1_i[13] top.top_multiplierreal.data1_i[12] top.top_multiplierreal.data1_i[11] top.top_multiplierreal.data1_i[10] top.top_multiplierreal.data1_i[9] top.top_multiplierreal.data1_i[8] top.top_multiplierreal.data1_i[7] top.top_multiplierreal.data1_i[6] top.top_multiplierreal.data1_i[5] top.top_multiplierreal.data1_i[4] top.top_multiplierreal.data1_i[3] top.top_multiplierreal.data1_i[2] top.top_multiplierreal.data1_i[1] top.top_multiplierreal.data1_i[0]
+@28
+top.top_multiplierreal.data1_eof_i
+top.top_multiplierreal.data1_sof_i
+top.top_multiplierreal.data2_en_i
+@22
+#{top.top_multiplierreal.data2_i[15:0]} top.top_multiplierreal.data2_i[15] top.top_multiplierreal.data2_i[14] top.top_multiplierreal.data2_i[13] top.top_multiplierreal.data2_i[12] top.top_multiplierreal.data2_i[11] top.top_multiplierreal.data2_i[10] top.top_multiplierreal.data2_i[9] top.top_multiplierreal.data2_i[8] top.top_multiplierreal.data2_i[7] top.top_multiplierreal.data2_i[6] top.top_multiplierreal.data2_i[5] top.top_multiplierreal.data2_i[4] top.top_multiplierreal.data2_i[3] top.top_multiplierreal.data2_i[2] top.top_multiplierreal.data2_i[1] top.top_multiplierreal.data2_i[0]
+@28
+top.top_multiplierreal.data2_eof_i
+top.top_multiplierreal.data2_sof_i
+top.top_multiplierreal.data_lt_en_o
+@22
+#{top.top_multiplierreal.data_lt_o[15:0]} top.top_multiplierreal.data_lt_o[15] top.top_multiplierreal.data_lt_o[14] top.top_multiplierreal.data_lt_o[13] top.top_multiplierreal.data_lt_o[12] top.top_multiplierreal.data_lt_o[11] top.top_multiplierreal.data_lt_o[10] top.top_multiplierreal.data_lt_o[9] top.top_multiplierreal.data_lt_o[8] top.top_multiplierreal.data_lt_o[7] top.top_multiplierreal.data_lt_o[6] top.top_multiplierreal.data_lt_o[5] top.top_multiplierreal.data_lt_o[4] top.top_multiplierreal.data_lt_o[3] top.top_multiplierreal.data_lt_o[2] top.top_multiplierreal.data_lt_o[1] top.top_multiplierreal.data_lt_o[0]
+@28
+top.top_multiplierreal.data_eq_en_o
+@22
+#{top.top_multiplierreal.data_eq_o[31:0]} top.top_multiplierreal.data_eq_o[31] top.top_multiplierreal.data_eq_o[30] top.top_multiplierreal.data_eq_o[29] top.top_multiplierreal.data_eq_o[28] top.top_multiplierreal.data_eq_o[27] top.top_multiplierreal.data_eq_o[26] top.top_multiplierreal.data_eq_o[25] top.top_multiplierreal.data_eq_o[24] top.top_multiplierreal.data_eq_o[23] top.top_multiplierreal.data_eq_o[22] top.top_multiplierreal.data_eq_o[21] top.top_multiplierreal.data_eq_o[20] top.top_multiplierreal.data_eq_o[19] top.top_multiplierreal.data_eq_o[18] top.top_multiplierreal.data_eq_o[17] top.top_multiplierreal.data_eq_o[16] top.top_multiplierreal.data_eq_o[15] top.top_multiplierreal.data_eq_o[14] top.top_multiplierreal.data_eq_o[13] top.top_multiplierreal.data_eq_o[12] top.top_multiplierreal.data_eq_o[11] top.top_multiplierreal.data_eq_o[10] top.top_multiplierreal.data_eq_o[9] top.top_multiplierreal.data_eq_o[8] top.top_multiplierreal.data_eq_o[7] top.top_multiplierreal.data_eq_o[6] top.top_multiplierreal.data_eq_o[5] top.top_multiplierreal.data_eq_o[4] top.top_multiplierreal.data_eq_o[3] top.top_multiplierreal.data_eq_o[2] top.top_multiplierreal.data_eq_o[1] top.top_multiplierreal.data_eq_o[0]
+@28
+top.top_multiplierreal.data_gt_en_o
+@22
+#{top.top_multiplierreal.data_gt_o[32:0]} top.top_multiplierreal.data_gt_o[32] top.top_multiplierreal.data_gt_o[31] top.top_multiplierreal.data_gt_o[30] top.top_multiplierreal.data_gt_o[29] top.top_multiplierreal.data_gt_o[28] top.top_multiplierreal.data_gt_o[27] top.top_multiplierreal.data_gt_o[26] top.top_multiplierreal.data_gt_o[25] top.top_multiplierreal.data_gt_o[24] top.top_multiplierreal.data_gt_o[23] top.top_multiplierreal.data_gt_o[22] top.top_multiplierreal.data_gt_o[21] top.top_multiplierreal.data_gt_o[20] top.top_multiplierreal.data_gt_o[19] top.top_multiplierreal.data_gt_o[18] top.top_multiplierreal.data_gt_o[17] top.top_multiplierreal.data_gt_o[16] top.top_multiplierreal.data_gt_o[15] top.top_multiplierreal.data_gt_o[14] top.top_multiplierreal.data_gt_o[13] top.top_multiplierreal.data_gt_o[12] top.top_multiplierreal.data_gt_o[11] top.top_multiplierreal.data_gt_o[10] top.top_multiplierreal.data_gt_o[9] top.top_multiplierreal.data_gt_o[8] top.top_multiplierreal.data_gt_o[7] top.top_multiplierreal.data_gt_o[6] top.top_multiplierreal.data_gt_o[5] top.top_multiplierreal.data_gt_o[4] top.top_multiplierreal.data_gt_o[3] top.top_multiplierreal.data_gt_o[2] top.top_multiplierreal.data_gt_o[1] top.top_multiplierreal.data_gt_o[0]
+@200
+-lt_size
+@22
+#{top.top_multiplierreal.lt_sz_inst.data1_i[15:0]} top.top_multiplierreal.lt_sz_inst.data1_i[15] top.top_multiplierreal.lt_sz_inst.data1_i[14] top.top_multiplierreal.lt_sz_inst.data1_i[13] top.top_multiplierreal.lt_sz_inst.data1_i[12] top.top_multiplierreal.lt_sz_inst.data1_i[11] top.top_multiplierreal.lt_sz_inst.data1_i[10] top.top_multiplierreal.lt_sz_inst.data1_i[9] top.top_multiplierreal.lt_sz_inst.data1_i[8] top.top_multiplierreal.lt_sz_inst.data1_i[7] top.top_multiplierreal.lt_sz_inst.data1_i[6] top.top_multiplierreal.lt_sz_inst.data1_i[5] top.top_multiplierreal.lt_sz_inst.data1_i[4] top.top_multiplierreal.lt_sz_inst.data1_i[3] top.top_multiplierreal.lt_sz_inst.data1_i[2] top.top_multiplierreal.lt_sz_inst.data1_i[1] top.top_multiplierreal.lt_sz_inst.data1_i[0]
+#{top.top_multiplierreal.lt_sz_inst.data2_i[15:0]} top.top_multiplierreal.lt_sz_inst.data2_i[15] top.top_multiplierreal.lt_sz_inst.data2_i[14] top.top_multiplierreal.lt_sz_inst.data2_i[13] top.top_multiplierreal.lt_sz_inst.data2_i[12] top.top_multiplierreal.lt_sz_inst.data2_i[11] top.top_multiplierreal.lt_sz_inst.data2_i[10] top.top_multiplierreal.lt_sz_inst.data2_i[9] top.top_multiplierreal.lt_sz_inst.data2_i[8] top.top_multiplierreal.lt_sz_inst.data2_i[7] top.top_multiplierreal.lt_sz_inst.data2_i[6] top.top_multiplierreal.lt_sz_inst.data2_i[5] top.top_multiplierreal.lt_sz_inst.data2_i[4] top.top_multiplierreal.lt_sz_inst.data2_i[3] top.top_multiplierreal.lt_sz_inst.data2_i[2] top.top_multiplierreal.lt_sz_inst.data2_i[1] top.top_multiplierreal.lt_sz_inst.data2_i[0]
+#{top.top_multiplierreal.lt_sz_inst.data1_in_s[15:0]} top.top_multiplierreal.lt_sz_inst.data1_in_s[15] top.top_multiplierreal.lt_sz_inst.data1_in_s[14] top.top_multiplierreal.lt_sz_inst.data1_in_s[13] top.top_multiplierreal.lt_sz_inst.data1_in_s[12] top.top_multiplierreal.lt_sz_inst.data1_in_s[11] top.top_multiplierreal.lt_sz_inst.data1_in_s[10] top.top_multiplierreal.lt_sz_inst.data1_in_s[9] top.top_multiplierreal.lt_sz_inst.data1_in_s[8] top.top_multiplierreal.lt_sz_inst.data1_in_s[7] top.top_multiplierreal.lt_sz_inst.data1_in_s[6] top.top_multiplierreal.lt_sz_inst.data1_in_s[5] top.top_multiplierreal.lt_sz_inst.data1_in_s[4] top.top_multiplierreal.lt_sz_inst.data1_in_s[3] top.top_multiplierreal.lt_sz_inst.data1_in_s[2] top.top_multiplierreal.lt_sz_inst.data1_in_s[1] top.top_multiplierreal.lt_sz_inst.data1_in_s[0]
+#{top.top_multiplierreal.lt_sz_inst.data2_in_s[15:0]} top.top_multiplierreal.lt_sz_inst.data2_in_s[15] top.top_multiplierreal.lt_sz_inst.data2_in_s[14] top.top_multiplierreal.lt_sz_inst.data2_in_s[13] top.top_multiplierreal.lt_sz_inst.data2_in_s[12] top.top_multiplierreal.lt_sz_inst.data2_in_s[11] top.top_multiplierreal.lt_sz_inst.data2_in_s[10] top.top_multiplierreal.lt_sz_inst.data2_in_s[9] top.top_multiplierreal.lt_sz_inst.data2_in_s[8] top.top_multiplierreal.lt_sz_inst.data2_in_s[7] top.top_multiplierreal.lt_sz_inst.data2_in_s[6] top.top_multiplierreal.lt_sz_inst.data2_in_s[5] top.top_multiplierreal.lt_sz_inst.data2_in_s[4] top.top_multiplierreal.lt_sz_inst.data2_in_s[3] top.top_multiplierreal.lt_sz_inst.data2_in_s[2] top.top_multiplierreal.lt_sz_inst.data2_in_s[1] top.top_multiplierreal.lt_sz_inst.data2_in_s[0]
+@23
+#{top.top_multiplierreal.lt_sz_inst.data_s[31:0]} top.top_multiplierreal.lt_sz_inst.data_s[31] top.top_multiplierreal.lt_sz_inst.data_s[30] top.top_multiplierreal.lt_sz_inst.data_s[29] top.top_multiplierreal.lt_sz_inst.data_s[28] top.top_multiplierreal.lt_sz_inst.data_s[27] top.top_multiplierreal.lt_sz_inst.data_s[26] top.top_multiplierreal.lt_sz_inst.data_s[25] top.top_multiplierreal.lt_sz_inst.data_s[24] top.top_multiplierreal.lt_sz_inst.data_s[23] top.top_multiplierreal.lt_sz_inst.data_s[22] top.top_multiplierreal.lt_sz_inst.data_s[21] top.top_multiplierreal.lt_sz_inst.data_s[20] top.top_multiplierreal.lt_sz_inst.data_s[19] top.top_multiplierreal.lt_sz_inst.data_s[18] top.top_multiplierreal.lt_sz_inst.data_s[17] top.top_multiplierreal.lt_sz_inst.data_s[16] top.top_multiplierreal.lt_sz_inst.data_s[15] top.top_multiplierreal.lt_sz_inst.data_s[14] top.top_multiplierreal.lt_sz_inst.data_s[13] top.top_multiplierreal.lt_sz_inst.data_s[12] top.top_multiplierreal.lt_sz_inst.data_s[11] top.top_multiplierreal.lt_sz_inst.data_s[10] top.top_multiplierreal.lt_sz_inst.data_s[9] top.top_multiplierreal.lt_sz_inst.data_s[8] top.top_multiplierreal.lt_sz_inst.data_s[7] top.top_multiplierreal.lt_sz_inst.data_s[6] top.top_multiplierreal.lt_sz_inst.data_s[5] top.top_multiplierreal.lt_sz_inst.data_s[4] top.top_multiplierreal.lt_sz_inst.data_s[3] top.top_multiplierreal.lt_sz_inst.data_s[2] top.top_multiplierreal.lt_sz_inst.data_s[1] top.top_multiplierreal.lt_sz_inst.data_s[0]
+[pattern_trace] 1
+[pattern_trace] 0
