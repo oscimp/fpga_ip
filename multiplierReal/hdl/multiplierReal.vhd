@@ -39,7 +39,7 @@ entity multiplierReal is
 end multiplierReal;
 
 architecture Behavioral of multiplierReal is
-	constant INT_DATA_SZ : natural := DATA1_IN_SIZE * DATA2_IN_SIZE;
+	constant INT_DATA_SZ : natural := DATA1_IN_SIZE + DATA2_IN_SIZE;
 
 	-- input latches
 	signal data1_in_s                     : std_logic_vector(DATA1_IN_SIZE-1 downto 0);
