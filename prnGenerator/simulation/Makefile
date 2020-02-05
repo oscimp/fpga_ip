@@ -1,4 +1,4 @@
-PROJECT=top_prn
+PROJECT=top_prnGenerator
 TESTBENCH_FILE=$(PROJECT)_tb.vhd
 SIMTOP =$(PROJECT)_tb
 
@@ -6,7 +6,7 @@ GHDL=ghdl
 GHDLFLAGS=--workdir=simu --work=work
 GHDLRUNFLAGS=--assert-level=error
 GHDL_SIMU_FLAGS = --ieee=synopsys --warn-no-vital-generic --warn-default-binding
-FILES=../hdl/prn.vhd
+FILES=../hdl/prnGenerator.vhd
 
 SIMDIR=simu
 

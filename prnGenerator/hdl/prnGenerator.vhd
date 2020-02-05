@@ -8,7 +8,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.numeric_std.all;
 use IEEE.math_real.all;
 
-entity prn is
+entity prnGenerator is
 	generic (
 		BIT_LEN    : natural := 7;
 		PRN_NUM    : natural := 1;
@@ -22,7 +22,7 @@ entity prn is
 	);
 end entity;
  
-architecture rtl of prn is
+architecture rtl of prnGenerator is
 	constant PERIOD_WIDTH      : natural := natural(ceil(log2(real(PERIOD_LEN))));
 	signal period_s            : unsigned(PERIOD_WIDTH-1 downto 0);
 	signal tick_int_s          : std_logic;
