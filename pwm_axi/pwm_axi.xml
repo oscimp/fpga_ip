@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component name="pwm" version="1.0">
+    <description>
+        Component for pwm.
+    </description>
+
+    <generics>
+		<generic name="id" public="true" value="1" match="\d+" type="natural" destination="both" />
+		<generic name="data_size" public="true" value="32" match="\d+" type="natural" destination="both" />
+		<generic name="cpt_overflow" public="true" value="50" match="\d+" type="natural" destination="both" />
+		<generic name="C_S00_AXI_ADDR_WIDTH" public="true" value="3" match="\d+" type="integer" destination="both" />
+		<!--<generic name="wb_size" public="true" value="32" match="\d+" type="natural" destination="both" />
+		<generic name="OUTPUT_SIZE" public="true" value="8" match="\d+"  type="natural" destination="both" />-->
+    </generics>
+
+    <hdl_files>
+        <hdl_file filename="pwm.vhd" scope="both" istop="1" />
+        <hdl_file filename="pwm_axi.vhd" scope="both" istop="0" />
+        <hdl_file filename="pwm_cpt.vhd" scope="both" istop="0" />
+        <hdl_file filename="pwm_logic.vhd" scope="both" istop="0" />
+        <hdl_file filename="pwm_handCom.vhd" scope="both" istop="0" />
+    </hdl_files>
+	<interfaces>
+		<interface name="swb16" class="slave" bus="axi4lite" data_size="32" addr_size="3" >
+			<registers>
+				<register name="id" offset="0x01" size="32" rows="1" />
+			</registers>
+			<ports>
+				<port name="s00_axi_aclk" type="CLK" size="1" dir="in" />
+				<port name="s00_axi_reset" type="RST" size="1" dir="in" />
+ 				<port name="s00_axi_araddr" type="ARADR" size="3" dir="in" />
+                <port name="s00_axi_arprot" type="ARPROT" size="3" dir="in" />
+                <port name="s00_axi_arready" type="ARREADY" size="1" dir="out" />
+                <port name="s00_axi_arvalid" type="ARVALID" size="1" dir="in" />
+                <port name="s00_axi_awaddr" type="AWADR" size="3" dir="in" />
+                <port name="s00_axi_awprot" type="AWPROT" size="3" dir="in" />
+                <port name="s00_axi_awready" type="AWREADY" size="1" dir="out" />
+                <port name="s00_axi_awvalid" type="AWVALID" size="1" dir="in" />
+                <port name="s00_axi_bready" type="BREADY" size="1" dir="in" />
+                <port name="s00_axi_bresp" type="BRESP" size="2" dir="out" />
+                <port name="s00_axi_bvalid" type="BVALID" size="1" dir="out" />
+                <port name="s00_axi_rdata" type="RDATA" size="32" dir="out" />
+                <port name="s00_axi_rready" type="RREADY" size="1" dir="in" />
+                <port name="s00_axi_rresp" type="RRESP" size="2" dir="out" />
+                <port name="s00_axi_rvalid" type="RVALID" size="1" dir="out" />
+                <port name="s00_axi_wdata" type="WDATA" size="32" dir="in" />
+                <port name="s00_axi_wready" type="WREADY" size="1" dir="out" />
+                <port name="s00_axi_wstrb" type="WSTRB" size="4" dir="in" />
+                <port name="s00_axi_wvalid" type="WVALID" size="1" dir="in" />
+			</ports>
+		</interface>
+		<interface name="pwm" class="gls" >
+			<ports>
+				<port name="pwm_o" type="EXPORT" size="1" dir="out" />
+			</ports>
+		</interface>
+    </interfaces>
+</component>

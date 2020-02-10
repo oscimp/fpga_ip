@@ -1,0 +1,42 @@
+[*]
+[*] GTKWave Analyzer v3.3.99 (w)1999-2019 BSI
+[*] Fri Feb  7 07:31:25 2020
+[*]
+[dumpfile] "/home/gwe/projets/oscimp/pourGithub/oscimpDigital/fpga_ip/pwm_axi/simulation/build/waveform.ghw"
+[dumpfile_mtime] "Fri Feb  7 07:31:04 2020"
+[dumpfile_size] 76264
+[savefile] "/home/gwe/projets/oscimp/pourGithub/oscimpDigital/fpga_ip/pwm_axi/simulation/top_pwmAxi.gtkw"
+[timestart] 0
+[size] 1366 748
+[pos] -1 -1
+*-29.840347 30000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.top_pwmaxi.
+[treeopen] top.top_pwmaxi.dutinvert.
+[sst_width] 340
+[signals_width] 190
+[sst_expanded] 1
+[sst_vpaned_height] 300
+@200
+-unsigned
+@28
+top.top_pwmaxi.rst_i
+top.top_pwmaxi.clk_i
+top.top_pwmaxi.enable_i
+top.top_pwmaxi.pwm1_o
+top.top_pwmaxi.pwm2_o
+@200
+-invert
+@28
+top.top_pwmaxi.dutinvert.invert_i
+top.top_pwmaxi.dutinvert.enable_i
+@29
+top.top_pwmaxi.dutinvert.pwm_cpt_inst.tick_o
+@24
+#{top.top_pwmaxi.dutinvert.nb_tick_s[31:0]} top.top_pwmaxi.dutinvert.nb_tick_s[31] top.top_pwmaxi.dutinvert.nb_tick_s[30] top.top_pwmaxi.dutinvert.nb_tick_s[29] top.top_pwmaxi.dutinvert.nb_tick_s[28] top.top_pwmaxi.dutinvert.nb_tick_s[27] top.top_pwmaxi.dutinvert.nb_tick_s[26] top.top_pwmaxi.dutinvert.nb_tick_s[25] top.top_pwmaxi.dutinvert.nb_tick_s[24] top.top_pwmaxi.dutinvert.nb_tick_s[23] top.top_pwmaxi.dutinvert.nb_tick_s[22] top.top_pwmaxi.dutinvert.nb_tick_s[21] top.top_pwmaxi.dutinvert.nb_tick_s[20] top.top_pwmaxi.dutinvert.nb_tick_s[19] top.top_pwmaxi.dutinvert.nb_tick_s[18] top.top_pwmaxi.dutinvert.nb_tick_s[17] top.top_pwmaxi.dutinvert.nb_tick_s[16] top.top_pwmaxi.dutinvert.nb_tick_s[15] top.top_pwmaxi.dutinvert.nb_tick_s[14] top.top_pwmaxi.dutinvert.nb_tick_s[13] top.top_pwmaxi.dutinvert.nb_tick_s[12] top.top_pwmaxi.dutinvert.nb_tick_s[11] top.top_pwmaxi.dutinvert.nb_tick_s[10] top.top_pwmaxi.dutinvert.nb_tick_s[9] top.top_pwmaxi.dutinvert.nb_tick_s[8] top.top_pwmaxi.dutinvert.nb_tick_s[7] top.top_pwmaxi.dutinvert.nb_tick_s[6] top.top_pwmaxi.dutinvert.nb_tick_s[5] top.top_pwmaxi.dutinvert.nb_tick_s[4] top.top_pwmaxi.dutinvert.nb_tick_s[3] top.top_pwmaxi.dutinvert.nb_tick_s[2] top.top_pwmaxi.dutinvert.nb_tick_s[1] top.top_pwmaxi.dutinvert.nb_tick_s[0]
+#{top.top_pwmaxi.dutinvert.period_i[31:0]} top.top_pwmaxi.dutinvert.period_i[31] top.top_pwmaxi.dutinvert.period_i[30] top.top_pwmaxi.dutinvert.period_i[29] top.top_pwmaxi.dutinvert.period_i[28] top.top_pwmaxi.dutinvert.period_i[27] top.top_pwmaxi.dutinvert.period_i[26] top.top_pwmaxi.dutinvert.period_i[25] top.top_pwmaxi.dutinvert.period_i[24] top.top_pwmaxi.dutinvert.period_i[23] top.top_pwmaxi.dutinvert.period_i[22] top.top_pwmaxi.dutinvert.period_i[21] top.top_pwmaxi.dutinvert.period_i[20] top.top_pwmaxi.dutinvert.period_i[19] top.top_pwmaxi.dutinvert.period_i[18] top.top_pwmaxi.dutinvert.period_i[17] top.top_pwmaxi.dutinvert.period_i[16] top.top_pwmaxi.dutinvert.period_i[15] top.top_pwmaxi.dutinvert.period_i[14] top.top_pwmaxi.dutinvert.period_i[13] top.top_pwmaxi.dutinvert.period_i[12] top.top_pwmaxi.dutinvert.period_i[11] top.top_pwmaxi.dutinvert.period_i[10] top.top_pwmaxi.dutinvert.period_i[9] top.top_pwmaxi.dutinvert.period_i[8] top.top_pwmaxi.dutinvert.period_i[7] top.top_pwmaxi.dutinvert.period_i[6] top.top_pwmaxi.dutinvert.period_i[5] top.top_pwmaxi.dutinvert.period_i[4] top.top_pwmaxi.dutinvert.period_i[3] top.top_pwmaxi.dutinvert.period_i[2] top.top_pwmaxi.dutinvert.period_i[1] top.top_pwmaxi.dutinvert.period_i[0]
+#{top.top_pwmaxi.dutinvert.duty_i[31:0]} top.top_pwmaxi.dutinvert.duty_i[31] top.top_pwmaxi.dutinvert.duty_i[30] top.top_pwmaxi.dutinvert.duty_i[29] top.top_pwmaxi.dutinvert.duty_i[28] top.top_pwmaxi.dutinvert.duty_i[27] top.top_pwmaxi.dutinvert.duty_i[26] top.top_pwmaxi.dutinvert.duty_i[25] top.top_pwmaxi.dutinvert.duty_i[24] top.top_pwmaxi.dutinvert.duty_i[23] top.top_pwmaxi.dutinvert.duty_i[22] top.top_pwmaxi.dutinvert.duty_i[21] top.top_pwmaxi.dutinvert.duty_i[20] top.top_pwmaxi.dutinvert.duty_i[19] top.top_pwmaxi.dutinvert.duty_i[18] top.top_pwmaxi.dutinvert.duty_i[17] top.top_pwmaxi.dutinvert.duty_i[16] top.top_pwmaxi.dutinvert.duty_i[15] top.top_pwmaxi.dutinvert.duty_i[14] top.top_pwmaxi.dutinvert.duty_i[13] top.top_pwmaxi.dutinvert.duty_i[12] top.top_pwmaxi.dutinvert.duty_i[11] top.top_pwmaxi.dutinvert.duty_i[10] top.top_pwmaxi.dutinvert.duty_i[9] top.top_pwmaxi.dutinvert.duty_i[8] top.top_pwmaxi.dutinvert.duty_i[7] top.top_pwmaxi.dutinvert.duty_i[6] top.top_pwmaxi.dutinvert.duty_i[5] top.top_pwmaxi.dutinvert.duty_i[4] top.top_pwmaxi.dutinvert.duty_i[3] top.top_pwmaxi.dutinvert.duty_i[2] top.top_pwmaxi.dutinvert.duty_i[1] top.top_pwmaxi.dutinvert.duty_i[0]
+@200
+-invertn
+[pattern_trace] 1
+[pattern_trace] 0
