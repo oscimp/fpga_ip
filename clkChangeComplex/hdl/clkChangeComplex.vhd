@@ -1,85 +1,69 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-use IEEE.numeric_std.all;
+use IEEE.numeric_std.ALL;
+use IEEE.math_real.all;
 
-Entity clkChangeComplex is 
+entity clkChangeComplex is
 	generic (
-		DATA_SIZE : natural := 32
+		DATA_SIZE : natural := 16
 	);
-	port 
-	(
-		ref_clk_i : in std_logic;
-		rst_i 		: in std_logic;
-		-- input data
-		data_i_i : in std_logic_vector(DATA_SIZE-1 downto 0);
-		data_q_i : in std_logic_vector(DATA_SIZE-1 downto 0);
-		data_en_i: in std_logic;
-		data_eof_i: in std_logic;
-		data_clk_i: in std_logic;
+	port (
+		-- input
+		data_i_i   : in std_logic_vector(DATA_SIZE-1 downto 0);
+		data_q_i   : in std_logic_vector(DATA_SIZE-1 downto 0);
+		data_en_i  : in std_logic;
+		data_clk_i : in std_logic;
+		data_rst_i : in std_logic;
+		-- output
+		data_i_o   : out std_logic_vector(DATA_SIZE-1 downto 0);
+		data_q_o   : out std_logic_vector(DATA_SIZE-1 downto 0);
+		data_en_o  : out std_logic;
+		data_clk_o : out std_logic;
+		data_rst_o : out std_logic;
 
-		-- for the next component
-		data_q_o  : out std_logic_vector(DATA_SIZE-1 downto 0);		
-		data_i_o  : out std_logic_vector(DATA_SIZE-1 downto 0);		
-		data_en_o : out std_logic;
-		data_eof_o : out std_logic;
-		data_clk_o : out std_logic
+		-- data fo FIFO
+		m00_axis_aclk   : in std_logic;
+		m00_axis_tdata  : out std_logic_vector((2*DATA_SIZE)-1 downto 0);
+		m00_axis_tready : in std_logic;
+		m00_axis_tvalid : out std_logic;
+		m00_aclk_en     : out std_logic;
+		-- from FIFO to data
+		s00_axis_aclk   : in std_logic;
+		s00_axis_reset  : in std_logic;
+		s00_axis_tdata  : in std_logic_vector((2*DATA_SIZE) - 1 downto 0);
+		s00_axis_tready : out std_logic;
+		s00_axis_tvalid : in std_logic
 	);
-end entity;
-Architecture clkChangeComplex_1 of clkChangeComplex is
-	signal data_q_s, data_i_s : std_logic_vector(DATA_SIZE-1 downto 0);
-	signal data_q_out_s, data_i_out_s : std_logic_vector(DATA_SIZE-1 downto 0);
-	signal ack_s, data_eof_s, data_en_s : std_logic;
+end clkChangeComplex;
+
+architecture Behavioral of clkChangeComplex is
+	signal data_in_s : std_logic_vector((2*DATA_SIZE)-1 downto 0);
 begin
-	data_clk_o <= ref_clk_i;
+	m00_axis_tdata <= data_q_i & data_i_i;
+	m00_axis_tvalid <= data_en_i;
+	m00_aclk_en <= '1';
 
-	process(data_clk_i)
-	begin
-		if rising_edge(data_clk_i) then
-			data_q_s <= data_q_s;
-			data_i_s <= data_i_s;
-			data_en_s <= data_en_s;
-			data_eof_s <= data_eof_s;
-			if rst_i = '1' then
-				data_q_s <= (others => '0');
-				data_i_s <= (others => '0');
-				data_en_s <= '0';
-				data_eof_s <= '0';
-			end if;
+	data_clk_o <= s00_axis_aclk;
 
-			if data_en_i = '1' then
-				data_q_s <= data_q_i;
-				data_i_s <= data_i_i;
-				data_eof_s <= data_eof_i;
-				data_en_s <= data_en_i;
-			end if;
+	data_rst_o <= s00_axis_reset;
 
-			if ack_s = '1' then
-				data_eof_s <= '0';
-				data_en_s <= '0';
+	process(s00_axis_aclk) begin
+		if rising_edge(s00_axis_aclk) then
+			data_en_o <= s00_axis_tvalid;
+			s00_axis_tready <= '1';
+			if (s00_axis_reset = '1') then
+				s00_axis_tready <= '0';
+				data_in_s <= (others => '0');
+			elsif (s00_axis_tvalid = '1') then
+				data_in_s <= s00_axis_tdata;
+			else
+				data_in_s <= data_in_s;
 			end if;
 		end if;
 	end process;
 
-	data_q_o <= data_q_out_s;
-	data_i_o <= data_i_out_s;
+	data_q_o <= data_in_s((2*DATA_SIZE)-1 downto 1 * DATA_SIZE);
+	data_i_o <= data_in_s((1*DATA_SIZE)-1 downto 0 * DATA_SIZE);
 
-	process(ref_clk_i)
-	begin
-		if rising_edge(ref_clk_i) then
-			data_i_out_s <= data_i_out_s;
-			data_q_out_s <= data_q_out_s;
-			data_en_o <= '0';
-			data_eof_o <= '0';
-			ack_s <= '0';
-			if data_en_s = '1' then
-				data_i_out_s <= data_i_s;
-				data_q_out_s <= data_q_s;
-				data_en_o <= data_en_s;
-				data_eof_o <= data_eof_s;
-				ack_s <= '1';
-			end if;
-		end if;
-	end process;
-
-end architecture clkChangeComplex_1;
+end Behavioral;
 

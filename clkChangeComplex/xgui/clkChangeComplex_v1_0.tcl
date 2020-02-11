@@ -1,9 +1,10 @@
 # Definitional proc to organize widgets for parameters.
 proc init_gui { IPINST } {
+  ipgui::add_param $IPINST -name "Component_Name"
   #Adding Page
   set Page_0 [ipgui::add_page $IPINST -name "Page 0"]
-  ipgui::add_param $IPINST -name "Component_Name" -parent ${Page_0}
-  ipgui::add_param $IPINST -name "DATA_SIZE" -parent ${Page_0}
+  set DATA_SIZE [ipgui::add_param $IPINST -name "DATA_SIZE" -parent ${Page_0}]
+  set_property tooltip {Size of input data bus.} ${DATA_SIZE}
 
 
 }
