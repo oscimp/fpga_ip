@@ -7,6 +7,11 @@ TARGET_PRJ=tmp/$(NAME).xpr
 BIT_FILE=tmp/$(NAME).runs/impl_1/$(NAME)_wrapper.bit
 BIN_FILE=$(NAME)_wrapper.bit.bin
 BIF_FILE=$(NAME).bif
+TARGET_BIN=tmp/$(NAME).runs/impl_1/$(NAME)
+ifeq ($(USE_BD),y)
+TARGET_BIN+=_wrapper
+endif
+TARGET_BIN+=.$(OUT_BIN)
 
 INSTALL_DIR=$(OSCIMP_DIGITAL_NFS)/$(BOARD_NAME)/$(NAME)/bitstreams
 
