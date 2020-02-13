@@ -61,7 +61,9 @@ begin
 		max_accum_i => max_accum_s,
 		cpt_off_i => (LUT_SIZE-1 downto 0 => '0'),
 		cpt_inc_i => cpt_step_s,
-		test_o => open,
+		enable_i => '1',
+		sync_i => '0',
+		--test_o => open,
 		cos_o => cos_s, sin_o => sin_s,
 		cos_fake_o => cos_fake_s, sin_fake_o => sin_fake_s,
 		wave_en_o => wave_en_s

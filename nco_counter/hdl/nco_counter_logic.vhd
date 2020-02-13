@@ -22,6 +22,7 @@ entity nco_counter_logic is
 		rst_i : in std_logic;
 		-- configuration (wishbone)
 		enable_i    : in std_logic;
+		sync_i  : in std_logic;
 		max_accum_i : in std_logic_vector(COUNTER_SIZE-1 downto 0);
 		cpt_off_i : in std_logic_vector(LUT_SIZE-1 downto 0) := (others => '0');
 		cpt_inc_i : in std_logic_vector(COUNTER_SIZE-1 downto 0) := (others => '0');
@@ -62,7 +63,7 @@ architecture Behavioral of nco_counter_logic is
 	signal counter_old_s, reinit_counter_s : std_logic;
 	constant sin_static_offset_s : unsigned(COUNTER_SIZE-2 downto 0) := '1' & (COUNTER_SIZE-3 downto 0 => '0');
 begin
-	int_rst_s <= (not enable_i) or rst_i;
+	int_rst_s <= (not enable_i) or rst_i or sync_i;
 	-- in fact the enable signal is alwais true
 	wave_en_o <= enable_i;
 

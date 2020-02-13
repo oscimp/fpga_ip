@@ -46,6 +46,7 @@ entity nco_counter is
 		s00_axi_rvalid	: out std_logic;
 		s00_axi_rready	: in std_logic;
 		-- hardware pinc and poff
+		sync_i : in std_logic := '0';
 		pinc_i : in std_logic_vector(COUNTER_SIZE-1 downto 0) := (COUNTER_SIZE-1 downto 0 => '0');
 		pinc_en_i : in std_logic := '0';
 		pinc_rst_i : in std_logic := '0';
@@ -107,6 +108,7 @@ begin
 		clk_i => ref_clk_i,
 		rst_i => ref_rst_i,
 		--configuration (wishbone)
+		sync_i => sync_i,
 		max_accum_i => max_accum_sync_s,
 		enable_i => enable_sync_s,
 		cpt_inc_i => cpt_step_mux_s,
