@@ -66,8 +66,6 @@ proc connect_to_fpga_pins {inst_name inst_bus fpga_pins} {
 
 		set vlnv [get_property VLNV $inst_if]
 		set mode [get_property MODE $inst_if]
-		puts $vlnv
-		puts $mode
 
 		# create corresponding interface
 		set fpga_if [create_bd_intf_port -mode $mode -vlnv $vlnv $fpga_pins]
@@ -75,16 +73,9 @@ proc connect_to_fpga_pins {inst_name inst_bus fpga_pins} {
 		connect_bd_intf_net $inst_if $fpga_if
 
 	} else {
-		puts "c'est un signal"
-		puts [list_property $inst_if]
-		puts [get_property TYPE $inst_if]
-		puts [get_property NAME $inst_if]
 		set high_bit [get_property LEFT $inst_if]
 		set low_bit [get_property RIGHT $inst_if]
 		set dir [get_property DIR $inst_if]
-		puts $high_bit
-		puts $low_bit
-		puts $dir
 		# create corresponding port
 		if {$high_bit == ""} {
 			set fpga_if [create_bd_port -dir $dir $fpga_pins]
@@ -146,8 +137,6 @@ proc connect_proc {inst_name axi_bus {base_addr ""}} {
 		} else {
 			set num_mi [get_property CONFIG.NUM_MI  $ps7_axi]
 			set new_num_mi [expr {$num_mi + 1}]
-			puts $num_mi
-			puts $new_num_mi
 			set_property -dict [list CONFIG.NUM_MI $new_num_mi] $ps7_axi
 		}
 
@@ -166,12 +155,11 @@ proc connect_proc {inst_name axi_bus {base_addr ""}} {
 			[get_bd_pins ps7/FCLK_CLK0] \
 			[get_bd_pins ps7_axi/${mst_if}_ACLK]
 
-		save_bd_design
 
 		connect_bd_net \
 			[get_bd_pins ps7_rst/peripheral_reset] \
 			[get_bd_pins $inst_name/${axi_rst}]
-		save_bd_design
+
 		connect_bd_net \
 			[get_bd_pins ps7/FCLK_CLK0] \
 			[get_bd_pins $inst_name/$axi_clock]
