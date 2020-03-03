@@ -1,0 +1,11 @@
+result.txt
+fir16
+*.log
+*.xmsgs
+*.cmd
+*.wdd
+*.wcfg
+isim
+*.wdb
+simu
+fake_coeff.dat
