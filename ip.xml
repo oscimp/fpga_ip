@@ -14,6 +14,8 @@
 		driver="data_to_ram" />
 	<ip name="extract_data_from_burst"
 		driver="edfb" />
+	<ip name="firComplex"
+		driver="fir" />
 	<ip name="firReal"
 		driver="fir" />
 	<ip name="gen_radar_prog"
