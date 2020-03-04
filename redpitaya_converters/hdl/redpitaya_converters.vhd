@@ -7,7 +7,7 @@ entity redpitaya_converters is
 generic (
 	ADC_SIZE : natural := 14;
 	ADC_EN : boolean := true;
-	CLOCK_DUTY_CYCLE_STABILIZER_EN : boolean := false;
+	CLOCK_DUTY_CYCLE_STABILIZER_EN : boolean := true;
 	DAC_EN : boolean := true
 );
 port (

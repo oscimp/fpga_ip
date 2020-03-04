@@ -6,7 +6,7 @@ use UNISIM.vcomponents.all;
 entity redpitaya_adc_cmos_capture is
 generic (
 	ADC_SIZE : natural := 14;
-	CLOCK_DUTY_CYCLE_STABILIZER_EN : boolean := false
+	CLOCK_DUTY_CYCLE_STABILIZER_EN : boolean := true
 );
 port (
     -- redpitaya_adc
@@ -30,12 +30,12 @@ begin
 
     adc_data_a <= data_a_s;
     adc_data_b <= data_b_s;
-	--dis_cdcs: if CLOCK_DUTY_CYCLE_STABILIZER_EN = false generate
-    	clk_cdcs <= '0'; --'1';
-	--end generate dis_cdcs;
-	--en_cdcs: if CLOCK_DUTY_CYCLE_STABILIZER_EN /= false generate
-    --	clk_cdcs <= '1';
-	--end generate en_cdcs;
+	dis_cdcs: if CLOCK_DUTY_CYCLE_STABILIZER_EN = false generate
+		clk_cdcs <= '0';
+	end generate dis_cdcs;
+	en_cdcs: if CLOCK_DUTY_CYCLE_STABILIZER_EN = true generate
+		clk_cdcs <= '1';
+	end generate en_cdcs;
     
     latch_d: process(clk_in_i, resetn)
     begin

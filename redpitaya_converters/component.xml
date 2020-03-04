@@ -809,7 +809,7 @@
       <spirit:modelParameter spirit:dataType="boolean">
         <spirit:name>CLOCK_DUTY_CYCLE_STABILIZER_EN</spirit:name>
         <spirit:displayName>Clock Duty Cycle Stabilizer En</spirit:displayName>
-        <spirit:value spirit:format="bool" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.CLOCK_DUTY_CYCLE_STABILIZER_EN">false</spirit:value>
+        <spirit:value spirit:format="bool" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.CLOCK_DUTY_CYCLE_STABILIZER_EN">true</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="boolean">
         <spirit:name>DAC_EN</spirit:name>
@@ -909,7 +909,7 @@
       <spirit:name>CLOCK_DUTY_CYCLE_STABILIZER_EN</spirit:name>
       <spirit:displayName>Enable ADC clock duty cycle stabilizer</spirit:displayName>
       <spirit:description>Enable ADC clock duty cycle stabilizer.</spirit:description>
-      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.CLOCK_DUTY_CYCLE_STABILIZER_EN">false</spirit:value>
+      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.CLOCK_DUTY_CYCLE_STABILIZER_EN">true</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>DAC_EN</spirit:name>
