@@ -12,7 +12,7 @@ Entity axiStreamToReal is
 		DATA_SIZE : natural := 32
 	);
 	port (
-		rst_i : in std_logic;
+		s00_axis_reset : in std_logic;
 		-- output data
 		data_o : out std_logic_vector(DATA_SIZE-1 downto 0);
 		data_en_o: out std_logic;
@@ -33,6 +33,6 @@ begin
 	data_en_o <= s00_axis_tvalid;
 	data_clk_o <= s00_axis_aclk;
 	s00_axis_tready <= '1';
-	data_rst_o <= rst_i;
+	data_rst_o <= s00_axis_reset;
 end architecture axiStreamToReal_1;
 
