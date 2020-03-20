@@ -48,14 +48,14 @@ Architecture bhv of pwm_axi is
 	signal write_en_s, read_en_s : std_logic;
 
 	-- conf
-	signal duty_s, duty_sync_s           : std_logic_vector(C_S00_AXI_DATA_WIDTH-1 downto 0);
-	signal period_s, period_sync_s       : std_logic_vector(C_S00_AXI_DATA_WIDTH-1 downto 0);
-	signal prescaler_s, prescaler_sync_s : std_logic_vector(C_S00_AXI_DATA_WIDTH-1 downto 0);
+	signal duty_s, duty_sync_s           : std_logic_vector(COUNTER_SIZE-1 downto 0);
+	signal period_s, period_sync_s       : std_logic_vector(COUNTER_SIZE-1 downto 0);
+	signal prescaler_s, prescaler_sync_s : std_logic_vector(COUNTER_SIZE-1 downto 0);
 	signal enable_s, enable_sync_s       : std_logic;
 	signal invert_s, invert_sync_s       : std_logic;
 begin
 	pwm_log_inst : entity work.pwm_logic
-	generic map (data_size => C_S00_AXI_DATA_WIDTH)
+	generic map (COUNTER_SIZE => COUNTER_SIZE)
 	port map(reset => ref_rst_i, clk => ref_clk_i,
 		-- in signals
 		enable_i => enable_sync_s, invert_i => invert_sync_s,
@@ -66,17 +66,17 @@ begin
 	);
 
 	sync_duty: entity work.pwm_sync_vector
-	generic map (DATA => C_S00_AXI_DATA_WIDTH)
+	generic map (DATA => COUNTER_SIZE)
 	port map (ref_clk_i => s00_axi_aclk, clk_i => ref_clk_i,
 		bit_i => duty_s, bit_o => duty_sync_s
 	);
 	sync_period: entity work.pwm_sync_vector
-	generic map (DATA => C_S00_AXI_DATA_WIDTH)
+	generic map (DATA => COUNTER_SIZE)
 	port map (ref_clk_i => s00_axi_aclk, clk_i => ref_clk_i,
 		bit_i => period_s, bit_o => period_sync_s
 	);
 	sync_prescaler: entity work.pwm_sync_vector
-	generic map (DATA => C_S00_AXI_DATA_WIDTH)
+	generic map (DATA => COUNTER_SIZE)
 	port map (ref_clk_i => s00_axi_aclk, clk_i => ref_clk_i,
 		bit_i => prescaler_s, bit_o => prescaler_sync_s
 	);
@@ -90,7 +90,8 @@ begin
 	);
 
 	pwm_comm_inst : entity work.pwm_comm
-	generic map(id => id, data_size => data_size, AXI_DATA_WIDTH => C_S00_AXI_DATA_WIDTH)
+	generic map(id => id, COUNTER_SIZE => COUNTER_SIZE,
+		AXI_DATA_WIDTH => C_S00_AXI_DATA_WIDTH)
 	port map(reset => s00_axi_reset, clk => s00_axi_aclk,
 		-- axi signals
 		addr_i		=> addr_s,
@@ -116,7 +117,7 @@ begin
 	)
 	port map (
 		S_AXI_ACLK		=> s00_axi_aclk,
-		S_AXI_RESET		=> rst_s,
+		S_AXI_RESET		=> s00_axi_reset,
 		S_AXI_AWADDR	=> s00_axi_awaddr,
 		S_AXI_AWPROT	=> s00_axi_awprot,
 		S_AXI_AWVALID   => s00_axi_awvalid,

@@ -5,7 +5,7 @@ use IEEE.numeric_std.all;
 Entity pwm_comm is 
 generic(
     id : natural := 1;
-	DATA_SIZE : natural := 32;
+	COUNTER_SIZE : natural := 32;
 	AXI_DATA_WIDTH : integer := 32
 );
 port (
@@ -22,9 +22,9 @@ port (
 	-- out signals
 	enable_o 	: out std_logic;
 	invert_o 	: out std_logic;
-	prescaler_o	: out std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
-	duty_o		: out std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
-	period_o	: out std_logic_vector(AXI_DATA_WIDTH-1 downto 0)
+	prescaler_o	: out std_logic_vector(COUNTER_SIZE-1 downto 0);
+	duty_o		: out std_logic_vector(COUNTER_SIZE-1 downto 0);
+	period_o	: out std_logic_vector(COUNTER_SIZE-1 downto 0)
 );
 end entity pwm_comm;
 
@@ -39,10 +39,11 @@ Architecture pwm_comm_1 of pwm_comm is
 	constant REG_PRESCALER	: std_logic_vector(2 downto 0) := "100";
 
 	signal enable_s, invert_s : std_logic;
-	signal duty_s : std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
-	signal period_s : std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
-	signal readdata_s : std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
-	signal prescaler_s : std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
+	signal duty_s      : std_logic_vector(COUNTER_SIZE-1 downto 0);
+	signal period_s    : std_logic_vector(COUNTER_SIZE-1 downto 0);
+	signal prescaler_s : std_logic_vector(COUNTER_SIZE-1 downto 0);
+	signal readdata_s  : std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
+	signal writedata_s : std_logic_vector(COUNTER_SIZE-1 downto 0);
 begin
 	duty_o <= duty_s;
 	period_o <= period_s;
@@ -51,39 +52,35 @@ begin
 	invert_o <= invert_s;
 
 	readdata <= readdata_s;
+	writedata_s <= writedata(COUNTER_SIZE-1 downto 0);
 
 	-- manage register
-	write_bloc : process(clk, reset)
+	write_bloc : process(clk)
 	begin
-    	if reset = '1' then 
-			enable_s <= '0';
-			invert_s <= '0';
-			prescaler_s	<= x"0000000A";--(others => '0');
-			period_s	<= x"0BEBC200";--(others => '0');
-			duty_s		<= x"05F5E100";--(others => '0');
-    	elsif rising_edge(clk) then
-			enable_s 	<= enable_s;
-			invert_s 	<= invert_s;
-			prescaler_s	<= prescaler_s;
-			period_s	<= period_s;
-			duty_s		<= duty_s;
-    	    if (write_en_i = '1' ) then
+		if rising_edge(clk) then
+    		if reset = '1' then 
+				enable_s    <= '0';
+				invert_s    <= '0';
+				prescaler_s	<= (others => '0');
+				period_s	<= (others => '0');
+				duty_s		<= (others => '0');
+    		elsif (write_en_i = '1' ) then
 				case addr_i is
 				when REG_CTRL =>
 					enable_s <= writedata(0);
-					invert_s <= writedata(1);
+					invert_s <= writedata_s(1);
 				when REG_PERIOD =>
-					period_s <= writedata;
+					period_s <= writedata_s;
 				when REG_DUTY =>
-					duty_s <= writedata;
+					duty_s <= writedata_s;
 				when REG_ID =>
-					prescaler_s <= writedata;
+					prescaler_s <= writedata_s;
 				when REG_PRESCALER =>
-					prescaler_s <= writedata;
+					prescaler_s <= writedata_s;
 				when others =>
 				end case;
-    	    end if;
-    	end if;
+    		end if;
+		end if;
 	end process write_bloc;
 
 read_bloc : process(clk, reset)
@@ -103,11 +100,11 @@ begin
 				readdata_s <= (AXI_DATA_WIDTH-1 downto 2 => '0')&invert_s &
 					enable_s;
 			when REG_PERIOD =>
-				readdata_s <= period_s;
+				readdata_s <= std_logic_vector(resize(unsigned(period_s, AXI_DATA_WIDTH)));
 			when REG_DUTY =>
-				readdata_s <= duty_s;
+				readdata_s <= std_logic_vector(resize(unsigned(duty_s, AXI_DATA_WIDTH)));
 			when REG_PRESCALER =>
-				readdata_s <= prescaler_s;
+				readdata_s <= std_logic_vector(resize(unsigned(prescaler_s, AXI_DATA_WIDTH)));
 			when others =>
 				readdata_s <= (others => '1');
 			end case;
