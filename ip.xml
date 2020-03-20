@@ -24,6 +24,8 @@
 		driver="fpgagen" />
 	<ip name="nco_counter"
 		driver="nco_counter" />
+	<ip name="pidv3_axi"
+		driver="pidv3_axi" />
 	<ip name="prn20b"
 		driver="fpgagen" />
 	<ip name="shiterComplex_dyn"
