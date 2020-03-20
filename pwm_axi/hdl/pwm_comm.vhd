@@ -100,11 +100,11 @@ begin
 				readdata_s <= (AXI_DATA_WIDTH-1 downto 2 => '0')&invert_s &
 					enable_s;
 			when REG_PERIOD =>
-				readdata_s <= std_logic_vector(resize(unsigned(period_s, AXI_DATA_WIDTH)));
+				readdata_s <= std_logic_vector(resize(unsigned(period_s), AXI_DATA_WIDTH));
 			when REG_DUTY =>
-				readdata_s <= std_logic_vector(resize(unsigned(duty_s, AXI_DATA_WIDTH)));
+				readdata_s <= std_logic_vector(resize(unsigned(duty_s), AXI_DATA_WIDTH));
 			when REG_PRESCALER =>
-				readdata_s <= std_logic_vector(resize(unsigned(prescaler_s, AXI_DATA_WIDTH)));
+				readdata_s <= std_logic_vector(resize(unsigned(prescaler_s), AXI_DATA_WIDTH));
 			when others =>
 				readdata_s <= (others => '1');
 			end case;
