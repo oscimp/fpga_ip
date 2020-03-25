@@ -17,6 +17,9 @@ def get_modelParameters(parameters):
     print(stylize("\nParameters:", colored.fg("blue")))
     print(stylize("-----------", colored.fg("blue")))
     for parameter in parameters.parameter:
+        if parameter.name in ["C_S00_AXI_DATA_WIDTH", "C_S00_AXI_ADDR_WIDTH",
+                         "C_M00_AXIS_TDATA_WIDTH", "Component_Name" ]:
+            continue
         printRed("name: ", "{}".format(parameter.name))
         if parameter.displayName == "":
             printGreen('  name          : ', '{}'.format(parameter.name))
