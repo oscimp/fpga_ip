@@ -12,6 +12,8 @@
 		driver="data_dma_direct" />
 	<ip name="dataReal_to_ram"
 		driver="data_to_ram" />
+        <ip name="delay_tempo_axi"
+                driver="fpgagen" />
 	<ip name="extract_data_from_burst"
 		driver="edfb" />
 	<ip name="firComplex"
@@ -28,9 +30,11 @@
 		driver="pidv3_axi" />
 	<ip name="prn20b"
 		driver="fpgagen" />
+	<ip name="pwm_axi"
+		driver="fpgagen" />
 	<ip name="shiterComplex_dyn"
 		driver="fpgagen" />
-	<ip name="shiterReal_dyn"
+	<ip name="shifterReal_dyn"
 		driver="fpgagen" />
 	<ip name="slv_to_sl_axi"
 		driver="fpgagen" />
