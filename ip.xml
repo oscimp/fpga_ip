@@ -32,6 +32,8 @@
 		driver="fpgagen" />
 	<ip name="pwm_axi"
 		driver="fpgagen" />
+	<ip name="redpitaya_converters_12"
+		driver="redpitaya_converters_12" />
 	<ip name="shiterComplex_dyn"
 		driver="fpgagen" />
 	<ip name="shifterReal_dyn"
