@@ -25,6 +25,14 @@ PRJ_PRESET  = ""
 BD_PRESET   = "${OSCIMP_DIGITAL_IP}/preset/redpitaya16_preset.xml"
 TOOLS       = vivado
 endif
+ifeq ($(BOARD_NAME), redpitaya12)
+OUT_BIN     = bit.bin
+USE_BD      = y
+PART        = "xc7z020clg400-3"
+PRJ_PRESET  = ""
+BD_PRESET   = "${OSCIMP_DIGITAL_IP}/preset/redpitaya12_preset.xml"
+TOOLS       = vivado
+endif
 
 ifeq ($(BOARD_NAME),)
 all: fail_rule
