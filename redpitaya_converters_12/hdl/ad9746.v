@@ -37,10 +37,9 @@ module ad9746 (
 	end
 
 	always @(posedge dac_clk_i) begin
-		dac_dat_a_o <= dac_dat_a_s;
-		dac_dat_b_o <= dac_dat_b_s;
+		dac_dat_a_o <= dac_dat_b_s;
+		dac_dat_b_o <= dac_dat_a_s;
 		dac_rst_o <= !dac_locked_i;
-		//dac_rst_o <= 1'b0;
 	end
 
 endmodule
