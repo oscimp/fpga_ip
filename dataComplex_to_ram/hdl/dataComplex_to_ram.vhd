@@ -94,6 +94,8 @@ entity dataComplex_to_ram is
 		data12_clk_i : in std_logic := '0';
 		data12_rst_i : in std_logic := '0';
 		data12_eof_i : in std_logic := '0';
+		-- interrupt
+		interrupt_o  : out std_logic;
 		-- Ports of Axi Slave Bus Interface S00_AXI
 		s00_axi_aclk	: in std_logic;
 		s00_axi_reset	: in std_logic;
@@ -137,7 +139,7 @@ architecture Behavioral of dataComplex_to_ram is
 
 	-- control
 	signal start_acquisition_s   : std_logic;
-	signal busy_s                : std_logic;
+	signal busy_s, busy_d_s      : std_logic;
 
 	--axi
 	constant INT_ADDR_WIDTH      : natural := 2;
@@ -209,6 +211,23 @@ begin
 		data_en_i(NB_INPUT-1 downto 0) => data_en_s(NB_INPUT-1 downto 0),
 		data_eof_i(NB_INPUT-1 downto 0) => data_eof_s(NB_INPUT-1 downto 0)
 	);
+
+	-- interrupt
+	process(s00_axi_aclk) begin
+		if rising_edge(s00_axi_aclk) then
+			if s00_axi_reset = '1' then
+				busy_d_s <= '0';
+			else
+				busy_d_s <= busy_s;
+			end if;
+
+			if (s00_axi_reset = '0' and ((busy_s xor busy_d_s) = '1' and busy_s = '0')) then
+				interrupt_o <= '1';
+			else
+				interrupt_o <= '0';
+			end if;
+		end if;
+	end process;
 
 	wb_inst : entity work.wb_dataComplex_to_ram
 	generic map(

@@ -111,7 +111,9 @@ begin
 
 	-- select sub slv part
 	mux_1word: if NB_PKT_PER_SAMP = 1 generate
-		select_next_s <= "0";
+		pkt_mux_sz_zero: if PKT_MUX_SZ /= 0 generate
+			select_next_s <= "0";
+		end generate pkt_mux_sz_zero;
 		incr_chan_s <= '1';
 	end generate mux_1word;
 	mux_manyWord: if NB_PKT_PER_SAMP /= 1 generate
