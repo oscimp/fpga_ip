@@ -82,6 +82,8 @@ entity dataReal_to_ram is
 		data12_clk_i : in std_logic := '0';
 		data12_rst_i : in std_logic := '0';
 		data12_eof_i : in std_logic := '0';
+		-- interrupt
+		interrupt_o  : out std_logic;
 		-- Ports of Axi Slave Bus Interface S00_AXI
 		s00_axi_aclk	: in std_logic;
 		s00_axi_reset	: in std_logic;
