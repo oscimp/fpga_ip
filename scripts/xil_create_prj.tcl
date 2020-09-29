@@ -102,15 +102,17 @@ if {$use_bd == y} {
 		[get_bd_pins $ps7_rst/ext_reset_in]
 	
 
-
 	#==========================
 	# autoconnect and AXI     =
 	#==========================
+	set autoconnect_list {make_external "FIXED_IO, DDR" Master "Disable" Slave "Disable" }
+
+	if {$prj_preset != ""} {
+		lappend autoconnect_list apply_board_preset "1"
+	}
 
 	apply_bd_automation -rule xilinx.com:bd_rule:processing_system7 \
-		-config {make_external "FIXED_IO, DDR" Master "Disable" Slave "Disable" } \
-		$ps7
-	
+		-config $autoconnect_list $ps7
 }
 
 for {set i 0} {$i < [llength $tcl_list]} {incr i} {
