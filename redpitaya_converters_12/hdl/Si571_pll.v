@@ -20,7 +20,6 @@ reg  [16-1:0] pll_ref_cnt = 16'h0;
 reg  [ 3-1:0] pll_sys_syc  ;
 reg  [21-1:0] pll_sys_cnt  ;
 reg           pll_sys_val  ;
-//reg           pll_cfg_en   ;
 wire [32-1:0] pll_cfg_rd   ;
 
 always @(posedge pll_ref_i) begin
@@ -34,6 +33,7 @@ if (rstn_i == 1'b0) begin
   pll_sys_val <=  1'b0 ;
 end else begin
   pll_sys_syc <= {pll_sys_syc[3-2:0], pll_ref_cnt[14-1]} ;
+  
 
   if (pll_sys_syc[3-1] ^ pll_sys_syc[3-2])
     pll_sys_cnt <= 21'h1;
@@ -42,7 +42,8 @@ end else begin
 
   // pll_sys_clk must be around 102400 (125000000/(10000000/2^13))
   if (pll_sys_syc[3-1] ^ pll_sys_syc[3-2])
-    pll_sys_val <= (pll_sys_cnt > 102385) && (pll_sys_cnt < 102415) ;
+    pll_sys_val <= (pll_sys_cnt > 204785) && (pll_sys_cnt < 204815) ;
+    //pll_sys_val <= (pll_sys_cnt > 102385) && (pll_sys_cnt < 102415) ;
   else if (pll_sys_cnt[21-1])
     pll_sys_val <= 1'b0 ;
 end
