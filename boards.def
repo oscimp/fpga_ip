@@ -33,6 +33,14 @@ PRJ_PRESET  = ""
 BD_PRESET   = "${OSCIMP_DIGITAL_IP}/preset/redpitaya12_preset.xml"
 TOOLS       = vivado
 endif
+ifeq ($(BOARD_NAME), zedboard)
+OUT_BIN     = bit.bin
+USE_BD      = y
+PART        = "xc7z020clg484-1"
+PRJ_PRESET  = "em.avnet.com:zed:part0:1.4"
+BD_PRESET   = "ZedBoard"
+TOOLS       = vivado
+endif
 
 ifeq ($(BOARD_NAME),)
 all: fail_rule

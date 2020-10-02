@@ -82,6 +82,8 @@ entity dataReal_to_ram is
 		data12_clk_i : in std_logic := '0';
 		data12_rst_i : in std_logic := '0';
 		data12_eof_i : in std_logic := '0';
+		-- interrupt
+		interrupt_o  : out std_logic;
 		-- Ports of Axi Slave Bus Interface S00_AXI
 		s00_axi_aclk	: in std_logic;
 		s00_axi_reset	: in std_logic;
@@ -108,7 +110,17 @@ entity dataReal_to_ram is
 end dataReal_to_ram;
 
 architecture Behavioral of dataReal_to_ram is
-	constant ADDR_SIZE			 : natural := natural(ceil(log2(real(NB_SAMPLE))));
+	function chan_mux_size(nb_input_i: natural) return natural is
+	begin
+		if (nb_input_i = 1) then
+			return 1;
+		else
+			return natural(ceil(log2(real(nb_input_i))));
+		end if;
+	end function chan_mux_size;
+
+	constant ADDR_SIZE			 : natural := chan_mux_size(NB_SAMPLE);
+	--constant ADDR_SIZE			 : natural := natural(ceil(log2(real(NB_SAMPLE))));
 	constant MAX_WAY			 : natural := 12;
 	-- compute upper near 2^n size for data extension
 	function comp_internal_size(in_size : natural) return natural is
@@ -125,7 +137,7 @@ architecture Behavioral of dataReal_to_ram is
 
 	-- control
 	signal start_acquisition_s   : std_logic;
-	signal busy_s                : std_logic;
+	signal busy_s, busy_d_s      : std_logic;
 
 	--axi
 	constant INT_ADDR_WIDTH      : natural := 2;
@@ -143,7 +155,8 @@ architecture Behavioral of dataReal_to_ram is
 	constant AXI_SIZE        : natural := C_S00_AXI_DATA_WIDTH;
 	-- address adaptation
 	-- bit used for chan muxing
-	constant CHAN_MUX_SZ     : natural := natural(ceil(log2(real(NB_INPUT))));
+	--constant CHAN_MUX_SZ     : natural := natural(ceil(log2(real(NB_INPUT))));
+	constant CHAN_MUX_SZ     : natural := chan_mux_size(NB_INPUT);
 	-- number of pkt (32bits)
 	constant NB_PKT_PER_SAMP : natural := (INT_DATA_SIZE/AXI_SIZE);
 	-- bit used for pkt (32bits) muxing
@@ -192,6 +205,23 @@ begin
 		data_en_i(NB_INPUT-1 downto 0) => data_en_s(NB_INPUT-1 downto 0),
 		data_eof_i(NB_INPUT-1 downto 0) => data_eof_s(NB_INPUT-1 downto 0)
 	);
+
+	-- interrupt
+	process(s00_axi_aclk) begin
+		if rising_edge(s00_axi_aclk) then
+			if s00_axi_reset = '1' then
+				busy_d_s <= '0';
+			else
+				busy_d_s <= busy_s;
+			end if;
+
+			if (s00_axi_reset = '0' and ((busy_s xor busy_d_s) = '1' and busy_s = '0')) then
+				interrupt_o <= '1';
+			else
+				interrupt_o <= '0';
+			end if;
+		end if;
+	end process;
 
 	wb_inst : entity work.wb_dataReal_to_ram
 	generic map(

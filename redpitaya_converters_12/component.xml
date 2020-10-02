@@ -599,7 +599,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>ASSOCIATED_RESET</spirit:name>
-          <spirit:value spirit:id="BUSIFPARAM_VALUE.CLK_O.ASSOCIATED_RESET">rst_o:rstn:o</spirit:value>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.CLK_O.ASSOCIATED_RESET">rst_o:rstn_o</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>FREQ_HZ</spirit:name>

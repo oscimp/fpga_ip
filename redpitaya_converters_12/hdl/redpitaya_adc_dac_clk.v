@@ -129,7 +129,7 @@ BUFG i_ser_buf     (.O(ser_clk_o),      .I(ser_clk_out));
    genvar i;
    generate
       for (i=0; i<STAGES; i=i+1) begin: stages
-         always @(posedge ser_clk_out) begin //--------------- adc_clk
+         always @(posedge adc_clk) begin
          	if (i == 0) begin
             	value[i] <= 1'b0;
             end else begin
