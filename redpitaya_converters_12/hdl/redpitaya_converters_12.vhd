@@ -205,10 +205,6 @@ architecture rtl of redpitaya_converters_12 is
         );
         end component Si571_pll;
 
-	------------------------------------------------------------------------
-	--signal toto         : std_logic; 
-	--signal toto2         : std_logic;
-	------------------------------------------------------------------------
 begin
 
 -----------------------------------------------------------------------------------------------------------------------------
@@ -217,10 +213,7 @@ begin
 
 	clk_o          <= adc_clk_s;
 	rst_o          <= adc_rst_s;
-	------------------------------------------------------------------------
 	rstn_o         <= adc_rstn_s;
-    --rstn_o <= toto2; 
-    ------------------------------------------------------------------------
             
 	redpitaya_clk: redpitaya_adc_dac_clk
 	port map (
@@ -247,9 +240,6 @@ begin
 	end generate disable_dac;
 
 	enable_dac: if DAC_EN = true generate
-	-------------------------------------------------------------------
-		--dac_rst_o <= toto ; 
-    -------------------------------------------------------------------
     
 		redpitaya_dac: ad9746
 		port map (
@@ -261,10 +251,7 @@ begin
 			dac_dat_b_i     => dac_dat_b_i,
 			dac_dat_b_o     => dac_dat_b_o,
 			dac_dat_a_o     => dac_dat_a_o,
-			------------------------------------------------------------
 			dac_rst_o       => dac_rst_o,
-			--dac_rst_o        => open,
-			------------------------------------------------------------
 			-- clk
 			dac_locked_i    => dac_locked_s,
 			dac_clk_i       => dac_clk_s
@@ -331,9 +318,6 @@ begin
     pll_cfg_en : entity work.redpitaya_converters_12_sync_bit
 	port map (ref_clk_i=> s00_axi_aclk, clk_i => dac_clk_s,
                 bit_i => pll_cfg_en_s, bit_o => pll_cfg_en_o);
-    --pll_ok : entity work.redpitaya_converters_12_sync_bit
-	--port map (ref_clk_i=> s00_axi_aclk, clk_i => dac_clk_s,
-    --            bit_i => pll_ok_o, bit_o => pll_ok_s); 
                 
     comm_inst : entity work.redpitaya_converters_12_comm
         generic map(
@@ -420,11 +404,8 @@ begin
            
         pll_to_vcxo: Si571_pll
         port map (
-              ------------------------------------------------------------
-              --pll_ok_o   => pll_ok_o,
               pll_ok_o   => pll_ok_s,
               pll_cfg_en => pll_cfg_en_o,
-              ------------------------------------------------------------
 		      pll_hi_o   => pll_hi_o,
 		      pll_lo_o   => pll_lo_o,
 		      pll_ref_i  => pll_ref_i,

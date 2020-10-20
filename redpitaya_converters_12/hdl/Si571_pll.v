@@ -40,10 +40,9 @@ end else begin
   else if (!pll_sys_cnt[21-1])
     pll_sys_cnt <= pll_sys_cnt + 21'h1;
 
-  // pll_sys_clk must be around 102400 (125000000/(10000000/2^13))
+  // pll_sys_clk must be around 102400 (250000000/(10000000/2^13))
   if (pll_sys_syc[3-1] ^ pll_sys_syc[3-2])
     pll_sys_val <= (pll_sys_cnt > 204785) && (pll_sys_cnt < 204815) ;
-    //pll_sys_val <= (pll_sys_cnt > 102385) && (pll_sys_cnt < 102415) ;
   else if (pll_sys_cnt[21-1])
     pll_sys_val <= 1'b0 ;
 end
@@ -68,10 +67,7 @@ assign pll_ff_lck = (!pll_ff_sys && !pll_ff_ref);
 
 assign pll_lo_o = !pll_ff_sys && ( pll_sys_val &&  pll_cfg_en);
 assign pll_hi_o =  pll_ff_ref || (!pll_sys_val || !pll_cfg_en);
-//assign pll_lo_o = 1'b0 ;
-//assign pll_hi_o = 1'b0 ;
 
-//assign pll_ok_o = pll_cfg_en;
 assign pll_ok_o = (pll_sys_val && pll_cfg_en) || !pll_cfg_en;
 
 endmodule

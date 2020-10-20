@@ -5,7 +5,7 @@ use IEEE.numeric_std.all;
 Entity redpitaya_converters_12_comm is 
 generic(
     id : natural := 1;
-	CONF_SIZE : integer := 14; --8
+	CONF_SIZE : integer := 14; 
 	BUS_SIZE : natural := 32;
 	INTERNAL_ADDR_WIDTH : integer := 3
 );
@@ -52,7 +52,6 @@ begin
     	conf_sel_o   <= conf_sel_s;
     	conf_en_o    <= conf_en_s;
         pll_cfg_en_o <= pll_cfg_en_s;
-        --pll_ok_s     <= pll_ok_i;
         
 	readdata <= readdata_s;
     
