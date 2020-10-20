@@ -46,7 +46,6 @@ reg   dac_rst         ;
 wire  ser_clk_out     ;
 wire  adc_10mhz_out   ;
 wire  adc_10mhz       ;
-wire  spi_clk_out     ;
 
 PLLE2_ADV
 #(
@@ -59,7 +58,7 @@ PLLE2_ADV
    .CLKOUT0_PHASE        (  0.000        ),
    .CLKOUT0_DUTY_CYCLE   (  0.5          ),
    .CLKOUT1_DIVIDE       (  2            ), //////////////////////////
-   .CLKOUT1_PHASE        (  0.000       ),
+   .CLKOUT1_PHASE        (  0.000        ),
    .CLKOUT1_DUTY_CYCLE   (  0.5          ),
    .CLKOUT2_DIVIDE       (  100          ),
    .CLKOUT2_PHASE        (  0.000        ),
@@ -110,7 +109,6 @@ BUFG i_dacfb_buf   (.O(dac_clk_fb_buf), .I(dac_clk_fb));
 BUFG i_dac1_buf    (.O(dac_clk),        .I(dac_clk_out));
 BUFG i_dac2_buf    (.O(adc_clk2d),      .I(adc_clk2d_out));
 BUFG i_dac2ph_buf  (.O(adc_10mhz),      .I(adc_10mhz_out));
-BUFG i_spi_buf     (.O(spi_clk),        .I(spi_clk_out));
 BUFG i_ser_buf     (.O(ser_clk_o),      .I(ser_clk_out));
 
 	localparam STAGES = 3,

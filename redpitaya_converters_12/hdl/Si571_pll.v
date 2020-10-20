@@ -1,5 +1,6 @@
 module Si571_pll (
 	// Data input
+	output          pll_ok_o     ,
 	input           pll_cfg_en   ,
 	input           pll_ref_i    ,
 	output		    pll_hi_o     ,
@@ -20,7 +21,6 @@ reg  [16-1:0] pll_ref_cnt = 16'h0;
 reg  [ 3-1:0] pll_sys_syc  ;
 reg  [21-1:0] pll_sys_cnt  ;
 reg           pll_sys_val  ;
-wire [32-1:0] pll_cfg_rd   ;
 
 always @(posedge pll_ref_i) begin
   pll_ref_cnt <= pll_ref_cnt + 16'h1;
@@ -68,5 +68,10 @@ assign pll_ff_lck = (!pll_ff_sys && !pll_ff_ref);
 
 assign pll_lo_o = !pll_ff_sys && ( pll_sys_val &&  pll_cfg_en);
 assign pll_hi_o =  pll_ff_ref || (!pll_sys_val || !pll_cfg_en);
+//assign pll_lo_o = 1'b0 ;
+//assign pll_hi_o = 1'b0 ;
+
+//assign pll_ok_o = pll_cfg_en;
+assign pll_ok_o = (pll_sys_val && pll_cfg_en) || !pll_cfg_en;
 
 endmodule

@@ -9,6 +9,7 @@ generic (
 	DAC_EN : boolean := true;
 	C_S00_AXI_DATA_WIDTH : integer := 32;
 	C_S00_AXI_ADDR_WIDTH : integer := 5
+	
 );
 port (
 	-- SPI DAC control
@@ -93,6 +94,8 @@ end entity redpitaya_converters_12;
 
 architecture rtl of redpitaya_converters_12 is
         
+    constant INTERNAL_ADDR_WIDTH : integer := 3;
+        
 	component ad9746 is
 	port (
 		-- from design
@@ -159,7 +162,7 @@ architecture rtl of redpitaya_converters_12 is
 	end component redpitaya_adc_dac_clk;
 
         constant CONF_SIZE: integer := 21;
-        signal addr_s : std_logic_vector(1 downto 0);
+        signal addr_s : std_logic_vector(2 downto 0);
         signal write_en_s, read_en_s : std_logic;
         signal conf_s, conf_spi : std_logic_vector(CONF_SIZE-1 downto 0);
         signal conf_en_s, conf_en_spi : std_logic;
@@ -187,10 +190,11 @@ architecture rtl of redpitaya_converters_12 is
         );
         end component adc_dac_spi_control;
 
-        signal pll_cfg_en_s, pll_cfg_en_o : std_logic;
+        signal pll_cfg_en_s, pll_cfg_en_o, pll_ok_o, pll_ok_s : std_logic;
 
 	    component Si571_pll is
         port (
+              pll_ok_o      : out std_logic;
               pll_cfg_en    : in std_logic;
 		      pll_ref_i	    : in std_logic;
 		      pll_hi_o      : out std_logic;
@@ -311,7 +315,7 @@ begin
 	end generate enable_adc;
 
 -----------------------------------------------------------------------------------------------------------------------------
--- ADC DAC SPI CONTROL
+-- AXI COMM
 -----------------------------------------------------------------------------------------------------------------------------
 	
 	spi_en_conf : entity work.redpitaya_converters_12_sync_bit
@@ -326,57 +330,41 @@ begin
                 bit_i => conf_s, bit_o => conf_spi);
     pll_cfg_en : entity work.redpitaya_converters_12_sync_bit
 	port map (ref_clk_i=> s00_axi_aclk, clk_i => dac_clk_s,
-                bit_i => pll_cfg_en_s, bit_o => pll_cfg_en_o);            
+                bit_i => pll_cfg_en_s, bit_o => pll_cfg_en_o);
+    --pll_ok : entity work.redpitaya_converters_12_sync_bit
+	--port map (ref_clk_i=> s00_axi_aclk, clk_i => dac_clk_s,
+    --            bit_i => pll_ok_o, bit_o => pll_ok_s); 
                 
     comm_inst : entity work.redpitaya_converters_12_comm
         generic map(
                     CONF_SIZE     => CONF_SIZE,
-            BUS_SIZE   => C_S00_AXI_DATA_WIDTH -- Data port size for wishbone
-        )
+            BUS_SIZE   => C_S00_AXI_DATA_WIDTH, -- Data port size for wishbone
+            INTERNAL_ADDR_WIDTH => INTERNAL_ADDR_WIDTH)
         port map(
                     -- Syscon signals
                     reset        => s00_axi_reset,
                     clk          => s00_axi_aclk,
-                    -- Wishbone signals
+                    -- axi signals
                     addr_i       => addr_s,
                     write_en_i   => write_en_s,
                     writedata    => s00_axi_wdata,
                     read_en_i    => read_en_s,
                     readdata     => s00_axi_rdata,
+                    -- out signals
                     conf_o       => conf_s,
                     conf_en_o    => conf_en_s,
                     conf_sel_o   => conf_sel_s,
-                    pll_cfg_en_o => pll_cfg_en_s
-
+                    pll_cfg_en_o => pll_cfg_en_s,
+                    -- in signal
+	                pll_ok_i     => pll_ok_s -----------------------------
+	                
         );
         
-
-	spi_control: adc_dac_spi_control
-	    generic map (CONF_SIZE => CONF_SIZE)
-        port map (
-		-- Data input
-		conf_en_spi	  => conf_en_spi,
-		conf_sel_spi  => conf_sel_spi,
-		conf_spi	  => conf_spi,
-
-		-- SPI output
-		dac_spi_clk_o	=> dac_spi_clk_o,
-		dac_spi_csb_o	=> dac_spi_csb_o,
-		dac_spi_sdio_o	=> dac_spi_sdio_o,
-		adc_spi_sdio_o	=> adc_spi_sdio_o,
-		adc_spi_clk_o	=> adc_spi_clk_o,
-		adc_spi_csb_o	=> adc_spi_csb_o,
-
-		-- Clock
-		clk_i		=> adc_clk_s,
-		rst_i       => adc_rst_s
-        );	
-
-	
     -- Instantiation of Axi Bus Interface S00_AXI
     handle_comm : entity work.redpitaya_converters_12_handComm
-    generic map (C_S_AXI_DATA_WIDTH => C_S00_AXI_DATA_WIDTH,
-            C_S_AXI_ADDR_WIDTH      => C_S00_AXI_ADDR_WIDTH)
+    generic map (C_S_AXI_DATA_WIDTH	=> C_S00_AXI_DATA_WIDTH,
+		C_S_AXI_ADDR_WIDTH	=> C_S00_AXI_ADDR_WIDTH,
+		INTERNAL_ADDR_WIDTH => INTERNAL_ADDR_WIDTH)
     port map (
             S_AXI_ACLK              => s00_axi_aclk,
             S_AXI_RESET             => s00_axi_reset,
@@ -400,6 +388,31 @@ begin
 	        read_en_o => read_en_s,
             write_en_o => write_en_s,
             addr_o => addr_s);
+
+-----------------------------------------------------------------------------------------------------------------------------
+-- ADC DAC SPI CONTROL
+-----------------------------------------------------------------------------------------------------------------------------
+
+	spi_control: adc_dac_spi_control
+	    generic map (CONF_SIZE => CONF_SIZE)
+        port map (
+		-- Data input
+		conf_en_spi	  => conf_en_spi,
+		conf_sel_spi  => conf_sel_spi,
+		conf_spi	  => conf_spi,
+
+		-- SPI output
+		dac_spi_clk_o	=> dac_spi_clk_o,
+		dac_spi_csb_o	=> dac_spi_csb_o,
+		dac_spi_sdio_o	=> dac_spi_sdio_o,
+		adc_spi_sdio_o	=> adc_spi_sdio_o,
+		adc_spi_clk_o	=> adc_spi_clk_o,
+		adc_spi_csb_o	=> adc_spi_csb_o,
+
+		-- Clock
+		clk_i		=> adc_clk_s,
+		rst_i       => adc_rst_s
+        );	
             
 -----------------------------------------------------------------------------------------------------------------------------
 -- PLL ENABLE 
@@ -407,18 +420,18 @@ begin
            
         pll_to_vcxo: Si571_pll
         port map (
+              ------------------------------------------------------------
+              --pll_ok_o   => pll_ok_o,
+              pll_ok_o   => pll_ok_s,
               pll_cfg_en => pll_cfg_en_o,
               ------------------------------------------------------------
 		      pll_hi_o   => pll_hi_o,
-		      --pll_hi_o   => toto,
 		      pll_lo_o   => pll_lo_o,
-		      --pll_lo_o   => toto2,
 		      pll_ref_i  => pll_ref_i,
 		      -- Clock
 		      clk_i		 => adc_clk_s,
 		      clk_10mhz  => adc_10mhz_s,
 		      rstn_i     => adc_rstn_s
-		      ------------------------------------------------------------
         ); 
             
 end rtl;

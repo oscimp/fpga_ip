@@ -1,3 +1,8 @@
+---------------------------------------------------------------------------
+-- (c) Copyright: OscillatorIMP Digital
+-- Author : Gwenhael Goavec-Merou<gwenhael.goavec-merou@trabucayre.com>
+-- Creation date : 2015/04/08
+---------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
@@ -12,7 +17,7 @@ entity redpitaya_converters_12_handComm is
 		-- Width of S_AXI data bus
 		C_S_AXI_DATA_WIDTH	: integer	:= 32;
 		-- Width of S_AXI address bus
-		C_S_AXI_ADDR_WIDTH	: integer	:= 5;
+		C_S_AXI_ADDR_WIDTH	: integer	:= 4;
 		INTERNAL_ADDR_WIDTH : integer := 2
 	);
 	port (
@@ -105,7 +110,7 @@ architecture arch_imp of redpitaya_converters_12_handComm is
 	-- ADDR_LSB = 2 for 32 bits (n downto 2)
 	-- ADDR_LSB = 3 for 64 bits (n downto 3)
 	constant ADDR_LSB  : integer := (C_S_AXI_DATA_WIDTH/32)+ 1;
-	constant OPT_MEM_ADDR_BITS : integer := 1;
+	constant OPT_MEM_ADDR_BITS : integer := INTERNAL_ADDR_WIDTH;
 	------------------------------------------------
 	---- Signals for user logic register space example
 	--------------------------------------------------
@@ -124,8 +129,8 @@ begin
 	addr_reg <= addr_s when rising_edge(S_AXI_ACLK);
 
 	diff_addr_size : if INTERNAL_ADDR_WIDTH /= C_S_AXI_ADDR_WIDTH generate
-		write_addr_s <= axi_awaddr(ADDR_LSB + OPT_MEM_ADDR_BITS downto ADDR_LSB);
-		read_addr_s <= axi_araddr(ADDR_LSB + OPT_MEM_ADDR_BITS downto ADDR_LSB);
+		write_addr_s <= axi_awaddr(ADDR_LSB + OPT_MEM_ADDR_BITS-1 downto ADDR_LSB);
+		read_addr_s <= axi_araddr(ADDR_LSB + OPT_MEM_ADDR_BITS-1 downto ADDR_LSB);
 	end generate diff_addr_size;
 	-- We assume in and out size is the same it's not needed to shift addr
 	same_addr_size : if INTERNAL_ADDR_WIDTH = C_S_AXI_ADDR_WIDTH generate

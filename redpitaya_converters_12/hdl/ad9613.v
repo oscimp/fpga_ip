@@ -64,6 +64,7 @@ module ad9613
 	endgenerate
 
 
+
 	always @(negedge adc_clk_i) begin
 	   if (! resetn) begin
 	      adc_data_en <= 0 ;
