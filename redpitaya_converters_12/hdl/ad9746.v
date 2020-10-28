@@ -4,8 +4,8 @@ module ad9746 (
 	input			dac_locked_i,
 
 	// DAC
-	output  [ 14-1: 0]      dac_dat_a_o, //!< DAC combined data
-	output  [ 14-1: 0]      dac_dat_b_o, //!< DAC combined data
+	output  [ 14-1: 0]      dac_dat_a_o,
+	output  [ 14-1: 0]      dac_dat_b_o,
 	output                  dac_rst_o,
 
 	input				dac_dat_a_en_i,
@@ -27,6 +27,7 @@ module ad9746 (
 	reg  [14-1: 0] dac_dat_b_s    ;
 	reg            dac_rst_o      ;
 
+
 	always @(posedge dac_clk_i) begin
 		dac_dat_a_s <= dac_dat_a_s;
 		dac_dat_b_s <= dac_dat_b_s;
@@ -37,10 +38,9 @@ module ad9746 (
 	end
 
 	always @(posedge dac_clk_i) begin
-		dac_dat_a_o <= dac_dat_b_s;
-		dac_dat_b_o <= dac_dat_a_s;
+		dac_dat_a_o <= ~dac_dat_b_s;
+		dac_dat_b_o <= ~dac_dat_a_s;
 		dac_rst_o <= !dac_locked_i;
 	end
 
 endmodule
-
