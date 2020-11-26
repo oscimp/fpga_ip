@@ -33,7 +33,7 @@ set_property PACKAGE_PIN W15 [get_ports {phys_interface_0_adc_n_b[6]}]
 
 
 ### ADC SPI control
-set_property IOSTANDARD LVCMOS33 [get_ports phys_interface_0_adc_spi_*]
+set_property IOSTANDARD LVCMOS18 [get_ports phys_interface_0_adc_spi_*]
 set_property SLEW SLOW [get_ports phys_interface_0_adc_spi_*]
 set_property DRIVE 8 [get_ports phys_interface_0_adc_spi_*]
 set_property PACKAGE_PIN U13 [get_ports phys_interface_0_adc_spi_csb]
