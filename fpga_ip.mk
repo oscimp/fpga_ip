@@ -38,4 +38,4 @@ force_install:
 
 clean:
 	@rm -rf tmp
-	@rm -rf $(CLEAN_FILES)
+	@rm -rf $(CLEAN_FILES) *.$(OUT_BIN)
