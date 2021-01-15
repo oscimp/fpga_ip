@@ -15,15 +15,16 @@ module magnitude #(
 	input                 data_rst_i,
 	input                 data_clk_i,
 	// output data
-	output [2*DATA_SIZE-1:0] data_o,
-	output                  data_en_o,
-	output                  data_sof_o,
-	output                  data_eof_o,
+	output reg [2*DATA_SIZE-1:0] data_o,
+	output reg              data_en_o,
+	output reg              data_sof_o,
+	output reg              data_eof_o,
 	output                  data_rst_o,
 	output                  data_clk_o
 );
 
-wire [2*DATA_SIZE-1:0] data_s = data_i_i * data_i_i + data_q_i * data_q_i;
+wire [2*DATA_SIZE-1:0] data_s = $signed(data_i_i) * $signed(data_i_i) +
+		$signed(data_q_i) * $signed(data_q_i);
 
 always @(posedge data_clk_i) begin
 	data_o <= data_s;

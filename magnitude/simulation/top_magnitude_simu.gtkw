@@ -1,0 +1,44 @@
+[*]
+[*] GTKWave Analyzer v3.3.106 (w)1999-2020 BSI
+[*] Fri Jan 15 17:20:27 2021
+[*]
+[dumpfile] "/home/gwe/projets/oscimp/pourGithub/oscimpDigital/fpga_ip/magnitude/simulation/magnitude_simu_tb.vcd"
+[dumpfile_mtime] "Fri Jan 15 17:18:03 2021"
+[dumpfile_size] 1099
+[savefile] "/home/gwe/projets/oscimp/pourGithub/oscimpDigital/fpga_ip/magnitude/simulation/top_magnitude_simu.gtkw"
+[timestart] 0
+[size] 1366 748
+[pos] -1 -1
+*-15.759605 13520000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top_dut.
+[sst_width] 214
+[signals_width] 222
+[sst_expanded] 1
+[sst_vpaned_height] 209
+@28
+top_dut.rst_i
+top_dut.clk_i
+top_dut.data_en_i
+@22
+top_dut.data_i_i[15:0]
+top_dut.data_q_i[15:0]
+@28
+top_dut.magnitude_inst.data_en_o
+@420
+top_dut.data_o[32:0]
+@200
+-internal
+@28
+top_dut.magnitude_inst.data_clk_i
+top_dut.magnitude_inst.data_rst_i
+top_dut.magnitude_inst.data_en_i
+@22
+top_dut.magnitude_inst.data_i_i[15:0]
+top_dut.magnitude_inst.data_q_i[15:0]
+top_dut.magnitude_inst.data_s[32:0]
+@28
+top_dut.magnitude_inst.data_en_o
+@22
+top_dut.magnitude_inst.data_o[32:0]
+[pattern_trace] 1
+[pattern_trace] 0
