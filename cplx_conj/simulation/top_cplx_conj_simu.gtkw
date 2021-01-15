@@ -1,0 +1,30 @@
+[*]
+[*] GTKWave Analyzer v3.3.106 (w)1999-2020 BSI
+[*] Sat Dec  5 06:58:17 2020
+[*]
+[dumpfile] "/home/gwe/projets/ggm_fpga_ip/lan8720/cplx_conj_simu/cplx_conj_simu_tb.vcd"
+[dumpfile_mtime] "Sat Dec  5 06:02:45 2020"
+[dumpfile_size] 12044
+[savefile] "/home/gwe/projets/ggm_fpga_ip/lan8720/cplx_conj_simu/top_cplx_conj_simu.gtkw"
+[timestart] 1007300
+[size] 1366 748
+[pos] -1 -1
+*-15.759605 13520000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top_dut.
+[sst_width] 214
+[signals_width] 222
+[sst_expanded] 1
+[sst_vpaned_height] 209
+@28
+top_dut.rst_i
+top_dut.clk_i
+top_dut.start_i
+top_dut.cplx_conj_inst.data_en_o
+@22
+top_dut.data8_o[7:0]
+@28
+top_dut.data8_en_o
+@29
+top_dut.sl_clk[1:0]
+[pattern_trace] 1
+[pattern_trace] 0
