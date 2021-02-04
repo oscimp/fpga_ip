@@ -34,7 +34,7 @@
 		driver="fpgagen" />
 	<ip name="redpitaya_converters_12"
 		driver="redpitaya_converters_12" />
-	<ip name="shiterComplex_dyn"
+	<ip name="shifterComplex_dyn"
 		driver="fpgagen" />
 	<ip name="shifterReal_dyn"
 		driver="fpgagen" />
