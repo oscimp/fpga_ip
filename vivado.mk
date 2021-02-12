@@ -37,7 +37,7 @@ $(BIF_FILE):
 
 %.bin: $(BIT_FILE) $(BIF_FILE) | tmp
 	bootgen -w -image $(BIF_FILE) -arch zynq -process_bitstream bin
-	@mv $(BIN_FILE) .
+	@cp $(BIN_FILE) .
 
 force_bin: $(BIF_FILE)
 	bootgen -w -image $(BIF_FILE) -arch zynq -process_bitstream bin
