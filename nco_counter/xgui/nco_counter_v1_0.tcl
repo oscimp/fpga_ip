@@ -4,17 +4,17 @@ proc init_gui { IPINST } {
   #Adding Page
   set Page_0 [ipgui::add_page $IPINST -name "Page 0"]
   set COUNTER_SIZE [ipgui::add_param $IPINST -name "COUNTER_SIZE" -parent ${Page_0}]
-  set_property tooltip {Size of the phase accum counter.} ${COUNTER_SIZE}
+  set_property tooltip {Size of the phase accumulator counter (defining the frequency resolution).} ${COUNTER_SIZE}
   set C_S00_AXI_ADDR_WIDTH [ipgui::add_param $IPINST -name "C_S00_AXI_ADDR_WIDTH" -parent ${Page_0}]
   set_property tooltip {Width of the S_AXI addr bus.} ${C_S00_AXI_ADDR_WIDTH}
   set C_S00_AXI_DATA_WIDTH [ipgui::add_param $IPINST -name "C_S00_AXI_DATA_WIDTH" -parent ${Page_0}]
   set_property tooltip {Width of the S_AXI data bus.} ${C_S00_AXI_DATA_WIDTH}
   set DATA_SIZE [ipgui::add_param $IPINST -name "DATA_SIZE" -parent ${Page_0}]
-  set_property tooltip {Size of input data bus.} ${DATA_SIZE}
+  set_property tooltip {Output data stream bus size.} ${DATA_SIZE}
   set DEFAULT_RST_ACCUM_VAL [ipgui::add_param $IPINST -name "DEFAULT_RST_ACCUM_VAL" -parent ${Page_0}]
-  set_property tooltip {Default reset accum val.} ${DEFAULT_RST_ACCUM_VAL}
+  set_property tooltip {initial accumulator value.} ${DEFAULT_RST_ACCUM_VAL}
   set LUT_SIZE [ipgui::add_param $IPINST -name "LUT_SIZE" -parent ${Page_0}]
-  set_property tooltip {Length of the coefficient LUT.} ${LUT_SIZE}
+  set_property tooltip {Length of the coefficients of the LUT (10 or 12 allowed).} ${LUT_SIZE}
   set RESET_ACCUM [ipgui::add_param $IPINST -name "RESET_ACCUM" -parent ${Page_0}]
   set_property tooltip {Reset accum at each overflow.} ${RESET_ACCUM}
   set id [ipgui::add_param $IPINST -name "id" -parent ${Page_0}]
