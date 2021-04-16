@@ -27,12 +27,12 @@ Architecture bhv of add_constReal_logic is
 begin
 
 	signed_op: if format = "signed" generate
-		data_in_s <= std_logic_vector(signed(data_i)
-				+ signed(add_val));
+		data_in_s <= std_logic_vector(resize(signed(data_i), DATA_OUT_SIZE)
+				+ resize(signed(add_val), DATA_OUT_SIZE));
 	end generate signed_op;
 	unsigned_op: if format /= "signed" generate
-		data_in_s <= std_logic_vector(unsigned(data_i)
-				+ unsigned(add_val));
+		data_in_s <= std_logic_vector(resize(unsigned(data_i), DATA_OUT_SIZE)
+				+ resize(unsigned(add_val), DATA_OUT_SIZE));
 	end generate unsigned_op;
 
 	data_o <= data_s(DATA_OUT_SIZE-1 downto 0);
@@ -40,7 +40,13 @@ begin
 	process(clk_i)
 	begin
 		if rising_edge(clk_i) then
-			data_en_o <= data_en_i;
+			if rst_i = '1' then
+				data_en_o <= '0';
+			elsif data_en_i = '1' then
+				data_en_o <= '1';
+			else
+				data_en_o <= '0';
+			end if;
 			if rst_i = '1' then
 				data_s <= (others => '0');
 			elsif data_en_i = '1' then

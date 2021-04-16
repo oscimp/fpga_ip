@@ -37,16 +37,16 @@ begin
 	end process;
 	
 	signed_op: if format = "signed" generate
-		data_in_i_s <= std_logic_vector(signed(data_i_i) 
-				+ signed(add_val2_s));
-		data_in_q_s <= std_logic_vector(signed(data_q_i) 
-				+ signed(add_val2_s));
+		data_in_i_s <= std_logic_vector(resize(signed(data_i_i), DATA_OUT_SIZE)
+				+ resize(signed(add_val2_s), DATA_OUT_SIZE));
+		data_in_q_s <= std_logic_vector(resize(signed(data_q_i), DATA_OUT_SIZE)
+				+ resize(signed(add_val2_s), DATA_OUT_SIZE));
 	end generate signed_op;
 	unsigned_op: if format /= "signed" generate
-		data_in_i_s <= std_logic_vector(signed(data_i_i) 
-				+ signed(add_val2_s));
-		data_in_q_s <= std_logic_vector(signed(data_q_i) 
-				+ signed(add_val2_s));
+		data_in_i_s <= std_logic_vector(resize(unsigned(data_i_i), DATA_OUT_SIZE)
+				+ resize(unsigned(add_val2_s), DATA_OUT_SIZE));
+		data_in_q_s <= std_logic_vector(resize(unsigned(data_q_i), DATA_OUT_SIZE)
+				+ resize(unsigned(add_val2_s), DATA_OUT_SIZE));
 	end generate unsigned_op;
 
 	data_i_o <= data_i_s(DATA_OUT_SIZE-1 downto 0);
