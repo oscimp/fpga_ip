@@ -24,6 +24,7 @@ OscillatorIMP ecosystem FPGA IP sources: see ![the dedicated tool](https://githu
 |convertRealToComplex |Real -> complex values                 |dataI_in,dataQ_in|data_out      |DATA_SIZE(8)    |none    |                                 |
 |[dataComplex_to_ram](https://github.com/oscimp/oscimpDigital/blob/master/doc/IP/data_to_ram.md)   |PL to PS transfer (complex values)     |dataN_in   |none                |DATA_SIZE(32), NB_INPUT(12), NB_SAMPLE(1024) |data_to_ram| |
 |[dataReal_to_ram](https://github.com/oscimp/oscimpDigital/blob/master/doc/IP/data_to_ram.md)      |PL to PS transfer (real values)        |dataN_in   |none                |DATA_SIZE(32), NB_INPUT(12), NB_SAMPLE(1024) |data_to_ram| |
+|delayTempoReal_axi   |Delays the real stream by a given number of clock cycles| data_in | data_out | DATA_SIZE(16), MAX_NB_DELAY(6), DEFAULT_DELAY(0) | none | none |
 |dupplReal_1_to_2     |Splits a real value stream             |data_in    |data1_out,data2_out |DATA_SIZE(8)    |none    |                                 |
 |dupplComplex_1_to_2  |Splits a complex value stream          |data_in    |data1_out,data2_out |DATA_SIZE(8)    |none    |                                 |
 |expanderComplex      |Add Most Significant Bits (complex)    |data_in    |data_out            |DATA_IN_SIZE(16), DATA_OUT_SIZE(16) | none |               |
