@@ -5,20 +5,20 @@ use ieee.math_real.all;
 
 Entity cordicAtan is 
 	generic (
-		NB_ITER      : natural := 25;
-		DATA_SIZE    : natural := 32;
-		OUTPUT_SIZE  : natural := 28;
-		PI_VALUE     : natural := 52707179 -- M_PI * 2**(NB_ITER-1)
+		NB_ITER       : natural := 25;
+		DATA_IN_SIZE  : natural := 32;
+		DATA_OUT_SIZE : natural := 28;
+		PI_VALUE      : natural := 52707179 -- M_PI * 2**(NB_ITER-1)
 	);
 	port (
 		-- input data
 		data_en_i  : in std_logic;
-		data_i_i   : in std_logic_vector(DATA_SIZE-1 downto 0);
-		data_q_i   : in std_logic_vector(DATA_SIZE-1 downto 0);
+		data_i_i   : in std_logic_vector(DATA_IN_SIZE-1 downto 0);
+		data_q_i   : in std_logic_vector(DATA_IN_SIZE-1 downto 0);
 		data_clk_i : in std_logic;
 		data_rst_i : in std_logic;
 		-- output
-		atan_o     : out std_logic_vector(OUTPUT_SIZE-1 downto 0);
+		atan_o     : out std_logic_vector(DATA_OUT_SIZE-1 downto 0);
 		atan_en_o  : out std_logic;
 		atan_clk_o : out std_logic;
 		atan_rst_o : out std_logic
@@ -28,7 +28,7 @@ Architecture bev of cordicAtan is
 	constant ATAN_SIZE : natural := NB_ITER-1;
 	constant SHIFT_FACTOR : natural := NB_ITER-1;
 
-	constant RESIZE_DATA_SIZE : natural := 2+DATA_SIZE+SHIFT_FACTOR;
+	constant RESIZE_DATA_SIZE : natural := 2+DATA_IN_SIZE+SHIFT_FACTOR;
 	constant ALPHA_SIZE : natural := ATAN_SIZE+4;
 	type atan_tab is array (natural range <>) 
 			of std_logic_vector(ALPHA_SIZE-1 downto 0);
@@ -165,17 +165,17 @@ begin
 		end if;
 	end process;
 
-	same_size_gen: if ALPHA_SIZE = OUTPUT_SIZE generate
+	same_size_gen: if ALPHA_SIZE = DATA_OUT_SIZE generate
 		atan_o <= atan_fin_s;
 	end generate;
 
-	less_size_gen: if ALPHA_SIZE < OUTPUT_SIZE generate
-		atan_o <= (OUTPUT_SIZE-1 downto ALPHA_SIZE => atan_fin_s(ATAN_SIZE-1))
+	less_size_gen: if ALPHA_SIZE < DATA_OUT_SIZE generate
+		atan_o <= (DATA_OUT_SIZE-1 downto ALPHA_SIZE => atan_fin_s(ATAN_SIZE-1))
 					&atan_fin_s;
 	end generate;
 
-	gt_size_gen: if ALPHA_SIZE > OUTPUT_SIZE generate
-		atan_o <= atan_fin_s(ALPHA_SIZE-1 downto ALPHA_SIZE-OUTPUT_SIZE);
+	gt_size_gen: if ALPHA_SIZE > DATA_OUT_SIZE generate
+		atan_o <= atan_fin_s(ALPHA_SIZE-1 downto ALPHA_SIZE-DATA_OUT_SIZE);
 	end generate;
 
 	atan_en_o <= data_en_fin_s;
