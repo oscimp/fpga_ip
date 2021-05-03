@@ -22,7 +22,7 @@ OscillatorIMP ecosystem FPGA IP sources: see ![the dedicated tool](https://githu
 |cacode               |GPS Gold Code generator (outputs 31 codes in parallel -- select using slv_to_sl (std logic vector to std logic) | clk, reset, tick_i | gold_code_o | PERIOD_LEN  | none  |  none       |                  
 |convertComplexToReal |Complex -> real values                 |data_in   | dataI_out,dataQ_out |DATA_SIZE(8)    |none    | none                            |
 |convertRealToComplex |Real -> complex values                 |dataI_in,dataQ_in|data_out      |DATA_SIZE(8)    |none    |                                 |
-|cordicAtan           | Atan2(Q,I)                            | 
+|cordicAtan           | Atan2(Q,I)                            |data_in | data_out | DATA_IN_SIZE(32), DATA_OUT_SIZE(28), NB_ITER(25), PI_VALUE(pi x 2^(NB_ITER-1)) | none|
 |[dataComplex_to_ram](https://github.com/oscimp/oscimpDigital/blob/master/doc/IP/data_to_ram.md)   |PL to PS transfer (complex values)     |dataN_in   |none                |DATA_SIZE(32), NB_INPUT(12), NB_SAMPLE(1024) |data_to_ram| |
 |[dataReal_to_ram](https://github.com/oscimp/oscimpDigital/blob/master/doc/IP/data_to_ram.md)      |PL to PS transfer (real values)        |dataN_in   |none                |DATA_SIZE(32), NB_INPUT(12), NB_SAMPLE(1024) |data_to_ram| | data_in | data_out | DATA_IN_SIZE(32),DATA_OUT_SIZE(28),NB_ITER(25),PI_VALUE(pi x 2^(NB_ITER-1)) | none |
 |delayTempoReal_axi   |Delays the real stream by a given number of clock cycles| data_in | data_out | DATA_SIZE(16), MAX_NB_DELAY(6), DEFAULT_DELAY(0) | none | none |
