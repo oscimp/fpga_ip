@@ -162,7 +162,7 @@
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.DATA_SIZE&apos;)) - 1)">31</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.DATA_IN_SIZE&apos;)) - 1)">31</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -179,7 +179,7 @@
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.DATA_SIZE&apos;)) - 1)">31</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.DATA_IN_SIZE&apos;)) - 1)">31</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -222,7 +222,7 @@
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.OUTPUT_SIZE&apos;)) - 1)">27</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.DATA_OUT_SIZE&apos;)) - 1)">27</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -281,14 +281,14 @@
         <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.NB_ITER" spirit:minimum="0">25</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
-        <spirit:name>DATA_SIZE</spirit:name>
+        <spirit:name>DATA_IN_SIZE</spirit:name>
         <spirit:displayName>Data Size</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DATA_SIZE" spirit:minimum="0">32</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DATA_IN_SIZE" spirit:minimum="0">32</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
-        <spirit:name>OUTPUT_SIZE</spirit:name>
+        <spirit:name>DATA_OUT_SIZE</spirit:name>
         <spirit:displayName>Output Size</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.OUTPUT_SIZE" spirit:minimum="0">28</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DATA_OUT_SIZE" spirit:minimum="0">28</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>PI_VALUE</spirit:name>
@@ -340,16 +340,16 @@
       <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.NB_ITER" spirit:minimum="0" spirit:rangeType="long">25</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
-      <spirit:name>DATA_SIZE</spirit:name>
+      <spirit:name>DATA_IN_SIZE</spirit:name>
       <spirit:displayName>Data Size</spirit:displayName>
       <spirit:description>Size of input data bus.</spirit:description>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.DATA_SIZE" spirit:minimum="0" spirit:rangeType="long">32</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.DATA_IN_SIZE" spirit:minimum="0" spirit:rangeType="long">32</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
-      <spirit:name>OUTPUT_SIZE</spirit:name>
+      <spirit:name>DATA_OUT_SIZE</spirit:name>
       <spirit:displayName>Data Size</spirit:displayName>
       <spirit:description>Size of output data bus.</spirit:description>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.OUTPUT_SIZE" spirit:minimum="0" spirit:rangeType="long">28</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.DATA_OUT_SIZE" spirit:minimum="0" spirit:rangeType="long">28</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PI_VALUE</spirit:name>
