@@ -10,6 +10,7 @@ use IEEE.numeric_std.ALL;
 entity mixer_sin is
 	generic (
 		NCO_SIZE : natural := 16;
+		ENABLE_SEL   : string := "data_in";
 		DATA_IN_SIZE : natural := 16;
 		DATA_OUT_SIZE: natural := 16
 	);
@@ -40,15 +41,32 @@ architecture Behavioral of mixer_sin is
 	signal nco_q_s : signed(NCO_SIZE-1 downto 0);
 	signal data_en_s : std_logic;
 	signal data_s  : signed(DATA_IN_SIZE-1 downto 0);
+	signal clk_s, rst_s : std_logic;
 	-- multiplication
 	constant MULT_SIZE      : natural := NCO_SIZE + DATA_IN_SIZE;
 	signal res_i_s, res_q_s : signed(MULT_SIZE-1 downto 0);
 	-- output latches
+	signal data_sel_en_s    : std_logic;
 	constant POST_MULT_SIZE : natural := MULT_SIZE-1;
 	signal data_i_s, data_q_s : std_logic_vector(POST_MULT_SIZE-1 downto 0);
+
 begin
-	data_clk_o <= data_clk_i;
-	data_rst_o <= data_rst_i;
+	data_clk_o <= clk_s;
+	data_rst_o <= rst_s;
+
+	-- data_in for CANDR and en
+	data_sel: if ENABLE_SEL = "data_in" generate
+		clk_s <= data_clk_i;
+		rst_s <= data_rst_i;
+		data_sel_en_s <= data_en_s;
+	end generate data_sel;
+
+	-- nco_in for CANDR and en
+	nco_sel: if ENABLE_SEL = "nco_in" generate
+		clk_s <= nco_clk_i;
+		rst_s <= nco_rst_i;
+		data_sel_en_s <= nco_en_s;
+	end generate data_sel;
 
 	process(nco_clk_i)
 	begin
@@ -92,8 +110,8 @@ begin
 	generic map (SIGNED_FORMAT => true,
 		IN_SZ => POST_MULT_SIZE, OUT_SZ => DATA_OUT_SIZE
 	)
-	port map (clk_i => data_clk_i, rst_i => data_rst_i,
-		data_en_i => data_en_s, data_i_i => data_i_s, data_q_i => data_q_s,
+	port map (clk_i => clk_s, rst_i => rst_s,
+		data_en_i => data_sel_en_s, data_i_i => data_i_s, data_q_i => data_q_s,
 		data_en_o => data_en_o, data_i_o => data_i_o, data_q_o => data_q_o
 	);
 

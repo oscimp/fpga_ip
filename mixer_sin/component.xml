@@ -156,7 +156,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>ea84d2df</spirit:value>
+            <spirit:value>a410fe74</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -172,7 +172,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>ea84d2df</spirit:value>
+            <spirit:value>a410fe74</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -186,7 +186,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>49f1fede</spirit:value>
+            <spirit:value>a711eae7</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -401,6 +401,11 @@
         <spirit:displayName>Nco Size</spirit:displayName>
         <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.NCO_SIZE" spirit:minimum="0">16</spirit:value>
       </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="string">
+        <spirit:name>ENABLE_SEL</spirit:name>
+        <spirit:displayName>Enable Sel</spirit:displayName>
+        <spirit:value spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.ENABLE_SEL">data_in</spirit:value>
+      </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>DATA_IN_SIZE</spirit:name>
         <spirit:displayName>Data In Size</spirit:displayName>
@@ -413,6 +418,13 @@
       </spirit:modelParameter>
     </spirit:modelParameters>
   </spirit:model>
+  <spirit:choices>
+    <spirit:choice>
+      <spirit:name>choice_list_ff196c85</spirit:name>
+      <spirit:enumeration>data_in</spirit:enumeration>
+      <spirit:enumeration>nco_in</spirit:enumeration>
+    </spirit:choice>
+  </spirit:choices>
   <spirit:fileSets>
     <spirit:fileSet>
       <spirit:name>xilinx_anylanguagesynthesis_view_fileset</spirit:name>
@@ -423,7 +435,7 @@
       <spirit:file>
         <spirit:name>hdl/mixer_sin.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_4a4ffd19</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_0e3efa56</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -442,7 +454,7 @@
       <spirit:file>
         <spirit:name>xgui/mixer_sin_v1_0.tcl</spirit:name>
         <spirit:fileType>tclSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_49f1fede</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_a711eae7</spirit:userFileType>
         <spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
@@ -454,6 +466,12 @@
       <spirit:displayName>Nco Size</spirit:displayName>
       <spirit:description>Size of input NCO bus.</spirit:description>
       <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.NCO_SIZE" spirit:minimum="0" spirit:rangeType="long">16</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>ENABLE_SEL</spirit:name>
+      <spirit:displayName>Enable and CANDR selection</spirit:displayName>
+      <spirit:description>select between data_in and nco_in for enable and CANDR</spirit:description>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.ENABLE_SEL" spirit:choiceRef="choice_list_ff196c85">data_in</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>DATA_IN_SIZE</spirit:name>
@@ -488,16 +506,16 @@
       <xilinx:definitionSource>package_project</xilinx:definitionSource>
       <xilinx:vendorDisplayName>Gwenhael Goavec-Merou</xilinx:vendorDisplayName>
       <xilinx:vendorURL>http://www.trabucayre.com</xilinx:vendorURL>
-      <xilinx:coreRevision>1</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2019-10-16T15:54:18Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>2</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2021-05-12T09:27:18Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2018.3.1</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="c87daa11"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="d19d842b"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="2623481e"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="d4284f62"/>
-      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="9f199f1f"/>
-      <xilinx:checksum xilinx:scope="parameters" xilinx:value="a0d9db6b"/>
+      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="14e0c356"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="3fded2c6"/>
     </xilinx:packagingInfo>
   </spirit:vendorExtensions>
 </spirit:component>
