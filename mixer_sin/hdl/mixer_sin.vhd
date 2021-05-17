@@ -39,6 +39,7 @@ architecture Behavioral of mixer_sin is
 	-- input latches
 	signal nco_i_s : signed(NCO_SIZE-1 downto 0);
 	signal nco_q_s : signed(NCO_SIZE-1 downto 0);
+	signal nco_en_s: std_logic;
 	signal data_en_s : std_logic;
 	signal data_s  : signed(DATA_IN_SIZE-1 downto 0);
 	signal clk_s, rst_s : std_logic;
@@ -66,7 +67,7 @@ begin
 		clk_s <= nco_clk_i;
 		rst_s <= nco_rst_i;
 		data_sel_en_s <= nco_en_s;
-	end generate data_sel;
+	end generate nco_sel;
 
 	process(nco_clk_i)
 	begin
@@ -74,12 +75,15 @@ begin
 			if nco_rst_i = '1' then
 				nco_i_s <= (others => '0');
 				nco_q_s <= (others => '0');
+				nco_en_s <= '0';
 			elsif nco_en_i = '1' then
 				nco_i_s <= signed(nco_i_i);
 				nco_q_s <= signed(nco_q_i);
+				nco_en_s <= '1';
 			else
 				nco_i_s <= nco_i_s;
 				nco_q_s <= nco_q_s;
+				nco_en_s <= '0';
 			end if;
 		end if;
 	end process;
