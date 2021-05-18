@@ -1,0 +1,11 @@
+simu
+*.dat
+result.txt
+debug.txt
+fft
+fft.wdb
+fuse.log
+fuse.xmsgs
+fuseRelaunch.cmd
+isim.log
+isim

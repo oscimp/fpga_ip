@@ -1,0 +1,14 @@
+vhdl work ../hdl/fft_ram.vhd
+vhdl work ../hdl/fft_ram_coeff.vhd
+vhdl work ../hdl/fft_coeff_handler.vhd
+vhdl work ../hdl/fft_comp_complex.vhd
+vhdl work ../hdl/fft_data_handler.vhd
+vhdl work ../hdl/fft_comp_butterfly.vhd
+vhdl work ./readComplexFromFile.vhd
+vhdl work ./readFromFile.vhd
+vhdl work ./ram_storage16.vhd
+vhdl work ../hdl/fft_transfert.vhd
+vhdl work ../hdl/fft_loop_radix.vhd
+vhdl work ../hdl/fft_loop_stage.vhd
+vhdl work ../hdl/fft_top_logic.vhd
+vhdl work ./top_fft_tb.vhd

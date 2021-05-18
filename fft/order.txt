@@ -1,0 +1,63 @@
+
+
+
+					fft_top_logic 
+    					 |
+						 |
+ 					fft_loop_stage
+    					 |
+						 |
+				    fft_loop_radix
+						 |
+			 			 |
+				  fft_comp_butterfly
+						 |
+	|--------------------|--------------------|
+	|					 |					  |
+fft_data_handler   fft_comp_complex    fft_coeff_handler
+
+
+La fft se compose de trois boucles imbriqu\'ees~:
+
+\begin{itemize}
+\item une premi\`ere qui va r\'ealiser $log(N)$ it\'erations;
+\item une seconde qui r\'ealise N/2 it\'erations pour la premi\`ere iter de la
+boucle du haut, puis N/4, ensuite N/8, etc.
+\item la derni\`ere qui est r\'eelement celle de calcul qui r\'ealise une iter,
+puis 2, puis 3, etc...
+\end{itemize}
+
+Il est important de pr\'eciser que la borne max des deux it\'erations \'evoluent
+\`a chaque it\'eration de la premi\`ere boucle. Ainsi un pas de la premi\`ere
+boucle va r\'ealiser N/2 it\'erations.
+
+donc pour la premiere iterations de plus haut niveau le calcul va etre
+
+(0,1), (2,3), (4,5), ...
+
+(Il y a une joyeusete sur a_index qui reste a
+a_index_ref si sb_index + 1 & s_of_b-1 == 0
+
+donc pour la premiere etape ou s_of_b = 1 et sb_index = 0
+=> 0+1 & 1-1 = 1 & 0 => 0
+
+ce qui fait qu'à la sortie de la premiere boucle 1, 2 et 3 
+a_index = ((s_of_b << 1) + a_index) & N_FFT_MINUS_1; avec
+s_of_b = 1 et a_index = 0
+a_index vaut 2
+
+Pour le second pas de l'iter1~:
+n_of_b = N/4
+s_of_b = 2
+le radix va faire N/4 iter et le butterfly 2
+
+iterBut1:
+b_index = 2
+a_index = 0
+(0,2), (1,3) puis a_index = s_of_b << 1 + a_index => 4 (a_index = 1 => 1+1 & 2-1
+d'ou a_index = 0).
+(4,6), (5,7) etc
+
+idee : si l'on pipeline les etapes de iter1 alors le second etage va devoir attendre
+4 donnees du premier avant de faire (0,2), (1,3), puis de nouveau 4 pour
+(4,6),(5,7)

@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="fft.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="numeric_std" />
+            <top_module name="std_logic_1164" />
+            <top_module name="std_logic_textio" />
+            <top_module name="textio" />
+            <top_module name="top_fft_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="95" />
+   <wvobject fp_name="/top_fft_tb/reset" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/adc_clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">adc_clk</obj_property>
+      <obj_property name="ObjectShortName">adc_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/start_prod" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">start_prod</obj_property>
+      <obj_property name="ObjectShortName">start_prod</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/data_in_s" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">data_in_s[27:0]</obj_property>
+      <obj_property name="ObjectShortName">data_in_s[27:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/data_in_en_s" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">data_in_en_s</obj_property>
+      <obj_property name="ObjectShortName">data_in_en_s</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/coeff_re_s" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">coeff_re_s[16:0]</obj_property>
+      <obj_property name="ObjectShortName">coeff_re_s[16:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/coeff_im_s" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">coeff_im_s[16:0]</obj_property>
+      <obj_property name="ObjectShortName">coeff_im_s[16:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/coeff_addr_s" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">coeff_addr_s[10:0]</obj_property>
+      <obj_property name="ObjectShortName">coeff_addr_s[10:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/coeff_en_s" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">coeff_en_s</obj_property>
+      <obj_property name="ObjectShortName">coeff_en_s</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/res_re_s" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">res_re_s[35:0]</obj_property>
+      <obj_property name="ObjectShortName">res_re_s[35:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/res_im_s" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">res_im_s[35:0]</obj_property>
+      <obj_property name="ObjectShortName">res_im_s[35:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/res_en_s" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">res_en_s</obj_property>
+      <obj_property name="ObjectShortName">res_en_s</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/res_eof_s" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">res_eof_s</obj_property>
+      <obj_property name="ObjectShortName">res_eof_s</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/ram_addr_s" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">ram_addr_s[10:0]</obj_property>
+      <obj_property name="ObjectShortName">ram_addr_s[10:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/tmp_data_s" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">tmp_data_s[27:0]</obj_property>
+      <obj_property name="ObjectShortName">tmp_data_s[27:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/cpt_s" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">cpt_s</obj_property>
+      <obj_property name="ObjectShortName">cpt_s</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/end_coeff_s" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">end_coeff_s</obj_property>
+      <obj_property name="ObjectShortName">end_coeff_s</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/end_read_s" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">end_read_s</obj_property>
+      <obj_property name="ObjectShortName">end_read_s</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/read_data_en_s" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">read_data_en_s</obj_property>
+      <obj_property name="ObjectShortName">read_data_en_s</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/read_data_val_s" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">read_data_val_s[27:0]</obj_property>
+      <obj_property name="ObjectShortName">read_data_val_s[27:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/read_data_addr_s" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">read_data_addr_s[10:0]</obj_property>
+      <obj_property name="ObjectShortName">read_data_addr_s[10:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/rst_2" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rst_2</obj_property>
+      <obj_property name="ObjectShortName">rst_2</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/reset_transfert" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">reset_transfert</obj_property>
+      <obj_property name="ObjectShortName">reset_transfert</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/start_acq" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">start_acq</obj_property>
+      <obj_property name="ObjectShortName">start_acq</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/prescaler_s" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">prescaler_s</obj_property>
+      <obj_property name="ObjectShortName">prescaler_s</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/tick_s" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">tick_s</obj_property>
+      <obj_property name="ObjectShortName">tick_s</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/data_size" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">data_size</obj_property>
+      <obj_property name="ObjectShortName">data_size</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/coeff_size" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">coeff_size</obj_property>
+      <obj_property name="ObjectShortName">coeff_size</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/data_out_size" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">data_out_size</obj_property>
+      <obj_property name="ObjectShortName">data_out_size</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/addr_size" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">addr_size</obj_property>
+      <obj_property name="ObjectShortName">addr_size</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/half_periode" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">half_periode</obj_property>
+      <obj_property name="ObjectShortName">half_periode</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/adc_period" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">adc_period</obj_property>
+      <obj_property name="ObjectShortName">adc_period</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/max_val" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">max_val</obj_property>
+      <obj_property name="ObjectShortName">max_val</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider102" type="divider">
+      <obj_property name="label">loop</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">128 128 255</obj_property>
+      <obj_property name="TextColor">230 230 230</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/fft_inst/fft_loop_stage_inst/stage_slv_s" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">stage_slv_s[10:0]</obj_property>
+      <obj_property name="ObjectShortName">stage_slv_s[10:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/fft_inst/fft_loop_stage_inst/fft_radix_inst/nb_index_slv_s" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">nb_index_slv_s[10:0]</obj_property>
+      <obj_property name="ObjectShortName">nb_index_slv_s[10:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/fft_inst/fft_loop_stage_inst/fft_radix_inst/fft_butterfly_inst/sb_index_slv_s" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">sb_index_slv_s[10:0]</obj_property>
+      <obj_property name="ObjectShortName">sb_index_slv_s[10:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider36" type="divider">
+      <obj_property name="label">fft_comp</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">128 128 255</obj_property>
+      <obj_property name="TextColor">230 230 230</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/fft_inst/fft_loop_stage_inst/fft_radix_inst/fft_butterfly_inst/fft_c_c_inst/data_en_i" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">data_en_i</obj_property>
+      <obj_property name="ObjectShortName">data_en_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/fft_inst/fft_loop_stage_inst/fft_radix_inst/fft_butterfly_inst/fft_c_c_inst/data_a_re_o" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">data_a_re_o[35:0]</obj_property>
+      <obj_property name="ObjectShortName">data_a_re_o[35:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/fft_inst/fft_loop_stage_inst/fft_radix_inst/fft_butterfly_inst/fft_c_c_inst/data_a_im_o" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">data_a_im_o[35:0]</obj_property>
+      <obj_property name="ObjectShortName">data_a_im_o[35:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/fft_inst/fft_loop_stage_inst/fft_radix_inst/fft_butterfly_inst/fft_c_c_inst/data_b_re_o" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">data_b_re_o[35:0]</obj_property>
+      <obj_property name="ObjectShortName">data_b_re_o[35:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/fft_inst/fft_loop_stage_inst/fft_radix_inst/fft_butterfly_inst/fft_c_c_inst/data_b_im_o" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">data_b_im_o[35:0]</obj_property>
+      <obj_property name="ObjectShortName">data_b_im_o[35:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/fft_inst/fft_loop_stage_inst/fft_radix_inst/fft_butterfly_inst/fft_c_c_inst/coeff_re_i" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">coeff_re_i[16:0]</obj_property>
+      <obj_property name="ObjectShortName">coeff_re_i[16:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/fft_inst/fft_loop_stage_inst/fft_radix_inst/fft_butterfly_inst/fft_c_c_inst/coeff_im_i" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">coeff_im_i[16:0]</obj_property>
+      <obj_property name="ObjectShortName">coeff_im_i[16:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/fft_inst/fft_loop_stage_inst/fft_radix_inst/fft_butterfly_inst/fft_c_c_inst/tmp_a_re_s" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">tmp_a_re_s[35:0]</obj_property>
+      <obj_property name="ObjectShortName">tmp_a_re_s[35:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/fft_inst/fft_loop_stage_inst/fft_radix_inst/fft_butterfly_inst/fft_c_c_inst/tmp_a_im_s" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">tmp_a_im_s[35:0]</obj_property>
+      <obj_property name="ObjectShortName">tmp_a_im_s[35:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/fft_inst/fft_loop_stage_inst/fft_radix_inst/fft_butterfly_inst/fft_c_c_inst/tmp_b_re_s" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">tmp_b_re_s[35:0]</obj_property>
+      <obj_property name="ObjectShortName">tmp_b_re_s[35:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/fft_inst/fft_loop_stage_inst/fft_radix_inst/fft_butterfly_inst/fft_c_c_inst/tmp_b_im_s" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">tmp_b_im_s[35:0]</obj_property>
+      <obj_property name="ObjectShortName">tmp_b_im_s[35:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/fft_inst/fft_loop_stage_inst/fft_radix_inst/fft_butterfly_inst/fft_c_c_inst/res_mult_re_cos_s" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">res_mult_re_cos_s[34:0]</obj_property>
+      <obj_property name="ObjectShortName">res_mult_re_cos_s[34:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/fft_inst/fft_loop_stage_inst/fft_radix_inst/fft_butterfly_inst/fft_c_c_inst/res_mult_re_sin_s" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">res_mult_re_sin_s[34:0]</obj_property>
+      <obj_property name="ObjectShortName">res_mult_re_sin_s[34:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/fft_inst/fft_loop_stage_inst/fft_radix_inst/fft_butterfly_inst/fft_c_c_inst/res_mult_im_cos_s" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">res_mult_im_cos_s[34:0]</obj_property>
+      <obj_property name="ObjectShortName">res_mult_im_cos_s[34:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/fft_inst/fft_loop_stage_inst/fft_radix_inst/fft_butterfly_inst/fft_c_c_inst/res_mult_im_sin_s" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">res_mult_im_sin_s[34:0]</obj_property>
+      <obj_property name="ObjectShortName">res_mult_im_sin_s[34:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/fft_inst/fft_loop_stage_inst/fft_radix_inst/fft_butterfly_inst/fft_c_c_inst/res_mult_re_cos" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">res_mult_re_cos[52:0]</obj_property>
+      <obj_property name="ObjectShortName">res_mult_re_cos[52:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/fft_inst/fft_loop_stage_inst/fft_radix_inst/fft_butterfly_inst/fft_c_c_inst/res_mult_re_sin" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">res_mult_re_sin[52:0]</obj_property>
+      <obj_property name="ObjectShortName">res_mult_re_sin[52:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/fft_inst/fft_loop_stage_inst/fft_radix_inst/fft_butterfly_inst/fft_c_c_inst/res_mult_im_cos" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">res_mult_im_cos[52:0]</obj_property>
+      <obj_property name="ObjectShortName">res_mult_im_cos[52:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/fft_inst/fft_loop_stage_inst/fft_radix_inst/fft_butterfly_inst/fft_c_c_inst/res_mult_im_sin" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">res_mult_im_sin[52:0]</obj_property>
+      <obj_property name="ObjectShortName">res_mult_im_sin[52:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/fft_inst/fft_loop_stage_inst/fft_radix_inst/fft_butterfly_inst/fft_c_c_inst/clk_i" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk_i</obj_property>
+      <obj_property name="ObjectShortName">clk_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/fft_inst/fft_loop_stage_inst/fft_radix_inst/fft_butterfly_inst/fft_c_c_inst/rst_i" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rst_i</obj_property>
+      <obj_property name="ObjectShortName">rst_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/fft_inst/fft_loop_stage_inst/fft_radix_inst/fft_butterfly_inst/fft_c_c_inst/t_stage_i" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">t_stage_i[10:0]</obj_property>
+      <obj_property name="ObjectShortName">t_stage_i[10:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/fft_inst/fft_loop_stage_inst/fft_radix_inst/fft_butterfly_inst/fft_c_c_inst/t_nb_index_i" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">t_nb_index_i[10:0]</obj_property>
+      <obj_property name="ObjectShortName">t_nb_index_i[10:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/fft_inst/fft_loop_stage_inst/fft_radix_inst/fft_butterfly_inst/fft_c_c_inst/t_sb_index_i" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">t_sb_index_i[10:0]</obj_property>
+      <obj_property name="ObjectShortName">t_sb_index_i[10:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/fft_inst/fft_loop_stage_inst/fft_radix_inst/fft_butterfly_inst/fft_c_c_inst/data_a_re_i" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">data_a_re_i[35:0]</obj_property>
+      <obj_property name="ObjectShortName">data_a_re_i[35:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/fft_inst/fft_loop_stage_inst/fft_radix_inst/fft_butterfly_inst/fft_c_c_inst/data_a_im_i" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">data_a_im_i[35:0]</obj_property>
+      <obj_property name="ObjectShortName">data_a_im_i[35:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/fft_inst/fft_loop_stage_inst/fft_radix_inst/fft_butterfly_inst/fft_c_c_inst/a_addr_i" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">a_addr_i[10:0]</obj_property>
+      <obj_property name="ObjectShortName">a_addr_i[10:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/fft_inst/fft_loop_stage_inst/fft_radix_inst/fft_butterfly_inst/fft_c_c_inst/data_b_re_i" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">data_b_re_i[35:0]</obj_property>
+      <obj_property name="ObjectShortName">data_b_re_i[35:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/fft_inst/fft_loop_stage_inst/fft_radix_inst/fft_butterfly_inst/fft_c_c_inst/data_b_im_i" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">data_b_im_i[35:0]</obj_property>
+      <obj_property name="ObjectShortName">data_b_im_i[35:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/fft_inst/fft_loop_stage_inst/fft_radix_inst/fft_butterfly_inst/fft_c_c_inst/b_addr_i" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">b_addr_i[10:0]</obj_property>
+      <obj_property name="ObjectShortName">b_addr_i[10:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/fft_inst/fft_loop_stage_inst/fft_radix_inst/fft_butterfly_inst/fft_c_c_inst/data_addr_a_o" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">data_addr_a_o[10:0]</obj_property>
+      <obj_property name="ObjectShortName">data_addr_a_o[10:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/fft_inst/fft_loop_stage_inst/fft_radix_inst/fft_butterfly_inst/fft_c_c_inst/data_addr_b_o" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">data_addr_b_o[10:0]</obj_property>
+      <obj_property name="ObjectShortName">data_addr_b_o[10:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/fft_inst/fft_loop_stage_inst/fft_radix_inst/fft_butterfly_inst/fft_c_c_inst/comp_done_o" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">comp_done_o</obj_property>
+      <obj_property name="ObjectShortName">comp_done_o</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/fft_inst/fft_loop_stage_inst/fft_radix_inst/fft_butterfly_inst/fft_c_c_inst/tmp_real_s" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">tmp_real_s[35:0]</obj_property>
+      <obj_property name="ObjectShortName">tmp_real_s[35:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/fft_inst/fft_loop_stage_inst/fft_radix_inst/fft_butterfly_inst/fft_c_c_inst/tmp_im_s" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">tmp_im_s[35:0]</obj_property>
+      <obj_property name="ObjectShortName">tmp_im_s[35:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/fft_inst/fft_loop_stage_inst/fft_radix_inst/fft_butterfly_inst/fft_c_c_inst/tmp_re_s" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">tmp_re_s[35:0]</obj_property>
+      <obj_property name="ObjectShortName">tmp_re_s[35:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/fft_inst/fft_loop_stage_inst/fft_radix_inst/fft_butterfly_inst/fft_c_c_inst/tmp_imag_s" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">tmp_imag_s[35:0]</obj_property>
+      <obj_property name="ObjectShortName">tmp_imag_s[35:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/fft_inst/fft_loop_stage_inst/fft_radix_inst/fft_butterfly_inst/fft_c_c_inst/res2_mult_re_cos_s" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">res2_mult_re_cos_s[34:0]</obj_property>
+      <obj_property name="ObjectShortName">res2_mult_re_cos_s[34:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/fft_inst/fft_loop_stage_inst/fft_radix_inst/fft_butterfly_inst/fft_c_c_inst/res2_mult_re_sin_s" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">res2_mult_re_sin_s[34:0]</obj_property>
+      <obj_property name="ObjectShortName">res2_mult_re_sin_s[34:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/fft_inst/fft_loop_stage_inst/fft_radix_inst/fft_butterfly_inst/fft_c_c_inst/res2_mult_im_cos_s" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">res2_mult_im_cos_s[34:0]</obj_property>
+      <obj_property name="ObjectShortName">res2_mult_im_cos_s[34:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/fft_inst/fft_loop_stage_inst/fft_radix_inst/fft_butterfly_inst/fft_c_c_inst/res2_mult_im_sin_s" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">res2_mult_im_sin_s[34:0]</obj_property>
+      <obj_property name="ObjectShortName">res2_mult_im_sin_s[34:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/fft_inst/fft_loop_stage_inst/fft_radix_inst/fft_butterfly_inst/fft_c_c_inst/data_re_a_s" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">data_re_a_s[35:0]</obj_property>
+      <obj_property name="ObjectShortName">data_re_a_s[35:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/fft_inst/fft_loop_stage_inst/fft_radix_inst/fft_butterfly_inst/fft_c_c_inst/data_im_a_s" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">data_im_a_s[35:0]</obj_property>
+      <obj_property name="ObjectShortName">data_im_a_s[35:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/fft_inst/fft_loop_stage_inst/fft_radix_inst/fft_butterfly_inst/fft_c_c_inst/data_re_b_s" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">data_re_b_s[35:0]</obj_property>
+      <obj_property name="ObjectShortName">data_re_b_s[35:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/fft_inst/fft_loop_stage_inst/fft_radix_inst/fft_butterfly_inst/fft_c_c_inst/data_im_b_s" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">data_im_b_s[35:0]</obj_property>
+      <obj_property name="ObjectShortName">data_im_b_s[35:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/fft_inst/fft_loop_stage_inst/fft_radix_inst/fft_butterfly_inst/fft_c_c_inst/data_addr_a_s" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">data_addr_a_s[10:0]</obj_property>
+      <obj_property name="ObjectShortName">data_addr_a_s[10:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/fft_inst/fft_loop_stage_inst/fft_radix_inst/fft_butterfly_inst/fft_c_c_inst/data_addr_b_s" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">data_addr_b_s[10:0]</obj_property>
+      <obj_property name="ObjectShortName">data_addr_b_s[10:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/fft_inst/fft_loop_stage_inst/fft_radix_inst/fft_butterfly_inst/fft_c_c_inst/coeff_re_in_s" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">coeff_re_in_s[16:0]</obj_property>
+      <obj_property name="ObjectShortName">coeff_re_in_s[16:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/fft_inst/fft_loop_stage_inst/fft_radix_inst/fft_butterfly_inst/fft_c_c_inst/coeff_im_in_s" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">coeff_im_in_s[16:0]</obj_property>
+      <obj_property name="ObjectShortName">coeff_im_in_s[16:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/fft_inst/fft_loop_stage_inst/fft_radix_inst/fft_butterfly_inst/fft_c_c_inst/data_a_re_in_s" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">data_a_re_in_s[35:0]</obj_property>
+      <obj_property name="ObjectShortName">data_a_re_in_s[35:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/fft_inst/fft_loop_stage_inst/fft_radix_inst/fft_butterfly_inst/fft_c_c_inst/data_a_im_in_s" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">data_a_im_in_s[35:0]</obj_property>
+      <obj_property name="ObjectShortName">data_a_im_in_s[35:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/fft_inst/fft_loop_stage_inst/fft_radix_inst/fft_butterfly_inst/fft_c_c_inst/data_b_re_in_s" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">data_b_re_in_s[35:0]</obj_property>
+      <obj_property name="ObjectShortName">data_b_re_in_s[35:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/fft_inst/fft_loop_stage_inst/fft_radix_inst/fft_butterfly_inst/fft_c_c_inst/data_b_im_in_s" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">data_b_im_in_s[35:0]</obj_property>
+      <obj_property name="ObjectShortName">data_b_im_in_s[35:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/fft_inst/fft_loop_stage_inst/fft_radix_inst/fft_butterfly_inst/fft_c_c_inst/data_en_s" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">data_en_s</obj_property>
+      <obj_property name="ObjectShortName">data_en_s</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/fft_inst/fft_loop_stage_inst/fft_radix_inst/fft_butterfly_inst/fft_c_c_inst/data2_en_s" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">data2_en_s</obj_property>
+      <obj_property name="ObjectShortName">data2_en_s</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_fft_tb/fft_inst/fft_loop_stage_inst/fft_radix_inst/fft_butterfly_inst/fft_c_c_inst/truc" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">truc[36:0]</obj_property>
+      <obj_property name="ObjectShortName">truc[36:0]</obj_property>
+   </wvobject>
+</wave_config>
