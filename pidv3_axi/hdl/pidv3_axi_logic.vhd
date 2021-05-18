@@ -48,6 +48,7 @@ Architecture behavioral of pidv3_axi_logic is
 	constant P_RES_SZ 	: natural := P_MULT_SZ-PSR;
 	signal P_temp_s	  	: std_logic_vector(P_MULT_SZ-1 downto 0);
 	signal P_s 	  		: std_logic_vector(P_RES_SZ-1 downto 0);
+	signal Pd_s   		: std_logic_vector(P_RES_SZ-1 downto 0);
 
 	-- i --
 	--signal I_desat_s  : std_logic_vector(33-1 downto 0);
@@ -104,13 +105,16 @@ begin
 		if rising_edge(clk_i) then
 			data2_en_s <= '0';
 			if reset = '1' then
-				P_s  <= (others => '0');
+				Pd_s  <= (others => '0');
+				P_s   <= (others => '0');
 			else
 				P_s <= P_s;
+				Pd_s <= Pd_s;
 				if data_en_s = '1' then
-					P_s <= P_temp_s(P_MULT_SZ-1 downto PSR); 
+					Pd_s <= P_temp_s(P_MULT_SZ-1 downto PSR);
 					data2_en_s <= '1' ;
 				end if;
+				P_s <= Pd_s;
 			end if;
 		end if;
 	end process;
