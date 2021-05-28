@@ -30,7 +30,7 @@ OscillatorIMP ecosystem FPGA IP sources: see ![the dedicated tool](https://githu
 |dupplComplex_1_to_2  |Splits a complex value stream          |data_in    |data1_out,data2_out |DATA_SIZE(8)    |none    |                                 |
 |expanderComplex      |Add Most Significant Bits (complex)    |data_in    |data_out            |DATA_IN_SIZE(16), DATA_OUT_SIZE(16) | none |               |
 |expanderReal         |Add Most Significant Bits (real value) |data_in    |data_out            |DATA_IN_SIZE(16), DATA_OUT_SIZE(16) | none |               |
-|[fft](https://github.com/oscimp/oscimpDigital/blob/master/doc/IP/fft.md)   |Cordic based Fast Fourier Transform    |data_in    |data_out            | LOG_2_N_FFT(11), SHIFT_VAL(16), DATA_SIZE(32), DATA_IN_SIZE(16), USE_FIRST_BUFF(true), USE_SEC_BUFF(true), USE_EOF(false) | fft | fft_send_conf, fft_MultiSend_conf, fft_get_conf |
+|[fft](https://github.com/oscimp/oscimpDigital/blob/master/doc/IP/fft.md)   |Cordic based Fast Fourier Transform    |data_in    |data_out            | LOG_2_N_FFT(11), SHIFT_VAL(16), DATA_SIZE(32), DATA_IN_SIZE(16), USE_FIRST_BUFF(true), USE_SEC_BUFF(true), USE_EOF(false) | fft | fft_send_conf |
 |firReal              | Finite Impulse Response (FIR) filter with real coefficients provided from the processor, applied to real input stream |data_in    |data_out            |DATA_IN_SIZE(16), NB_COEFF(128), DECIMATE_FACTOR(32), DATA_OUT_SIZE(32), COEFF_SIZE(16)|fir| |
 |ltc2145              |Redpitaya ADC (obsolete: see redpitaya_converters) |none |dataA_out,dataB_out |none      |none    |                                 |
 |meanComplex          |outputs the mean value of the complex valued input stream |  data_in | data_out               | DATA_IN_SIZE(16), DATA_OUT_SIZE(18), NB_ACCUM(8), SHIFT(3), SIGNED_FORMAT(true)          | none   |          none                   |                  
@@ -46,6 +46,7 @@ OscillatorIMP ecosystem FPGA IP sources: see ![the dedicated tool](https://githu
 |[shifterComplex](https://github.com/oscimp/oscimpDigital/blob/master/doc/IP/shifter.md)  |Bit shift (complex values)|data_in |data_out |DATA_IN_SIZE(32), DATA_OUT_SIZE(16)   |none    | |
 |[switchComplex](https://github.com/oscimp/oscimpDigital/blob/master/doc/IP/switch.md)    |Complex stream multiplexer             |data1_in,data2_in   | data_out  |DATA_SIZE(16),DEFAULT_INPUT(0) |switch   | switch_conf     |
 |[switchReal](https://github.com/oscimp/oscimpDigital/blob/master/doc/IP/switch.md)       |Real stream multiplexer                |data1_in,data2_in   | data_out  |DATA_SIZE(16),DEFAULT_INPUT(0) |switch   | switch_conf     |
+|windowReal          | Multiply a value stream by a time window | data_in   | data_out             | DATA_SIZE(32), COEFF_ADDR_SIZE(8), COEFF_SIZE(16)  | fir | fir_send_conf |
 
 For the pulse RADAR application:
 
