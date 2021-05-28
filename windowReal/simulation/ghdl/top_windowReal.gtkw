@@ -1,0 +1,71 @@
+[*]
+[*] GTKWave Analyzer v3.3.79 (w)1999-2017 BSI
+[*] Mon Jan 23 14:18:34 2017
+[*]
+[dumpfile] "/home/gwe/projets/oscimp/fpga_ip/windowReal/simulation/ghdl/simu/top_windowReal_tb.ghw"
+[dumpfile_mtime] "Mon Jan 23 14:18:31 2017"
+[dumpfile_size] 536396
+[savefile] "/home/gwe/projets/oscimp/fpga_ip/windowReal/simulation/ghdl/top_windowReal.gtkw"
+[timestart] 50507000000
+[size] 1678 1029
+[pos] -837 -511
+*-27.000000 41130000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.top_windowreal_tb.
+[treeopen] top.top_windowreal_tb.conv_inst.
+[sst_width] 196
+[signals_width] 230
+[sst_expanded] 1
+[sst_vpaned_height] 610
+@28
+top.top_windowreal_tb.reset
+top.top_windowreal_tb.clk
+top.top_windowreal_tb.sl_clk_s
+top.top_windowreal_tb.result_en_s
+top.top_windowreal_tb.result_eof_s
+@22
+#{top.top_windowreal_tb.result_s[31:0]} top.top_windowreal_tb.result_s[31] top.top_windowreal_tb.result_s[30] top.top_windowreal_tb.result_s[29] top.top_windowreal_tb.result_s[28] top.top_windowreal_tb.result_s[27] top.top_windowreal_tb.result_s[26] top.top_windowreal_tb.result_s[25] top.top_windowreal_tb.result_s[24] top.top_windowreal_tb.result_s[23] top.top_windowreal_tb.result_s[22] top.top_windowreal_tb.result_s[21] top.top_windowreal_tb.result_s[20] top.top_windowreal_tb.result_s[19] top.top_windowreal_tb.result_s[18] top.top_windowreal_tb.result_s[17] top.top_windowreal_tb.result_s[16] top.top_windowreal_tb.result_s[15] top.top_windowreal_tb.result_s[14] top.top_windowreal_tb.result_s[13] top.top_windowreal_tb.result_s[12] top.top_windowreal_tb.result_s[11] top.top_windowreal_tb.result_s[10] top.top_windowreal_tb.result_s[9] top.top_windowreal_tb.result_s[8] top.top_windowreal_tb.result_s[7] top.top_windowreal_tb.result_s[6] top.top_windowreal_tb.result_s[5] top.top_windowreal_tb.result_s[4] top.top_windowreal_tb.result_s[3] top.top_windowreal_tb.result_s[2] top.top_windowreal_tb.result_s[1] top.top_windowreal_tb.result_s[0]
+@200
+-coeffs
+@28
+top.top_windowreal_tb.coeff_en_s
+@24
+#{top.top_windowreal_tb.coeff_addr_s[10:0]} top.top_windowreal_tb.coeff_addr_s[10] top.top_windowreal_tb.coeff_addr_s[9] top.top_windowreal_tb.coeff_addr_s[8] top.top_windowreal_tb.coeff_addr_s[7] top.top_windowreal_tb.coeff_addr_s[6] top.top_windowreal_tb.coeff_addr_s[5] top.top_windowreal_tb.coeff_addr_s[4] top.top_windowreal_tb.coeff_addr_s[3] top.top_windowreal_tb.coeff_addr_s[2] top.top_windowreal_tb.coeff_addr_s[1] top.top_windowreal_tb.coeff_addr_s[0]
+@420
+#{top.top_windowreal_tb.coeff_s[15:0]} top.top_windowreal_tb.coeff_s[15] top.top_windowreal_tb.coeff_s[14] top.top_windowreal_tb.coeff_s[13] top.top_windowreal_tb.coeff_s[12] top.top_windowreal_tb.coeff_s[11] top.top_windowreal_tb.coeff_s[10] top.top_windowreal_tb.coeff_s[9] top.top_windowreal_tb.coeff_s[8] top.top_windowreal_tb.coeff_s[7] top.top_windowreal_tb.coeff_s[6] top.top_windowreal_tb.coeff_s[5] top.top_windowreal_tb.coeff_s[4] top.top_windowreal_tb.coeff_s[3] top.top_windowreal_tb.coeff_s[2] top.top_windowreal_tb.coeff_s[1] top.top_windowreal_tb.coeff_s[0]
+@28
+>10000000
+top.top_windowreal_tb.generate_en_s
+>0
+top.top_windowreal_tb.end_read_s
+@200
+-data
+@28
+top.top_windowreal_tb.read_data_en_s
+@24
+#{top.top_windowreal_tb.read_data_addr_s[10:0]} top.top_windowreal_tb.read_data_addr_s[10] top.top_windowreal_tb.read_data_addr_s[9] top.top_windowreal_tb.read_data_addr_s[8] top.top_windowreal_tb.read_data_addr_s[7] top.top_windowreal_tb.read_data_addr_s[6] top.top_windowreal_tb.read_data_addr_s[5] top.top_windowreal_tb.read_data_addr_s[4] top.top_windowreal_tb.read_data_addr_s[3] top.top_windowreal_tb.read_data_addr_s[2] top.top_windowreal_tb.read_data_addr_s[1] top.top_windowreal_tb.read_data_addr_s[0]
+@420
+#{top.top_windowreal_tb.read_data_val_s[31:0]} top.top_windowreal_tb.read_data_val_s[31] top.top_windowreal_tb.read_data_val_s[30] top.top_windowreal_tb.read_data_val_s[29] top.top_windowreal_tb.read_data_val_s[28] top.top_windowreal_tb.read_data_val_s[27] top.top_windowreal_tb.read_data_val_s[26] top.top_windowreal_tb.read_data_val_s[25] top.top_windowreal_tb.read_data_val_s[24] top.top_windowreal_tb.read_data_val_s[23] top.top_windowreal_tb.read_data_val_s[22] top.top_windowreal_tb.read_data_val_s[21] top.top_windowreal_tb.read_data_val_s[20] top.top_windowreal_tb.read_data_val_s[19] top.top_windowreal_tb.read_data_val_s[18] top.top_windowreal_tb.read_data_val_s[17] top.top_windowreal_tb.read_data_val_s[16] top.top_windowreal_tb.read_data_val_s[15] top.top_windowreal_tb.read_data_val_s[14] top.top_windowreal_tb.read_data_val_s[13] top.top_windowreal_tb.read_data_val_s[12] top.top_windowreal_tb.read_data_val_s[11] top.top_windowreal_tb.read_data_val_s[10] top.top_windowreal_tb.read_data_val_s[9] top.top_windowreal_tb.read_data_val_s[8] top.top_windowreal_tb.read_data_val_s[7] top.top_windowreal_tb.read_data_val_s[6] top.top_windowreal_tb.read_data_val_s[5] top.top_windowreal_tb.read_data_val_s[4] top.top_windowreal_tb.read_data_val_s[3] top.top_windowreal_tb.read_data_val_s[2] top.top_windowreal_tb.read_data_val_s[1] top.top_windowreal_tb.read_data_val_s[0]
+@200
+-windowReal
+@28
+top.top_windowreal_tb.data_en_s
+@420
+#{top.top_windowreal_tb.data_s[31:0]} top.top_windowreal_tb.data_s[31] top.top_windowreal_tb.data_s[30] top.top_windowreal_tb.data_s[29] top.top_windowreal_tb.data_s[28] top.top_windowreal_tb.data_s[27] top.top_windowreal_tb.data_s[26] top.top_windowreal_tb.data_s[25] top.top_windowreal_tb.data_s[24] top.top_windowreal_tb.data_s[23] top.top_windowreal_tb.data_s[22] top.top_windowreal_tb.data_s[21] top.top_windowreal_tb.data_s[20] top.top_windowreal_tb.data_s[19] top.top_windowreal_tb.data_s[18] top.top_windowreal_tb.data_s[17] top.top_windowreal_tb.data_s[16] top.top_windowreal_tb.data_s[15] top.top_windowreal_tb.data_s[14] top.top_windowreal_tb.data_s[13] top.top_windowreal_tb.data_s[12] top.top_windowreal_tb.data_s[11] top.top_windowreal_tb.data_s[10] top.top_windowreal_tb.data_s[9] top.top_windowreal_tb.data_s[8] top.top_windowreal_tb.data_s[7] top.top_windowreal_tb.data_s[6] top.top_windowreal_tb.data_s[5] top.top_windowreal_tb.data_s[4] top.top_windowreal_tb.data_s[3] top.top_windowreal_tb.data_s[2] top.top_windowreal_tb.data_s[1] top.top_windowreal_tb.data_s[0]
+@24
+#{top.top_windowreal_tb.prop_data_addr_s[10:0]} top.top_windowreal_tb.prop_data_addr_s[10] top.top_windowreal_tb.prop_data_addr_s[9] top.top_windowreal_tb.prop_data_addr_s[8] top.top_windowreal_tb.prop_data_addr_s[7] top.top_windowreal_tb.prop_data_addr_s[6] top.top_windowreal_tb.prop_data_addr_s[5] top.top_windowreal_tb.prop_data_addr_s[4] top.top_windowreal_tb.prop_data_addr_s[3] top.top_windowreal_tb.prop_data_addr_s[2] top.top_windowreal_tb.prop_data_addr_s[1] top.top_windowreal_tb.prop_data_addr_s[0]
+@28
+top.top_windowreal_tb.result_en_s
+top.top_windowreal_tb.result_eof_s
+@420
+#{top.top_windowreal_tb.result_s[31:0]} top.top_windowreal_tb.result_s[31] top.top_windowreal_tb.result_s[30] top.top_windowreal_tb.result_s[29] top.top_windowreal_tb.result_s[28] top.top_windowreal_tb.result_s[27] top.top_windowreal_tb.result_s[26] top.top_windowreal_tb.result_s[25] top.top_windowreal_tb.result_s[24] top.top_windowreal_tb.result_s[23] top.top_windowreal_tb.result_s[22] top.top_windowreal_tb.result_s[21] top.top_windowreal_tb.result_s[20] top.top_windowreal_tb.result_s[19] top.top_windowreal_tb.result_s[18] top.top_windowreal_tb.result_s[17] top.top_windowreal_tb.result_s[16] top.top_windowreal_tb.result_s[15] top.top_windowreal_tb.result_s[14] top.top_windowreal_tb.result_s[13] top.top_windowreal_tb.result_s[12] top.top_windowreal_tb.result_s[11] top.top_windowreal_tb.result_s[10] top.top_windowreal_tb.result_s[9] top.top_windowreal_tb.result_s[8] top.top_windowreal_tb.result_s[7] top.top_windowreal_tb.result_s[6] top.top_windowreal_tb.result_s[5] top.top_windowreal_tb.result_s[4] top.top_windowreal_tb.result_s[3] top.top_windowreal_tb.result_s[2] top.top_windowreal_tb.result_s[1] top.top_windowreal_tb.result_s[0]
+@200
+-in_logic
+@25
+#{top.top_windowreal_tb.conv_inst.coeff_addr_s[10:0]} top.top_windowreal_tb.conv_inst.coeff_addr_s[10] top.top_windowreal_tb.conv_inst.coeff_addr_s[9] top.top_windowreal_tb.conv_inst.coeff_addr_s[8] top.top_windowreal_tb.conv_inst.coeff_addr_s[7] top.top_windowreal_tb.conv_inst.coeff_addr_s[6] top.top_windowreal_tb.conv_inst.coeff_addr_s[5] top.top_windowreal_tb.conv_inst.coeff_addr_s[4] top.top_windowreal_tb.conv_inst.coeff_addr_s[3] top.top_windowreal_tb.conv_inst.coeff_addr_s[2] top.top_windowreal_tb.conv_inst.coeff_addr_s[1] top.top_windowreal_tb.conv_inst.coeff_addr_s[0]
+@22
+#{top.top_windowreal_tb.conv_inst.coeff_addr_s[10:0]} top.top_windowreal_tb.conv_inst.coeff_addr_s[10] top.top_windowreal_tb.conv_inst.coeff_addr_s[9] top.top_windowreal_tb.conv_inst.coeff_addr_s[8] top.top_windowreal_tb.conv_inst.coeff_addr_s[7] top.top_windowreal_tb.conv_inst.coeff_addr_s[6] top.top_windowreal_tb.conv_inst.coeff_addr_s[5] top.top_windowreal_tb.conv_inst.coeff_addr_s[4] top.top_windowreal_tb.conv_inst.coeff_addr_s[3] top.top_windowreal_tb.conv_inst.coeff_addr_s[2] top.top_windowreal_tb.conv_inst.coeff_addr_s[1] top.top_windowreal_tb.conv_inst.coeff_addr_s[0]
+@28
+top.top_windowreal_tb.conv_inst.data_en_s
+[pattern_trace] 1
+[pattern_trace] 0

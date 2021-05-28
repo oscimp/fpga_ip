@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="windowReal.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="numeric_std" />
+            <top_module name="std_logic_1164" />
+            <top_module name="textio" />
+            <top_module name="top_windowreal_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="27" />
+   <wvobject fp_name="/top_windowreal_tb/reset" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_windowreal_tb/clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_windowreal_tb/data_s" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">data_s[31:0]</obj_property>
+      <obj_property name="ObjectShortName">data_s[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_windowreal_tb/data_en_s" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">data_en_s</obj_property>
+      <obj_property name="ObjectShortName">data_en_s</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_windowreal_tb/result_s" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">result_s[31:0]</obj_property>
+      <obj_property name="ObjectShortName">result_s[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_windowreal_tb/result_en_s" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">result_en_s</obj_property>
+      <obj_property name="ObjectShortName">result_en_s</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_windowreal_tb/result_eof_s" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">result_eof_s</obj_property>
+      <obj_property name="ObjectShortName">result_eof_s</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_windowreal_tb/sl_clk_s" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">sl_clk_s</obj_property>
+      <obj_property name="ObjectShortName">sl_clk_s</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_windowreal_tb/slow_clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">slow_clk</obj_property>
+      <obj_property name="ObjectShortName">slow_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_windowreal_tb/generate_en_s" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">generate_en_s</obj_property>
+      <obj_property name="ObjectShortName">generate_en_s</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_windowreal_tb/read_data_en_s" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">read_data_en_s</obj_property>
+      <obj_property name="ObjectShortName">read_data_en_s</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_windowreal_tb/end_read_s" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">end_read_s</obj_property>
+      <obj_property name="ObjectShortName">end_read_s</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_windowreal_tb/prop_data_addr_s" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">prop_data_addr_s[10:0]</obj_property>
+      <obj_property name="ObjectShortName">prop_data_addr_s[10:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_windowreal_tb/read_data_val_s" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">read_data_val_s[31:0]</obj_property>
+      <obj_property name="ObjectShortName">read_data_val_s[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_windowreal_tb/read_data_addr_s" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">read_data_addr_s[10:0]</obj_property>
+      <obj_property name="ObjectShortName">read_data_addr_s[10:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider30" type="divider">
+      <obj_property name="label">coeffs</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">128 128 255</obj_property>
+      <obj_property name="TextColor">230 230 230</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_windowreal_tb/coeff_en_s" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">coeff_en_s</obj_property>
+      <obj_property name="ObjectShortName">coeff_en_s</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_windowreal_tb/coeff_addr_s" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">coeff_addr_s[10:0]</obj_property>
+      <obj_property name="ObjectShortName">coeff_addr_s[10:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_windowreal_tb/coeff_s" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">coeff_s[15:0]</obj_property>
+      <obj_property name="ObjectShortName">coeff_s[15:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider23" type="divider">
+      <obj_property name="label">in</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">128 128 255</obj_property>
+      <obj_property name="TextColor">230 230 230</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_windowreal_tb/conv_inst/data_en_i" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">data_en_i</obj_property>
+      <obj_property name="ObjectShortName">data_en_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_windowreal_tb/conv_inst/data_i" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">data_i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">data_i[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_windowreal_tb/conv_inst/coeff_addr_s" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">coeff_addr_s[10:0]</obj_property>
+      <obj_property name="ObjectShortName">coeff_addr_s[10:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_windowreal_tb/conv_inst/coeff_s" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">coeff_s[15:0]</obj_property>
+      <obj_property name="ObjectShortName">coeff_s[15:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_windowreal_tb/conv_inst/mult_res_s" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">mult_res_s[47:0]</obj_property>
+      <obj_property name="ObjectShortName">mult_res_s[47:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_windowreal_tb/conv_inst/data_en_s" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">data_en_s</obj_property>
+      <obj_property name="ObjectShortName">data_en_s</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_windowreal_tb/conv_inst/mult_res_scale_s" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">mult_res_scale_s[31:0]</obj_property>
+      <obj_property name="ObjectShortName">mult_res_scale_s[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+</wave_config>

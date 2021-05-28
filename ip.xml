@@ -46,4 +46,6 @@
 		driver="switch" />
 	<ip name="switchReal"
 		driver="switch" />
+	<ip name="windowReal"
+		driver="fir" />
 </ips>

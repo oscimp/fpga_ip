@@ -1,0 +1,6 @@
+vhdl work top_windowReal_tb.vhd
+vhdl work ../hdl/windowReal_logic.vhd
+vhdl work readFromFile.vhd 
+vhdl work ram_storage16.vhd
+vhdl work ../hdl/windowReal_ram.vhd 
+
