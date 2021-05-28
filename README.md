@@ -46,7 +46,7 @@ OscillatorIMP ecosystem FPGA IP sources: see ![the dedicated tool](https://githu
 |[shifterComplex](https://github.com/oscimp/oscimpDigital/blob/master/doc/IP/shifter.md)  |Bit shift (complex values)|data_in |data_out |DATA_IN_SIZE(32), DATA_OUT_SIZE(16)   |none    | |
 |[switchComplex](https://github.com/oscimp/oscimpDigital/blob/master/doc/IP/switch.md)    |Complex stream multiplexer             |data1_in,data2_in   | data_out  |DATA_SIZE(16),DEFAULT_INPUT(0) |switch   | switch_conf     |
 |[switchReal](https://github.com/oscimp/oscimpDigital/blob/master/doc/IP/switch.md)       |Real stream multiplexer                |data1_in,data2_in   | data_out  |DATA_SIZE(16),DEFAULT_INPUT(0) |switch   | switch_conf     |
-|windowReal          | Multiply a value stream by a time window | data_in   | data_out             | DATA_SIZE(32), COEFF_ADDR_SIZE(8), COEFF_SIZE(16)  | fir | fir_send_conf |
+|[windowReal](https://github.com/oscimp/oscimpDigital/blob/master/doc/IP/windowReal.md)   | Multiply a value stream by a time window | data_in   | data_out             | DATA_SIZE(32), COEFF_ADDR_SIZE(8), COEFF_SIZE(16)  | fir | fir_send_conf |
 
 For the pulse RADAR application:
 
