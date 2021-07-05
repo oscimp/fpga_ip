@@ -10,31 +10,40 @@ if {$argc == 2} {
 open_project $vivado_prj_root_path/$project_name.xpr
 open_bd_design $vivado_prj_root_path/$project_name.srcs/sources_1/bd/$bd_name/$bd_name.bd
 
-set list_addr [get_bd_addr_spaces]
-set list_seg [lsearch -all -inline [get_bd_addr_segs] "*SEG*"]
+set list_cells [get_bd_cells]
+set max [llength $list_cells]
 
-set max [llength $list_addr]
-set my_list []
+set list_axi_cells []
 set list_ip {}
 
 for {set i 0} {$i < $max} {incr i} {
-	set obj [lindex $list_addr $i]
-	set base_name [join [lrange [split $obj "/"] 1 end-1] "/"]
-	if {([get_property VLNV -object [get_bd_cells "/$base_name"]] ne "xilinx.com:ip:processing_system7:5.5")} {
-		set itf_type [get_property VLNV -object [get_bd_intf_pins $obj]]
-		set itf_mode [get_property MODE -object [get_bd_intf_pins $obj]]
-		if {$itf_type == "xilinx.com:interface:aximm_rtl:1.0"} {
-			if {$itf_mode == "Slave"} {
-				lappend my_list "$base_name"
-				lappend list_ip [get_property VLNV -object [get_bd_cells "/$base_name"]]
-			}
+	set cell [lindex $list_cells $i]
+	set vlnv [get_property VLNV $cell]
+	set name [get_property NAME $cell]
+	if {[regexp {xilinx.com:ip:axi_interconnect:[0-9]*.[0-9]*} $vlnv] |
+		[regexp {xilinx.com:ip:proc_sys_reset:[0-9]*.[0-9]*} $vlnv] |
+		[regexp {xilinx.com:ip:processing_system7:[0-9]*.[0-9]*} $vlnv]} {
+		continue
+	}
+	set list_net [get_bd_intf_pins -of [get_bd_cells $cell]]
+	for {set ii 0} {$ii < [llength $list_net]} {incr ii} {
+		set name_net [lindex $list_net $ii]
+		set vlnv_net [get_property VLNV $name_net]
+		set mode_net [get_property MODE $name_net]
+		if {[regexp {xilinx.com:interface:aximm_rtl:[0-9]*.[0-9]*} $vlnv_net] &
+			$mode_net == "Slave"} {
+			set reg_name [get_bd_addr_segs -of_object $cell]
+			set seg_name [get_bd_addr_segs -of_object $reg_name]
+			set offset [get_property OFFSET $seg_name]
+			lappend list_axi_cells [dict create name $name vlnv $vlnv offset $offset]
+			lappend list_ip $vlnv
 		}
 	}
 }
 
 set uniqueList [lsort -unique $list_ip]
 set max_ip [llength $uniqueList]
-set max_inst [llength $my_list]
+set max_inst [llength $list_axi_cells]
 if {$max_inst == 0} {
 	exit
 }
@@ -51,12 +60,11 @@ for {set i 0} {$i < $max_ip} {incr i} {
 	puts $fd "\t\t<ip name =\"$ip_name\" >"
 	set id 0
 	for {set ii 0} {$ii < $max_inst} {incr ii} {
-		set base_name [lindex $my_list $ii]
-		set inst_type [get_property VLNV -object [get_bd_cells $base_name]]
+		set tmp [lindex $list_axi_cells $ii]
+		set inst_type [dict get $tmp vlnv]
 		if {$ip_type == $inst_type} {
-			set inst_name [lindex [split $base_name "/"] end]
-			set seg_name [lsearch -inline $list_seg "*${inst_name}*"]
-			set base_addr [get_property OFFSET [get_bd_addr_segs $seg_name ]]
+			set inst_name [dict get $tmp name]
+			set base_addr [dict get $tmp offset]
 			puts $fd "\t\t\t<instance name=\"$inst_name\" id=\"$id\""
 			puts $fd "\t\t\t\tbase_addr=\"$base_addr\" addr_size=\"0xffff\" />"
 			incr id
