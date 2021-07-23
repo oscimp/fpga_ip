@@ -26,6 +26,10 @@
 		driver="fpgagen" />
 	<ip name="mean_vector_axi"
 		driver="fpgagen" />
+	<ip name="MUXcomplexNto1"
+		driver="switch"/>
+	<ip name="MUXrealNto1"
+		driver="switch"/>
 	<ip name="nco_counter"
 		driver="nco_counter" />
 	<ip name="pidv3_axi"
