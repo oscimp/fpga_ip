@@ -17,10 +17,13 @@ BIF_FILE    = tmp/$(PRJ).bif
 .PHONY: all clean
 all: $(TARGET_BIN)
 
+# try to create tmp and xpr file, fill bd (if required)
+# if something wrong delete tmp directory
 $(PRJ_FILE): $(TCL_SRC) | tmp
 	$(VIVADO) $(OSCIMP_DIGITAL_IP)/scripts/xil_create_prj.tcl \
 		-tclargs $(PRJ) $(PRJ) $(BOARD_NAME) $(PART) $(PRJ_PRESET) \
-		$(BD_PRESET) $(IP_PATH) $(USE_BD) $(SRC) $(TCL_SRC) $(REAL_CONSTR)
+		$(BD_PRESET) $(IP_PATH) $(USE_BD) $(SRC) $(TCL_SRC) \
+		$(REAL_CONSTR) || rm -rf tmp
 xpr:$(PRJ_FILE)
 project:xpr
 
