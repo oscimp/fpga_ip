@@ -1,12 +1,29 @@
+# display a message colored in red, delete project and call exit
+proc print_error_and_exit {error_message} {
+  puts "\033\[1;31mError: ${error_message}\033\[0m"
+  exit 1
+}
+
+
 proc add_ip_and_conf {ip_name inst_name {conf_list {}} } {
   # UPGRADE_VERSIONS == "" => latest IP version
   set vlnv_ip [get_ipdefs -all \
   	-filter "VLNV =~ *:$ip_name:* && design_tool_contexts =~ *IPI* && UPGRADE_VERSIONS == \"\""]
 
+  if {$vlnv_ip == ""} {
+	  print_error_and_exit "no IP with name ${ip_name}"
+	  exit
+  }
+
   set ip_inst [ create_bd_cell -type ip -vlnv $vlnv_ip $inst_name ]
   set prop_list {}
+  set ip_cnf_list [list_property $ip_inst CONFIG.*]
   foreach {cnf_name cnf_value} [uplevel 1 [list subst $conf_list]] {
-    lappend prop_list CONFIG.$cnf_name $cnf_value
+    set full_cnf_name CONFIG.$cnf_name
+    if {[lsearch -exact $ip_cnf_list $full_cnf_name] == -1} {
+	  print_error_and_exit "IP ${ip_name} has no parameter $cnf_name"
+    }
+    lappend prop_list $full_cnf_name $cnf_value
   }
   if {[llength $prop_list] > 1} {
 	  set_property -dict $prop_list $ip_inst
@@ -17,15 +34,28 @@ proc add_ip_and_conf {ip_name inst_name {conf_list {}} } {
 proc connect_intf {src_name src_if dest_name dest_if} {
   set src_is_intf 1
   set dest_is_intf 1
+
+  # check if src and dest instance exists
+  set src_inst [get_bd_cells $src_name -quiet]
+  if {$src_inst == ""} {
+	  print_error_and_exit "no instance with name ${src_name}"
+  }
+  set dest_inst [get_bd_cells $dest_name -quiet]
+  if {$dest_inst == ""} {
+	  print_error_and_exit "no instance with name ${dest_name}"
+  }
+
   # search if src is an interface or simple signal
   set src_inst_if [get_bd_intf_pins $src_name/$src_if -quiet]
   if {$src_inst_if == ""} {
 	set src_is_intf 0
     set src_inst_if [get_bd_pins $src_name/$src_if -quiet]
 	if {$src_inst_if == ""} {
-		puts "$src_name/$src_if not found!"
-		exit
+      print_error_and_exit "instance $src_name has no signal or interface called $src_if"
 	}
+    set src_intf_mode [get_property DIR $src_inst_if]
+  } else {
+    set src_intf_mode [get_property MODE $src_inst_if]
   }
   # search if dest is an interface or simple signal
   set dest_inst_if [get_bd_intf_pins $dest_name/$dest_if -quiet]
@@ -33,19 +63,29 @@ proc connect_intf {src_name src_if dest_name dest_if} {
 	set dest_is_intf 0
     set dest_inst_if [get_bd_pins $dest_name/$dest_if -quiet]
 	if {$dest_inst_if == ""} {
-		puts "$dest_name/$dest_if not found!"
-		exit
+      print_error_and_exit "instance $dest_name has no signal or interface called $dest_if"
 	}
+    set dest_intf_mode [get_property DIR $dest_inst_if]
+  } else {
+    set dest_intf_mode [get_property MODE $dest_inst_if]
   }
 
   if {$src_is_intf != $dest_is_intf} {
-	  puts "connect_intf errror: try to connect a mix interface and pins"
-	  puts "$src_name $src_if $dest_name $dest_if"
-	  exit
-	  return
+    print_error_and_exit "Can't connect $src_name/$src_if to $dest_name/$dest_if: not same type"
+  }
+
+  if {$src_intf_mode == $dest_intf_mode} {
+    print_error_and_exit "Can't connect $src_name/$src_if to $dest_name/$dest_if: same direction"
   }
 
   if {$src_is_intf == 1} {
+    set src_intf_vlnv [get_property VLNV $src_inst_if]
+    set dest_intf_vlnv [get_property VLNV $dest_inst_if]
+	puts "$src_intf_vlnv != $dest_intf_vlnv"
+	if {$src_intf_vlnv != $dest_intf_vlnv} {
+      print_error_and_exit "Can't connect $src_name/$src_if to $dest_name/$src_if: not same type"
+    }
+
     connect_bd_intf_net $src_inst_if $dest_inst_if
   } else {
     connect_bd_net $src_inst_if $dest_inst_if
@@ -155,14 +195,15 @@ proc connect_proc {inst_name axi_bus {base_addr ""}} {
 			[get_bd_pins ps7/FCLK_CLK0] \
 			[get_bd_pins ps7_axi/${mst_if}_ACLK]
 
+        if {$axi_rst != ""} {
+          connect_bd_net \
+            [get_bd_pins ps7_rst/peripheral_reset] \
+            [get_bd_pins $inst_name/${axi_rst}]
+        }
 
-		connect_bd_net \
-			[get_bd_pins ps7_rst/peripheral_reset] \
-			[get_bd_pins $inst_name/${axi_rst}]
-
-		connect_bd_net \
-			[get_bd_pins ps7/FCLK_CLK0] \
-			[get_bd_pins $inst_name/$axi_clock]
+        if {$axi_clock != ""} {
+          connect_proc_clk $inst_name $axi_clock
+        }
 
 		connect_bd_intf_net [get_bd_intf_pins ps7_axi/$axi_mst] \
 			[get_bd_intf_pins $inst_name/$axi_bus]
