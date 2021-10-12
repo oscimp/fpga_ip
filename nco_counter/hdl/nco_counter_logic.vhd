@@ -190,9 +190,7 @@ begin
 	end generate lt_size;
 
 	gt_size: if DATA_SIZE > 16 generate
-	   cos_o(DATA_SIZE-1 downto 16) <= (DATA_SIZE-1 downto 16 => cos_s(15));
-	   cos_o(15 downto 0) <= cos_s;
-	   sin_o(DATA_SIZE-1 downto 16) <= (DATA_SIZE-1 downto 16 => sin_s(15));
-	   sin_o(15 downto 0) <= sin_s;
+		cos_o <= cos_s & (DATA_SIZE-17 downto 0 => '0');
+		sin_o <= sin_s & (DATA_SIZE-17 downto 0 => '0');
 	end generate gt_size;
 end Behavioral;

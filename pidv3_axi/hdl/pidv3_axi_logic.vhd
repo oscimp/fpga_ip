@@ -213,7 +213,7 @@ begin
 	end generate lt_size;
 	gt_size : if DATA_OUT_SIZE > PID_SZ generate
 		data_o <= (DATA_OUT_SIZE-1 downto PID_SZ => pid_out_s(PID_SZ-1))
-			&pid_out_s(DATA_OUT_SIZE-1 downto 0);
+			&pid_out_s(PID_SZ-1 downto 0);
 	end generate gt_size;
 	same_size : if DATA_OUT_SIZE = PID_SZ generate
 		data_o <= pid_out_s;
