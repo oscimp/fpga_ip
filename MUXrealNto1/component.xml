@@ -5262,69 +5262,48 @@
       </xilinx:taxonomies>
       <xilinx:displayName>MUXrealNto1_v1_0</xilinx:displayName>
       <xilinx:definitionSource>package_project</xilinx:definitionSource>
-      <xilinx:coreRevision>3</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2021-07-16T15:11:53Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>11</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2021-09-06T15:47:28Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@14c36530_ARCHIVE_LOCATION">/home/manip/nextcloud/tmp_ivan/vivado/MUXrealNto1</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@74818c01_ARCHIVE_LOCATION">/home/manip/nextcloud/tmp_ivan/vivado/MUXrealNto1</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@28e27835_ARCHIVE_LOCATION">/home/manip/nextcloud/tmp_ivan/vivado/MUXrealNto1</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@e3a30e6_ARCHIVE_LOCATION">/home/manip/nextcloud/tmp_ivan/vivado/MUXrealNto1</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@a4bfcb0_ARCHIVE_LOCATION">/home/manip/nextcloud/tmp_ivan/vivado/MUXrealNto1</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@7b012ad_ARCHIVE_LOCATION">/home/manip/nextcloud/tmp_ivan/vivado/MUXrealNto1</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@6e72f90_ARCHIVE_LOCATION">/home/manip/nextcloud/tmp_ivan/vivado/MUXrealNto1</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@69ff5246_ARCHIVE_LOCATION">/home/manip/nextcloud/tmp_ivan/vivado/MUXrealNto1</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@401be6eb_ARCHIVE_LOCATION">/home/manip/nextcloud/tmp_ivan/vivado/MUXrealNto1</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@40951926_ARCHIVE_LOCATION">/home/manip/nextcloud/tmp_ivan/vivado/MUXrealNto1</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@1f891358_ARCHIVE_LOCATION">/home/manip/nextcloud/tmp_ivan/vivado/MUXrealNto1</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@62793c5c_ARCHIVE_LOCATION">/home/manip/nextcloud/tmp_ivan/vivado/MUXrealNto1</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@7c5f3542_ARCHIVE_LOCATION">/home/manip/nextcloud/tmp_ivan/vivado/MUXrealNto1</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@7f5a365d_ARCHIVE_LOCATION">/home/manip/nextcloud/tmp_ivan/vivado/MUXrealNto1</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@64aa2cb4_ARCHIVE_LOCATION">/home/manip/nextcloud/tmp_ivan/vivado/MUXrealNto1</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@4b982c6f_ARCHIVE_LOCATION">/home/manip/nextcloud/tmp_ivan/vivado/MUXrealNto1</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@6e795450_ARCHIVE_LOCATION">/home/manip/nextcloud/tmp_ivan/vivado/MUXrealNto1</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@4df4d025_ARCHIVE_LOCATION">/home/manip/nextcloud/tmp_ivan/vivado/MUXrealNto1</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@1180ccb1_ARCHIVE_LOCATION">/home/manip/nextcloud/tmp_ivan/vivado/MUXrealNto1</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@2c1db432_ARCHIVE_LOCATION">/home/manip/nextcloud/tmp_ivan/vivado/MUXrealNto1</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@24255fd2_ARCHIVE_LOCATION">/home/manip/nextcloud/tmp_ivan/vivado/MUXrealNto1</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@4b221600_ARCHIVE_LOCATION">/home/manip/nextcloud/tmp_ivan/vivado/MUXrealNto1</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@6b7714ae_ARCHIVE_LOCATION">/home/manip/nextcloud/tmp_ivan/vivado/MUXrealNto1</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@39df514f_ARCHIVE_LOCATION">/home/manip/nextcloud/tmp_ivan/vivado/MUXrealNto1</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@61439293_ARCHIVE_LOCATION">/home/manip/nextcloud/tmp_ivan/vivado/MUXrealNto1</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@74a0a136_ARCHIVE_LOCATION">/home/manip/nextcloud/tmp_ivan/vivado/MUXrealNto1</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@768a19f_ARCHIVE_LOCATION">/home/manip/nextcloud/tmp_ivan/vivado/MUXrealNto1</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@5afee7f4_ARCHIVE_LOCATION">/home/manip/nextcloud/tmp_ivan/vivado/MUXrealNto1</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@56497bc_ARCHIVE_LOCATION">/home/manip/nextcloud/tmp_ivan/vivado/MUXrealNto1</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@47b54fd0_ARCHIVE_LOCATION">/home/manip/nextcloud/tmp_ivan/vivado/MUXrealNto1</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@a258b95_ARCHIVE_LOCATION">/home/manip/nextcloud/tmp_ivan/vivado/MUXrealNto1</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@5e82ce5a_ARCHIVE_LOCATION">/home/manip/nextcloud/tmp_ivan/vivado/MUXrealNto1</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@6b4e2f4e_ARCHIVE_LOCATION">/home/manip/nextcloud/tmp_ivan/vivado/MUXrealNto1</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@44db0552_ARCHIVE_LOCATION">/home/manip/nextcloud/tmp_ivan/vivado/MUXrealNto1</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@1fc790a5_ARCHIVE_LOCATION">/home/manip/nextcloud/tmp_ivan/vivado/MUXrealNto1</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@2bec86af_ARCHIVE_LOCATION">/home/manip/nextcloud/tmp_ivan/vivado/MUXrealNto1</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@2114deea_ARCHIVE_LOCATION">/home/manip/nextcloud/tmp_ivan/vivado/MUXrealNto1</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@1dca0f27_ARCHIVE_LOCATION">/home/manip/nextcloud/tmp_ivan/vivado/MUXrealNto1</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@6fe80abe_ARCHIVE_LOCATION">/home/manip/nextcloud/tmp_ivan/vivado/MUXrealNto1</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@4b43c07_ARCHIVE_LOCATION">/home/manip/nextcloud/tmp_ivan/vivado/MUXrealNto1</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@428796ed_ARCHIVE_LOCATION">/home/manip/nextcloud/tmp_ivan/vivado/MUXrealNto1</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@65ca4641_ARCHIVE_LOCATION">/home/manip/nextcloud/tmp_ivan/vivado/MUXrealNto1</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@3e0b4de2_ARCHIVE_LOCATION">/home/manip/nextcloud/tmp_ivan/vivado/MUXrealNto1</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@4457065d_ARCHIVE_LOCATION">/home/manip/nextcloud/tmp_ivan/vivado/MUXrealNto1</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@678d5a56_ARCHIVE_LOCATION">/home/manip/nextcloud/tmp_ivan/vivado/MUXrealNto1</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@5951f6ea_ARCHIVE_LOCATION">/home/manip/nextcloud/tmp_ivan/vivado/MUXrealNto1</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@2c450011_ARCHIVE_LOCATION">/home/manip/nextcloud/tmp_ivan/vivado/MUXrealNto1</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@78fad611_ARCHIVE_LOCATION">/home/manip/nextcloud/tmp_ivan/vivado/MUXrealNto1</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@5673e659_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/MUXrealNto1</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@fa99c64_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/MUXrealNto1</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@6b4868f7_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/MUXrealNto1</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@423a9817_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/MUXrealNto1</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@13208ed4_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/MUXrealNto1</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@24da3b96_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/MUXrealNto1</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@36899c33_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/MUXrealNto1</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@588680c4_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/MUXrealNto1</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@aacfc1_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/MUXrealNto1</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@6975013f_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/MUXrealNto1</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@634a09f7_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/MUXrealNto1</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@3be4682d_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/MUXrealNto1</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@54e99cd6_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/MUXrealNto1</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3c651caf_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/MUXrealNto1</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@f5248b8_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/MUXrealNto1</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@16fa742b_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/MUXrealNto1</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7a5a88d7_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/MUXrealNto1</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1262e85e_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/MUXrealNto1</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4805f378_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/MUXrealNto1</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@46e292d5_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/MUXrealNto1</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@10f9ae3e_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/MUXrealNto1</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@45754925_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/MUXrealNto1</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5f2ab6d8_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/MUXrealNto1</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1e1ffc76_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/MUXrealNto1</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@66777c3c_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/MUXrealNto1</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7676ba21_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/MUXrealNto1</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@501fb54f_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/MUXrealNto1</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@208da99e_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/MUXrealNto1</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@432dc45d_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/MUXrealNto1</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@49698f5a_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/MUXrealNto1</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@48b5a087_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/MUXrealNto1</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@772f50d_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/MUXrealNto1</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@39a5460f_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/MUXrealNto1</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@71fdc65a_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/MUXrealNto1</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@429f739c_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/MUXrealNto1</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@27b41329_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/MUXrealNto1</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2578d192_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/MUXrealNto1</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@52636023_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/MUXrealNto1</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@38a3c690_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/MUXrealNto1</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@307c38e9_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/MUXrealNto1</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@facd1b4_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/MUXrealNto1</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@65102cbd_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/MUXrealNto1</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@d703544_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/MUXrealNto1</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7e58b031_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/MUXrealNto1</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@51343a08_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/MUXrealNto1</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7fbdd833_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/MUXrealNto1</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2a4d53fc_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/MUXrealNto1</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@567beb0_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/MUXrealNto1</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6d90c6cc_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/MUXrealNto1</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@f325901_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/MUXrealNto1</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2dc6cddc_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/MUXrealNto1</xilinx:tag>
       </xilinx:tags>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>

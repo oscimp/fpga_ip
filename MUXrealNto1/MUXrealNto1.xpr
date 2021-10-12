@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="54" Path="/home/manip/nextcloud/tmp_ivan/vivado/MUXrealNto1/MUXrealNto1.xpr">
+<Project Version="7" Minor="54" Path="/home/manip/oscimpDigital/oscimpDigital/fpga_ip/MUXrealNto1/MUXrealNto1.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="73cadedf914d4cc9a27e622f849b2b88"/>
@@ -36,8 +36,7 @@
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="ProjectType" Val="Default"/>
-    <Option Name="IPRepoPath" Val="$PPRDIR/."/>
-    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../oscimpDigital/oscimpDigital/fpga_ip"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../fpga_ip"/>
     <Option Name="IPOutputRepo" Val="$PCACHEDIR/ip"/>
     <Option Name="IPDefaultOutputPath" Val="$PGENDIR/sources_1"/>
     <Option Name="IPCachePermission" Val="read"/>

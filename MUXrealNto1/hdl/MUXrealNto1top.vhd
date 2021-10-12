@@ -3,11 +3,7 @@
 -- Author : Gwenhael Goavec-Merou<gwenhael.goavec-merou@trabucayre.com>
 -- modified: Ivan Ryger <om1air@gmail.com>
 -- Creation date : 2015/04/08
--- last modified : 2021/07/19 IR extended the switch interface to 32 inputs
--- to work as a multiplexor N -> 1.
--- added AXI interface attribute X_INTERFACE_PARAMETER
--- to the reset signal to be regarded as active-high. See:
--- https://forums.xilinx.com/t5/Design-Entry/RTL-block-designs/td-p/1159
+-- last modified : 2021/06/11
 ---------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.all;
@@ -257,10 +253,6 @@ entity MUXrealNto1 is
 end MUXrealNto1;
 
 architecture Behavioral of MUXrealNto1 is
-
-       attribute X_INTERFACE_INFO of           s00_axi_reset : signal is "xilinx.com:signal:reset:1.0 sync_rst RST";
-       attribute X_INTERFACE_PARAMETER of      s00_axi_reset : signal is "POLARITY ACTIVE_HIGH";
-
 	constant SEL_SIZE : integer := integer(ceil(log2(real(INPUTS))));
 	
 	type STD_LOGIC_VECTOR_ARRAY is array(natural range <>) of STD_LOGIC_VECTOR(DATA_SIZE - 1 downto 0);
