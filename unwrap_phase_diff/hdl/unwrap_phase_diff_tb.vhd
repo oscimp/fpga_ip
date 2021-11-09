@@ -2,6 +2,8 @@
 -- (c) Copyright: OscillatorIMP Digital
 -- Author : Ivan Ryger, ivan.ryger@femto-st.fr
 -- Creation date : 2021/09/14
+-- modification	 : 2021/11/8 IR - changed the component declaration unwrap_phase_diff.vhd : 
+-- to accept generalized case of PI interval.
 -----------------------------------------------------------------------
 -- Cadence Xcelium 20.02 compile options -v200x -access +rw
 
@@ -21,7 +23,7 @@ architecture tb of unwrap_phase_diff_tb is
 	generic(
 		DATA_WIDTH : natural :=16;
 		DATA_OUT_WIDTH : natural := 32;
-		PI_INTERVAL_TWOS_POWER : natural := 9;
+		PI_VALUE		: integer := 12868;         --M_PI*2**(NB_ITER - 1)
 		FILTER_COEFF_TWOS_POWER : natural := 5;	-- determines the LP filter cutoff frequency
 		ESTIMATION_METHOD : natural := 0 -- 0-- simple phase extraction, 1-simple phase and frequency extraction, 2- robust extraction of phase and frequency  
 
@@ -42,12 +44,13 @@ architecture tb of unwrap_phase_diff_tb is
     constant f : real := 1.0e+6;
     constant fs : real := 125.0e+6;
 	constant DATA_WIDTH : natural := 16;
+    constant PI_SCALING : natural := 12; 
+	constant PI_VALUE : natural := 12868;-- 3.141*2**PI_SCALING    
 	constant DATA_OUT_WIDTH : natural := 32;
-	constant PI_INTERVAL_TWOS_POWER : natural := 5;--fpole = fs/(2*pi)*ln(1-2^(-N))
     constant ESTIMATION_METHOD : natural := 2; --0: simple phase unwrap, 1: phase and frequency unwrap, 2: robust phase and frequency unwrap
 	
 	signal data_in : std_logic_vector(DATA_WIDTH - 1 downto 0);
-	signal phase : std_logic_vector(PI_INTERVAL_TWOS_POWER + 1 - 1 downto 0);
+	signal phase : std_logic_vector(DATA_WIDTH + 1 - 1 downto 0);
     signal uu, vv, nnu, nnv, ph : real;
 	
 	signal data_out : std_logic_vector(DATA_OUT_WIDTH - 1 downto 0);
@@ -57,7 +60,7 @@ begin
 	generic map( 
 				DATA_WIDTH => DATA_WIDTH,
 				DATA_OUT_WIDTH => DATA_OUT_WIDTH,
-				PI_INTERVAL_TWOS_POWER => PI_INTERVAL_TWOS_POWER,
+				PI_VALUE => PI_VALUE,
                 ESTIMATION_METHOD => ESTIMATION_METHOD
 				)
 	port map	(
@@ -115,13 +118,12 @@ begin
         x2 := (rand_max - rand_min)*xx2 + rand_min;
         -- Box-Muller transform to map uniform random numbers to Gaussian noise
     	nnu <= sqrt(-2.0*log(x1))*cos(2.0*MATH_PI*x2)*sigma;
-        nnv <= sqrt(-2.0*log(x1))*sin(2.0*MATH_PI*x2)*sigma;
-        
+        nnv <= sqrt(-2.0*log(x1))*sin(2.0*MATH_PI*x2)*sigma; 
         uu <= cos(real(ii)*f/fs*2.0*MATH_PI) + nnu;
         vv <= sin(real(ii)*f/fs*2.0*MATH_PI) + nnv;
         --https://perso.telecom-paristech.fr/guilley/ENS/20171205/TP/tp_syn/doc/IEEE_VHDL_1076.2-1996.pdf
         ph <= arctan(vv,uu);
-    	phase <= std_logic_vector(to_signed(integer((ph/MATH_PI)*2.0**PI_INTERVAL_TWOS_POWER), phase'length));
+    	phase <= std_logic_vector(to_signed(integer(ph*2.0**PI_SCALING), phase'length));
 		data_en_i <= '1';
 		wait until rising_edge(clk);
 		data_en_i <= '0';

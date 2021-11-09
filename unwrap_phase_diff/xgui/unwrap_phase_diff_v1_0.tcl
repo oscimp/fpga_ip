@@ -7,8 +7,8 @@ proc init_gui { IPINST } {
   ipgui::add_param $IPINST -name "DATA_WIDTH" -parent ${Page_0}
   ipgui::add_param $IPINST -name "ESTIMATION_METHOD" -parent ${Page_0}
   ipgui::add_param $IPINST -name "FILTER_COEFF_TWOS_POWER" -parent ${Page_0}
-  ipgui::add_param $IPINST -name "PI_INTERVAL_TWOS_POWER" -parent ${Page_0}
 
+  ipgui::add_param $IPINST -name "PI_VALUE"
 
 }
 
@@ -48,12 +48,12 @@ proc validate_PARAM_VALUE.FILTER_COEFF_TWOS_POWER { PARAM_VALUE.FILTER_COEFF_TWO
 	return true
 }
 
-proc update_PARAM_VALUE.PI_INTERVAL_TWOS_POWER { PARAM_VALUE.PI_INTERVAL_TWOS_POWER } {
-	# Procedure called to update PI_INTERVAL_TWOS_POWER when any of the dependent parameters in the arguments change
+proc update_PARAM_VALUE.PI_VALUE { PARAM_VALUE.PI_VALUE } {
+	# Procedure called to update PI_VALUE when any of the dependent parameters in the arguments change
 }
 
-proc validate_PARAM_VALUE.PI_INTERVAL_TWOS_POWER { PARAM_VALUE.PI_INTERVAL_TWOS_POWER } {
-	# Procedure called to validate PI_INTERVAL_TWOS_POWER
+proc validate_PARAM_VALUE.PI_VALUE { PARAM_VALUE.PI_VALUE } {
+	# Procedure called to validate PI_VALUE
 	return true
 }
 
@@ -68,11 +68,6 @@ proc update_MODELPARAM_VALUE.DATA_OUT_WIDTH { MODELPARAM_VALUE.DATA_OUT_WIDTH PA
 	set_property value [get_property value ${PARAM_VALUE.DATA_OUT_WIDTH}] ${MODELPARAM_VALUE.DATA_OUT_WIDTH}
 }
 
-proc update_MODELPARAM_VALUE.PI_INTERVAL_TWOS_POWER { MODELPARAM_VALUE.PI_INTERVAL_TWOS_POWER PARAM_VALUE.PI_INTERVAL_TWOS_POWER } {
-	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
-	set_property value [get_property value ${PARAM_VALUE.PI_INTERVAL_TWOS_POWER}] ${MODELPARAM_VALUE.PI_INTERVAL_TWOS_POWER}
-}
-
 proc update_MODELPARAM_VALUE.FILTER_COEFF_TWOS_POWER { MODELPARAM_VALUE.FILTER_COEFF_TWOS_POWER PARAM_VALUE.FILTER_COEFF_TWOS_POWER } {
 	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
 	set_property value [get_property value ${PARAM_VALUE.FILTER_COEFF_TWOS_POWER}] ${MODELPARAM_VALUE.FILTER_COEFF_TWOS_POWER}
@@ -81,5 +76,10 @@ proc update_MODELPARAM_VALUE.FILTER_COEFF_TWOS_POWER { MODELPARAM_VALUE.FILTER_C
 proc update_MODELPARAM_VALUE.ESTIMATION_METHOD { MODELPARAM_VALUE.ESTIMATION_METHOD PARAM_VALUE.ESTIMATION_METHOD } {
 	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
 	set_property value [get_property value ${PARAM_VALUE.ESTIMATION_METHOD}] ${MODELPARAM_VALUE.ESTIMATION_METHOD}
+}
+
+proc update_MODELPARAM_VALUE.PI_VALUE { MODELPARAM_VALUE.PI_VALUE PARAM_VALUE.PI_VALUE } {
+	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
+	set_property value [get_property value ${PARAM_VALUE.PI_VALUE}] ${MODELPARAM_VALUE.PI_VALUE}
 }
 

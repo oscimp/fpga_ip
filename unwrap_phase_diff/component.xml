@@ -100,7 +100,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>13bdf765</spirit:value>
+            <spirit:value>c02e3d73</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -116,7 +116,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>13bdf765</spirit:value>
+            <spirit:value>c02e3d73</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -130,7 +130,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>7e53c225</spirit:value>
+            <spirit:value>dc4b76b1</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -253,27 +253,27 @@
       <spirit:modelParameter xsi:type="spirit:nameValueTypeType" spirit:dataType="integer">
         <spirit:name>DATA_WIDTH</spirit:name>
         <spirit:displayName>Data Width</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DATA_WIDTH" spirit:minimum="0">16</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DATA_WIDTH" spirit:minimum="0" spirit:rangeType="long">16</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>DATA_OUT_WIDTH</spirit:name>
         <spirit:displayName>Data Out Width</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DATA_OUT_WIDTH" spirit:minimum="0">32</spirit:value>
-      </spirit:modelParameter>
-      <spirit:modelParameter spirit:dataType="integer">
-        <spirit:name>PI_INTERVAL_TWOS_POWER</spirit:name>
-        <spirit:displayName>Pi Interval Twos Power</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.PI_INTERVAL_TWOS_POWER" spirit:minimum="0">9</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DATA_OUT_WIDTH" spirit:minimum="0" spirit:rangeType="long">32</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>FILTER_COEFF_TWOS_POWER</spirit:name>
         <spirit:displayName>Filter Coeff Twos Power</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.FILTER_COEFF_TWOS_POWER" spirit:minimum="0">5</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.FILTER_COEFF_TWOS_POWER" spirit:minimum="0" spirit:rangeType="long">5</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>ESTIMATION_METHOD</spirit:name>
         <spirit:displayName>Estimation Method</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.ESTIMATION_METHOD" spirit:minimum="0">2</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.ESTIMATION_METHOD" spirit:minimum="0" spirit:rangeType="long">2</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>PI_VALUE</spirit:name>
+        <spirit:displayName>Pi Value</spirit:displayName>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.PI_VALUE">12868</spirit:value>
       </spirit:modelParameter>
     </spirit:modelParameters>
   </spirit:model>
@@ -283,7 +283,7 @@
       <spirit:file>
         <spirit:name>hdl/unwrap_phase_diff.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_13bdf765</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_c02e3d73</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -298,7 +298,7 @@
       <spirit:file>
         <spirit:name>xgui/unwrap_phase_diff_v1_0.tcl</spirit:name>
         <spirit:fileType>tclSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_7e53c225</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_dc4b76b1</spirit:userFileType>
         <spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
@@ -316,11 +316,6 @@
       <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.DATA_OUT_WIDTH" spirit:minimum="0" spirit:rangeType="long">32</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
-      <spirit:name>PI_INTERVAL_TWOS_POWER</spirit:name>
-      <spirit:displayName>Pi Interval Twos Power</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.PI_INTERVAL_TWOS_POWER" spirit:minimum="0" spirit:rangeType="long">9</spirit:value>
-    </spirit:parameter>
-    <spirit:parameter>
       <spirit:name>FILTER_COEFF_TWOS_POWER</spirit:name>
       <spirit:displayName>Filter Coeff Twos Power</spirit:displayName>
       <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.FILTER_COEFF_TWOS_POWER" spirit:minimum="0" spirit:rangeType="long">5</spirit:value>
@@ -333,6 +328,11 @@
     <spirit:parameter>
       <spirit:name>Component_Name</spirit:name>
       <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Component_Name" spirit:order="1">unwrap_phase_diff_v1_0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>PI_VALUE</spirit:name>
+      <spirit:displayName>Pi Value</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.PI_VALUE">12868</spirit:value>
     </spirit:parameter>
   </spirit:parameters>
   <spirit:vendorExtensions>
@@ -354,8 +354,8 @@
       </xilinx:taxonomies>
       <xilinx:displayName>unwrap_phase_diff_v1_0</xilinx:displayName>
       <xilinx:definitionSource>package_project</xilinx:definitionSource>
-      <xilinx:coreRevision>2</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2021-10-12T13:56:22Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>3</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2021-11-09T09:48:26Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@1fa5e54c_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/unwrap_phase_diff</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@6b12401f_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/unwrap_phase_diff</xilinx:tag>
@@ -364,15 +364,27 @@
         <xilinx:tag xilinx:name="ui.data.coregen.dd@210018a1_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/unwrap_phase_diff</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@2482308d_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/unwrap_phase_diff</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@1d6210d8_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/unwrap_phase_diff</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@378b91a2_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/unwrap_phase_diff</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@bf2550d_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/unwrap_phase_diff</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5205975f_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/unwrap_phase_diff</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@64750e27_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/unwrap_phase_diff</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5e096660_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/unwrap_phase_diff</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1bc9c6c4_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/unwrap_phase_diff</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@697b658c_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/unwrap_phase_diff</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1f2966e0_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/unwrap_phase_diff</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@401d057c_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/unwrap_phase_diff</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@907ff84_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/unwrap_phase_diff</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7cc15d7d_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/unwrap_phase_diff</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2af86b5e_ARCHIVE_LOCATION">/home/manip/oscimpDigital/oscimpDigital/fpga_ip/unwrap_phase_diff</xilinx:tag>
       </xilinx:tags>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2020.2</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="b5b04192"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="b61260f6"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="8b4f4553"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="a2a58be9"/>
-      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="0b240fd0"/>
-      <xilinx:checksum xilinx:scope="parameters" xilinx:value="e94e9b6a"/>
+      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="3dfb177c"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="71c73692"/>
     </xilinx:packagingInfo>
   </spirit:vendorExtensions>
 </spirit:component>
