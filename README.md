@@ -38,7 +38,7 @@ OscillatorIMP ecosystem FPGA IP sources: see ![the dedicated tool](https://githu
 |mean_vector_axi      |Average complex input stream (ADDR_SIZE=burst length) |data_in| data_out|DATA_SIZE(14),MAX_NB_ACCUM(1024),ADDR_SIZE(10)|   |        |
 |[mixer_sin](https://github.com/oscimp/oscimpDigital/blob/master/doc/IP/mixer.md) |mixer                        |data_in,nco_in|data_out |DATA_IN_SIZE(16), DATA_OUT_SIZE(16), NCO_SIZE(16)|none||
 |nco_counter          |NCO (sine & square = complex values)   |none       |sine_out, square_out |COUNTER_SIZE(28), DATA_SIZE(16) |nco_counter|nco_counter_send_conf|
-|prn20b               | 20-bit pseudo random number sequence (LFSR)|none  | ref_clk_i, ref_rst_i, prn_full_out, bit_o           | DFLT_PRESC(15), PRESC_SIZE(16)           | none   | none |                          |
+|prn20b               | 20-bit pseudo random number sequence (LFSR)|none  | ref_clk_i, ref_rst_i, prn_full_o, bit_o           | DFLT_PRESC(15), PRESC_SIZE(16)           | none   | none |                          |
 |redpitaya_adc_dac_clk|Repitaya clock distribution (ADC & DAC)| none       |none                |none            |none                                    | |
 |redpitaya_converters | Redpitaya ADC/DAC converters | dataA_in, dataB_in | dataA_out, dataB_out| ADC_EN(true), DAC_EN(true), ADC_SIZE(14)          | none            | none             |
 |[redpitaya_converters_12](https://github.com/oscimp/oscimpDigital/blob/master/doc/IP/redpitaya_converters_12.md)| Redpitaya ADC/DAC converters for SignalLab | dataA_in, dataB_in | dataA_out, dataB_out| ADC_EN(true), DAC_EN(true)          | redpitaya_converters_12            | redpitaya_converters_12_spi_conf, redpitaya_converters_12_ext_ref_enable, redpitaya_converters_12_get_ref_status |
