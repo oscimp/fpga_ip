@@ -37,7 +37,7 @@ ifeq ($(BOARD_NAME), zedboard)
 OUT_BIN     = bit.bin
 USE_BD      = y
 PART        = "xc7z020clg484-1"
-PRJ_PRESET  = "em.avnet.com:zed:part0:1.4"
+PRJ_PRESET  = ""
 BD_PRESET   = "ZedBoard"
 TOOLS       = vivado
 endif
