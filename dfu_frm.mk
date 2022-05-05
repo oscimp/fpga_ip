@@ -22,7 +22,7 @@ IS_ABS_PATH=$(shell echo '${POST_SCRIPT}' | grep -o "\$\{.*\}")
 # if post_image refer to a variable -> br2_external
 ifneq ($(IS_ABS_PATH),)
 	# include mk build by buildroot with all br2_external variables
-	include $(OUTPUT_DIR)/.br-external.mk
+	include $(OUTPUT_DIR)/.br*-external.mk
 endif
 ifeq ($(BOARD_NAME),plutosdr)
 POST_SCRIPT=$(BR2_EXTERNAL_PLUTOSDR_PATH)/board/pluto/post_image.sh
@@ -33,9 +33,9 @@ image:
 	mkdir -p image
 
 dfu_frm: |image
-	(cd image; cp $(IMG_DIR)/*.dtb $(IMG_DIR)/rootfs* $(IMG_DIR)/zImage $(BIT_FILE) .; \
-		PATH=$(PATH):$(BR_DIR)/output/host/bin $(POST_SCRIPT) .)
+	cp $(IMG_DIR)/*.dtb $(IMG_DIR)/rootfs* $(IMG_DIR)/zImage $(BIT_FILE) ./image/
+	$(POST_SCRIPT) ./image
 
 flash_dfu_frm:
 	ssh root@$(IP) "device_reboot sf"; sleep 10;
-		dfu-util -D image/*.dfu -a firmware.dfu
+	sudo dfu-util -R -D image/*.dfu -a firmware.dfu
