@@ -1,0 +1,75 @@
+[*]
+[*] GTKWave Analyzer v3.3.111 (w)1999-2020 BSI
+[*] Fri Jun 10 21:11:11 2022
+[*]
+[dumpfile] "/home/gwe/projets/ggm_fpga_ip/hyperram/simulation/dump.vcd"
+[dumpfile_mtime] "Fri Jun 10 21:11:08 2022"
+[dumpfile_size] 7528
+[savefile] "/home/gwe/projets/ggm_fpga_ip/hyperram/simulation/top_add_constReal.gtkw"
+[timestart] 0
+[size] 1366 748
+[pos] -1 -1
+*-14.977392 110000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.top_dut.
+[sst_width] 193
+[signals_width] 222
+[sst_expanded] 1
+[sst_vpaned_height] 209
+@200
+-top_dut
+@22
+top.top_dut.i_addr[31:0]
+top.top_dut.i_burst_length[7:0]
+@28
+top.top_dut.i_clk
+@22
+top.top_dut.i_data[31:0]
+@28
+top.top_dut.i_rdwrn
+top.top_dut.i_req
+top.top_dut.i_rst
+top.top_dut.inst_core.i_clk
+top.top_dut.o_ck
+top.top_dut.o_cs
+@22
+top.top_dut.o_data[15:0]
+@28
+top.top_dut.o_data_rdy
+top.top_dut.tmp_clk
+@22
+top.top_dut.tmp_data[7:0]
+@200
+-test
+@22
+top.top_dut.inst_core.i_addr[31:0]
+@28
+top.top_dut.inst_core.i_req
+@23
+top.top_dut.inst_core.i_dq[7:0]
+@28
+top.top_dut.inst_core.o_data_rdy
+@22
+top.top_dut.inst_core.o_data[15:0]
+@200
+-internal
+@28
+top.top_dut.inst_core.o_cs
+top.top_dut.inst_core.o_ck
+top.top_dut.inst_core.oe_dq
+@22
+top.top_dut.inst_core.o_dq[7:0]
+top.top_dut.inst_core.i_dq[7:0]
+@28
+top.top_dut.inst_core.oe_rwds
+top.top_dut.inst_core.o_rwds
+top.top_dut.inst_core.i_rdwrn
+top.top_dut.inst_core.state_s[2:0]
+@22
+top.top_dut.inst_core.edge_cpt[3:0]
+top.top_dut.inst_core.i_data[31:0]
+top.top_dut.inst_core.data2_s[47:0]
+@28
+top.top_dut.inst_core.oe_dq
+[pattern_trace] 1
+[pattern_trace] 0
