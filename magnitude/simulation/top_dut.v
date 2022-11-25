@@ -6,7 +6,7 @@ module top_dut (
 	input  [15:0] data_i_i,
 	input  [15:0] data_q_i,
 	input         data_en_i,
-	output [32:0] data_o,
+	output [33:0] data_o,
 	output        data_en_o
 
 );
