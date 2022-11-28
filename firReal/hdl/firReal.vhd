@@ -13,6 +13,7 @@ entity firReal is
 		-- Users to add parameters here
 		ID : natural := 1;
 		coeff_format : string := "signed";
+		data_signed  : boolean := true;
 		NB_COEFF : natural := 128;
 		COEFF_SIZE : natural := 16;
 		DECIMATE_FACTOR : natural := 10;
@@ -112,6 +113,7 @@ begin
 	fir_top_inst : entity work.firReal_top
 	generic map (
 		coeff_format => coeff_format,
+		data_signed => data_signed,
 		NB_COEFF => NB_COEFF,
 		DECIMATE_FACTOR => DECIMATE_FACTOR,
 		COEFF_SIZE => COEFF_SIZE,

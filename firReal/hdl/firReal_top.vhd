@@ -11,6 +11,7 @@ use IEEE.math_real.all;
 Entity firReal_top is 
 	generic (
 		coeff_format : string := "signed";
+		data_signed : boolean := true;
 		NB_COEFF : natural := 128;
 		DECIMATE_FACTOR : natural := 32;
 		COEFF_SIZE : natural := 16;
@@ -39,6 +40,15 @@ end entity;
 ---------------------------------------------------------------------------
 Architecture bhv of firReal_top is
 ---------------------------------------------------------------------------
+	function getIntInputSize(data_in_size : natural; is_signed: boolean) return natural is
+    begin
+		if (is_signed) then
+			return data_in_size;
+		end if;
+        return data_in_size + 1;
+    end function getIntInputSize;
+	constant DATA_INT_SIZE : natural := getIntInputSize(DATA_SIZE, data_signed);
+
 	constant NB_THREAD : natural :=
 			natural(ceil(real(real(NB_COEFF)/real(DECIMATE_FACTOR))));
 	constant READY_SZ : natural := NB_THREAD * DECIMATE_FACTOR;
@@ -61,7 +71,8 @@ Architecture bhv of firReal_top is
 	signal coeff2_tab_s : coeff_tab(READY_SZ-1 downto 0);
 
 	signal data_in_en_s : std_logic;
-	signal data_in_s : std_logic_vector(DATA_SIZE-1 downto 0);
+	signal data_d0_i : std_logic_vector(DATA_INT_SIZE-1 downto 0);
+	signal data_in_s : std_logic_vector(DATA_INT_SIZE-1 downto 0);
 	signal end_delay_macc_s : std_logic;
 
 	-- last
@@ -79,6 +90,13 @@ begin
 	coeff_tab_next_s(0) <= coeff_s;
 	coeff_tab_next_s(READY_SZ-1 downto 1) <= coeff_tab_s(READY_SZ-2 downto 0);
 
+	is_unsigned_format: if data_signed /= true generate
+		data_d0_i <= '0' & data_i;
+	end generate is_unsigned_format;
+	is_signed_format: if data_signed = true generate
+		data_d0_i <= data_i;
+	end generate is_signed_format;
+
 	process(clk) begin
 		if rising_edge(clk) then
 			if reset = '1' then
@@ -88,7 +106,7 @@ begin
 			else
 				data_in_en_s <= data_en_i;
 				end_delay_macc_s <= end_macc_s;
-				data_in_s <= data_i;
+				data_in_s <= data_d0_i;
 			end if;
 			if reset = '1' then
 				ready_s <= (READY_SZ-1 downto 1 => '0') & '1';
@@ -110,7 +128,7 @@ begin
 		logic_inst: entity work.firReal_proc
 		generic map (NB_COEFF => NB_COEFF,
 			coeff_format => coeff_format,
-			DATA_SIZE => DATA_SIZE, DATA_OUT_SIZE => DATA_OUT_SIZE,
+			DATA_SIZE => DATA_INT_SIZE, DATA_OUT_SIZE => DATA_OUT_SIZE,
 			COEFF_SIZE => COEFF_SIZE)
 		port map (reset => reset, clk => clk,
 			end_i => end_s(i*DECIMATE_FACTOR),
