@@ -1,0 +1,64 @@
+[*]
+[*] GTKWave Analyzer v3.3.111 (w)1999-2020 BSI
+[*] Mon Dec  5 15:46:24 2022
+[*]
+[dumpfile] "/home/gwe/projets/oscimp/pourGithub/oscimpDigital/fpga_ip/add_constComplex/simulation/sim_build/waveform.ghw"
+[dumpfile_mtime] "Mon Dec  5 15:27:04 2022"
+[dumpfile_size] 13930081
+[savefile] "/home/gwe/projets/oscimp/pourGithub/oscimpDigital/fpga_ip/add_constComplex/simulation/top_add_constComplex.gtkw"
+[timestart] 0
+[size] 1366 747
+[pos] -1 -1
+*-23.977392 26340000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.top_dut.
+[treeopen] top.top_dut.add_constcomplex_signed.
+[sst_width] 221
+[signals_width] 222
+[sst_expanded] 1
+[sst_vpaned_height] 209
+@200
+-top_dut
+@28
+top.top_dut.i_clk
+top.top_dut.i_rst
+@420
+#{top.top_dut.i_add_val_signed[7:0]} top.top_dut.i_add_val_signed[7] top.top_dut.i_add_val_signed[6] top.top_dut.i_add_val_signed[5] top.top_dut.i_add_val_signed[4] top.top_dut.i_add_val_signed[3] top.top_dut.i_add_val_signed[2] top.top_dut.i_add_val_signed[1] top.top_dut.i_add_val_signed[0]
+@28
+top.top_dut.i_data_en_signed
+@200
+-signed
+-signed_lt
+-signed_lt_internal
+-signed_gte
+@28
+top.top_dut.add_constcomplex_signed.rst_i
+top.top_dut.add_constcomplex_signed.clk_i
+top.top_dut.add_constcomplex_signed.data_en_i
+@421
+#{top.top_dut.add_constcomplex_signed.add_val[7:0]} top.top_dut.add_constcomplex_signed.add_val[7] top.top_dut.add_constcomplex_signed.add_val[6] top.top_dut.add_constcomplex_signed.add_val[5] top.top_dut.add_constcomplex_signed.add_val[4] top.top_dut.add_constcomplex_signed.add_val[3] top.top_dut.add_constcomplex_signed.add_val[2] top.top_dut.add_constcomplex_signed.add_val[1] top.top_dut.add_constcomplex_signed.add_val[0]
+#{top.top_dut.add_constcomplex_signed.data_i_i[7:0]} top.top_dut.add_constcomplex_signed.data_i_i[7] top.top_dut.add_constcomplex_signed.data_i_i[6] top.top_dut.add_constcomplex_signed.data_i_i[5] top.top_dut.add_constcomplex_signed.data_i_i[4] top.top_dut.add_constcomplex_signed.data_i_i[3] top.top_dut.add_constcomplex_signed.data_i_i[2] top.top_dut.add_constcomplex_signed.data_i_i[1] top.top_dut.add_constcomplex_signed.data_i_i[0]
+#{top.top_dut.add_constcomplex_signed.data_q_i[7:0]} top.top_dut.add_constcomplex_signed.data_q_i[7] top.top_dut.add_constcomplex_signed.data_q_i[6] top.top_dut.add_constcomplex_signed.data_q_i[5] top.top_dut.add_constcomplex_signed.data_q_i[4] top.top_dut.add_constcomplex_signed.data_q_i[3] top.top_dut.add_constcomplex_signed.data_q_i[2] top.top_dut.add_constcomplex_signed.data_q_i[1] top.top_dut.add_constcomplex_signed.data_q_i[0]
+#{top.top_dut.add_constcomplex_signed.data_add_i_s[8:0]} top.top_dut.add_constcomplex_signed.data_add_i_s[8] top.top_dut.add_constcomplex_signed.data_add_i_s[7] top.top_dut.add_constcomplex_signed.data_add_i_s[6] top.top_dut.add_constcomplex_signed.data_add_i_s[5] top.top_dut.add_constcomplex_signed.data_add_i_s[4] top.top_dut.add_constcomplex_signed.data_add_i_s[3] top.top_dut.add_constcomplex_signed.data_add_i_s[2] top.top_dut.add_constcomplex_signed.data_add_i_s[1] top.top_dut.add_constcomplex_signed.data_add_i_s[0]
+#{top.top_dut.add_constcomplex_signed.data_add_q_s[8:0]} top.top_dut.add_constcomplex_signed.data_add_q_s[8] top.top_dut.add_constcomplex_signed.data_add_q_s[7] top.top_dut.add_constcomplex_signed.data_add_q_s[6] top.top_dut.add_constcomplex_signed.data_add_q_s[5] top.top_dut.add_constcomplex_signed.data_add_q_s[4] top.top_dut.add_constcomplex_signed.data_add_q_s[3] top.top_dut.add_constcomplex_signed.data_add_q_s[2] top.top_dut.add_constcomplex_signed.data_add_q_s[1] top.top_dut.add_constcomplex_signed.data_add_q_s[0]
+@28
+top.top_dut.add_constcomplex_signed.msb_q_d0_s
+top.top_dut.add_constcomplex_signed.msb_q_s
+top.top_dut.add_constcomplex_signed.msb_i_d0_s
+top.top_dut.add_constcomplex_signed.msb_i_s
+@420
+top.top_dut.add_constcomplex_signed.overflow_q_d0_s
+top.top_dut.add_constcomplex_signed.overflow_q_s
+top.top_dut.add_constcomplex_signed.overflow_i_d0_s
+top.top_dut.add_constcomplex_signed.overflow_i_s
+@28
+top.top_dut.add_constcomplex_signed.data_en_o
+@22
+#{top.top_dut.add_constcomplex_signed.data_q_s[8:0]} top.top_dut.add_constcomplex_signed.data_q_s[8] top.top_dut.add_constcomplex_signed.data_q_s[7] top.top_dut.add_constcomplex_signed.data_q_s[6] top.top_dut.add_constcomplex_signed.data_q_s[5] top.top_dut.add_constcomplex_signed.data_q_s[4] top.top_dut.add_constcomplex_signed.data_q_s[3] top.top_dut.add_constcomplex_signed.data_q_s[2] top.top_dut.add_constcomplex_signed.data_q_s[1] top.top_dut.add_constcomplex_signed.data_q_s[0]
+#{top.top_dut.add_constcomplex_signed.data_i_s[8:0]} top.top_dut.add_constcomplex_signed.data_i_s[8] top.top_dut.add_constcomplex_signed.data_i_s[7] top.top_dut.add_constcomplex_signed.data_i_s[6] top.top_dut.add_constcomplex_signed.data_i_s[5] top.top_dut.add_constcomplex_signed.data_i_s[4] top.top_dut.add_constcomplex_signed.data_i_s[3] top.top_dut.add_constcomplex_signed.data_i_s[2] top.top_dut.add_constcomplex_signed.data_i_s[1] top.top_dut.add_constcomplex_signed.data_i_s[0]
+#{top.top_dut.add_constcomplex_signed.data_res_q_s[8:0]} top.top_dut.add_constcomplex_signed.data_res_q_s[8] top.top_dut.add_constcomplex_signed.data_res_q_s[7] top.top_dut.add_constcomplex_signed.data_res_q_s[6] top.top_dut.add_constcomplex_signed.data_res_q_s[5] top.top_dut.add_constcomplex_signed.data_res_q_s[4] top.top_dut.add_constcomplex_signed.data_res_q_s[3] top.top_dut.add_constcomplex_signed.data_res_q_s[2] top.top_dut.add_constcomplex_signed.data_res_q_s[1] top.top_dut.add_constcomplex_signed.data_res_q_s[0]
+#{top.top_dut.add_constcomplex_signed.data_res_i_s[8:0]} top.top_dut.add_constcomplex_signed.data_res_i_s[8] top.top_dut.add_constcomplex_signed.data_res_i_s[7] top.top_dut.add_constcomplex_signed.data_res_i_s[6] top.top_dut.add_constcomplex_signed.data_res_i_s[5] top.top_dut.add_constcomplex_signed.data_res_i_s[4] top.top_dut.add_constcomplex_signed.data_res_i_s[3] top.top_dut.add_constcomplex_signed.data_res_i_s[2] top.top_dut.add_constcomplex_signed.data_res_i_s[1] top.top_dut.add_constcomplex_signed.data_res_i_s[0]
+#{top.top_dut.add_constcomplex_signed.data_i_o[8:0]} top.top_dut.add_constcomplex_signed.data_i_o[8] top.top_dut.add_constcomplex_signed.data_i_o[7] top.top_dut.add_constcomplex_signed.data_i_o[6] top.top_dut.add_constcomplex_signed.data_i_o[5] top.top_dut.add_constcomplex_signed.data_i_o[4] top.top_dut.add_constcomplex_signed.data_i_o[3] top.top_dut.add_constcomplex_signed.data_i_o[2] top.top_dut.add_constcomplex_signed.data_i_o[1] top.top_dut.add_constcomplex_signed.data_i_o[0]
+#{top.top_dut.add_constcomplex_signed.data_q_o[8:0]} top.top_dut.add_constcomplex_signed.data_q_o[8] top.top_dut.add_constcomplex_signed.data_q_o[7] top.top_dut.add_constcomplex_signed.data_q_o[6] top.top_dut.add_constcomplex_signed.data_q_o[5] top.top_dut.add_constcomplex_signed.data_q_o[4] top.top_dut.add_constcomplex_signed.data_q_o[3] top.top_dut.add_constcomplex_signed.data_q_o[2] top.top_dut.add_constcomplex_signed.data_q_o[1] top.top_dut.add_constcomplex_signed.data_q_o[0]
+[pattern_trace] 1
+[pattern_trace] 0

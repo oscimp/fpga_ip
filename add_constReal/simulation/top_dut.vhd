@@ -18,7 +18,13 @@ entity top_dut is
 		i_data_unsigned    : in  std_logic_vector(7 downto 0);
 		i_data_en_unsigned : in  std_logic;
 		o_data_unsigned    : out std_logic_vector(8 downto 0);
-		o_data_en_unsigned : out std_logic
+		o_data_en_unsigned : out std_logic;
+		-- lt signed intance
+		o_data_lt_signed      : out std_logic_vector(6 downto 0);
+		o_data_lt_en_signed   : out std_logic;
+		-- lt unsigned intance
+		o_data_lt_unsigned    : out std_logic_vector(6 downto 0);
+		o_data_lt_en_unsigned : out std_logic
 	);
 end entity top_dut;
 Architecture bhv of top_dut is
@@ -47,5 +53,31 @@ begin
 		add_val => i_add_val_unsigned,
 		data_i => i_data_unsigned, data_en_i => i_data_en_unsigned,
 		data_o => o_data_unsigned, data_en_o => o_data_en_unsigned
+	);
+
+	add_constReal_lt_signed: entity work.add_constReal_logic
+	generic map(
+		format => "signed",
+		DATA_IN_SIZE => 8,
+		DATA_OUT_SIZE => 7
+	)
+	port map (
+		rst_i => i_rst, clk_i => i_clk,
+		add_val => i_add_val_signed,
+		data_i => i_data_signed, data_en_i => i_data_en_signed,
+		data_o => o_data_lt_signed, data_en_o => o_data_lt_en_signed
+	);
+
+	add_constReal_lt_unsigned: entity work.add_constReal_logic
+	generic map(
+		format => "unsigned",
+		DATA_IN_SIZE => 8,
+		DATA_OUT_SIZE => 7
+	)
+	port map (
+		rst_i => i_rst, clk_i => i_clk,
+		add_val => i_add_val_unsigned,
+		data_i => i_data_unsigned, data_en_i => i_data_en_unsigned,
+		data_o => o_data_lt_unsigned, data_en_o => o_data_lt_en_unsigned
 	);
 end architecture bhv;
