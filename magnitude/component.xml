@@ -140,7 +140,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>b1b65962</spirit:value>
+            <spirit:value>c25b359a</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -156,7 +156,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>b1b65962</spirit:value>
+            <spirit:value>c25b359a</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -170,7 +170,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>b7534590</spirit:value>
+            <spirit:value>0f39302b</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -364,6 +364,11 @@
         <spirit:displayName>Data Size</spirit:displayName>
         <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DATA_SIZE">16</spirit:value>
       </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>SIGN_CORRECTION</spirit:name>
+        <spirit:displayName>Sign Correction</spirit:displayName>
+        <spirit:value spirit:format="bool" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.SIGN_CORRECTION">false</spirit:value>
+      </spirit:modelParameter>
     </spirit:modelParameters>
   </spirit:model>
   <spirit:fileSets>
@@ -372,7 +377,7 @@
       <spirit:file>
         <spirit:name>hdl/magnitude.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_b1b65962</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_c25b359a</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -387,7 +392,7 @@
       <spirit:file>
         <spirit:name>xgui/magnitude_v1_0.tcl</spirit:name>
         <spirit:fileType>tclSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_b7534590</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_0f39302b</spirit:userFileType>
         <spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
@@ -403,6 +408,11 @@
     <spirit:parameter>
       <spirit:name>Component_Name</spirit:name>
       <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Component_Name" spirit:order="1">magnitude_v1_0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>SIGN_CORRECTION</spirit:name>
+      <spirit:displayName>Sign Correction</spirit:displayName>
+      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.SIGN_CORRECTION">false</spirit:value>
     </spirit:parameter>
   </spirit:parameters>
   <spirit:vendorExtensions>
@@ -440,10 +450,10 @@
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2019.2</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="d6278d8f"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="679cfd8e"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="41a4d0a1"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="15c993da"/>
-      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="2a871e58"/>
-      <xilinx:checksum xilinx:scope="parameters" xilinx:value="c7ebac7c"/>
+      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="3b160906"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="5d072431"/>
     </xilinx:packagingInfo>
   </spirit:vendorExtensions>
 </spirit:component>

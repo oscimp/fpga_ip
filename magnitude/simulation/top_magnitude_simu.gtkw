@@ -1,44 +1,59 @@
 [*]
-[*] GTKWave Analyzer v3.3.106 (w)1999-2020 BSI
-[*] Fri Jan 15 17:20:27 2021
+[*] GTKWave Analyzer v3.3.113 (w)1999-2022 BSI
+[*] Fri Feb 24 09:33:36 2023
 [*]
 [dumpfile] "/home/gwe/projets/oscimp/pourGithub/oscimpDigital/fpga_ip/magnitude/simulation/magnitude_simu_tb.vcd"
-[dumpfile_mtime] "Fri Jan 15 17:18:03 2021"
-[dumpfile_size] 1099
+[dumpfile_mtime] "Fri Feb 24 09:32:04 2023"
+[dumpfile_size] 2274
 [savefile] "/home/gwe/projets/oscimp/pourGithub/oscimpDigital/fpga_ip/magnitude/simulation/top_magnitude_simu.gtkw"
 [timestart] 0
 [size] 1366 748
 [pos] -1 -1
 *-15.759605 13520000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] top_dut.
-[sst_width] 214
+[sst_width] 221
 [signals_width] 222
 [sst_expanded] 1
 [sst_vpaned_height] 209
 @28
 top_dut.rst_i
 top_dut.clk_i
-top_dut.data_en_i
-@22
-top_dut.data_i_i[15:0]
-top_dut.data_q_i[15:0]
-@28
-top_dut.magnitude_inst.data_en_o
 @420
-top_dut.data_o[32:0]
+top_dut.data_q_i[9:0]
+top_dut.data_i_i[9:0]
+@28
+top_dut.data_en_i
+top_dut.data_uns_en_o
+@22
+top_dut.data_uns_o[19:0]
+@28
+top_dut.data_sign_en_o
 @200
 -internal
+-unsigned
 @28
-top_dut.magnitude_inst.data_clk_i
-top_dut.magnitude_inst.data_rst_i
-top_dut.magnitude_inst.data_en_i
-@22
-top_dut.magnitude_inst.data_i_i[15:0]
-top_dut.magnitude_inst.data_q_i[15:0]
-top_dut.magnitude_inst.data_s[32:0]
+top_dut.magnitude_uns.data_rst_i
+top_dut.magnitude_uns.data_clk_i
+top_dut.magnitude_uns.data_en_i
+top_dut.magnitude_uns.data_eof_i
+top_dut.magnitude_uns.data_eof_o
+@420
+top_dut.magnitude_uns.data_i_i[9:0]
+top_dut.magnitude_uns.data_q_i[9:0]
+@24
+top_dut.magnitude_uns.data_i_s[18:0]
+top_dut.magnitude_uns.data_q_s[18:0]
+top_dut.magnitude_uns.data_s[19:0]
 @28
-top_dut.magnitude_inst.data_en_o
+top_dut.magnitude_uns.sign_s
+top_dut.magnitude_uns.data_clk_o
+@29
+top_dut.magnitude_uns.data_en_o
 @22
-top_dut.magnitude_inst.data_o[32:0]
+top_dut.magnitude_uns.data_o[20:0]
+@28
+top_dut.magnitude_uns.data_rst_o
+top_dut.magnitude_uns.data_sof_i
+top_dut.magnitude_uns.data_sof_o
 [pattern_trace] 1
 [pattern_trace] 0
