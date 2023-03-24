@@ -24,6 +24,8 @@
 		driver="fir" />
 	<ip name="gen_radar_prog"
 		driver="fpgagen" />
+	<ip name="lutGeneratorComplex"
+		driver="lutGene" />
 	<ip name="mean_vector_axi"
 		driver="fpgagen" />
 	<ip name="MUXcomplexNto1"
