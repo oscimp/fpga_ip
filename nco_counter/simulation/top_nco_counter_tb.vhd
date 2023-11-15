@@ -17,7 +17,8 @@ architecture RTL of top_nco_counter_tb is
 	end;
 	constant LUT_SIZE : natural := 12;
 	constant COUNTER_SIZE : natural := 32;
-	constant DATA_SIZE : natural := 14;
+	constant DATA_SIZE : natural := 16;
+	constant MAX_TRIG : natural := 1;
 
 	signal reset : std_logic;
     CONSTANT HALF_PERIODE : time := 4 ns; --5.0 ns;  -- Half clock period
@@ -25,6 +26,7 @@ architecture RTL of top_nco_counter_tb is
 
 	signal cpt_step_s : std_logic_vector(COUNTER_SIZE-1 downto 0);
 	signal cpt_tmp_s : std_logic_vector(COUNTER_SIZE-1 downto 0);
+	signal cpt_off_s : std_logic_vector(LUT_SIZE-1 downto 0);
 
 	signal reset_nco_s : std_logic;
 
@@ -48,18 +50,19 @@ begin
 	--cpt_tmp_s <= x"028F5C28";
 	--cpt_tmp_s <= x"00001000";
 	--cpt_tmp_s <=  x"147AE148";
-	--cpt_tmp_s <=  x"0A3D70A4";
-	cpt_tmp_s <=  x"40000000";
+	cpt_tmp_s <=  x"0A3D70A4";
+	--cpt_tmp_s <=  x"40000000";
 	max_accum_s<= x"00000019";
 	cpt_step_s <= cpt_tmp_s(COUNTER_SIZE-1 downto 0);
+	cpt_off_s <= x"000";
 
 	nco_inst : entity work.nco_counter_logic
 	generic map(LUT_SIZE => LUT_SIZE, TEST => true,
-		COUNTER_SIZE => COUNTER_SIZE, DATA_SIZE => DATA_SIZE,
+		COUNTER_SIZE => COUNTER_SIZE, DATA_SIZE => DATA_SIZE, MAX_TRIG => MAX_TRIG,
 		RESET_ACCUM=> false)
 	port map(rst_i => reset, clk_i => clk, cpu_clk_i => '0',
 		max_accum_i => max_accum_s,
-		cpt_off_i => (LUT_SIZE-1 downto 0 => '0'),
+		cpt_off_i => cpt_off_s,
 		cpt_inc_i => cpt_step_s,
 		enable_i => '1',
 		sync_i => '0',
@@ -123,27 +126,6 @@ begin
     wait for 10 ns;
     wait for 10 us;
     wait for 10 us;
-    --wait for 10 us;
-    --wait for 10 us;
-    --wait for 10 ns;
-    --wait for 10 us;
-    --wait for 10 us;
-    --wait for 10 us;
-    --wait for 10 us;
-    --wait for 10 ns;
-    --wait for 10 us;
-    --wait for 10 us;
-    --wait for 10 us;
-    --wait for 10 us;
-	--wait for 1 ms;
-	--wait for 1 ms;
---	wait for 10 ms;
---   wait for 10 us;
---    wait for 10 us;
---    wait for 10 us;
---    wait for 10 us;
---    wait for 10 us;
---    wait for 10 us;
 	wait for 1 ms;
     assert false report "End of test" severity error;
     end process stimulis;
@@ -155,7 +137,6 @@ begin
         clk <= '0';
         wait for HALF_PERIODE;
     end process clockp;
-
 
 store_result : process(clk, reset)
 	variable lp: line;
@@ -190,6 +171,5 @@ begin
 		end if;
 	end if;
 end process;
-
 
 end architecture RTL;

@@ -1,70 +1,48 @@
 [*]
-[*] GTKWave Analyzer v3.3.79 (w)1999-2017 BSI
-[*] Sun Apr  2 13:24:39 2017
+[*] GTKWave Analyzer v3.3.114 (w)1999-2023 BSI
+[*] Thu Nov 16 07:07:41 2023
 [*]
-[dumpfile] "/home/gwe/projets/oscimp/fpga_ip/nco_counter/simulation/simu/top_nco_counter_tb.ghw"
-[dumpfile_mtime] "Sun Apr  2 13:18:24 2017"
-[dumpfile_size] 33154954
-[savefile] "/home/gwe/projets/oscimp/fpga_ip/nco_counter/simulation/top_nco_counter.gtkw"
-[timestart] 320803990000
-[size] 1364 747
-[pos] -681 -371
-*-24.000000 1330000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[dumpfile] "/home/bma/git/github/oscimpDigital/fpga_ip/nco_counter/simulation/simu/top_nco_counter_tb.ghw"
+[dumpfile_mtime] "Thu Nov 16 07:06:50 2023"
+[dumpfile_size] 32228894
+[savefile] "/home/bma/git/github/oscimpDigital/fpga_ip/nco_counter/simulation/top_nco_counter.gtkw"
+[timestart] 207000000
+[size] 841 1313
+[pos] 0 25
+*-28.000000 448000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] top.
 [treeopen] top.top_nco_counter_tb.
 [treeopen] top.top_nco_counter_tb.nco_inst.
-[sst_width] 196
-[signals_width] 223
+[sst_width] 276
+[signals_width] 218
 [sst_expanded] 1
-[sst_vpaned_height] 300
+[sst_vpaned_height] 518
 @28
 top.top_nco_counter_tb.reset
 top.top_nco_counter_tb.clk
-top.top_nco_counter_tb.cos_fake_s
-top.top_nco_counter_tb.sin_fake_s
-top.top_nco_counter_tb.wave_en_s
-@22
-#{top.top_nco_counter_tb.nco_inst.counter_s[31:0]} top.top_nco_counter_tb.nco_inst.counter_s[31] top.top_nco_counter_tb.nco_inst.counter_s[30] top.top_nco_counter_tb.nco_inst.counter_s[29] top.top_nco_counter_tb.nco_inst.counter_s[28] top.top_nco_counter_tb.nco_inst.counter_s[27] top.top_nco_counter_tb.nco_inst.counter_s[26] top.top_nco_counter_tb.nco_inst.counter_s[25] top.top_nco_counter_tb.nco_inst.counter_s[24] top.top_nco_counter_tb.nco_inst.counter_s[23] top.top_nco_counter_tb.nco_inst.counter_s[22] top.top_nco_counter_tb.nco_inst.counter_s[21] top.top_nco_counter_tb.nco_inst.counter_s[20] top.top_nco_counter_tb.nco_inst.counter_s[19] top.top_nco_counter_tb.nco_inst.counter_s[18] top.top_nco_counter_tb.nco_inst.counter_s[17] top.top_nco_counter_tb.nco_inst.counter_s[16] top.top_nco_counter_tb.nco_inst.counter_s[15] top.top_nco_counter_tb.nco_inst.counter_s[14] top.top_nco_counter_tb.nco_inst.counter_s[13] top.top_nco_counter_tb.nco_inst.counter_s[12] top.top_nco_counter_tb.nco_inst.counter_s[11] top.top_nco_counter_tb.nco_inst.counter_s[10] top.top_nco_counter_tb.nco_inst.counter_s[9] top.top_nco_counter_tb.nco_inst.counter_s[8] top.top_nco_counter_tb.nco_inst.counter_s[7] top.top_nco_counter_tb.nco_inst.counter_s[6] top.top_nco_counter_tb.nco_inst.counter_s[5] top.top_nco_counter_tb.nco_inst.counter_s[4] top.top_nco_counter_tb.nco_inst.counter_s[3] top.top_nco_counter_tb.nco_inst.counter_s[2] top.top_nco_counter_tb.nco_inst.counter_s[1] top.top_nco_counter_tb.nco_inst.counter_s[0]
-@10420
-#{top.top_nco_counter_tb.nco_inst.cos_o[15:0]} top.top_nco_counter_tb.nco_inst.cos_o[15] top.top_nco_counter_tb.nco_inst.cos_o[14] top.top_nco_counter_tb.nco_inst.cos_o[13] top.top_nco_counter_tb.nco_inst.cos_o[12] top.top_nco_counter_tb.nco_inst.cos_o[11] top.top_nco_counter_tb.nco_inst.cos_o[10] top.top_nco_counter_tb.nco_inst.cos_o[9] top.top_nco_counter_tb.nco_inst.cos_o[8] top.top_nco_counter_tb.nco_inst.cos_o[7] top.top_nco_counter_tb.nco_inst.cos_o[6] top.top_nco_counter_tb.nco_inst.cos_o[5] top.top_nco_counter_tb.nco_inst.cos_o[4] top.top_nco_counter_tb.nco_inst.cos_o[3] top.top_nco_counter_tb.nco_inst.cos_o[2] top.top_nco_counter_tb.nco_inst.cos_o[1] top.top_nco_counter_tb.nco_inst.cos_o[0]
-@24
-#{top.top_nco_counter_tb.nco_inst.counter_sin_s[9:0]} top.top_nco_counter_tb.nco_inst.counter_sin_s[9] top.top_nco_counter_tb.nco_inst.counter_sin_s[8] top.top_nco_counter_tb.nco_inst.counter_sin_s[7] top.top_nco_counter_tb.nco_inst.counter_sin_s[6] top.top_nco_counter_tb.nco_inst.counter_sin_s[5] top.top_nco_counter_tb.nco_inst.counter_sin_s[4] top.top_nco_counter_tb.nco_inst.counter_sin_s[3] top.top_nco_counter_tb.nco_inst.counter_sin_s[2] top.top_nco_counter_tb.nco_inst.counter_sin_s[1] top.top_nco_counter_tb.nco_inst.counter_sin_s[0]
-@10420
-#{top.top_nco_counter_tb.nco_inst.sin_o[15:0]} top.top_nco_counter_tb.nco_inst.sin_o[15] top.top_nco_counter_tb.nco_inst.sin_o[14] top.top_nco_counter_tb.nco_inst.sin_o[13] top.top_nco_counter_tb.nco_inst.sin_o[12] top.top_nco_counter_tb.nco_inst.sin_o[11] top.top_nco_counter_tb.nco_inst.sin_o[10] top.top_nco_counter_tb.nco_inst.sin_o[9] top.top_nco_counter_tb.nco_inst.sin_o[8] top.top_nco_counter_tb.nco_inst.sin_o[7] top.top_nco_counter_tb.nco_inst.sin_o[6] top.top_nco_counter_tb.nco_inst.sin_o[5] top.top_nco_counter_tb.nco_inst.sin_o[4] top.top_nco_counter_tb.nco_inst.sin_o[3] top.top_nco_counter_tb.nco_inst.sin_o[2] top.top_nco_counter_tb.nco_inst.sin_o[1] top.top_nco_counter_tb.nco_inst.sin_o[0]
-@420
-#{top.top_nco_counter_tb.nco_inst.sin_o[15:0]} top.top_nco_counter_tb.nco_inst.sin_o[15] top.top_nco_counter_tb.nco_inst.sin_o[14] top.top_nco_counter_tb.nco_inst.sin_o[13] top.top_nco_counter_tb.nco_inst.sin_o[12] top.top_nco_counter_tb.nco_inst.sin_o[11] top.top_nco_counter_tb.nco_inst.sin_o[10] top.top_nco_counter_tb.nco_inst.sin_o[9] top.top_nco_counter_tb.nco_inst.sin_o[8] top.top_nco_counter_tb.nco_inst.sin_o[7] top.top_nco_counter_tb.nco_inst.sin_o[6] top.top_nco_counter_tb.nco_inst.sin_o[5] top.top_nco_counter_tb.nco_inst.sin_o[4] top.top_nco_counter_tb.nco_inst.sin_o[3] top.top_nco_counter_tb.nco_inst.sin_o[2] top.top_nco_counter_tb.nco_inst.sin_o[1] top.top_nco_counter_tb.nco_inst.sin_o[0]
-@10420
-#{top.top_nco_counter_tb.nco_inst.cos_s[15:0]} top.top_nco_counter_tb.nco_inst.cos_s[15] top.top_nco_counter_tb.nco_inst.cos_s[14] top.top_nco_counter_tb.nco_inst.cos_s[13] top.top_nco_counter_tb.nco_inst.cos_s[12] top.top_nco_counter_tb.nco_inst.cos_s[11] top.top_nco_counter_tb.nco_inst.cos_s[10] top.top_nco_counter_tb.nco_inst.cos_s[9] top.top_nco_counter_tb.nco_inst.cos_s[8] top.top_nco_counter_tb.nco_inst.cos_s[7] top.top_nco_counter_tb.nco_inst.cos_s[6] top.top_nco_counter_tb.nco_inst.cos_s[5] top.top_nco_counter_tb.nco_inst.cos_s[4] top.top_nco_counter_tb.nco_inst.cos_s[3] top.top_nco_counter_tb.nco_inst.cos_s[2] top.top_nco_counter_tb.nco_inst.cos_s[1] top.top_nco_counter_tb.nco_inst.cos_s[0]
-@20000
--
--
--
 @8420
-#{top.top_nco_counter_tb.nco_inst.sin_s[15:0]} top.top_nco_counter_tb.nco_inst.sin_s[15] top.top_nco_counter_tb.nco_inst.sin_s[14] top.top_nco_counter_tb.nco_inst.sin_s[13] top.top_nco_counter_tb.nco_inst.sin_s[12] top.top_nco_counter_tb.nco_inst.sin_s[11] top.top_nco_counter_tb.nco_inst.sin_s[10] top.top_nco_counter_tb.nco_inst.sin_s[9] top.top_nco_counter_tb.nco_inst.sin_s[8] top.top_nco_counter_tb.nco_inst.sin_s[7] top.top_nco_counter_tb.nco_inst.sin_s[6] top.top_nco_counter_tb.nco_inst.sin_s[5] top.top_nco_counter_tb.nco_inst.sin_s[4] top.top_nco_counter_tb.nco_inst.sin_s[3] top.top_nco_counter_tb.nco_inst.sin_s[2] top.top_nco_counter_tb.nco_inst.sin_s[1] top.top_nco_counter_tb.nco_inst.sin_s[0]
+#{top.top_nco_counter_tb.nco_inst.sin_o[15:0]} top.top_nco_counter_tb.nco_inst.sin_o[15] top.top_nco_counter_tb.nco_inst.sin_o[14] top.top_nco_counter_tb.nco_inst.sin_o[13] top.top_nco_counter_tb.nco_inst.sin_o[12] top.top_nco_counter_tb.nco_inst.sin_o[11] top.top_nco_counter_tb.nco_inst.sin_o[10] top.top_nco_counter_tb.nco_inst.sin_o[9] top.top_nco_counter_tb.nco_inst.sin_o[8] top.top_nco_counter_tb.nco_inst.sin_o[7] top.top_nco_counter_tb.nco_inst.sin_o[6] top.top_nco_counter_tb.nco_inst.sin_o[5] top.top_nco_counter_tb.nco_inst.sin_o[4] top.top_nco_counter_tb.nco_inst.sin_o[3] top.top_nco_counter_tb.nco_inst.sin_o[2] top.top_nco_counter_tb.nco_inst.sin_o[1] top.top_nco_counter_tb.nco_inst.sin_o[0]
 @20000
 -
+-
+-
+@8421
+#{top.top_nco_counter_tb.nco_inst.cos_o[15:0]} top.top_nco_counter_tb.nco_inst.cos_o[15] top.top_nco_counter_tb.nco_inst.cos_o[14] top.top_nco_counter_tb.nco_inst.cos_o[13] top.top_nco_counter_tb.nco_inst.cos_o[12] top.top_nco_counter_tb.nco_inst.cos_o[11] top.top_nco_counter_tb.nco_inst.cos_o[10] top.top_nco_counter_tb.nco_inst.cos_o[9] top.top_nco_counter_tb.nco_inst.cos_o[8] top.top_nco_counter_tb.nco_inst.cos_o[7] top.top_nco_counter_tb.nco_inst.cos_o[6] top.top_nco_counter_tb.nco_inst.cos_o[5] top.top_nco_counter_tb.nco_inst.cos_o[4] top.top_nco_counter_tb.nco_inst.cos_o[3] top.top_nco_counter_tb.nco_inst.cos_o[2] top.top_nco_counter_tb.nco_inst.cos_o[1] top.top_nco_counter_tb.nco_inst.cos_o[0]
+@20000
+-
+-
+-
+@8022
+#{top.top_nco_counter_tb.nco_inst.saw_i_o[15:0]} top.top_nco_counter_tb.nco_inst.saw_i_o[15] top.top_nco_counter_tb.nco_inst.saw_i_o[14] top.top_nco_counter_tb.nco_inst.saw_i_o[13] top.top_nco_counter_tb.nco_inst.saw_i_o[12] top.top_nco_counter_tb.nco_inst.saw_i_o[11] top.top_nco_counter_tb.nco_inst.saw_i_o[10] top.top_nco_counter_tb.nco_inst.saw_i_o[9] top.top_nco_counter_tb.nco_inst.saw_i_o[8] top.top_nco_counter_tb.nco_inst.saw_i_o[7] top.top_nco_counter_tb.nco_inst.saw_i_o[6] top.top_nco_counter_tb.nco_inst.saw_i_o[5] top.top_nco_counter_tb.nco_inst.saw_i_o[4] top.top_nco_counter_tb.nco_inst.saw_i_o[3] top.top_nco_counter_tb.nco_inst.saw_i_o[2] top.top_nco_counter_tb.nco_inst.saw_i_o[1] top.top_nco_counter_tb.nco_inst.saw_i_o[0]
+@20000
+-
+-
+@8022
+#{top.top_nco_counter_tb.nco_inst.saw_q_o[15:0]} top.top_nco_counter_tb.nco_inst.saw_q_o[15] top.top_nco_counter_tb.nco_inst.saw_q_o[14] top.top_nco_counter_tb.nco_inst.saw_q_o[13] top.top_nco_counter_tb.nco_inst.saw_q_o[12] top.top_nco_counter_tb.nco_inst.saw_q_o[11] top.top_nco_counter_tb.nco_inst.saw_q_o[10] top.top_nco_counter_tb.nco_inst.saw_q_o[9] top.top_nco_counter_tb.nco_inst.saw_q_o[8] top.top_nco_counter_tb.nco_inst.saw_q_o[7] top.top_nco_counter_tb.nco_inst.saw_q_o[6] top.top_nco_counter_tb.nco_inst.saw_q_o[5] top.top_nco_counter_tb.nco_inst.saw_q_o[4] top.top_nco_counter_tb.nco_inst.saw_q_o[3] top.top_nco_counter_tb.nco_inst.saw_q_o[2] top.top_nco_counter_tb.nco_inst.saw_q_o[1] top.top_nco_counter_tb.nco_inst.saw_q_o[0]
+@20000
 -
 -
 @28
-top.top_nco_counter_tb.reset_nco_s
-@22
-#{top.top_nco_counter_tb.sin2_s[15:0]} top.top_nco_counter_tb.sin2_s[15] top.top_nco_counter_tb.sin2_s[14] top.top_nco_counter_tb.sin2_s[13] top.top_nco_counter_tb.sin2_s[12] top.top_nco_counter_tb.sin2_s[11] top.top_nco_counter_tb.sin2_s[10] top.top_nco_counter_tb.sin2_s[9] top.top_nco_counter_tb.sin2_s[8] top.top_nco_counter_tb.sin2_s[7] top.top_nco_counter_tb.sin2_s[6] top.top_nco_counter_tb.sin2_s[5] top.top_nco_counter_tb.sin2_s[4] top.top_nco_counter_tb.sin2_s[3] top.top_nco_counter_tb.sin2_s[2] top.top_nco_counter_tb.sin2_s[1] top.top_nco_counter_tb.sin2_s[0]
-#{top.top_nco_counter_tb.cos2_s[15:0]} top.top_nco_counter_tb.cos2_s[15] top.top_nco_counter_tb.cos2_s[14] top.top_nco_counter_tb.cos2_s[13] top.top_nco_counter_tb.cos2_s[12] top.top_nco_counter_tb.cos2_s[11] top.top_nco_counter_tb.cos2_s[10] top.top_nco_counter_tb.cos2_s[9] top.top_nco_counter_tb.cos2_s[8] top.top_nco_counter_tb.cos2_s[7] top.top_nco_counter_tb.cos2_s[6] top.top_nco_counter_tb.cos2_s[5] top.top_nco_counter_tb.cos2_s[4] top.top_nco_counter_tb.cos2_s[3] top.top_nco_counter_tb.cos2_s[2] top.top_nco_counter_tb.cos2_s[1] top.top_nco_counter_tb.cos2_s[0]
-@420
-#{top.top_nco_counter_tb.sin2_s[15:0]} top.top_nco_counter_tb.sin2_s[15] top.top_nco_counter_tb.sin2_s[14] top.top_nco_counter_tb.sin2_s[13] top.top_nco_counter_tb.sin2_s[12] top.top_nco_counter_tb.sin2_s[11] top.top_nco_counter_tb.sin2_s[10] top.top_nco_counter_tb.sin2_s[9] top.top_nco_counter_tb.sin2_s[8] top.top_nco_counter_tb.sin2_s[7] top.top_nco_counter_tb.sin2_s[6] top.top_nco_counter_tb.sin2_s[5] top.top_nco_counter_tb.sin2_s[4] top.top_nco_counter_tb.sin2_s[3] top.top_nco_counter_tb.sin2_s[2] top.top_nco_counter_tb.sin2_s[1] top.top_nco_counter_tb.sin2_s[0]
-@22
-#{top.top_nco_counter_tb.cos2_s[15:0]} top.top_nco_counter_tb.cos2_s[15] top.top_nco_counter_tb.cos2_s[14] top.top_nco_counter_tb.cos2_s[13] top.top_nco_counter_tb.cos2_s[12] top.top_nco_counter_tb.cos2_s[11] top.top_nco_counter_tb.cos2_s[10] top.top_nco_counter_tb.cos2_s[9] top.top_nco_counter_tb.cos2_s[8] top.top_nco_counter_tb.cos2_s[7] top.top_nco_counter_tb.cos2_s[6] top.top_nco_counter_tb.cos2_s[5] top.top_nco_counter_tb.cos2_s[4] top.top_nco_counter_tb.cos2_s[3] top.top_nco_counter_tb.cos2_s[2] top.top_nco_counter_tb.cos2_s[1] top.top_nco_counter_tb.cos2_s[0]
-@20000
--
--
--
-@8420
-#{top.top_nco_counter_tb.sin2_s[15:0]} top.top_nco_counter_tb.sin2_s[15] top.top_nco_counter_tb.sin2_s[14] top.top_nco_counter_tb.sin2_s[13] top.top_nco_counter_tb.sin2_s[12] top.top_nco_counter_tb.sin2_s[11] top.top_nco_counter_tb.sin2_s[10] top.top_nco_counter_tb.sin2_s[9] top.top_nco_counter_tb.sin2_s[8] top.top_nco_counter_tb.sin2_s[7] top.top_nco_counter_tb.sin2_s[6] top.top_nco_counter_tb.sin2_s[5] top.top_nco_counter_tb.sin2_s[4] top.top_nco_counter_tb.sin2_s[3] top.top_nco_counter_tb.sin2_s[2] top.top_nco_counter_tb.sin2_s[1] top.top_nco_counter_tb.sin2_s[0]
-@20000
--
--
--
-@22
-#{top.top_nco_counter_tb.nco_inst.counter_cos_off_s[11:0]} top.top_nco_counter_tb.nco_inst.counter_cos_off_s[11] top.top_nco_counter_tb.nco_inst.counter_cos_off_s[10] top.top_nco_counter_tb.nco_inst.counter_cos_off_s[9] top.top_nco_counter_tb.nco_inst.counter_cos_off_s[8] top.top_nco_counter_tb.nco_inst.counter_cos_off_s[7] top.top_nco_counter_tb.nco_inst.counter_cos_off_s[6] top.top_nco_counter_tb.nco_inst.counter_cos_off_s[5] top.top_nco_counter_tb.nco_inst.counter_cos_off_s[4] top.top_nco_counter_tb.nco_inst.counter_cos_off_s[3] top.top_nco_counter_tb.nco_inst.counter_cos_off_s[2] top.top_nco_counter_tb.nco_inst.counter_cos_off_s[1] top.top_nco_counter_tb.nco_inst.counter_cos_off_s[0]
+top.top_nco_counter_tb.nco_inst.trigger_o
 [pattern_trace] 1
 [pattern_trace] 0

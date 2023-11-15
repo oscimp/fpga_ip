@@ -3,22 +3,16 @@ proc init_gui { IPINST } {
   ipgui::add_param $IPINST -name "Component_Name"
   #Adding Page
   set Page_0 [ipgui::add_page $IPINST -name "Page 0"]
-  set COUNTER_SIZE [ipgui::add_param $IPINST -name "COUNTER_SIZE" -parent ${Page_0}]
-  set_property tooltip {Size of the phase accum counter.} ${COUNTER_SIZE}
-  set C_S00_AXI_ADDR_WIDTH [ipgui::add_param $IPINST -name "C_S00_AXI_ADDR_WIDTH" -parent ${Page_0}]
-  set_property tooltip {Width of the S_AXI addr bus.} ${C_S00_AXI_ADDR_WIDTH}
-  set C_S00_AXI_DATA_WIDTH [ipgui::add_param $IPINST -name "C_S00_AXI_DATA_WIDTH" -parent ${Page_0}]
-  set_property tooltip {Width of the S_AXI data bus.} ${C_S00_AXI_DATA_WIDTH}
-  set DATA_SIZE [ipgui::add_param $IPINST -name "DATA_SIZE" -parent ${Page_0}]
-  set_property tooltip {Size of input data bus.} ${DATA_SIZE}
-  set DEFAULT_RST_ACCUM_VAL [ipgui::add_param $IPINST -name "DEFAULT_RST_ACCUM_VAL" -parent ${Page_0}]
-  set_property tooltip {Default reset accum val.} ${DEFAULT_RST_ACCUM_VAL}
-  set LUT_SIZE [ipgui::add_param $IPINST -name "LUT_SIZE" -parent ${Page_0}]
-  set_property tooltip {Length of the coefficient LUT.} ${LUT_SIZE}
-  set RESET_ACCUM [ipgui::add_param $IPINST -name "RESET_ACCUM" -parent ${Page_0}]
-  set_property tooltip {Reset accum at each overflow.} ${RESET_ACCUM}
-  set id [ipgui::add_param $IPINST -name "id" -parent ${Page_0}]
-  set_property tooltip {Id.} ${id}
+  ipgui::add_param $IPINST -name "COUNTER_SIZE" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "C_S00_AXI_ADDR_WIDTH" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "C_S00_AXI_DATA_WIDTH" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "DATA_SIZE" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "DEFAULT_RST_ACCUM_VAL" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "LUT_SIZE" -parent ${Page_0}
+  set MAX_TRIG [ipgui::add_param $IPINST -name "MAX_TRIG" -parent ${Page_0}]
+  set_property tooltip {Length of trigger_o on clk cycles} ${MAX_TRIG}
+  ipgui::add_param $IPINST -name "RESET_ACCUM" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "id" -parent ${Page_0}
 
 
 }
@@ -74,6 +68,15 @@ proc update_PARAM_VALUE.LUT_SIZE { PARAM_VALUE.LUT_SIZE } {
 
 proc validate_PARAM_VALUE.LUT_SIZE { PARAM_VALUE.LUT_SIZE } {
 	# Procedure called to validate LUT_SIZE
+	return true
+}
+
+proc update_PARAM_VALUE.MAX_TRIG { PARAM_VALUE.MAX_TRIG } {
+	# Procedure called to update MAX_TRIG when any of the dependent parameters in the arguments change
+}
+
+proc validate_PARAM_VALUE.MAX_TRIG { PARAM_VALUE.MAX_TRIG } {
+	# Procedure called to validate MAX_TRIG
 	return true
 }
 
@@ -134,5 +137,10 @@ proc update_MODELPARAM_VALUE.C_S00_AXI_DATA_WIDTH { MODELPARAM_VALUE.C_S00_AXI_D
 proc update_MODELPARAM_VALUE.C_S00_AXI_ADDR_WIDTH { MODELPARAM_VALUE.C_S00_AXI_ADDR_WIDTH PARAM_VALUE.C_S00_AXI_ADDR_WIDTH } {
 	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
 	set_property value [get_property value ${PARAM_VALUE.C_S00_AXI_ADDR_WIDTH}] ${MODELPARAM_VALUE.C_S00_AXI_ADDR_WIDTH}
+}
+
+proc update_MODELPARAM_VALUE.MAX_TRIG { MODELPARAM_VALUE.MAX_TRIG PARAM_VALUE.MAX_TRIG } {
+	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
+	set_property value [get_property value ${PARAM_VALUE.MAX_TRIG}] ${MODELPARAM_VALUE.MAX_TRIG}
 }
 

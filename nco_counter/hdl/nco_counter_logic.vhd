@@ -14,7 +14,8 @@ entity nco_counter_logic is
 		RESET_ACCUM : boolean := false;
 		LUT_SIZE : natural := 10;
 		COUNTER_SIZE : natural := 32;
-		DATA_SIZE : natural := 16
+		DATA_SIZE : natural := 16;
+		MAX_TRIG : natural := 1
 	);
 	port (
 		cpu_clk_i : in std_logic;
@@ -31,6 +32,8 @@ entity nco_counter_logic is
 		--step_scale_o : out std_logic_vector(LUT_SIZE-1 downto 0);
 		cos_o : out std_logic_vector(DATA_SIZE -1 downto 0);
 		sin_o : out std_logic_vector(DATA_SIZE -1 downto 0);
+		saw_i_o : out std_logic_vector(DATA_SIZE -1 downto 0);
+		saw_q_o : out std_logic_vector(DATA_SIZE -1 downto 0);
 		sin_fake_o : out std_logic;
 		wave_en_o : out std_logic;
 		cos_fake_o : out std_logic
@@ -58,7 +61,6 @@ architecture Behavioral of nco_counter_logic is
 	signal rst_accum_s : std_logic := '0';
 	signal cpt_s : std_logic_vector(COUNTER_SIZE-1 downto 0);
 	-- trigger
-	constant MAX_TRIG : natural := 3;
 	signal trig_cpt_s : natural range 0 to MAX_TRIG;
 	signal counter_old_s, reinit_counter_s : std_logic;
 	constant sin_static_offset_s : unsigned(COUNTER_SIZE-2 downto 0) := '1' & (COUNTER_SIZE-3 downto 0 => '0');
@@ -193,4 +195,20 @@ begin
 		cos_o <= cos_s & (DATA_SIZE-17 downto 0 => '0');
 		sin_o <= sin_s & (DATA_SIZE-17 downto 0 => '0');
 	end generate gt_size;
+
+	same_size_saw: if DATA_SIZE = LUT_SIZE generate
+		saw_i_o <= counter_sin_off_s;
+		saw_q_o <= counter_cos_off_s;
+	end generate same_size_saw;
+
+	lt_size_saw: if DATA_SIZE < LUT_SIZE generate
+	   saw_i_o <= counter_sin_off_s(LUT_SIZE-1 downto LUT_SIZE-DATA_SIZE);
+	   saw_q_o <= counter_cos_off_s(LUT_SIZE-1 downto LUT_SIZE-DATA_SIZE);
+	end generate lt_size_saw;
+
+	gt_size_saw: if DATA_SIZE > LUT_SIZE generate
+		saw_i_o <= counter_sin_off_s & (DATA_SIZE-LUT_SIZE-1 downto 0 => '0');
+		saw_q_o <= counter_cos_off_s & (DATA_SIZE-LUT_SIZE-1 downto 0 => '0');
+	end generate gt_size_saw;
+
 end Behavioral;

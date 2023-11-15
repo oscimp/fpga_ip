@@ -15,6 +15,7 @@ entity nco_counter is
 		DATA_SIZE : natural := 16;
 		LUT_SIZE : natural := 10;
 		COUNTER_SIZE : natural := 28;
+		MAX_TRIG : natural := 3;
 		-- Parameters of Axi Slave Bus Interface S00_AXI
 		C_S00_AXI_DATA_WIDTH	: integer	:= 32;
 		C_S00_AXI_ADDR_WIDTH	: integer	:= 5
@@ -61,6 +62,11 @@ entity nco_counter is
 		dds_en_o : out std_logic;
 		dds_clk_o : out std_logic;
 		dds_rst_o : out std_logic;
+		saw_i_o : out std_logic_vector(DATA_SIZE-1 downto 0);
+		saw_q_o : out std_logic_vector(DATA_SIZE-1 downto 0);
+		saw_en_o : out std_logic;
+		saw_clk_o : out std_logic;
+		saw_rst_o : out std_logic;
 		trigger_o : out std_logic;
 		
 		-- output single bit3
@@ -91,17 +97,21 @@ architecture Behavioral of nco_counter is
 begin
 	dds_rst_o <= ref_rst_i;
 	wave_rst_o <= ref_rst_i;
+	saw_rst_o <= ref_rst_i;
 	dds_en_o <= wave_en_s;
 	wave_en_o <= wave_en_s;
+	saw_en_o <= wave_en_s;
 	wave_clk_o <= ref_clk_i;
 	dds_clk_o <= ref_clk_i;
+	saw_clk_o <= ref_clk_i;
 	
 	nco_inst1 : entity work.nco_counter_logic
 	generic map (
 		RESET_ACCUM => RESET_ACCUM,
 		COUNTER_SIZE => COUNTER_SIZE,
 		LUT_SIZE => LUT_SIZE,
-		DATA_SIZE => DATA_SIZE
+		DATA_SIZE => DATA_SIZE,
+		MAX_TRIG => MAX_TRIG
 	)
 	port map(
 		cpu_clk_i => s00_axi_aclk,
@@ -115,6 +125,8 @@ begin
 		cpt_off_i => cpt_off_mux_s,
 		cos_o => dds_cos_o,
 		sin_o => dds_sin_o,
+		saw_i_o => saw_i_o,
+		saw_q_o => saw_q_o,
 		trigger_o => trigger_o,
 		--step_scale_o => open, --step_scale_s,
 		--output
@@ -208,4 +220,3 @@ begin
 		write_en_o => write_en_s,
 		addr_o => addr_s);
 end Behavioral;
-
