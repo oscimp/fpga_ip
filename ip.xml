@@ -6,10 +6,16 @@
 		driver="add_const" />
 	<ip name="check_valid_burst"
 		driver="fpgagen" />
-	<ip name="dataComplex_to_ram"
-		driver="data_to_ram" />
+	<ip name="dataComplex_dma_direct"
+		driver="data_dma_direct" />
 	<ip name="dataReal_dma_direct"
 		driver="data_dma_direct" />
+	<ip name="dataComplex_to_ram"
+		driver="data_to_ram" />
+	<ip name="dataReal_to_ram_pingpong"
+		driver="data_to_ram" />
+	<ip name="dataComplex_to_ram_pingpong"
+		driver="data_to_ram" />
 	<ip name="dataReal_to_ram"
 		driver="data_to_ram" />
 	<ip name="delayTempoReal_axi"
@@ -40,6 +46,8 @@
 		driver="fpgagen" />
 	<ip name="pwm_axi"
 		driver="fpgagen" />
+	<ip name="ram_to_dataReal"
+		driver="fir" />
 	<ip name="redpitaya_converters_12"
 		driver="redpitaya_converters_12" />
 	<ip name="shifterComplex_dyn"
