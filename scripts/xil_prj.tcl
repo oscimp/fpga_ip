@@ -127,11 +127,20 @@ proc connect_to_fpga_pins {inst_name inst_bus fpga_pins} {
 	}
 }
 
-proc __create_ps7_axi {} {
-	set ps7_axi [add_ip_and_conf axi_interconnect ps7_axi {
+proc __create_ps7_axi {{ps7_axi_name "ps7_axi"}} {
+	set ps7_axi [add_ip_and_conf axi_interconnect $ps7_axi_name {
 		NUM_MI 1}]
+
+	if {$ps7_axi_name == "ps7_axi"} {
+		set M_AXI_GP "M_AXI_GP0"
+	} else {
+		set M_AXI_GP "M_AXI_GP1"
+		set_property CONFIG.PCW_USE_M_AXI_GP1 {1} [get_bd_cells ps7]
+		connect_bd_net -net ps7_FCLK_CLK0 [get_bd_pins ps7/M_AXI_GP1_ACLK]
+	}
+
 	connect_bd_intf_net \
-		[get_bd_intf_pins ps7/M_AXI_GP0] [get_bd_intf_pins $ps7_axi/S00_AXI]
+		[get_bd_intf_pins ps7/$M_AXI_GP] [get_bd_intf_pins $ps7_axi/S00_AXI]
 
 	connect_bd_net [get_bd_pins ps7_rst/interconnect_aresetn] [get_bd_pins $ps7_axi/ARESETN]
 	connect_bd_net [get_bd_pins ps7/FCLK_CLK0] [get_bd_pins $ps7_axi/ACLK]
@@ -142,6 +151,7 @@ proc __create_ps7_axi {} {
 }
 
 proc connect_proc {inst_name axi_bus {base_addr ""}} {
+	set max_num_slaves 64
 	set axi_clock ""
 	set axi_rst ""
 	set listIF [get_bd_pins -of_objects [get_bd_cells $inst_name]]
@@ -166,6 +176,12 @@ proc connect_proc {inst_name axi_bus {base_addr ""}} {
 		apply_bd_automation -rule xilinx.com:bd_rule:axi4 \
 			-config {Master "/ps7/M_AXI_GP0" Clk "Auto" } \
 			[get_bd_intf_pins $inst_name/$axi_bus]
+
+		if {[get_property CONFIG.PCW_USE_M_AXI_GP1 [get_bd_cells ps7]] == 1} {
+			apply_bd_automation -rule xilinx.com:bd_rule:axi4 \
+				-config {Master "/ps7/M_AXI_GP1" Clk "Auto" } \
+				[get_bd_intf_pins $inst_name/$axi_bus]
+		}
 	} else {
 		set base_name [join [lrange [split $inst_name "/"] 0 end] "_"]
 		set addr [expr {$base_addr + 0x43C00000}]
@@ -175,9 +191,25 @@ proc connect_proc {inst_name axi_bus {base_addr ""}} {
 			set ps7_axi [__create_ps7_axi]
 			set num_mi 0
 		} else {
-			set num_mi [get_property CONFIG.NUM_MI  $ps7_axi]
-			set new_num_mi [expr {$num_mi + 1}]
-			set_property -dict [list CONFIG.NUM_MI $new_num_mi] $ps7_axi
+			set num_mi [get_property CONFIG.NUM_MI $ps7_axi]
+			if {$num_mi < $max_num_slaves} {
+				set new_num_mi [expr {$num_mi + 1}]
+				set_property -dict [list CONFIG.NUM_MI $new_num_mi] $ps7_axi
+			}
+		}
+
+		# If max num of slaves (64) of ps7_axi interconnect is reached, use ps7_1_axi
+		if {$num_mi == $max_num_slaves} {
+			set addr [expr {$base_addr + 0x83C00000}]
+			set ps7_axi [get_bd_cells ps7_1_axi -quiet]
+			if {$ps7_axi == ""} {
+				set ps7_axi [__create_ps7_axi ps7_1_axi]
+				set num_mi 0
+			} else {
+				set num_mi [get_property CONFIG.NUM_MI  $ps7_axi]
+				set new_num_mi [expr {$num_mi + 1}]
+				set_property -dict [list CONFIG.NUM_MI $new_num_mi] $ps7_axi
+			}
 		}
 
 		if {$num_mi < 10} {
@@ -185,15 +217,15 @@ proc connect_proc {inst_name axi_bus {base_addr ""}} {
 		} else {
 			set mst_if "M${num_mi}"
 		}
-		
+
 		set axi_mst "${mst_if}_AXI"
 
 		connect_bd_net \
 			[get_bd_pins ps7_rst/peripheral_aresetn] \
-			[get_bd_pins ps7_axi/${mst_if}_ARESETN]
+			[get_bd_pins $ps7_axi/${mst_if}_ARESETN]
 		connect_bd_net \
 			[get_bd_pins ps7/FCLK_CLK0] \
-			[get_bd_pins ps7_axi/${mst_if}_ACLK]
+			[get_bd_pins $ps7_axi/${mst_if}_ACLK]
 
         if {$axi_rst != ""} {
           connect_bd_net \
@@ -205,7 +237,7 @@ proc connect_proc {inst_name axi_bus {base_addr ""}} {
           connect_proc_clk $inst_name $axi_clock
         }
 
-		connect_bd_intf_net [get_bd_intf_pins ps7_axi/$axi_mst] \
+		connect_bd_intf_net [get_bd_intf_pins $ps7_axi/$axi_mst] \
 			[get_bd_intf_pins $inst_name/$axi_bus]
 
 		create_bd_addr_seg -verbose -range 0x0001000 -offset $addr \
