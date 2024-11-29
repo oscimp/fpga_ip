@@ -13,7 +13,7 @@ entity dataReal_to_ram_pingpong is
 		USE_EOF : boolean := false;
 		NB_INPUT : natural := 1;
 		DATA_FORMAT : string := "signed";
-		DATA_SIZE : natural := 32;
+		DATA_SIZE : natural := 16;
 		--ADDR_SIZE : natural := 12;
 		NB_SAMPLE : natural := 1024;
 		-- Parameters of Axi Slave Bus Interface S00_AXI
@@ -142,7 +142,7 @@ architecture Behavioral of dataReal_to_ram_pingpong is
 	signal write_en_s, read_en_s : std_logic;
 
 	-- input data merge
-	signal data_i_s : std_logic_vector((MAX_WAY * DATA_SIZE)-1 downto 0);
+	signal data_s : std_logic_vector((MAX_WAY * DATA_SIZE)-1 downto 0);
 	signal data_rst_s : std_logic_vector(MAX_WAY-1 downto 0);
 	signal data_clk_s : std_logic_vector(MAX_WAY-1 downto 0);
 	signal data_en_s : std_logic_vector(MAX_WAY-1 downto 0);
@@ -163,7 +163,7 @@ architecture Behavioral of dataReal_to_ram_pingpong is
 	signal ram_reinit_s      : std_logic;
 begin
 
-	data_i_s <= data12_i & data11_i & data10_i & data9_i &
+	data_s <= data12_i & data11_i & data10_i & data9_i &
 		data8_i & data7_i & data6_i & data5_i & data4_i & data3_i &
 		data2_i & data1_i;
 	data_rst_s <= data12_rst_i & data11_rst_i & data10_rst_i & data9_rst_i & 
@@ -194,7 +194,7 @@ begin
 		-- results
 		ram_incr_i => ram_incr_s, ram_reinit_i => ram_reinit_s, res_o => res_s,
 		-- input
-		data_i((NB_INPUT*DATA_SIZE)-1 downto 0) => data_i_s((NB_INPUT*DATA_SIZE)-1 downto 0),
+		data_i((NB_INPUT*DATA_SIZE)-1 downto 0) => data_s((NB_INPUT*DATA_SIZE)-1 downto 0),
 		data_en_i(NB_INPUT-1 downto 0) => data_en_s(NB_INPUT-1 downto 0),
 		data_eof_i(NB_INPUT-1 downto 0) => data_eof_s(NB_INPUT-1 downto 0)
 	);

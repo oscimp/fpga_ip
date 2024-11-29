@@ -40,9 +40,25 @@ entity dataReal_to_ram_pingpong_top is
 end dataReal_to_ram_pingpong_top;
 
 architecture Behavioral of dataReal_to_ram_pingpong_top is
+	function prod_nb_iter(in_size, axi_size, nb_way: natural) return natural is
+	begin
+		if (in_size <= axi_size / 2 and nb_way /= 1) then
+			if ((nb_way mod 2) /= 0) then
+				return ((nb_way / 2) + 1);
+			else
+				return (nb_way / 2);
+			end if;
+		else
+			return(nb_way);
+		end if;
+	end function prod_nb_iter;
+	constant NB_ITER         : natural := prod_nb_iter(DATA_SIZE, AXI_SIZE, NB_WAY);
+	constant HLF_WAY         : natural := NB_WAY/2;
+
 	signal start_s           : std_logic;
 	type res_tab is array (natural range <>) of std_logic_vector(AXI_SIZE-1 downto 0);
 	signal res_s             : res_tab(NB_WAY-1 downto 0);
+	signal mux_complex_s     : res_tab(NB_WAY-1 downto 0);
 
 	-- address manipulation
 	constant NB_PKT_PER_SAMP : natural := 2**PKT_MUX_SZ;
@@ -99,7 +115,9 @@ begin
 
 	-- select sub slv part
 	mux_1word: if NB_PKT_PER_SAMP = 1 generate
-		select_next_s <= "0";
+		pkt_mux_sz_zero: if PKT_MUX_SZ /= 0 generate
+			select_next_s <= "0";
+		end generate pkt_mux_sz_zero;
 		incr_chan_s <= '1';
 	end generate mux_1word;
 	mux_manyWord: if NB_PKT_PER_SAMP /= 1 generate
@@ -134,6 +152,7 @@ begin
 		data_subtop_inst : entity work.dataReal_logic
 		generic map(USE_EOF => USE_EOF, DATA_FORMAT => DATA_FORMAT,
 			DATA_SIZE => DATA_SIZE, INPUT_SIZE => INPUT_SIZE,
+			NB_WAY => NB_WAY,
 			AXI_SIZE => AXI_SIZE, NB_SAMPLE => NB_SAMPLE,
 			SELECT_SZ => PKT_MUX_SZ, ADDR_SIZE => ADDR_SIZE)
 		port map (data_clk_i => data_clk_i(i), cpu_clk_i => cpu_clk_i,
@@ -146,7 +165,53 @@ begin
 			data_en_i => data_en_i(i), data_eof_i => data_eof_i(i));
 	end generate subtop_loop;
 
-	res_o <= res_s(to_integer(unsigned(select_chan_s)));
+---
+--- for output we consider 2 case :
+--- 1/ for DATA_SIZE >= AXI_SIZE NB_WAY == NB_ITER and use direct or
+---    mux depending on the nb pkt to send for one sample
+--- 2/ for DATA_SIZE < AXI_SIZE NB_WAY == NB_ITER * 2 and to consecutive
+---    channel are merged to provide one AXI_SIZE bit pkt. Since res_s
+---    is extended to AXI_SIZE we use only DATA_SIZE lsb
+---
+	-- 1 / DATA_SIZE >= AXI_SIZE direct access to sample (managed by submodule)
+	--     or DATA_SIZE < AXI_SIZE but NB_WAY = 1 -> 2 consecutive sample
+	--     are merged to have DATA_SIZE == AXI_SIZE -> direct access
+	simple_mux: if (NB_WAY = NB_ITER) generate
+		res_o <= res_s(to_integer(unsigned(select_chan_s)));
+	end generate simple_mux;
+
+	-- 2 / DATA_SIZE < AXI_SIZE and NB_WAY > 1 we need to merge to consecutive
+	--     channel to have DATA_SIZE = AXI_SIZE with one increment for two
+	--     set of sample (rest of logic in submodule)
+	complex_mux: if (NB_WAY /= 1 and DATA_SIZE < AXI_SIZE) generate
+		res_o <= mux_complex_s(to_integer(unsigned(select_chan_s)));
+
+		--    a/ NB_WAY even we merge simply two consecutive channel
+		even_way: if (NB_ITER = HLF_WAY) generate
+			even_loop: for i in 0 to HLF_WAY-1 generate
+				mux_complex_s(i) <= res_s((2*i)+1)(DATA_SIZE-1 downto 0)
+									& res_s(2*i)(DATA_SIZE-1 downto 0);
+				mux_complex_s(NB_ITER+i) <= res_s((2*i)+1)(AXI_SIZE-1 downto DATA_SIZE)
+									& res_s(2*i)(AXI_SIZE-1 downto DATA_SIZE);
+			end generate even_loop;
+		end generate even_way;
+
+		-- b/ NB_WAY odd: a trick is mandatory to have first part equivalent to
+		--     a/, the last channel and the first to the next set in one pkt
+		--        and finaly merge to two consecutive sample
+		odd_way: if (NB_ITER /= HLF_WAY) generate
+			odd_loop: for i in 0 to HLF_WAY-1 generate
+				mux_complex_s(i) <= res_s((2*i)+1)(DATA_SIZE-1 downto 0)
+									& res_s(2*i)(DATA_SIZE-1 downto 0);
+				mux_complex_s(NB_ITER+i) <= res_s((2*i)+2)(AXI_SIZE-1 downto DATA_SIZE)
+									& res_s((2*i)+1)(AXI_SIZE-1 downto DATA_SIZE);
+			end generate odd_loop;
+			mux_complex_s(NB_ITER -1) <= res_s(0)(AXI_SIZE-1 downto DATA_SIZE)
+							& res_s(NB_WAY-1)(DATA_SIZE-1 downto 0);
+
+		end generate odd_way;
+	end generate complex_mux;
+
 
 end Behavioral;
 

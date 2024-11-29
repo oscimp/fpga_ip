@@ -320,7 +320,7 @@
       <spirit:vendorExtensions>
         <xilinx:busInterfaceInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="BUSIF_ENABLEMENT.data2_in" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.NB_INPUT&apos;)) >= 2">true</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="BUSIF_ENABLEMENT.data2_in" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.NB_INPUT&apos;)) >= 2">false</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:busInterfaceInfo>
       </spirit:vendorExtensions>
@@ -902,7 +902,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>ef6d5ed4</spirit:value>
+            <spirit:value>261a85c5</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -918,7 +918,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>ef6d5ed4</spirit:value>
+            <spirit:value>261a85c5</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -943,7 +943,7 @@
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.DATA_SIZE&apos;)) - 1)">31</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.DATA_SIZE&apos;)) - 1)">15</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -1027,7 +1027,7 @@
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.DATA_SIZE&apos;)) - 1)">31</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.DATA_SIZE&apos;)) - 1)">15</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -1111,7 +1111,7 @@
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.DATA_SIZE&apos;)) - 1)">31</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.DATA_SIZE&apos;)) - 1)">15</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -1195,7 +1195,7 @@
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.DATA_SIZE&apos;)) - 1)">31</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.DATA_SIZE&apos;)) - 1)">15</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -1279,7 +1279,7 @@
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.DATA_SIZE&apos;)) - 1)">31</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.DATA_SIZE&apos;)) - 1)">15</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -1363,7 +1363,7 @@
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.DATA_SIZE&apos;)) - 1)">31</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.DATA_SIZE&apos;)) - 1)">15</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -1447,7 +1447,7 @@
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.DATA_SIZE&apos;)) - 1)">31</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.DATA_SIZE&apos;)) - 1)">15</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -1531,7 +1531,7 @@
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.DATA_SIZE&apos;)) - 1)">31</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.DATA_SIZE&apos;)) - 1)">15</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -1615,7 +1615,7 @@
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.DATA_SIZE&apos;)) - 1)">31</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.DATA_SIZE&apos;)) - 1)">15</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -1699,7 +1699,7 @@
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.DATA_SIZE&apos;)) - 1)">31</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.DATA_SIZE&apos;)) - 1)">15</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -1783,7 +1783,7 @@
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.DATA_SIZE&apos;)) - 1)">31</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.DATA_SIZE&apos;)) - 1)">15</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -1867,7 +1867,7 @@
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.DATA_SIZE&apos;)) - 1)">31</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.DATA_SIZE&apos;)) - 1)">15</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -2311,7 +2311,7 @@
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>NB_INPUT</spirit:name>
         <spirit:displayName>Nb Input</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.NB_INPUT" spirit:minimum="0" spirit:rangeType="long">2</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.NB_INPUT" spirit:minimum="0" spirit:rangeType="long">1</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="string">
         <spirit:name>DATA_FORMAT</spirit:name>
@@ -2321,7 +2321,7 @@
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>DATA_SIZE</spirit:name>
         <spirit:displayName>Data Size</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DATA_SIZE" spirit:minimum="0" spirit:rangeType="long">32</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DATA_SIZE" spirit:minimum="0" spirit:rangeType="long">16</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>NB_SAMPLE</spirit:name>
@@ -2370,7 +2370,7 @@
       <spirit:file>
         <spirit:name>hdl/dataReal_to_ram_pingpong.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_3fe51348</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_57d01e44</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -2426,7 +2426,7 @@
       <spirit:name>NB_INPUT</spirit:name>
       <spirit:displayName>NB input</spirit:displayName>
       <spirit:description>Number of input channels (max 12).</spirit:description>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.NB_INPUT">2</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.NB_INPUT">1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>DATA_FORMAT</spirit:name>
@@ -2438,7 +2438,7 @@
       <spirit:name>DATA_SIZE</spirit:name>
       <spirit:displayName>Data Size</spirit:displayName>
       <spirit:description>Size of input data bus.</spirit:description>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.DATA_SIZE" spirit:minimum="0" spirit:rangeType="long">32</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.DATA_SIZE" spirit:minimum="0" spirit:rangeType="long">16</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>NB_SAMPLE</spirit:name>
@@ -2494,8 +2494,8 @@
       <xilinx:definitionSource>package_project</xilinx:definitionSource>
       <xilinx:vendorDisplayName>Gwenhael Goavec-Merou</xilinx:vendorDisplayName>
       <xilinx:vendorURL>http://www.trabucayre.com</xilinx:vendorURL>
-      <xilinx:coreRevision>7</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2024-11-29T20:01:08Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>8</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2024-11-29T23:28:28Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
         <xilinx:tag xilinx:name="ui.data.coregen.df@622f4a21_ARCHIVE_LOCATION">/home/bma/git/gitlab/bma/oscimpDigital/fpga_ip/dataReal_to_ram_pingpong</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.df@7c71f523_ARCHIVE_LOCATION">/home/bma/git/gitlab/bma/oscimpDigital/fpga_ip/dataReal_to_ram_pingpong</xilinx:tag>
@@ -2616,16 +2616,37 @@
         <xilinx:tag xilinx:name="ui.data.coregen.df@52fccbee_ARCHIVE_LOCATION">/home/bma/git/github/oscimpDigital/fpga_ip/dataReal_to_ram_pingpong</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.df@1d9e99e8_ARCHIVE_LOCATION">/home/bma/git/github/oscimpDigital/fpga_ip/dataReal_to_ram_pingpong</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.df@669798e2_ARCHIVE_LOCATION">/home/bma/git/github/oscimpDigital/fpga_ip/dataReal_to_ram_pingpong</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7ea29de7_ARCHIVE_LOCATION">/home/bma/git/github/oscimpDigital/fpga_ip/dataReal_to_ram_pingpong</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2524c978_ARCHIVE_LOCATION">/home/bma/git/github/oscimpDigital/fpga_ip/dataReal_to_ram_pingpong</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6d05f8b3_ARCHIVE_LOCATION">/home/bma/git/github/oscimpDigital/fpga_ip/dataReal_to_ram_pingpong</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4320dcaa_ARCHIVE_LOCATION">/home/bma/git/github/oscimpDigital/fpga_ip/dataReal_to_ram_pingpong</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4f3617cf_ARCHIVE_LOCATION">/home/bma/git/github/oscimpDigital/fpga_ip/dataReal_to_ram_pingpong</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5fc0ce01_ARCHIVE_LOCATION">/home/bma/git/github/oscimpDigital/fpga_ip/dataReal_to_ram_pingpong</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@47951075_ARCHIVE_LOCATION">/home/bma/git/github/oscimpDigital/fpga_ip/dataReal_to_ram_pingpong</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@438f6445_ARCHIVE_LOCATION">/home/bma/git/github/oscimpDigital/fpga_ip/dataReal_to_ram_pingpong</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3a55612_ARCHIVE_LOCATION">/home/bma/git/github/oscimpDigital/fpga_ip/dataReal_to_ram_pingpong</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6965d4f_ARCHIVE_LOCATION">/home/bma/git/github/oscimpDigital/fpga_ip/dataReal_to_ram_pingpong</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@77de7fad_ARCHIVE_LOCATION">/home/bma/git/github/oscimpDigital/fpga_ip/dataReal_to_ram_pingpong</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@15efd254_ARCHIVE_LOCATION">/home/bma/git/github/oscimpDigital/fpga_ip/dataReal_to_ram_pingpong</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4b8cedef_ARCHIVE_LOCATION">/home/bma/git/github/oscimpDigital/fpga_ip/dataReal_to_ram_pingpong</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6f73824c_ARCHIVE_LOCATION">/home/bma/git/github/oscimpDigital/fpga_ip/dataReal_to_ram_pingpong</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1740f0a6_ARCHIVE_LOCATION">/home/bma/git/github/oscimpDigital/fpga_ip/dataReal_to_ram_pingpong</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@708cd2e7_ARCHIVE_LOCATION">/home/bma/git/github/oscimpDigital/fpga_ip/dataReal_to_ram_pingpong</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@67d79ce2_ARCHIVE_LOCATION">/home/bma/git/github/oscimpDigital/fpga_ip/dataReal_to_ram_pingpong</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@558381ef_ARCHIVE_LOCATION">/home/bma/git/github/oscimpDigital/fpga_ip/dataReal_to_ram_pingpong</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@b5e5494_ARCHIVE_LOCATION">/home/bma/git/github/oscimpDigital/fpga_ip/dataReal_to_ram_pingpong</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6054ad5b_ARCHIVE_LOCATION">/home/bma/git/github/oscimpDigital/fpga_ip/dataReal_to_ram_pingpong</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1e448e08_ARCHIVE_LOCATION">/home/bma/git/github/oscimpDigital/fpga_ip/dataReal_to_ram_pingpong</xilinx:tag>
       </xilinx:tags>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2021.1_AR76780</xilinx:xilinxVersion>
-      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="906d636f"/>
+      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="9044f269"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="871c369d"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="7876ee22"/>
-      <xilinx:checksum xilinx:scope="ports" xilinx:value="67b40bb4"/>
-      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="991f9696"/>
-      <xilinx:checksum xilinx:scope="parameters" xilinx:value="a0809c00"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="ec221d4b"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="b669711a"/>
+      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="1e169623"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="bca118fa"/>
     </xilinx:packagingInfo>
   </spirit:vendorExtensions>
 </spirit:component>

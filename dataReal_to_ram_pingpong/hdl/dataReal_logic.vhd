@@ -129,41 +129,39 @@ begin
 	--   by using two RAM (1 for odd, 1 for even)
 	--   (based on addr lsb bit)
 	half_axi_bits: if RAM_SIZE = AXI_SIZE/2 generate
-		en_even_s <= data_en_s when sample_cpt_s(0) = '0' else '0';
-		en_even_ping_s <= en_ping_s and en_even_s;
-		en_even_pong_s <= en_pong_s and en_even_s;
+		en_even_ping_s <= en_ping_s and sample_cpt_s(0);
+		en_even_pong_s <= en_pong_s and sample_cpt_s(0);
 		ram_even_ping: entity work.dataReal_to_ram_pingpong_storage
-		generic map (DATA => RAM_SIZE, ADDR => ADDR_SIZE)
+		generic map (DATA => RAM_SIZE, ADDR => ADDR_SIZE-1)
 		port map (clk_a => data_clk_i, clk_b => cpu_clk_i,
 			rst_b => cpu_rst_i,
 			-- state machine interface
-			we_a   => en_even_ping_s, addr_a => sample_cpt_s(ADDR_SIZE-1 downto 0), din_a => data_ping_s,
-			addr_b => result_addr_i, dout_b => ram_ping_data_s(RAM_SIZE-1 downto 0));
+			we_a   => en_even_ping_s, addr_a(ADDR_SIZE-2 downto 0) => sample_cpt_s(ADDR_SIZE-1 downto 1), din_a => data_ping_s,
+			addr_b => result_addr_i(ADDR_SIZE-2 downto 0), dout_b => ram_ping_data_s(RAM_SIZE-1 downto 0));
     	ram_even_pong: entity work.dataReal_to_ram_pingpong_storage
-		generic map (DATA => RAM_SIZE, ADDR => ADDR_SIZE)
+		generic map (DATA => RAM_SIZE, ADDR => ADDR_SIZE-1)
 		port map (clk_a => data_clk_i, clk_b => cpu_clk_i,
 			rst_b => cpu_rst_i,
 			-- state machine interface
-			we_a   => en_even_pong_s, addr_a => sample_cpt_s(ADDR_SIZE-1 downto 0), din_a => data_pong_s,
-			addr_b => result_addr_i, dout_b => ram_pong_data_s(RAM_SIZE-1 downto 0));
+			we_a   => en_even_pong_s, addr_a(ADDR_SIZE-2 downto 0) => sample_cpt_s(ADDR_SIZE-1 downto 1), din_a => data_pong_s,
+			addr_b => result_addr_i(ADDR_SIZE-2 downto 0), dout_b => ram_pong_data_s(RAM_SIZE-1 downto 0));
 
-		en_odd_s <= data_en_s when sample_cpt_s(0) = '1' else '0';
-		en_odd_ping_s <= en_ping_s and en_odd_s;
-		en_odd_pong_s <= en_pong_s and en_odd_s;
+		en_odd_ping_s <= en_ping_s and not sample_cpt_s(0);
+		en_odd_pong_s <= en_pong_s and not sample_cpt_s(0);
 		ram_odd_ping: entity work.dataReal_to_ram_pingpong_storage
-		generic map (DATA => RAM_SIZE, ADDR => ADDR_SIZE)
+		generic map (DATA => RAM_SIZE, ADDR => ADDR_SIZE-1)
 		port map (clk_a => data_clk_i, clk_b => cpu_clk_i,
 			rst_b => cpu_rst_i,
 			-- state machine interface
-			we_a   => en_odd_ping_s, addr_a => sample_cpt_s(ADDR_SIZE-1 downto 0), din_a => data_ping_s,
-			addr_b => result_addr_i, dout_b => ram_ping_data_s(RAM_SIZE-1 downto 0));
+			we_a   => en_odd_ping_s, addr_a(ADDR_SIZE-2 downto 0) => sample_cpt_s(ADDR_SIZE-1 downto 1), din_a => data_ping_s,
+			addr_b => result_addr_i(ADDR_SIZE-2 downto 0), dout_b => ram_ping_data_s(OUTPUT_RAM-1 downto RAM_SIZE));
     	ram_odd_pong: entity work.dataReal_to_ram_pingpong_storage
-		generic map (DATA => RAM_SIZE, ADDR => ADDR_SIZE)
+		generic map (DATA => RAM_SIZE, ADDR => ADDR_SIZE-1)
 		port map (clk_a => data_clk_i, clk_b => cpu_clk_i,
 			rst_b => cpu_rst_i,
 			-- state machine interface
-			we_a   => en_odd_pong_s, addr_a => sample_cpt_s(ADDR_SIZE-1 downto 0), din_a => data_pong_s,
-			addr_b => result_addr_i, dout_b => ram_pong_data_s(RAM_SIZE-1 downto 0));
+			we_a   => en_odd_pong_s, addr_a(ADDR_SIZE-2 downto 0) => sample_cpt_s(ADDR_SIZE-1 downto 1), din_a => data_pong_s,
+			addr_b => result_addr_i(ADDR_SIZE-2 downto 0), dout_b => ram_pong_data_s(OUTPUT_RAM-1 downto RAM_SIZE));
 	end generate half_axi_bits;
 
 	-- for other case (RAM_SIZE > AXI_SIZE /2 or more than one channel)
