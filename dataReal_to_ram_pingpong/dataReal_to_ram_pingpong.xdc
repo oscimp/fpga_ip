@@ -1,0 +1,2 @@
+set_property RAM_STYLE block [get_cells {data32_top_inst/subtop_loop[0].data_subtop_inst/ram_msb/mem_ping_reg}]
+set_property RAM_STYLE block [get_cells {data32_top_inst/subtop_loop[0].data_subtop_inst/ram_msb/mem_pong_reg}]
