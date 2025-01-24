@@ -1,22 +1,22 @@
 [*]
-[*] GTKWave Analyzer v3.3.114 (w)1999-2023 BSI
-[*] Thu Nov 16 07:07:41 2023
+[*] GTKWave Analyzer v3.3.118 (w)1999-2023 BSI
+[*] Fri Jan 24 08:37:15 2025
 [*]
-[dumpfile] "/home/bma/git/github/oscimpDigital/fpga_ip/nco_counter/simulation/simu/top_nco_counter_tb.ghw"
-[dumpfile_mtime] "Thu Nov 16 07:06:50 2023"
-[dumpfile_size] 32228894
-[savefile] "/home/bma/git/github/oscimpDigital/fpga_ip/nco_counter/simulation/top_nco_counter.gtkw"
-[timestart] 207000000
-[size] 841 1313
-[pos] 0 25
-*-28.000000 448000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[dumpfile] "/home/sdn/git/github/oscimpDigital/fpga_ip/nco_counter/simulation/simu/top_nco_counter_tb.ghw"
+[dumpfile_mtime] "Fri Jan 24 08:29:28 2025"
+[dumpfile_size] 38439527
+[savefile] "/home/sdn/git/github/oscimpDigital/fpga_ip/nco_counter/simulation/top_nco_counter.gtkw"
+[timestart] 0
+[size] 2546 1340
+[pos] 0 5
+*-26.575089 144000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] top.
 [treeopen] top.top_nco_counter_tb.
 [treeopen] top.top_nco_counter_tb.nco_inst.
 [sst_width] 276
-[signals_width] 218
+[signals_width] 292
 [sst_expanded] 1
-[sst_vpaned_height] 518
+[sst_vpaned_height] 922
 @28
 top.top_nco_counter_tb.reset
 top.top_nco_counter_tb.clk
@@ -26,23 +26,55 @@ top.top_nco_counter_tb.clk
 -
 -
 -
-@8421
+@8420
 #{top.top_nco_counter_tb.nco_inst.cos_o[15:0]} top.top_nco_counter_tb.nco_inst.cos_o[15] top.top_nco_counter_tb.nco_inst.cos_o[14] top.top_nco_counter_tb.nco_inst.cos_o[13] top.top_nco_counter_tb.nco_inst.cos_o[12] top.top_nco_counter_tb.nco_inst.cos_o[11] top.top_nco_counter_tb.nco_inst.cos_o[10] top.top_nco_counter_tb.nco_inst.cos_o[9] top.top_nco_counter_tb.nco_inst.cos_o[8] top.top_nco_counter_tb.nco_inst.cos_o[7] top.top_nco_counter_tb.nco_inst.cos_o[6] top.top_nco_counter_tb.nco_inst.cos_o[5] top.top_nco_counter_tb.nco_inst.cos_o[4] top.top_nco_counter_tb.nco_inst.cos_o[3] top.top_nco_counter_tb.nco_inst.cos_o[2] top.top_nco_counter_tb.nco_inst.cos_o[1] top.top_nco_counter_tb.nco_inst.cos_o[0]
 @20000
 -
 -
 -
-@8022
+@8420
 #{top.top_nco_counter_tb.nco_inst.saw_i_o[15:0]} top.top_nco_counter_tb.nco_inst.saw_i_o[15] top.top_nco_counter_tb.nco_inst.saw_i_o[14] top.top_nco_counter_tb.nco_inst.saw_i_o[13] top.top_nco_counter_tb.nco_inst.saw_i_o[12] top.top_nco_counter_tb.nco_inst.saw_i_o[11] top.top_nco_counter_tb.nco_inst.saw_i_o[10] top.top_nco_counter_tb.nco_inst.saw_i_o[9] top.top_nco_counter_tb.nco_inst.saw_i_o[8] top.top_nco_counter_tb.nco_inst.saw_i_o[7] top.top_nco_counter_tb.nco_inst.saw_i_o[6] top.top_nco_counter_tb.nco_inst.saw_i_o[5] top.top_nco_counter_tb.nco_inst.saw_i_o[4] top.top_nco_counter_tb.nco_inst.saw_i_o[3] top.top_nco_counter_tb.nco_inst.saw_i_o[2] top.top_nco_counter_tb.nco_inst.saw_i_o[1] top.top_nco_counter_tb.nco_inst.saw_i_o[0]
 @20000
 -
 -
-@8022
+@8420
 #{top.top_nco_counter_tb.nco_inst.saw_q_o[15:0]} top.top_nco_counter_tb.nco_inst.saw_q_o[15] top.top_nco_counter_tb.nco_inst.saw_q_o[14] top.top_nco_counter_tb.nco_inst.saw_q_o[13] top.top_nco_counter_tb.nco_inst.saw_q_o[12] top.top_nco_counter_tb.nco_inst.saw_q_o[11] top.top_nco_counter_tb.nco_inst.saw_q_o[10] top.top_nco_counter_tb.nco_inst.saw_q_o[9] top.top_nco_counter_tb.nco_inst.saw_q_o[8] top.top_nco_counter_tb.nco_inst.saw_q_o[7] top.top_nco_counter_tb.nco_inst.saw_q_o[6] top.top_nco_counter_tb.nco_inst.saw_q_o[5] top.top_nco_counter_tb.nco_inst.saw_q_o[4] top.top_nco_counter_tb.nco_inst.saw_q_o[3] top.top_nco_counter_tb.nco_inst.saw_q_o[2] top.top_nco_counter_tb.nco_inst.saw_q_o[1] top.top_nco_counter_tb.nco_inst.saw_q_o[0]
 @20000
 -
 -
 @28
 top.top_nco_counter_tb.nco_inst.trigger_o
+@8420
+#{top.top_nco_counter_tb.nco_inst.triangle_i_o[15:0]} top.top_nco_counter_tb.nco_inst.triangle_i_o[15] top.top_nco_counter_tb.nco_inst.triangle_i_o[14] top.top_nco_counter_tb.nco_inst.triangle_i_o[13] top.top_nco_counter_tb.nco_inst.triangle_i_o[12] top.top_nco_counter_tb.nco_inst.triangle_i_o[11] top.top_nco_counter_tb.nco_inst.triangle_i_o[10] top.top_nco_counter_tb.nco_inst.triangle_i_o[9] top.top_nco_counter_tb.nco_inst.triangle_i_o[8] top.top_nco_counter_tb.nco_inst.triangle_i_o[7] top.top_nco_counter_tb.nco_inst.triangle_i_o[6] top.top_nco_counter_tb.nco_inst.triangle_i_o[5] top.top_nco_counter_tb.nco_inst.triangle_i_o[4] top.top_nco_counter_tb.nco_inst.triangle_i_o[3] top.top_nco_counter_tb.nco_inst.triangle_i_o[2] top.top_nco_counter_tb.nco_inst.triangle_i_o[1] top.top_nco_counter_tb.nco_inst.triangle_i_o[0]
+@20000
+-
+-
+@c08420
+#{top.top_nco_counter_tb.nco_inst.triangle_q_o[15:0]} top.top_nco_counter_tb.nco_inst.triangle_q_o[15] top.top_nco_counter_tb.nco_inst.triangle_q_o[14] top.top_nco_counter_tb.nco_inst.triangle_q_o[13] top.top_nco_counter_tb.nco_inst.triangle_q_o[12] top.top_nco_counter_tb.nco_inst.triangle_q_o[11] top.top_nco_counter_tb.nco_inst.triangle_q_o[10] top.top_nco_counter_tb.nco_inst.triangle_q_o[9] top.top_nco_counter_tb.nco_inst.triangle_q_o[8] top.top_nco_counter_tb.nco_inst.triangle_q_o[7] top.top_nco_counter_tb.nco_inst.triangle_q_o[6] top.top_nco_counter_tb.nco_inst.triangle_q_o[5] top.top_nco_counter_tb.nco_inst.triangle_q_o[4] top.top_nco_counter_tb.nco_inst.triangle_q_o[3] top.top_nco_counter_tb.nco_inst.triangle_q_o[2] top.top_nco_counter_tb.nco_inst.triangle_q_o[1] top.top_nco_counter_tb.nco_inst.triangle_q_o[0]
+@28
+top.top_nco_counter_tb.nco_inst.triangle_q_o[15]
+top.top_nco_counter_tb.nco_inst.triangle_q_o[14]
+top.top_nco_counter_tb.nco_inst.triangle_q_o[13]
+top.top_nco_counter_tb.nco_inst.triangle_q_o[12]
+top.top_nco_counter_tb.nco_inst.triangle_q_o[11]
+top.top_nco_counter_tb.nco_inst.triangle_q_o[10]
+top.top_nco_counter_tb.nco_inst.triangle_q_o[9]
+top.top_nco_counter_tb.nco_inst.triangle_q_o[8]
+top.top_nco_counter_tb.nco_inst.triangle_q_o[7]
+top.top_nco_counter_tb.nco_inst.triangle_q_o[6]
+top.top_nco_counter_tb.nco_inst.triangle_q_o[5]
+top.top_nco_counter_tb.nco_inst.triangle_q_o[4]
+top.top_nco_counter_tb.nco_inst.triangle_q_o[3]
+top.top_nco_counter_tb.nco_inst.triangle_q_o[2]
+top.top_nco_counter_tb.nco_inst.triangle_q_o[1]
+top.top_nco_counter_tb.nco_inst.triangle_q_o[0]
+@1401200
+-group_end
+@20000
+-
+-
+@28
+top.top_nco_counter_tb.nco_inst.cos_fake_o
+top.top_nco_counter_tb.nco_inst.sin_fake_o
 [pattern_trace] 1
 [pattern_trace] 0

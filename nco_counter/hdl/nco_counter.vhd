@@ -67,6 +67,11 @@ entity nco_counter is
 		saw_en_o : out std_logic;
 		saw_clk_o : out std_logic;
 		saw_rst_o : out std_logic;
+		triangle_i_o : out std_logic_vector(DATA_SIZE-1 downto 0);
+		triangle_q_o : out std_logic_vector(DATA_SIZE-1 downto 0);
+		triangle_en_o : out std_logic;
+		triangle_clk_o : out std_logic;
+		triangle_rst_o : out std_logic;
 		trigger_o : out std_logic;
 		
 		-- output single bit3
@@ -98,12 +103,15 @@ begin
 	dds_rst_o <= ref_rst_i;
 	wave_rst_o <= ref_rst_i;
 	saw_rst_o <= ref_rst_i;
+	triangle_rst_o <= ref_rst_i;
 	dds_en_o <= wave_en_s;
 	wave_en_o <= wave_en_s;
 	saw_en_o <= wave_en_s;
+	triangle_en_o <= wave_en_s;
 	wave_clk_o <= ref_clk_i;
 	dds_clk_o <= ref_clk_i;
 	saw_clk_o <= ref_clk_i;
+	triangle_clk_o <= ref_clk_i;
 	
 	nco_inst1 : entity work.nco_counter_logic
 	generic map (
@@ -127,6 +135,8 @@ begin
 		sin_o => dds_sin_o,
 		saw_i_o => saw_i_o,
 		saw_q_o => saw_q_o,
+		triangle_i_o => triangle_i_o,
+		triangle_q_o => triangle_q_o,
 		trigger_o => trigger_o,
 		--step_scale_o => open, --step_scale_s,
 		--output

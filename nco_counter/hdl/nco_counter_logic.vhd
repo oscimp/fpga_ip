@@ -34,6 +34,8 @@ entity nco_counter_logic is
 		sin_o : out std_logic_vector(DATA_SIZE -1 downto 0);
 		saw_i_o : out std_logic_vector(DATA_SIZE -1 downto 0);
 		saw_q_o : out std_logic_vector(DATA_SIZE -1 downto 0);
+		triangle_i_o : out std_logic_vector(DATA_SIZE -1 downto 0);
+		triangle_q_o : out std_logic_vector(DATA_SIZE -1 downto 0);
 		sin_fake_o : out std_logic;
 		wave_en_o : out std_logic;
 		cos_fake_o : out std_logic
@@ -48,6 +50,10 @@ architecture Behavioral of nco_counter_logic is
 	signal counter_sin_scale_s : std_logic_vector(LUT_SIZE-1 downto 0);
 	signal counter_sin_off_s : std_logic_vector(LUT_SIZE-1 downto 0);
 	signal counter_cos_off_s : std_logic_vector(LUT_SIZE-1 downto 0);
+	signal triangle_sin_off_s : std_logic_vector(LUT_SIZE-1 downto 0);
+	signal triangle_cos_off_s : std_logic_vector(LUT_SIZE-1 downto 0);
+	signal triangle_dir_sin : std_logic;
+	signal triangle_dir_cos : std_logic;
 	signal sin_next, cos_next : std_logic;
 	signal cos_s, sin_s : std_logic_vector(15 downto 0);
 	-- synchro
@@ -104,7 +110,6 @@ begin
 	counter_scale_s <= counter_s(COUNTER_SIZE-1 downto COUNTER_SIZE-LUT_SIZE);
 	counter_sin_scale_s <= counter_sin_s(COUNTER_SIZE-1 downto COUNTER_SIZE-LUT_SIZE);
 
-
 	use_rst_accum : if RESET_ACCUM = true generate
 		process(clk_i)
 		begin
@@ -148,6 +153,24 @@ begin
 		unsigned(counter_scale_s) + unsigned(cpt_off_i));
 	counter_sin_off_s <= std_logic_vector(
 		unsigned(counter_sin_scale_s) + unsigned(cpt_off_i));
+
+	triangle_dir_sin <= counter_sin_off_s(LUT_SIZE-1);
+	triangle_dir_cos <= counter_cos_off_s(LUT_SIZE-1);
+
+	process(clk_i) begin
+		if rising_edge(clk_i) then
+		    if (triangle_dir_cos = '1') then
+		        triangle_cos_off_s <= std_logic_vector(shift_left(signed(counter_sin_off_s), 1));
+			else
+			    triangle_cos_off_s <= std_logic_vector(- shift_left(signed(counter_sin_off_s), 1)-1);
+			end if;
+			if (triangle_dir_sin = '1') then
+			    triangle_sin_off_s <= std_logic_vector(shift_left(signed(counter_cos_off_s), 1));
+			else
+			    triangle_sin_off_s <= std_logic_vector(- shift_left(signed(counter_cos_off_s), 1)-1);
+			end if;
+		end if;
+	end process;
 
 	rom_10 : if LUT_SIZE = 10 generate
 	rom10_inst : entity work.nco_counter_cos_rom
@@ -210,5 +233,20 @@ begin
 		saw_i_o <= counter_sin_off_s & (DATA_SIZE-LUT_SIZE-1 downto 0 => '0');
 		saw_q_o <= counter_cos_off_s & (DATA_SIZE-LUT_SIZE-1 downto 0 => '0');
 	end generate gt_size_saw;
+
+	same_size_triangle: if DATA_SIZE = LUT_SIZE generate
+		triangle_i_o <= triangle_sin_off_s;
+		triangle_q_o <= triangle_cos_off_s;
+	end generate same_size_triangle;
+
+	lt_size_triangle: if DATA_SIZE < LUT_SIZE generate
+	   triangle_i_o <= triangle_sin_off_s(LUT_SIZE-1 downto LUT_SIZE-DATA_SIZE);
+	   triangle_q_o <= triangle_cos_off_s(LUT_SIZE-1 downto LUT_SIZE-DATA_SIZE);
+	end generate lt_size_triangle;
+
+	gt_size_triangle: if DATA_SIZE > LUT_SIZE generate
+		triangle_i_o <= triangle_sin_off_s & (DATA_SIZE-LUT_SIZE-1 downto 0 => '0');
+		triangle_q_o <= triangle_cos_off_s & (DATA_SIZE-LUT_SIZE-1 downto 0 => '0');
+	end generate gt_size_triangle;
 
 end Behavioral;
