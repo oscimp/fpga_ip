@@ -14,12 +14,15 @@ def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument(
         'output_file', help='Output verilog file')
+    parser.add_argument(
+        '--conf_file', default='conf.json', help='Output verilog file')
     return parser.parse_args()
 
 
 def main():
     args = parse_args()
-    top = DDMTD()
+    conf = eval(open(args.conf_file, 'r').read())
+    top = DDMTD(**conf)
     platform = RedPitaya14Platform()
     with open(args.output_file, 'w') as f:
         f.write(amaranth.back.verilog.convert(

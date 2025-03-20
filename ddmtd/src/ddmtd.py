@@ -5,7 +5,12 @@ from src.deglitcher import Deglitcher
 from src.fast_counter import FastCounter
 
 class DDMTD(Component):
-    def __init__(self, word_size=32):
+    def __init__(self,
+                 freq = int(125e6),
+                 mult = 9,
+                 div = 9.001,
+                 word_size=32,
+                 ):
         super().__init__({
             'clk_a': In(1),
             'clk_b': In(1),
@@ -13,6 +18,9 @@ class DDMTD(Component):
             'new_phase': Out(1),
             })
         self.word_size = word_size
+        self.freq = freq
+        self.mult = mult
+        self.div = div
 
     def ports(self):
         return [
@@ -24,6 +32,44 @@ class DDMTD(Component):
 
     def elaborate(self, platform):
         m = Module()
+
+        mmcm_feedback = Signal()
+        mmcm_locked = Signal()
+        mmcm_clk = Signal()
+        m.domains.sync = ClockDomain()
+        m.submodules.mmcm = Instance(
+                'MMCME2_ADV',
+                p_CLKFBOUT_MULT_F = self.mult,
+                p_CLKIN1_PERIOD = 1e9/self.freq,
+                p_CLKOUT0_DIVIDE_F = self.div,
+
+                i_CLKFBIN = mmcm_feedback,
+                o_CLKFBOUT = mmcm_feedback,
+                i_CLKINSEL = 1,
+                o_LOCKED = mmcm_locked,
+
+                i_CLKIN1 = self.clk_a,
+                o_CLKOUT0 = mmcm_clk,
+
+                # Unused inputs tied to zero
+                i_CLKIN2 = 0,
+                i_DADDR = 0,
+                i_DCLK = 0,
+                i_DEN = 0,
+                i_DI = 0,
+                i_DWE = 0,
+                i_PSCLK = 0,
+                i_PSEN = 0,
+                i_PSINCDEC = 0,
+                i_PWRDWN = 0,
+                i_RST = 0,
+                )
+        m.submodules += Instance(
+                'BUFG',
+                i_I = mmcm_clk,
+                o_O = ClockSignal('sync'),
+                )
+        m.d.comb += ResetSignal('sync').eq(~mmcm_locked)
 
         mult_a = Signal()
         m.submodules.ffa = Instance(
