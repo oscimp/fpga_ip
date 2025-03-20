@@ -14,6 +14,14 @@ class DDMTD(Component):
             })
         self.word_size = word_size
 
+    def ports(self):
+        return [
+                self.clk_a,
+                self.clk_b,
+                self.phase,
+                self.new_phase,
+                ]
+
     def elaborate(self, platform):
         m = Module()
 
