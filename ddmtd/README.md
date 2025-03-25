@@ -1,4 +1,4 @@
-This IP implements a [https://white-rabbit.web.cern.ch/documents/DDMTD_for_Sub-ns_Synchronization.pdf](Digital Dual Mixer Time Difference)
+This IP implements a [Digital Dual Mixer Time Difference](https://white-rabbit.web.cern.ch/documents/DDMTD_for_Sub-ns_Synchronization.pdf)
 
 
 
