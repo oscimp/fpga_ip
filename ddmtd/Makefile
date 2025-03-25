@@ -7,7 +7,7 @@ all: $(configs)
 
 $(configs):
 	mkdir -p $@
-	./gen_hdl.py $@/ddmtd.v
+	./gen_hdl.py $@/ddmtd
 	cd $@ && IP_CORE_VERSION=$(IP_CORE_VERSION) $(VIVADO) ../package_ip.tcl
 
 clean:

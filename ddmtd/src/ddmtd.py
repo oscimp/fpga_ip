@@ -1,4 +1,5 @@
 from amaranth import Cat, ClockDomain, ClockSignal, DomainRenamer, Instance, Module, ResetSignal, Signal
+import amaranth
 from amaranth.lib.wiring import Component, In, Out
 
 from src.deglitcher import Deglitcher
@@ -7,27 +8,35 @@ from src.fast_counter import FastCounter
 class DDMTD(Component):
     def __init__(self,
                  freq = int(125e6),
-                 mult = 9,
-                 div = 9.001,
+                 mult = 8,
+                 div = 100,
                  word_size=32,
+                 timeout = 2**26,
                  ):
         super().__init__({
             'clk_a': In(1),
             'clk_b': In(1),
             'phase': Out(word_size),
-            'new_phase': Out(1),
+            'phase_en': Out(1),
+            'phase_clk': Out(1),
+            'phase_rst': Out(1),
+            'phase_eof': Out(1),
             })
         self.word_size = word_size
         self.freq = freq
         self.mult = mult
         self.div = div
+        self.timeout = timeout
 
     def ports(self):
         return [
                 self.clk_a,
                 self.clk_b,
                 self.phase,
-                self.new_phase,
+                self.phase_en,
+                self.phase_clk,
+                self.phase_rst,
+                self.phase_eof,
                 ]
 
     def elaborate(self, platform):
@@ -36,12 +45,14 @@ class DDMTD(Component):
         mmcm_feedback = Signal()
         mmcm_locked = Signal()
         mmcm_clk = Signal()
+        mmcm_clk_a = Signal()
         m.domains.sync = ClockDomain()
         m.submodules.mmcm = Instance(
                 'MMCME2_ADV',
                 p_CLKFBOUT_MULT_F = self.mult,
                 p_CLKIN1_PERIOD = 1e9/self.freq,
-                p_CLKOUT0_DIVIDE_F = self.div,
+                p_CLKOUT0_DIVIDE_F = self.div + 0.125,
+                p_CLKOUT1_DIVIDE = self.div,
 
                 i_CLKFBIN = mmcm_feedback,
                 o_CLKFBOUT = mmcm_feedback,
@@ -50,6 +61,7 @@ class DDMTD(Component):
 
                 i_CLKIN1 = self.clk_a,
                 o_CLKOUT0 = mmcm_clk,
+                o_CLKOUT1 = mmcm_clk_a,
 
                 # Unused inputs tied to zero
                 i_CLKIN2 = 0,
@@ -70,11 +82,15 @@ class DDMTD(Component):
                 o_O = ClockSignal('sync'),
                 )
         m.d.comb += ResetSignal('sync').eq(~mmcm_locked)
+        m.d.comb += self.phase_clk.eq(ClockSignal('sync'))
+        platform.add_clock_constraint(self.phase_clk, int(self.freq*self.mult/(self.div+0.125)))
+        m.d.comb += self.phase_rst.eq(ResetSignal('sync'))
+        m.d.comb += self.phase_eof.eq(0)
 
         mult_a = Signal()
         m.submodules.ffa = Instance(
                 'FDRE',
-                i_D = self.clk_a,
+                i_D = mmcm_clk_a,
                 i_C = ClockSignal('sync'),
                 o_Q = mult_a,
                 i_CE = 1,
@@ -109,8 +125,12 @@ class DDMTD(Component):
             m.d.sync += t.eq(cnt)
         with m.If(deglitch_b.end_glitches):
             m.d.sync += self.phase.eq(t - ta + deglitch_b.median)
-            m.d.sync += self.new_phase.eq(True)
-        with m.If(self.new_phase):
-            m.d.sync += self.new_phase.eq(False)
+            m.d.sync += self.phase_en.eq(True)
+        with m.If(self.phase_en):
+            m.d.sync += self.phase_en.eq(False)
+        
+        with m.If(cnt >= self.timeout):
+            m.d.sync += self.phase.eq(2**self.word_size-1)
+            m.d.sync += self.phase_en.eq(True)
 
         return m
