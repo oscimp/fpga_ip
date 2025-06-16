@@ -135,6 +135,16 @@ architecture Behavioral of dataComplex_to_ram is
 		end if;
 	end function comp_internal_size;
 
+	-- compute the number of 32bits packets required to sent one sample
+	function comp_pkt_mux_size(nb_pkt_per_samp : natural) return natural is
+	begin
+		if (nb_pkt_per_samp = 0) then
+			return(0);
+		else
+			return(natural(ceil(log2(real(nb_pkt_per_samp)))));
+		end if;
+	end function comp_pkt_mux_size;
+
 	constant INT_DATA_SIZE       : natural := comp_internal_size(DATA_SIZE);
 
 	-- control
@@ -162,7 +172,7 @@ architecture Behavioral of dataComplex_to_ram is
 	-- number of pkt (32bits)
 	constant NB_PKT_PER_SAMP : natural := ((2*INT_DATA_SIZE)/AXI_SIZE);
 	-- bit used for pkt (32bits) muxing
-	constant PKT_MUX_SZ      : natural := natural(ceil(log2(real(NB_PKT_PER_SAMP))));
+	constant PKT_MUX_SZ      : natural := comp_pkt_mux_size(NB_PKT_PER_SAMP);
 	constant RD_ADDR_SZ      : natural := ADDR_SIZE + CHAN_MUX_SZ + PKT_MUX_SZ;
 	signal res_s             : std_logic_vector(AXI_SIZE-1 downto 0);
 	signal ram_incr_s         : std_logic;
