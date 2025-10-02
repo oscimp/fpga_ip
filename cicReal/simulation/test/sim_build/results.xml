@@ -1,0 +1,6 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1712915000" />
+    <testcase name="cic_filter_frequency_response_test" classname="cicReal_tb" file="/home/benny/projets/projets_fe/region_2023/dev/oscimpDigital/fpga_ip/cicReal/simulation/test/cicReal_tb.py" lineno="119" time="3.940094232559204" sim_time_ns="2049.000001" ratio_time="520.038323974073" />
+  </testsuite>
+</testsuites>
