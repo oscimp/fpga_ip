@@ -10,7 +10,7 @@ use IEEE.math_real.all;
 
 entity cicComplex is
 	generic (
-		BIT_PRUNING : boolean := false;
+		BIT_PRUNING : boolean := true;
 		data_signed: boolean := true;
 		DECIMATE_FACTOR : natural := 8;
 		DIFFERENTIAL_DELAY : natural := 1;
@@ -42,7 +42,7 @@ begin
 
 	cic_top_inst : entity work.cicComplex_top
 	generic map (
-		BIT_PRUNING => BIT_PRUNING
+		BIT_PRUNING => BIT_PRUNING,
 		data_signed => data_signed,
 		DECIMATE_FACTOR => DECIMATE_FACTOR,
 		DIFFERENTIAL_DELAY => DIFFERENTIAL_DELAY,
