@@ -305,18 +305,21 @@
         <spirit:displayName>Signed Format</spirit:displayName>
         <spirit:value spirit:format="bool" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.SIGNED_FORMAT">true</spirit:value>
       </spirit:modelParameter>
+      <spirit:modelParameter xsi:type="spirit:nameValueTypeType" spirit:dataType="boolean">
+        <spirit:name>BIT_PRUNING</spirit:name>
+        <spirit:displayName>Bit Pruning</spirit:displayName>
+        <spirit:value spirit:format="bool" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.BIT_PRUNING">true</spirit:value>
+      </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>DECIMATE_FACTOR</spirit:name>
         <spirit:displayName>Decimate Factor</spirit:displayName>
         <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DECIMATE_FACTOR" spirit:minimum="0" spirit:rangeType="long">16</spirit:value>
       </spirit:modelParameter>
-
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>DIFFERENTIAL_DELAY</spirit:name>
         <spirit:displayName>Differential Delay</spirit:displayName>
         <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DIFFERENTIAL_DELAY" spirit:minimum="1" spirit:rangeType="long">1</spirit:value>
       </spirit:modelParameter>
-
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>ORDER</spirit:name>
         <spirit:displayName>Order</spirit:displayName>
@@ -400,14 +403,18 @@
       <spirit:description>Unique Id.</spirit:description>
       <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.ID" spirit:minimum="0" spirit:rangeType="long">1</spirit:value>
     </spirit:parameter>
-
-<spirit:parameter>
+    <spirit:parameter>
       <spirit:name>DIFFERENTIAL_DELAY</spirit:name>
       <spirit:displayName>Differential Delay</spirit:displayName>
       <spirit:description>Filter differential delay.</spirit:description>
       <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.DIFFERENTIAL_DELAY" spirit:minimum="1" spirit:rangeType="long">2</spirit:value>
     </spirit:parameter>
-
+    <spirit:parameter>
+      <spirit:name>BIT_PRUNING</spirit:name>
+      <spirit:displayName>Bit Pruning</spirit:displayName>
+      <spirit:description>Enable accumulator register truncation in each filter stage based on Hogenauer's 'accumulator register pruning' technique.</spirit:description>
+      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.BIT_PRUNING">true</spirit:value>
+    </spirit:parameter>
     <spirit:parameter>
       <spirit:name>ORDER</spirit:name>
       <spirit:displayName>Order</spirit:displayName>
