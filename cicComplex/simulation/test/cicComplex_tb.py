@@ -17,11 +17,11 @@ np.seterr(divide='ignore', invalid='ignore');
 NORMALIZE_FREQUENCY = False
 
 BIT_PRUNING = True
-Bin = 16  # Input sample precision
+Bin = 25  # Input sample precision
 DECIMATE_FACTOR = 32  # decimate or interpolation ratio
 ORDER = 4  # Number of stages in filter
 DIFFERENTIAL_DELAY = 4  # Number of samples per stage (usually 1 or 2)
-Bout = ORDER * int(round(math.log2(DECIMATE_FACTOR*DIFFERENTIAL_DELAY))) + Bin # Output sample precision
+Bout = 25 # ORDER * int(round(math.log2(DECIMATE_FACTOR*DIFFERENTIAL_DELAY))) + Bin # Output sample precision
 
 FS = 125e6  # Sampling frequency (in Hz)
 CLOCK_PERIOD = 8  # in ns
@@ -137,7 +137,7 @@ async def cic_wave_test(dut):
         nb_pts = 5000
         stimuli = wave(amp, f, fs, nb_pts) + freq/1024
         for i in range(nb_pts):
-            dut.data_i_i.value = int(stimuli[i] )
+            dut.data_i_i.value = int(stimuli[i])
             await RisingEdge(dut.clk)
             #assert dut.data_o.value == expected_val, f"output was incorrect on the {i}th cycle"
             #expected_val = val  # Save random value for next RisingEdge
