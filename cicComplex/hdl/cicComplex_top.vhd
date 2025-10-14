@@ -11,9 +11,9 @@ use IEEE.math_real.all;
 library work;
 use work.common.all;
 
-Entity cicComplex_top is 
+Entity cicComplex_top is
 	generic (
-		BIT_PRUNING : boolean := false;
+		BIT_PRUNING : boolean := true;
 		data_signed : boolean := true;
 		DECIMATE_FACTOR : natural := 8;
 		DIFFERENTIAL_DELAY : natural := 1;
@@ -41,9 +41,10 @@ Architecture rtl of cicComplex_top is
 ---------------------------------------------------------------------------
 	--
 	constant DATA_INT_SIZE : natural := GetIntInputSize(DATA_IN_SIZE, data_signed);
-	-- Internal register size (Compututed to avoid overflow)
+	constant DATA_OUTT_SIZE : natural := GetIntInputSize(DATA_OUT_SIZE, data_signed);
+	-- Internal register size (Computed to avoid overflow)
 	constant REGISTER_MAX : integer := Bmax(DATA_INT_SIZE, DECIMATE_FACTOR, ORDER, DIFFERENTIAL_DELAY);
-	constant REGISTER_SIZE : coeff_t := CicRegSize(BIT_PRUNING, DATA_INT_SIZE, DECIMATE_FACTOR, ORDER, DIFFERENTIAL_DELAY);
+	constant REGISTER_SIZE : coeff_t := CicRegSize(BIT_PRUNING, DATA_IN_SIZE, DATA_OUT_SIZE, DECIMATE_FACTOR, ORDER, DIFFERENTIAL_DELAY);
 	-- Try and make sure the CIC gain is designed to be a power of 2.
 	constant SHIFT_GAIN : natural := 0;  --Gain(DECIMATE_FACTOR, ORDER, DIFFERENTIAL_DELAY);
 	--
@@ -90,13 +91,13 @@ begin
 		end loop;
 	end process SE;
 
-	-- -------------------------------------------------------------------------	
+	-- -------------------------------------------------------------------------
 	--	Integrator
 	-- -------------------------------------------------------------------------
 	GEN_INTEGRATOR_1: if ORDER = 1 generate
-		INT_11: entity work.integrator 
+		INT_11: entity work.integrator
 		generic map(
-			DATA_SIZE => REGISTER_SIZE(1))
+			DATA_SIZE => REGISTER_SIZE(0))
 		port map (
 			clk => clk,
 			reset => reset,
@@ -110,9 +111,9 @@ begin
 
 	GEN_INTEGRATOR_2: if ORDER = 2 generate
 	begin
-		INT_21: entity work.integrator 
+		INT_21: entity work.integrator
 		generic map(
-			DATA_SIZE => REGISTER_SIZE(1))
+			DATA_SIZE => REGISTER_SIZE(0))
 		port map (
 			clk => clk,
 			reset => reset,
@@ -124,7 +125,7 @@ begin
 		);
 		INT_22: entity work.integrator
 		generic map(
-			DATA_SIZE => REGISTER_SIZE(2)) 
+			DATA_SIZE => REGISTER_SIZE(1))
 		port map (
 			clk => clk,
 			reset => reset,
@@ -135,7 +136,7 @@ begin
 			data_q_o => int_out_q_s
 		);
 	end generate GEN_INTEGRATOR_2;
-	
+
 	GEN_INTEGRATOR_N: if ORDER > 2 generate
 	begin
 		INTEGRATOR_N: for i in 1 to ORDER generate
@@ -143,33 +144,33 @@ begin
 			-- Generate the first integrator filter.
 			GEN_INT_1 : if i = 1 generate
 			begin
-				INT_N1 : entity work.integrator 
+				INT_N1 : entity work.integrator
 				generic map(
-					DATA_SIZE => REGISTER_SIZE(1))
+					DATA_SIZE => REGISTER_SIZE(0))
 				port map (
 					clk => clk,
 					reset => reset,
 					data_en_i => data_en_i,
-					data_i_i => data_i_se_s,
-					data_q_i => data_q_se_s,
-					data_i_o => int_data_i_s(1),
-					data_q_o => int_data_q_s(1)
+					data_i_i => data_i_se_s(data_i_se_s'high downto data_i_se_s'high-REGISTER_SIZE(0)+1),
+					data_q_i => data_q_se_s(data_i_se_s'high downto data_i_se_s'high-REGISTER_SIZE(0)+1),
+					data_i_o => int_data_i_s(1)(int_data_i_s(1)'high downto int_data_i_s(1)'high-REGISTER_SIZE(0)+1),
+					data_q_o => int_data_q_s(1)(int_data_q_s(1)'high downto int_data_q_s(1)'high-REGISTER_SIZE(0)+1)
 				);
 			end generate GEN_INT_1;
 			-- Generate the i'th integrator filter.
 			GEN_INT_I : if ((i > 1) and (i < ORDER)) generate
 			begin
-				INT_NI : entity work.integrator 
+				INT_NI : entity work.integrator
 				generic map(
-					DATA_SIZE => REGISTER_SIZE(i)) 
+					DATA_SIZE => REGISTER_SIZE(i-1))
 				port map (
 					clk => clk,
 					reset => reset,
 					data_en_i => data_en_i,
-					data_i_i => int_data_i_s(i-1),
-					data_q_i => int_data_q_s(i-1),
-					data_i_o => int_data_i_s(i),
-					data_q_o => int_data_q_s(i)
+					data_i_i => int_data_i_s(i-1)(int_data_i_s(i-1)'high downto int_data_i_s(i-1)'high-REGISTER_SIZE(i-1)+1),
+					data_q_i => int_data_q_s(i-1)(int_data_q_s(i-1)'high downto int_data_q_s(i-1)'high-REGISTER_SIZE(i-1)+1),
+					data_i_o => int_data_i_s(i)(int_data_i_s(i)'high downto int_data_i_s(i)'high-REGISTER_SIZE(i-1)+1),
+					data_q_o => int_data_q_s(i)(int_data_q_s(i)'high downto int_data_q_s(i)'high-REGISTER_SIZE(i-1)+1)
 				);
 			end generate GEN_INT_I;
 			-- Generate the ORDER'th integrator filter.
@@ -182,10 +183,10 @@ begin
 					clk => clk,
 					reset => reset,
 					data_en_i => data_en_i,
-					data_i_i => int_data_i_s(ORDER-1),
-					data_q_i => int_data_q_s(ORDER-1),
-					data_i_o => int_out_i_s,
-					data_q_o => int_out_q_s
+					data_i_i => int_data_i_s(ORDER-1)(int_data_i_s(ORDER-1)'high downto int_data_i_s(ORDER-1)'high-REGISTER_SIZE(ORDER)+1),
+					data_q_i => int_data_q_s(ORDER-1)(int_data_q_s(ORDER-1)'high downto int_data_q_s(ORDER-1)'high-REGISTER_SIZE(ORDER)+1),
+					data_i_o => int_out_i_s(int_out_i_s'high downto int_out_i_s'high-REGISTER_SIZE(ORDER)+1),
+					data_q_o => int_out_q_s(int_out_q_s'high downto int_out_q_s'high-REGISTER_SIZE(ORDER)+1)
 				);
 			end generate GEN_INT_ORDER;
 		end generate INTEGRATOR_N;
@@ -216,7 +217,7 @@ begin
 	--	Comb
 	-- -------------------------------------------------------------------------
 	GEN_COMB_1: if ORDER = 1 generate
-		INT_11: entity work.comb 
+		INT_11: entity work.comb
 		generic map(
 			DATA_SIZE => REGISTER_SIZE(ORDER+1),
 			DIFFERENTIAL_DELAY => DIFFERENTIAL_DELAY)
@@ -233,7 +234,7 @@ begin
 
 	GEN_COMB_2: if ORDER = 2 generate
 	begin
-		INT_21: entity work.comb 
+		INT_21: entity work.comb
 		generic map(
 			DATA_SIZE => REGISTER_SIZE(ORDER+1),
 			DIFFERENTIAL_DELAY => DIFFERENTIAL_DELAY)
@@ -275,10 +276,10 @@ begin
 				port map (
 					clk => clk,
 					reset => reset,
-					data_i_i => int_out_i_s,
-					data_q_i => int_out_q_s,
-					data_i_o => comb_data_i_s(1),
-					data_q_o => comb_data_q_s(1),
+					data_i_i => int_out_i_s(int_out_i_s'high downto int_out_i_s'high-REGISTER_SIZE(ORDER+1)+1),
+					data_q_i => int_out_q_s(int_out_q_s'high downto int_out_q_s'high-REGISTER_SIZE(ORDER+1)+1),
+					data_i_o => comb_data_i_s(1)(comb_data_i_s(1)'high downto comb_data_i_s(1)'high-REGISTER_SIZE(ORDER+1)+1),
+					data_q_o => comb_data_q_s(1)(comb_data_i_s(1)'high downto comb_data_i_s(1)'high-REGISTER_SIZE(ORDER+1)+1),
 					data_en_i => data_en_s
 				);
 			end generate GEN_COMB_N1;
@@ -292,10 +293,10 @@ begin
 				port map (
 					clk => clk,
 					reset => reset,
-					data_i_i => comb_data_i_s(i - 1),
-					data_q_i => comb_data_q_s(i - 1),
-					data_i_o => comb_data_i_s(i),
-					data_q_o => comb_data_q_s(i),
+					data_i_i => comb_data_i_s(i-1)(comb_data_i_s(i-1)'high downto comb_data_i_s(i-1)'high-REGISTER_SIZE(ORDER+i+1)+1),
+					data_q_i => comb_data_q_s(i-1)(comb_data_q_s(i-1)'high downto comb_data_q_s(i-1)'high-REGISTER_SIZE(ORDER+i+1)+1),
+					data_i_o => comb_data_i_s(i)(comb_data_i_s(i)'high downto comb_data_i_s(i)'high-REGISTER_SIZE(ORDER+i+1)+1),
+					data_q_o => comb_data_q_s(i)(comb_data_q_s(i)'high downto comb_data_q_s(i)'high-REGISTER_SIZE(ORDER+i+1)+1),
 					data_en_i => data_en_s
 				);
 			end generate GEN_COMB_NI;
@@ -305,14 +306,14 @@ begin
 				CMB_1 : entity work.comb
 				generic map(
 					DATA_SIZE => REGISTER_SIZE(2*ORDER),
-					DIFFERENTIAL_DELAY => DIFFERENTIAL_DELAY)  
+					DIFFERENTIAL_DELAY => DIFFERENTIAL_DELAY)
 				port map (
 					clk => clk,
 					reset => reset,
-					data_i_i => comb_data_i_s(ORDER - 1),
-					data_q_i => comb_data_q_s(ORDER - 1),
-					data_i_o => comb_out_i_s,
-					data_q_o => comb_out_q_s,
+					data_i_i => comb_data_i_s(ORDER-1)(comb_data_i_s(2*ORDER)'high downto comb_data_i_s(2*ORDER)'high-REGISTER_SIZE(2*ORDER)+1),
+					data_q_i => comb_data_q_s(ORDER-1)(comb_data_q_s(2*ORDER)'high downto comb_data_q_s(2*ORDER)'high-REGISTER_SIZE(2*ORDER)+1),
+					data_i_o => comb_out_i_s(comb_out_i_s'high downto comb_out_i_s'high-REGISTER_SIZE(2*ORDER)+1),
+					data_q_o => comb_out_q_s(comb_out_q_s'high downto comb_out_q_s'high-REGISTER_SIZE(2*ORDER)+1),
 					data_en_i => data_en_s
 				);
 			end generate GEN_COMB_NORDER;
