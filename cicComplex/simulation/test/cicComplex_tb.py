@@ -10,7 +10,7 @@ import cocotb
 from cocotb.clock import Clock
 from cocotb.triggers import Timer, RisingEdge, FallingEdge
 from cocotb.types import LogicArray
-from cocotb.runner import get_runner, Simulator
+from cocotb_tools.runner import get_runner
 
 np.seterr(divide='ignore', invalid='ignore');
 
@@ -366,7 +366,7 @@ def cic_tb_runner():
 
     print("Build HDL")
     runner.build(
-        vhdl_sources=vhdl_sources,
+        sources=vhdl_sources,
         hdl_toplevel="ciccomplex_top",
         parameters={"BIT_PRUNING": BIT_PRUNING,
                     "DATA_IN_SIZE": Bin,
