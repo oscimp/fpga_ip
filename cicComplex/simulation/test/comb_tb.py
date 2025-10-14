@@ -10,7 +10,8 @@ import cocotb
 from cocotb.clock import Clock
 from cocotb.triggers import Timer, RisingEdge, FallingEdge
 from cocotb.types import LogicArray
-from cocotb.runner import get_runner, Simulator
+from cocotb_tools.runner import get_runner
+
 
 np.seterr(divide='ignore', invalid='ignore');
 
@@ -75,10 +76,10 @@ async def comb_filter_impulse_response_test(dut):
     input_signal = [impulse_amplitude]+[0]*(nfft-1)
 
     # bit accurate predictor values
-    comb_theo_response = comb(input_signal, int(dut.DIFFERENTIAL_DELAY))
+    comb_theo_response = comb(input_signal, int(dut.DIFFERENTIAL_DELAY.value))
 
     # start simulator clock
-    cocotb.start_soon(Clock(dut.clk, CLOCK_PERIOD, units="ns").start())
+    cocotb.start_soon(Clock(dut.clk, CLOCK_PERIOD, unit="ns").start())
 
     # Reset DUT
     await reset_dut(dut.reset, dut.clk, 20)
@@ -88,7 +89,7 @@ async def comb_filter_impulse_response_test(dut):
     comb_complex_response_q = np.zeros(int(num_clks))
 
     # Enable data input sampling
-    dut.sample_i = 1
+    dut.data_en_i.value = 1
 
     # run through each clock
     for samp in range(num_clks):
@@ -97,8 +98,8 @@ async def comb_filter_impulse_response_test(dut):
         dut.data_q_i.value = int(input_signal[samp])
         await RisingEdge(dut.clk)
         # get the output at rising edge
-        comb_complex_response_i[samp] = dut.data_i_o.value.signed_integer
-        comb_complex_response_q[samp] = dut.data_q_o.value.signed_integer
+        comb_complex_response_i[samp] = dut.data_i_o.value.to_signed()
+        comb_complex_response_q[samp] = dut.data_q_o.value.to_signed()
         # wait until reset is over, then start the assertion checking
         if(samp>=2):
             assert comb_complex_response_i[samp] == comb_theo_response[samp], "filter result is incorrect: %d != %d" % (comb_complex_response_i[samp], comb_theo_response[samp])
@@ -113,7 +114,7 @@ async def comb_filter_impulse_response_test(dut):
     plt.plot(comb_theo_response[:time_max_idx], marker='.')
     plt.plot(input_signal[:time_max_idx])
     plt.legend(['DUT I', 'Theory', 'Impulse'])
-    plt.title(f'Time domain: Impulse response Comb delay {int(dut.DIFFERENTIAL_DELAY)}')
+    plt.title(f'Time domain: Impulse response Comb delay {int(dut.DIFFERENTIAL_DELAY.value)}')
 
     if NORMALIZE_FREQUENCY is True:
         xaxis = np.arange(0, 0.5, 1/nfft)
@@ -124,7 +125,7 @@ async def comb_filter_impulse_response_test(dut):
     plt.plot(xaxis, comb_complex_fft_i[0:int(nfft/2)], marker='x')
     plt.plot(xaxis, comb_theo_fft[0:int(nfft/2)], marker='.')
     plt.legend(['DUT I', 'Theory'])
-    plt.title(f'Comb delay {int(dut.DIFFERENTIAL_DELAY)} frequency Domain Response')
+    plt.title(f'Comb delay {int(dut.DIFFERENTIAL_DELAY.value)} frequency Domain Response')
 
     plt.grid()
     if NORMALIZE_FREQUENCY is True:
@@ -154,7 +155,7 @@ def comb_tb_runner(differential_delay: int) -> None:
 
     print("Build HDL")
     runner.build(
-        vhdl_sources=vhdl_sources,
+        sources=vhdl_sources,
         hdl_toplevel="comb",
         parameters={"DIFFERENTIAL_DELAY": differential_delay,
                     "DATA_SIZE": DATA_SIZE},
