@@ -43,7 +43,7 @@ begin
 		 if rising_edge(clk) then
 		 	if reset = '1' then 
 				shift_val_s <= std_logic_vector(to_unsigned(DEFAULT_SHIFT, SHFT_ADDR_SZ));
-			 elsif wr_en_i = '1' and addr_i = REG_SHIFT_VAL then
+			elsif wr_en_i = '1' and addr_i = REG_SHIFT_VAL then
 				shift_val_s <= writedata_i(SHFT_ADDR_SZ-1 downto 0);
 			else
 				shift_val_s <= shift_val_s;
