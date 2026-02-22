@@ -5,6 +5,7 @@ use IEEE.numeric_std.all;
 Entity meanReal is 
 	generic (
 		SIGNED_FORMAT : boolean := true;
+		DECIM_ONLY : boolean := false;
 		NB_ACCUM : natural := 8;
 		SHIFT : natural := 3;
 		DATA_OUT_SIZE: natural := 18;
@@ -38,15 +39,24 @@ begin
 	data_rst_o <= data_rst_i;
 	signed_prod: if SIGNED_FORMAT = true generate
 		data_resize_s <= std_logic_vector(resize(signed(data_i), TMP_DATA_SIZE));
-		accum_next_s <= std_logic_vector(signed(data_resize_s) +
+		accum: if DECIM_ONLY = false generate
+			accum_next_s <= std_logic_vector(signed(data_resize_s) +
 			signed(accum_s));
-
+		end generate accum;
+		decim: if DECIM_ONLY = true generate
+			accum_next_s <= std_logic_vector(signed(data_resize_s));
+		end generate decim;
 	end generate signed_prod;
 
 	unsigned_prod: if SIGNED_FORMAT = false generate
 		data_resize_s <= std_logic_vector(resize(unsigned(data_i), TMP_DATA_SIZE));
-		accum_next_s <= std_logic_vector(unsigned(data_resize_s) +
+		accum: if DECIM_ONLY = false generate
+			accum_next_s <= std_logic_vector(unsigned(data_resize_s) +
 			unsigned(accum_s));
+		end generate accum;
+		decim: if DECIM_ONLY = true generate
+			accum_next_s <= std_logic_vector(unsigned(data_resize_s));
+		end generate decim;
 	end generate unsigned_prod;
 
 	process(data_clk_i)
