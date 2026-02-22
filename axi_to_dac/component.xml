@@ -1057,7 +1057,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>DATAB_DEFAULT_OUT</spirit:name>
-      <spirit:displayName>Default dataB State</spirit:displayName>
+      <spirit:displayName>Default dataB Value</spirit:displayName>
       <spirit:description>Default DataB value.</spirit:description>
       <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.DATAB_DEFAULT_OUT">0</spirit:value>
     </spirit:parameter>
