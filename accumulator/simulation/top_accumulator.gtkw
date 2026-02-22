@@ -1,0 +1,31 @@
+[*]
+[*] GTKWave Analyzer v3.3.121 (w)1999-2024 BSI
+[*] Mon Nov 24 12:52:16 2025
+[*]
+[dumpfile] "/home/bma/git/github/oscimpDigital/fpga_ip/accumulator/simulation/simu/top_accumulator_tb.ghw"
+[dumpfile_mtime] "Mon Nov 24 12:51:14 2025"
+[dumpfile_size] 200592
+[savefile] "/home/bma/git/github/oscimpDigital/fpga_ip/accumulator/simulation/top_accumulator.gtkw"
+[timestart] 0
+[size] 1710 653
+[pos] 573 235
+*-27.721111 160000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.top_accumulator_tb.
+[treeopen] top.top_accumulator_tb.inst.
+[sst_width] 278
+[signals_width] 158
+[sst_expanded] 1
+[sst_vpaned_height] 297
+@28
+top.top_accumulator_tb.inst.data_clk_i
+top.top_accumulator_tb.inst.data_rst_i
+@420
+top.top_accumulator_tb.inst.cpt
+@29
+#{top.top_accumulator_tb.inst.cpt_s[2:0]} top.top_accumulator_tb.inst.cpt_s[2] top.top_accumulator_tb.inst.cpt_s[1] top.top_accumulator_tb.inst.cpt_s[0]
+@28
+top.top_accumulator_tb.inst.data_clk_o
+top.top_accumulator_tb.inst.data_rst_o
+[pattern_trace] 1
+[pattern_trace] 0
