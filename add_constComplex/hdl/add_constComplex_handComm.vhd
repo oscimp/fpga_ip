@@ -105,7 +105,7 @@ architecture add_constComplex_handComm_imp of add_constComplex_handComm is
 	-- ADDR_LSB = 2 for 32 bits (n downto 2)
 	-- ADDR_LSB = 3 for 64 bits (n downto 3)
 	constant ADDR_LSB  : integer := (C_S_AXI_DATA_WIDTH/32)+ 1;
-	constant OPT_MEM_ADDR_BITS : integer := 1;
+	constant OPT_MEM_ADDR_BITS : integer := INTERNAL_ADDR_WIDTH;
 	------------------------------------------------
 	---- Signals for user logic register space example
 	--------------------------------------------------
@@ -124,8 +124,8 @@ begin
 	addr_reg <= addr_s when rising_edge(S_AXI_ACLK);
 
 	diff_addr_size : if INTERNAL_ADDR_WIDTH /= C_S_AXI_ADDR_WIDTH generate
-		write_addr_s <= axi_awaddr(ADDR_LSB + OPT_MEM_ADDR_BITS downto ADDR_LSB);
-		read_addr_s <= axi_araddr(ADDR_LSB + OPT_MEM_ADDR_BITS downto ADDR_LSB);
+		write_addr_s <= axi_awaddr(ADDR_LSB + OPT_MEM_ADDR_BITS-1 downto ADDR_LSB);
+		read_addr_s <= axi_araddr(ADDR_LSB + OPT_MEM_ADDR_BITS-1 downto ADDR_LSB);
 	end generate diff_addr_size;
 	-- We assume in and out size is the same it's not needed to shift addr
 	same_addr_size : if INTERNAL_ADDR_WIDTH = C_S_AXI_ADDR_WIDTH generate

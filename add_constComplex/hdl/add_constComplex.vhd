@@ -6,12 +6,13 @@ entity add_constComplex is
 	generic (
 		id : natural := 1;
 		format : string := "signed";
-		add_val : integer := 0;
+		add_val_i : integer := 0;
+		add_val_q : integer := 0;
 		DATA_OUT_SIZE: natural := 18;
 		DATA_IN_SIZE : natural := 16;
 		-- Parameters of Axi Slave Bus Interface S00_AXI
 		C_S00_AXI_DATA_WIDTH	: integer	:= 32;
-		C_S00_AXI_ADDR_WIDTH	: integer	:= 4
+		C_S00_AXI_ADDR_WIDTH	: integer	:= 5
 	);
 	port (
 		s00_axi_aclk	: in std_logic;
@@ -53,11 +54,13 @@ end add_constComplex;
 
 architecture Behavioral of add_constComplex is
 	-- comm
-	constant INTERNAL_ADDR_WIDTH : natural := 2;
-	signal addr_s : std_logic_vector(1 downto 0);
+	constant INTERNAL_ADDR_WIDTH : natural := 3;
+	signal addr_s : std_logic_vector(INTERNAL_ADDR_WIDTH-1 downto 0);
 	signal write_en_s, read_en_s : std_logic;
-	signal offset_s : std_logic_vector(DATA_IN_SIZE-1 downto 0);
-	signal offset_sync_s : std_logic_vector(DATA_IN_SIZE-1 downto 0);
+	signal offset_i_s : std_logic_vector(DATA_IN_SIZE-1 downto 0);
+	signal offset_q_s : std_logic_vector(DATA_IN_SIZE-1 downto 0);
+	signal offset_i_sync_s : std_logic_vector(DATA_IN_SIZE-1 downto 0);
+	signal offset_q_sync_s : std_logic_vector(DATA_IN_SIZE-1 downto 0);
 begin
 	data_clk_o <= data_clk_i;
 	data_rst_o <= data_rst_i;
@@ -66,28 +69,34 @@ begin
 	generic map (format => format, 
 		DATA_IN_SIZE => DATA_IN_SIZE, DATA_OUT_SIZE => DATA_OUT_SIZE)
 	port map (clk_i => data_clk_i, rst_i => data_rst_i,
-		add_val => offset_sync_s,
+		add_val_i => offset_i_sync_s, add_val_q => offset_q_sync_s,
 		data_i_i => data_i_i, data_q_i => data_q_i, data_en_i => data_en_i,
 		data_en_o => data_en_o, data_i_o => data_i_o, data_q_o => data_q_o);
 
 	-- synchro --
-	offset_syn: entity work.add_constComplex_synchronizer_vector
+	offset_i_syn: entity work.add_constComplex_synchronizer_vector
 	generic map (DATA => DATA_IN_SIZE)
 	port map (clk_i => data_clk_i,
-		bit_i => offset_s, bit_o => offset_sync_s);
+		bit_i => offset_i_s, bit_o => offset_i_sync_s);
+
+	offset_q_syn: entity work.add_constComplex_synchronizer_vector
+	generic map (DATA => DATA_IN_SIZE)
+	port map (clk_i => data_clk_i,
+		bit_i => offset_q_s, bit_o => offset_q_sync_s);
 	-------------
 
 	wb_add_constComplex_inst : entity work.wb_add_constComplex
     generic map(id => id, wb_size   => C_S00_AXI_DATA_WIDTH,
 		FORMAT => format,
-		DATA_SIZE => DATA_IN_SIZE, DEFAULT_OFFSET => add_val)
+		DATA_SIZE => DATA_IN_SIZE, DEFAULT_OFFSET_I => add_val_i, DEFAULT_OFFSET_Q => add_val_q)
     port map(reset => s00_axi_reset, clk => s00_axi_aclk,
 		wbs_add       => addr_s,       
 		wbs_write     => write_en_s,     
 		wbs_writedata => s00_axi_wdata, 
 		wbs_read     => read_en_s,     
 		wbs_readdata  => s00_axi_rdata,  
-		offset_o => offset_s);
+		offset_i_o => offset_i_s,
+		offset_q_o => offset_q_s);
 
 	add_constComplexHandComm: entity work.add_constComplex_handComm
 	generic map (

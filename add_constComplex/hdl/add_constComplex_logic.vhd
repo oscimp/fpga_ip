@@ -13,14 +13,15 @@ Entity add_constComplex_logic is
 		rst_i     : in std_logic;
 		clk_i     : in std_logic;
 		-- config
-		add_val   : in std_logic_vector(DATA_IN_SIZE-1 downto 0);
+		add_val_i   : in std_logic_vector(DATA_IN_SIZE-1 downto 0);
+		add_val_q   : in std_logic_vector(DATA_IN_SIZE-1 downto 0);
 		-- input data
 		data_i_i  : in std_logic_vector(DATA_IN_SIZE-1 downto 0);
 		data_q_i  : in std_logic_vector(DATA_IN_SIZE-1 downto 0);
 		data_en_i : in std_logic;
 		-- for the next component
-		data_q_o  : out std_logic_vector(DATA_OUT_SIZE-1 downto 0);
 		data_i_o  : out std_logic_vector(DATA_OUT_SIZE-1 downto 0);
+		data_q_o  : out std_logic_vector(DATA_OUT_SIZE-1 downto 0);
 		data_en_o : out std_logic
 	);
 end entity;
@@ -104,9 +105,9 @@ begin
 	signed_op: if format = "signed" generate
 		-- resize both members by adding one bit
 		data_add_i_s <= std_logic_vector(resize(signed(data_i_i), DATA_IN_SIZE+1)
-				+ resize(signed(add_val), DATA_IN_SIZE + 1));
+				+ resize(signed(add_val_i), DATA_IN_SIZE + 1));
 		data_add_q_s <= std_logic_vector(resize(signed(data_q_i), DATA_IN_SIZE+1)
-				+ resize(signed(add_val), DATA_IN_SIZE + 1));
+				+ resize(signed(add_val_q), DATA_IN_SIZE + 1));
 		-- resize both members by adding one bit
 		data_i_s <= std_logic_vector(resize(signed(data_res_i_s), DATA_OUT_SIZE));
 		data_q_s <= std_logic_vector(resize(signed(data_res_q_s), DATA_OUT_SIZE));
@@ -115,9 +116,9 @@ begin
 	unsigned_op: if format /= "signed" generate
 		-- resize both members by adding one bit
 		data_add_i_s <= std_logic_vector(resize(unsigned(data_i_i), DATA_IN_SIZE+1)
-				+ resize(unsigned(add_val), DATA_IN_SIZE + 1));
+				+ resize(unsigned(add_val_i), DATA_IN_SIZE + 1));
 		data_add_q_s <= std_logic_vector(resize(unsigned(data_q_i), DATA_IN_SIZE+1)
-				+ resize(unsigned(add_val), DATA_IN_SIZE + 1));
+				+ resize(unsigned(add_val_q), DATA_IN_SIZE + 1));
 		-- resize both members by adding one bit
 		data_i_s <= std_logic_vector(resize(unsigned(data_res_i_s), DATA_OUT_SIZE));
 		data_q_s <= std_logic_vector(resize(unsigned(data_res_q_s), DATA_OUT_SIZE));
