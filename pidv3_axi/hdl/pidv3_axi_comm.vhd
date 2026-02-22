@@ -116,9 +116,9 @@ begin
 		when REG_KP =>
 			readdata_next_s <= (BUS_SIZE-1 downto P_SIZE => kp_s(P_SIZE-1)) & kp_s;
 		when REG_KI =>
-			readdata_next_s <= (BUS_SIZE-1 downto I_SIZE => ki_s(P_SIZE-1)) & ki_s;
+			readdata_next_s <= (BUS_SIZE-1 downto I_SIZE => ki_s(I_SIZE-1)) & ki_s;
 		when REG_KD =>
-			readdata_next_s <= (BUS_SIZE-1 downto D_SIZE => kd_s(P_SIZE-1)) & kd_s;
+			readdata_next_s <= (BUS_SIZE-1 downto D_SIZE => kd_s(D_SIZE-1)) & kd_s;
 		when REG_SETPOINT =>
 			readdata_next_s <= (BUS_SIZE-1 downto SETPOINT_SIZE => setpoint_s(SETPOINT_SIZE-1)) & setpoint_s;
 		when REG_SIGN =>
