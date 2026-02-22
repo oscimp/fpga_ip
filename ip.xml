@@ -2,6 +2,8 @@
 <ips>
 	<ip name="axi_to_dac"
 		driver="axi_to_dac" />
+	<ip name="add_constComplex"
+		driver="add_const" />
 	<ip name="add_constReal"
 		driver="add_const" />
 	<ip name="check_valid_burst"
