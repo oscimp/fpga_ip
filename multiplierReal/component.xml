@@ -188,7 +188,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>db82c556</spirit:value>
+            <spirit:value>3c00bb0e</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -204,7 +204,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>db82c556</spirit:value>
+            <spirit:value>3c00bb0e</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -218,7 +218,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>4440e228</spirit:value>
+            <spirit:value>ecd12983</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -480,20 +480,33 @@
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>DATA1_IN_SIZE</spirit:name>
         <spirit:displayName>Data1 In Size</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DATA1_IN_SIZE" spirit:minimum="0">16</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DATA1_IN_SIZE" spirit:minimum="0" spirit:rangeType="long">16</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>DATA2_IN_SIZE</spirit:name>
         <spirit:displayName>Data2 In Size</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DATA2_IN_SIZE" spirit:minimum="0">16</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DATA2_IN_SIZE" spirit:minimum="0" spirit:rangeType="long">16</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>DATA_OUT_SIZE</spirit:name>
         <spirit:displayName>Data Out Size</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DATA_OUT_SIZE" spirit:minimum="0">32</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DATA_OUT_SIZE" spirit:minimum="0" spirit:rangeType="long">32</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="string">
+        <spirit:name>ENABLE_SEL</spirit:name>
+        <spirit:displayName>Enable Sel</spirit:displayName>
+        <spirit:value spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.ENABLE_SEL">and</spirit:value>
       </spirit:modelParameter>
     </spirit:modelParameters>
   </spirit:model>
+  <spirit:choices>
+    <spirit:choice>
+      <spirit:name>choice_list_1bc04bbc</spirit:name>
+      <spirit:enumeration>and</spirit:enumeration>
+      <spirit:enumeration>data1</spirit:enumeration>
+      <spirit:enumeration>data2</spirit:enumeration>
+    </spirit:choice>
+  </spirit:choices>
   <spirit:fileSets>
     <spirit:fileSet>
       <spirit:name>xilinx_anylanguagesynthesis_view_fileset</spirit:name>
@@ -504,7 +517,7 @@
       <spirit:file>
         <spirit:name>hdl/multiplierReal.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_3ed50259</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_e13de0c0</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -523,7 +536,7 @@
       <spirit:file>
         <spirit:name>xgui/multiplierReal_v1_0.tcl</spirit:name>
         <spirit:fileType>tclSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_4440e228</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_ecd12983</spirit:userFileType>
         <spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
@@ -558,6 +571,11 @@
       <spirit:name>Component_Name</spirit:name>
       <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Component_Name" spirit:order="1">multiplierReal_v1_0</spirit:value>
     </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>ENABLE_SEL</spirit:name>
+      <spirit:displayName>Enable Sel</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.ENABLE_SEL" spirit:choiceRef="choice_list_1bc04bbc">and</spirit:value>
+    </spirit:parameter>
   </spirit:parameters>
   <spirit:vendorExtensions>
     <xilinx:coreExtensions>
@@ -567,6 +585,7 @@
         <xilinx:family xilinx:lifeCycle="Production">aartix7</xilinx:family>
         <xilinx:family xilinx:lifeCycle="Production">zynq</xilinx:family>
         <xilinx:family xilinx:lifeCycle="Production">azynq</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">kintexu</xilinx:family>
       </xilinx:supportedFamilies>
       <xilinx:taxonomies>
         <xilinx:taxonomy>/BaseIP</xilinx:taxonomy>
@@ -575,16 +594,16 @@
       <xilinx:definitionSource>package_project</xilinx:definitionSource>
       <xilinx:vendorDisplayName>Gwenhael Goavec-Merou</xilinx:vendorDisplayName>
       <xilinx:vendorURL>http://www.trabucayre.com</xilinx:vendorURL>
-      <xilinx:coreRevision>1</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2020-01-30T17:36:14Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>2</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2025-11-25T12:26:09Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
-      <xilinx:xilinxVersion>2018.3.1</xilinx:xilinxVersion>
+      <xilinx:xilinxVersion>2021.1</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="f89946ff"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="f2af4323"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="c566ab30"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="7a7a2b8f"/>
-      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="e5bcf17e"/>
-      <xilinx:checksum xilinx:scope="parameters" xilinx:value="0bebc94f"/>
+      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="e7140eda"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="2a9e9491"/>
     </xilinx:packagingInfo>
   </spirit:vendorExtensions>
 </spirit:component>
