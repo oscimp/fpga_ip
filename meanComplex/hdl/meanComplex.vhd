@@ -5,6 +5,7 @@ use IEEE.numeric_std.all;
 Entity meanComplex is 
 	generic (
 		SIGNED_FORMAT : boolean := true;
+		DECIM_ONLY : boolean := false;
 		NB_ACCUM : natural := 8;
 		SHIFT : natural := 3;
 		DATA_OUT_SIZE: natural := 18;
@@ -45,20 +46,31 @@ begin
 	signed_prod: if signed_format = true generate
 		data_i_resize_s <= std_logic_vector(resize(signed(data_i_i), TMP_DATA_SIZE));
 		data_q_resize_s <= std_logic_vector(resize(signed(data_q_i), TMP_DATA_SIZE));
-		accum_next_i_s <= std_logic_vector(signed(data_i_resize_s) +
-			signed(accum_i_s));
-		accum_next_q_s <= std_logic_vector(signed(data_q_resize_s) +
-			signed(accum_q_s));
-
+		accum: if DECIM_ONLY = false generate
+			accum_next_i_s <= std_logic_vector(signed(data_i_resize_s) +
+				signed(accum_i_s));
+			accum_next_q_s <= std_logic_vector(signed(data_q_resize_s) +
+				signed(accum_q_s));
+		end generate accum;
+		decim: if DECIM_ONLY = true generate
+			accum_next_i_s <= std_logic_vector(signed(data_i_resize_s));
+			accum_next_q_s <= std_logic_vector(signed(data_q_resize_s));
+		end generate decim;
 	end generate signed_prod;
 
 	unsigned_prod: if signed_format = false generate
 		data_i_resize_s <= std_logic_vector(resize(unsigned(data_i_i), TMP_DATA_SIZE));
 		data_q_resize_s <= std_logic_vector(resize(unsigned(data_q_i), TMP_DATA_SIZE));
-		accum_next_i_s <= std_logic_vector(unsigned(data_i_resize_s) +
-			unsigned(accum_i_s));
-		accum_next_q_s <= std_logic_vector(unsigned(data_q_resize_s) +
-			unsigned(accum_q_s));
+		accum: if DECIM_ONLY = false generate
+			accum_next_i_s <= std_logic_vector(unsigned(data_i_resize_s) +
+				unsigned(accum_i_s));
+			accum_next_q_s <= std_logic_vector(unsigned(data_q_resize_s) +
+				unsigned(accum_q_s));
+		end generate accum;
+		decim: if DECIM_ONLY = true generate
+			accum_next_i_s <= std_logic_vector(unsigned(data_i_resize_s));
+			accum_next_q_s <= std_logic_vector(unsigned(data_q_resize_s));
+		end generate decim;
 	end generate unsigned_prod;
 
 	process(data_clk_i)
