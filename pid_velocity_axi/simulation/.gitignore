@@ -1,0 +1,9 @@
+result.txt
+*.log
+*.xmsgs
+*.cmd
+*.wdd
+*.wcfg
+isim
+*.wdb
+simu

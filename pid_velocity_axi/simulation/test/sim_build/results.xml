@@ -1,0 +1,7 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1722440667" />
+    <testcase name="data_en_test" classname="pid_axi_logic_tb" file="/home/benny/projets/projets_fe/region_2023/dev/oscimpDigital/fpga_ip/pid_velocity_axi/simulation/test/pid_axi_logic_tb.py" lineno="110" time="9.757017374038696" sim_time_ns="1044.000001" ratio_time="106.99991206102158" />
+    <testcase name="pid_code_generation_test" classname="pid_axi_logic_tb" file="/home/benny/projets/projets_fe/region_2023/dev/oscimpDigital/fpga_ip/pid_velocity_axi/simulation/test/pid_axi_logic_tb.py" lineno="485" time="0.0001964569091796875" sim_time_ns="9.99999883788405e-07" ratio_time="0.005090174165744226" />
+  </testsuite>
+</testsuites>
