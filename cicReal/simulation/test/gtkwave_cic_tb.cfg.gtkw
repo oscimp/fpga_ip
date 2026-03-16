@@ -1,0 +1,50 @@
+[*]
+[*] GTKWave Analyzer v3.3.116 (w)1999-2023 BSI
+[*] Fri Apr 12 09:46:31 2024
+[*]
+[dumpfile] "/home/benny/projets/projets_fe/region_2023/dev/oscimpDigital/fpga_ip/cicReal/simulation/test/sim_build/cic_waves.vcd"
+[dumpfile_mtime] "Fri Apr 12 09:43:25 2024"
+[dumpfile_size] 766324
+[savefile] "/home/benny/projets/projets_fe/region_2023/dev/oscimpDigital/fpga_ip/cicReal/simulation/test/gtkwave_cic_tb.cfg.gtkw"
+[timestart] 0
+[size] 1872 1152
+[pos] -46 -46
+*-28.019623 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] cicreal_top.
+[treeopen] cicreal_top.comb_cascade(1).
+[treeopen] cicreal_top.comb_cascade(1).gen_comb_1.
+[treeopen] cicreal_top.comb_cascade(2).
+[treeopen] cicreal_top.comb_cascade(2).gen_comb_i.
+[treeopen] cicreal_top.comb_cascade(3).
+[treeopen] cicreal_top.comb_cascade(3).gen_comb_order.
+[treeopen] cicreal_top.int_cascade(1).
+[treeopen] cicreal_top.int_cascade(1).gen_int_1.
+[treeopen] cicreal_top.int_cascade(2).
+[treeopen] cicreal_top.int_cascade(2).gen_int_i.
+[treeopen] cicreal_top.int_cascade(3).
+[treeopen] cicreal_top.int_cascade(3).gen_int_order.
+[sst_width] 209
+[signals_width] 126
+[sst_expanded] 1
+[sst_vpaned_height] 347
+@28
+cicreal_top.clk
+cicreal_top.reset
+@22
+cicreal_top.data_i[15:0]
+@28
+cicreal_top.data_en_i
+@421
+cicreal_top.int_cascade(1).gen_int_1.int_1.data_i[33:0]
+cicreal_top.int_cascade(1).gen_int_1.int_1.data_o[33:0]
+cicreal_top.int_cascade(2).gen_int_i.int_1.data_o[33:0]
+cicreal_top.int_cascade(3).gen_int_order.int_1.data_o[33:0]
+@28
+cicreal_top.sample_s
+@421
+cicreal_top.comb_cascade(1).gen_comb_1.cmb_1.data_o[33:0]
+cicreal_top.comb_cascade(2).gen_comb_i.cmb_1.data_o[33:0]
+cicreal_top.comb_cascade(3).gen_comb_order.cmb_1.data_o[33:0]
+cicreal_top.data_o[22:0]
+[pattern_trace] 1
+[pattern_trace] 0
