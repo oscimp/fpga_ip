@@ -1,0 +1,123 @@
+[*]
+[*] GTKWave Analyzer v3.3.118 (w)1999-2023 BSI
+[*] Wed Jul 31 13:49:47 2024
+[*]
+[dumpfile] "/home/benny/projets/projets_fe/region_2023/dev/oscimpDigital/fpga_ip/pid_velocity_axi/simulation/test/sim_build/pid_waves.ghw"
+[dumpfile_mtime] "Wed Jul 31 13:22:22 2024"
+[dumpfile_size] 2431
+[savefile] "/home/benny/projets/projets_fe/region_2023/dev/oscimpDigital/fpga_ip/pid_velocity_axi/simulation/test/gtkwave_pidvelocity_logic_tb.cfg.gtkw"
+[timestart] 1009900000
+[size] 1872 1152
+[pos] -1 -1
+*-24.991848 1028000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.pid_velocity_axi_logic.
+[sst_width] 209
+[signals_width] 221
+[sst_expanded] 1
+[sst_vpaned_height] 347
+@28
+top.pid_velocity_axi_logic.sign_i
+top.pid_velocity_axi_logic.reset
+top.pid_velocity_axi_logic.clk_i
+@8420
+#{top.pid_velocity_axi_logic.data_i[13:0]} top.pid_velocity_axi_logic.data_i[13] top.pid_velocity_axi_logic.data_i[12] top.pid_velocity_axi_logic.data_i[11] top.pid_velocity_axi_logic.data_i[10] top.pid_velocity_axi_logic.data_i[9] top.pid_velocity_axi_logic.data_i[8] top.pid_velocity_axi_logic.data_i[7] top.pid_velocity_axi_logic.data_i[6] top.pid_velocity_axi_logic.data_i[5] top.pid_velocity_axi_logic.data_i[4] top.pid_velocity_axi_logic.data_i[3] top.pid_velocity_axi_logic.data_i[2] top.pid_velocity_axi_logic.data_i[1] top.pid_velocity_axi_logic.data_i[0]
+@20000
+-
+-
+@28
+top.pid_velocity_axi_logic.data_en_i
+@8420
+#{top.pid_velocity_axi_logic.err_s[14:0]} top.pid_velocity_axi_logic.err_s[14] top.pid_velocity_axi_logic.err_s[13] top.pid_velocity_axi_logic.err_s[12] top.pid_velocity_axi_logic.err_s[11] top.pid_velocity_axi_logic.err_s[10] top.pid_velocity_axi_logic.err_s[9] top.pid_velocity_axi_logic.err_s[8] top.pid_velocity_axi_logic.err_s[7] top.pid_velocity_axi_logic.err_s[6] top.pid_velocity_axi_logic.err_s[5] top.pid_velocity_axi_logic.err_s[4] top.pid_velocity_axi_logic.err_s[3] top.pid_velocity_axi_logic.err_s[2] top.pid_velocity_axi_logic.err_s[1] top.pid_velocity_axi_logic.err_s[0]
+@20000
+-
+-
+@8420
+#{top.pid_velocity_axi_logic.err1_s[14:0]} top.pid_velocity_axi_logic.err1_s[14] top.pid_velocity_axi_logic.err1_s[13] top.pid_velocity_axi_logic.err1_s[12] top.pid_velocity_axi_logic.err1_s[11] top.pid_velocity_axi_logic.err1_s[10] top.pid_velocity_axi_logic.err1_s[9] top.pid_velocity_axi_logic.err1_s[8] top.pid_velocity_axi_logic.err1_s[7] top.pid_velocity_axi_logic.err1_s[6] top.pid_velocity_axi_logic.err1_s[5] top.pid_velocity_axi_logic.err1_s[4] top.pid_velocity_axi_logic.err1_s[3] top.pid_velocity_axi_logic.err1_s[2] top.pid_velocity_axi_logic.err1_s[1] top.pid_velocity_axi_logic.err1_s[0]
+@20000
+-
+-
+@28
+top.pid_velocity_axi_logic.data_en_s
+@420
+#{top.pid_velocity_axi_logic.k1_i[13:0]} top.pid_velocity_axi_logic.k1_i[7] top.pid_velocity_axi_logic.k1_i[6] top.pid_velocity_axi_logic.k1_i[5] top.pid_velocity_axi_logic.k1_i[4] top.pid_velocity_axi_logic.k1_i[3] top.pid_velocity_axi_logic.k1_i[2] top.pid_velocity_axi_logic.k1_i[1] top.pid_velocity_axi_logic.k1_i[0]
+#{top.pid_velocity_axi_logic.k1err_a_s[28:0]} top.pid_velocity_axi_logic.k1err_a_s[22] top.pid_velocity_axi_logic.k1err_a_s[21] top.pid_velocity_axi_logic.k1err_a_s[20] top.pid_velocity_axi_logic.k1err_a_s[19] top.pid_velocity_axi_logic.k1err_a_s[18] top.pid_velocity_axi_logic.k1err_a_s[17] top.pid_velocity_axi_logic.k1err_a_s[16] top.pid_velocity_axi_logic.k1err_a_s[15] top.pid_velocity_axi_logic.k1err_a_s[14] top.pid_velocity_axi_logic.k1err_a_s[13] top.pid_velocity_axi_logic.k1err_a_s[12] top.pid_velocity_axi_logic.k1err_a_s[11] top.pid_velocity_axi_logic.k1err_a_s[10] top.pid_velocity_axi_logic.k1err_a_s[9] top.pid_velocity_axi_logic.k1err_a_s[8] top.pid_velocity_axi_logic.k1err_a_s[7] top.pid_velocity_axi_logic.k1err_a_s[6] top.pid_velocity_axi_logic.k1err_a_s[5] top.pid_velocity_axi_logic.k1err_a_s[4] top.pid_velocity_axi_logic.k1err_a_s[3] top.pid_velocity_axi_logic.k1err_a_s[2] top.pid_velocity_axi_logic.k1err_a_s[1] top.pid_velocity_axi_logic.k1err_a_s[0]
+@8420
+#{top.pid_velocity_axi_logic.k1err_s[24:0]} top.pid_velocity_axi_logic.k1err_s[22] top.pid_velocity_axi_logic.k1err_s[21] top.pid_velocity_axi_logic.k1err_s[20] top.pid_velocity_axi_logic.k1err_s[19] top.pid_velocity_axi_logic.k1err_s[18] top.pid_velocity_axi_logic.k1err_s[17] top.pid_velocity_axi_logic.k1err_s[16] top.pid_velocity_axi_logic.k1err_s[15] top.pid_velocity_axi_logic.k1err_s[14] top.pid_velocity_axi_logic.k1err_s[13] top.pid_velocity_axi_logic.k1err_s[12] top.pid_velocity_axi_logic.k1err_s[11] top.pid_velocity_axi_logic.k1err_s[10] top.pid_velocity_axi_logic.k1err_s[9] top.pid_velocity_axi_logic.k1err_s[8] top.pid_velocity_axi_logic.k1err_s[7] top.pid_velocity_axi_logic.k1err_s[6] top.pid_velocity_axi_logic.k1err_s[5] top.pid_velocity_axi_logic.k1err_s[4] top.pid_velocity_axi_logic.k1err_s[3] top.pid_velocity_axi_logic.k1err_s[2] top.pid_velocity_axi_logic.k1err_s[1] top.pid_velocity_axi_logic.k1err_s[0]
+@20000
+-
+-
+@420
+#{top.pid_velocity_axi_logic.k2_i[13:0]} top.pid_velocity_axi_logic.k2_i[7] top.pid_velocity_axi_logic.k2_i[6] top.pid_velocity_axi_logic.k2_i[5] top.pid_velocity_axi_logic.k2_i[4] top.pid_velocity_axi_logic.k2_i[3] top.pid_velocity_axi_logic.k2_i[2] top.pid_velocity_axi_logic.k2_i[1] top.pid_velocity_axi_logic.k2_i[0]
+#{top.pid_velocity_axi_logic.k2err1_a_s[28:0]} top.pid_velocity_axi_logic.k2err1_a_s[22] top.pid_velocity_axi_logic.k2err1_a_s[21] top.pid_velocity_axi_logic.k2err1_a_s[20] top.pid_velocity_axi_logic.k2err1_a_s[19] top.pid_velocity_axi_logic.k2err1_a_s[18] top.pid_velocity_axi_logic.k2err1_a_s[17] top.pid_velocity_axi_logic.k2err1_a_s[16] top.pid_velocity_axi_logic.k2err1_a_s[15] top.pid_velocity_axi_logic.k2err1_a_s[14] top.pid_velocity_axi_logic.k2err1_a_s[13] top.pid_velocity_axi_logic.k2err1_a_s[12] top.pid_velocity_axi_logic.k2err1_a_s[11] top.pid_velocity_axi_logic.k2err1_a_s[10] top.pid_velocity_axi_logic.k2err1_a_s[9] top.pid_velocity_axi_logic.k2err1_a_s[8] top.pid_velocity_axi_logic.k2err1_a_s[7] top.pid_velocity_axi_logic.k2err1_a_s[6] top.pid_velocity_axi_logic.k2err1_a_s[5] top.pid_velocity_axi_logic.k2err1_a_s[4] top.pid_velocity_axi_logic.k2err1_a_s[3] top.pid_velocity_axi_logic.k2err1_a_s[2] top.pid_velocity_axi_logic.k2err1_a_s[1] top.pid_velocity_axi_logic.k2err1_a_s[0]
+@8420
+#{top.pid_velocity_axi_logic.k2err1_s[24:0]} top.pid_velocity_axi_logic.k2err1_s[22] top.pid_velocity_axi_logic.k2err1_s[21] top.pid_velocity_axi_logic.k2err1_s[20] top.pid_velocity_axi_logic.k2err1_s[19] top.pid_velocity_axi_logic.k2err1_s[18] top.pid_velocity_axi_logic.k2err1_s[17] top.pid_velocity_axi_logic.k2err1_s[16] top.pid_velocity_axi_logic.k2err1_s[15] top.pid_velocity_axi_logic.k2err1_s[14] top.pid_velocity_axi_logic.k2err1_s[13] top.pid_velocity_axi_logic.k2err1_s[12] top.pid_velocity_axi_logic.k2err1_s[11] top.pid_velocity_axi_logic.k2err1_s[10] top.pid_velocity_axi_logic.k2err1_s[9] top.pid_velocity_axi_logic.k2err1_s[8] top.pid_velocity_axi_logic.k2err1_s[7] top.pid_velocity_axi_logic.k2err1_s[6] top.pid_velocity_axi_logic.k2err1_s[5] top.pid_velocity_axi_logic.k2err1_s[4] top.pid_velocity_axi_logic.k2err1_s[3] top.pid_velocity_axi_logic.k2err1_s[2] top.pid_velocity_axi_logic.k2err1_s[1] top.pid_velocity_axi_logic.k2err1_s[0]
+@20000
+-
+-
+@8420
+#{top.pid_velocity_axi_logic.un_s[28:0]} top.pid_velocity_axi_logic.un_s[24] top.pid_velocity_axi_logic.un_s[23] top.pid_velocity_axi_logic.un_s[22] top.pid_velocity_axi_logic.un_s[21] top.pid_velocity_axi_logic.un_s[20] top.pid_velocity_axi_logic.un_s[19] top.pid_velocity_axi_logic.un_s[18] top.pid_velocity_axi_logic.un_s[17] top.pid_velocity_axi_logic.un_s[16] top.pid_velocity_axi_logic.un_s[15] top.pid_velocity_axi_logic.un_s[14] top.pid_velocity_axi_logic.un_s[13] top.pid_velocity_axi_logic.un_s[12] top.pid_velocity_axi_logic.un_s[11] top.pid_velocity_axi_logic.un_s[10] top.pid_velocity_axi_logic.un_s[9] top.pid_velocity_axi_logic.un_s[8] top.pid_velocity_axi_logic.un_s[7] top.pid_velocity_axi_logic.un_s[6] top.pid_velocity_axi_logic.un_s[5] top.pid_velocity_axi_logic.un_s[4] top.pid_velocity_axi_logic.un_s[3] top.pid_velocity_axi_logic.un_s[2] top.pid_velocity_axi_logic.un_s[1] top.pid_velocity_axi_logic.un_s[0]
+@20000
+-
+-
+@28
+top.pid_velocity_axi_logic.data2_en_s
+@8420
+#{top.pid_velocity_axi_logic.un1_s[30:0]} top.pid_velocity_axi_logic.un1_s[24] top.pid_velocity_axi_logic.un1_s[23] top.pid_velocity_axi_logic.un1_s[22] top.pid_velocity_axi_logic.un1_s[21] top.pid_velocity_axi_logic.un1_s[20] top.pid_velocity_axi_logic.un1_s[19] top.pid_velocity_axi_logic.un1_s[18] top.pid_velocity_axi_logic.un1_s[17] top.pid_velocity_axi_logic.un1_s[16] top.pid_velocity_axi_logic.un1_s[15] top.pid_velocity_axi_logic.un1_s[14] top.pid_velocity_axi_logic.un1_s[13] top.pid_velocity_axi_logic.un1_s[12] top.pid_velocity_axi_logic.un1_s[11] top.pid_velocity_axi_logic.un1_s[10] top.pid_velocity_axi_logic.un1_s[9] top.pid_velocity_axi_logic.un1_s[8] top.pid_velocity_axi_logic.un1_s[7] top.pid_velocity_axi_logic.un1_s[6] top.pid_velocity_axi_logic.un1_s[5] top.pid_velocity_axi_logic.un1_s[4] top.pid_velocity_axi_logic.un1_s[3] top.pid_velocity_axi_logic.un1_s[2] top.pid_velocity_axi_logic.un1_s[1] top.pid_velocity_axi_logic.un1_s[0]
+@20000
+-
+-
+@420
+#{top.pid_velocity_axi_logic.err_s[14:0]} top.pid_velocity_axi_logic.err_s[14] top.pid_velocity_axi_logic.err_s[13] top.pid_velocity_axi_logic.err_s[12] top.pid_velocity_axi_logic.err_s[11] top.pid_velocity_axi_logic.err_s[10] top.pid_velocity_axi_logic.err_s[9] top.pid_velocity_axi_logic.err_s[8] top.pid_velocity_axi_logic.err_s[7] top.pid_velocity_axi_logic.err_s[6] top.pid_velocity_axi_logic.err_s[5] top.pid_velocity_axi_logic.err_s[4] top.pid_velocity_axi_logic.err_s[3] top.pid_velocity_axi_logic.err_s[2] top.pid_velocity_axi_logic.err_s[1] top.pid_velocity_axi_logic.err_s[0]
+#{top.pid_velocity_axi_logic.err1_s[14:0]} top.pid_velocity_axi_logic.err1_s[14] top.pid_velocity_axi_logic.err1_s[13] top.pid_velocity_axi_logic.err1_s[12] top.pid_velocity_axi_logic.err1_s[11] top.pid_velocity_axi_logic.err1_s[10] top.pid_velocity_axi_logic.err1_s[9] top.pid_velocity_axi_logic.err1_s[8] top.pid_velocity_axi_logic.err1_s[7] top.pid_velocity_axi_logic.err1_s[6] top.pid_velocity_axi_logic.err1_s[5] top.pid_velocity_axi_logic.err1_s[4] top.pid_velocity_axi_logic.err1_s[3] top.pid_velocity_axi_logic.err1_s[2] top.pid_velocity_axi_logic.err1_s[1] top.pid_velocity_axi_logic.err1_s[0]
+@200
+-
+@c00420
+[color] 3
+#{top.pid_velocity_axi_logic.un_s[24:0]} top.pid_velocity_axi_logic.un_s[24] top.pid_velocity_axi_logic.un_s[23] top.pid_velocity_axi_logic.un_s[22] top.pid_velocity_axi_logic.un_s[21] top.pid_velocity_axi_logic.un_s[20] top.pid_velocity_axi_logic.un_s[19] top.pid_velocity_axi_logic.un_s[18] top.pid_velocity_axi_logic.un_s[17] top.pid_velocity_axi_logic.un_s[16] top.pid_velocity_axi_logic.un_s[15] top.pid_velocity_axi_logic.un_s[14] top.pid_velocity_axi_logic.un_s[13] top.pid_velocity_axi_logic.un_s[12] top.pid_velocity_axi_logic.un_s[11] top.pid_velocity_axi_logic.un_s[10] top.pid_velocity_axi_logic.un_s[9] top.pid_velocity_axi_logic.un_s[8] top.pid_velocity_axi_logic.un_s[7] top.pid_velocity_axi_logic.un_s[6] top.pid_velocity_axi_logic.un_s[5] top.pid_velocity_axi_logic.un_s[4] top.pid_velocity_axi_logic.un_s[3] top.pid_velocity_axi_logic.un_s[2] top.pid_velocity_axi_logic.un_s[1] top.pid_velocity_axi_logic.un_s[0]
+@28
+top.pid_velocity_axi_logic.un_s[24]
+top.pid_velocity_axi_logic.un_s[23]
+top.pid_velocity_axi_logic.un_s[22]
+top.pid_velocity_axi_logic.un_s[21]
+top.pid_velocity_axi_logic.un_s[20]
+top.pid_velocity_axi_logic.un_s[19]
+top.pid_velocity_axi_logic.un_s[18]
+top.pid_velocity_axi_logic.un_s[17]
+top.pid_velocity_axi_logic.un_s[16]
+top.pid_velocity_axi_logic.un_s[15]
+top.pid_velocity_axi_logic.un_s[14]
+top.pid_velocity_axi_logic.un_s[13]
+top.pid_velocity_axi_logic.un_s[12]
+top.pid_velocity_axi_logic.un_s[11]
+top.pid_velocity_axi_logic.un_s[10]
+top.pid_velocity_axi_logic.un_s[9]
+top.pid_velocity_axi_logic.un_s[8]
+top.pid_velocity_axi_logic.un_s[7]
+top.pid_velocity_axi_logic.un_s[6]
+top.pid_velocity_axi_logic.un_s[5]
+top.pid_velocity_axi_logic.un_s[4]
+top.pid_velocity_axi_logic.un_s[3]
+top.pid_velocity_axi_logic.un_s[2]
+top.pid_velocity_axi_logic.un_s[1]
+top.pid_velocity_axi_logic.un_s[0]
+@1401200
+-group_end
+@421
+[color] 2
+#{top.pid_velocity_axi_logic.un1_s[24:0]} top.pid_velocity_axi_logic.un1_s[24] top.pid_velocity_axi_logic.un1_s[23] top.pid_velocity_axi_logic.un1_s[22] top.pid_velocity_axi_logic.un1_s[21] top.pid_velocity_axi_logic.un1_s[20] top.pid_velocity_axi_logic.un1_s[19] top.pid_velocity_axi_logic.un1_s[18] top.pid_velocity_axi_logic.un1_s[17] top.pid_velocity_axi_logic.un1_s[16] top.pid_velocity_axi_logic.un1_s[15] top.pid_velocity_axi_logic.un1_s[14] top.pid_velocity_axi_logic.un1_s[13] top.pid_velocity_axi_logic.un1_s[12] top.pid_velocity_axi_logic.un1_s[11] top.pid_velocity_axi_logic.un1_s[10] top.pid_velocity_axi_logic.un1_s[9] top.pid_velocity_axi_logic.un1_s[8] top.pid_velocity_axi_logic.un1_s[7] top.pid_velocity_axi_logic.un1_s[6] top.pid_velocity_axi_logic.un1_s[5] top.pid_velocity_axi_logic.un1_s[4] top.pid_velocity_axi_logic.un1_s[3] top.pid_velocity_axi_logic.un1_s[2] top.pid_velocity_axi_logic.un1_s[1] top.pid_velocity_axi_logic.un1_s[0]
+[color] 2
+#{top.pid_velocity_axi_logic.k1err_s[22:0]} top.pid_velocity_axi_logic.k1err_s[22] top.pid_velocity_axi_logic.k1err_s[21] top.pid_velocity_axi_logic.k1err_s[20] top.pid_velocity_axi_logic.k1err_s[19] top.pid_velocity_axi_logic.k1err_s[18] top.pid_velocity_axi_logic.k1err_s[17] top.pid_velocity_axi_logic.k1err_s[16] top.pid_velocity_axi_logic.k1err_s[15] top.pid_velocity_axi_logic.k1err_s[14] top.pid_velocity_axi_logic.k1err_s[13] top.pid_velocity_axi_logic.k1err_s[12] top.pid_velocity_axi_logic.k1err_s[11] top.pid_velocity_axi_logic.k1err_s[10] top.pid_velocity_axi_logic.k1err_s[9] top.pid_velocity_axi_logic.k1err_s[8] top.pid_velocity_axi_logic.k1err_s[7] top.pid_velocity_axi_logic.k1err_s[6] top.pid_velocity_axi_logic.k1err_s[5] top.pid_velocity_axi_logic.k1err_s[4] top.pid_velocity_axi_logic.k1err_s[3] top.pid_velocity_axi_logic.k1err_s[2] top.pid_velocity_axi_logic.k1err_s[1] top.pid_velocity_axi_logic.k1err_s[0]
+[color] 2
+#{top.pid_velocity_axi_logic.k2err1_s[22:0]} top.pid_velocity_axi_logic.k2err1_s[22] top.pid_velocity_axi_logic.k2err1_s[21] top.pid_velocity_axi_logic.k2err1_s[20] top.pid_velocity_axi_logic.k2err1_s[19] top.pid_velocity_axi_logic.k2err1_s[18] top.pid_velocity_axi_logic.k2err1_s[17] top.pid_velocity_axi_logic.k2err1_s[16] top.pid_velocity_axi_logic.k2err1_s[15] top.pid_velocity_axi_logic.k2err1_s[14] top.pid_velocity_axi_logic.k2err1_s[13] top.pid_velocity_axi_logic.k2err1_s[12] top.pid_velocity_axi_logic.k2err1_s[11] top.pid_velocity_axi_logic.k2err1_s[10] top.pid_velocity_axi_logic.k2err1_s[9] top.pid_velocity_axi_logic.k2err1_s[8] top.pid_velocity_axi_logic.k2err1_s[7] top.pid_velocity_axi_logic.k2err1_s[6] top.pid_velocity_axi_logic.k2err1_s[5] top.pid_velocity_axi_logic.k2err1_s[4] top.pid_velocity_axi_logic.k2err1_s[3] top.pid_velocity_axi_logic.k2err1_s[2] top.pid_velocity_axi_logic.k2err1_s[1] top.pid_velocity_axi_logic.k2err1_s[0]
+@200
+-
+@8420
+#{top.pid_velocity_axi_logic.data_o[24:0]} top.pid_velocity_axi_logic.data_o[16] top.pid_velocity_axi_logic.data_o[15] top.pid_velocity_axi_logic.data_o[14] top.pid_velocity_axi_logic.data_o[13] top.pid_velocity_axi_logic.data_o[12] top.pid_velocity_axi_logic.data_o[11] top.pid_velocity_axi_logic.data_o[10] top.pid_velocity_axi_logic.data_o[9] top.pid_velocity_axi_logic.data_o[8] top.pid_velocity_axi_logic.data_o[7] top.pid_velocity_axi_logic.data_o[6] top.pid_velocity_axi_logic.data_o[5] top.pid_velocity_axi_logic.data_o[4] top.pid_velocity_axi_logic.data_o[3] top.pid_velocity_axi_logic.data_o[2] top.pid_velocity_axi_logic.data_o[1] top.pid_velocity_axi_logic.data_o[0]
+@20000
+-
+-
+@28
+top.pid_velocity_axi_logic.data_en_o
+[pattern_trace] 1
+[pattern_trace] 0

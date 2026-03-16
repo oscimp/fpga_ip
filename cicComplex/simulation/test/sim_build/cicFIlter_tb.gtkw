@@ -1,0 +1,38 @@
+[*]
+[*] GTKWave Analyzer v3.3.116 (w)1999-2023 BSI
+[*] Wed Apr 24 09:48:09 2024
+[*]
+[dumpfile] "/home/benny/projets/projets_fe/region_2023/dev/oscimpDigital/fpga_ip/cicComplex/simulation/test/sim_build/cic_waves.ghw"
+[dumpfile_mtime] "Wed Apr 24 09:45:46 2024"
+[dumpfile_size] 954528
+[savefile] "/home/benny/projets/projets_fe/region_2023/dev/oscimpDigital/fpga_ip/cicComplex/simulation/test/sim_build/cicFIlter_tb.gtkw"
+[timestart] 0
+[size] 1920 1152
+[pos] -461 -277
+*-31.051895 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.ciccomplex_top.
+[sst_width] 209
+[signals_width] 142
+[sst_expanded] 1
+[sst_vpaned_height] 656
+@28
+top.ciccomplex_top.clk
+top.ciccomplex_top.reset
+top.ciccomplex_top.data_en_i
+@420
+top.ciccomplex_top.count_s
+@28
+top.ciccomplex_top.sample_s
+@8420
+#{top.ciccomplex_top.data_i_i[15:0]} top.ciccomplex_top.data_i_i[15] top.ciccomplex_top.data_i_i[14] top.ciccomplex_top.data_i_i[13] top.ciccomplex_top.data_i_i[12] top.ciccomplex_top.data_i_i[11] top.ciccomplex_top.data_i_i[10] top.ciccomplex_top.data_i_i[9] top.ciccomplex_top.data_i_i[8] top.ciccomplex_top.data_i_i[7] top.ciccomplex_top.data_i_i[6] top.ciccomplex_top.data_i_i[5] top.ciccomplex_top.data_i_i[4] top.ciccomplex_top.data_i_i[3] top.ciccomplex_top.data_i_i[2] top.ciccomplex_top.data_i_i[1] top.ciccomplex_top.data_i_i[0]
+@20000
+-
+-
+@8421
+#{top.ciccomplex_top.data_i_o[43:0]} top.ciccomplex_top.data_i_o[43] top.ciccomplex_top.data_i_o[42] top.ciccomplex_top.data_i_o[41] top.ciccomplex_top.data_i_o[40] top.ciccomplex_top.data_i_o[39] top.ciccomplex_top.data_i_o[38] top.ciccomplex_top.data_i_o[37] top.ciccomplex_top.data_i_o[36] top.ciccomplex_top.data_i_o[35] top.ciccomplex_top.data_i_o[34] top.ciccomplex_top.data_i_o[33] top.ciccomplex_top.data_i_o[32] top.ciccomplex_top.data_i_o[31] top.ciccomplex_top.data_i_o[30] top.ciccomplex_top.data_i_o[29] top.ciccomplex_top.data_i_o[28] top.ciccomplex_top.data_i_o[27] top.ciccomplex_top.data_i_o[26] top.ciccomplex_top.data_i_o[25] top.ciccomplex_top.data_i_o[24] top.ciccomplex_top.data_i_o[23] top.ciccomplex_top.data_i_o[22] top.ciccomplex_top.data_i_o[21] top.ciccomplex_top.data_i_o[20] top.ciccomplex_top.data_i_o[19] top.ciccomplex_top.data_i_o[18] top.ciccomplex_top.data_i_o[17] top.ciccomplex_top.data_i_o[16] top.ciccomplex_top.data_i_o[15] top.ciccomplex_top.data_i_o[14] top.ciccomplex_top.data_i_o[13] top.ciccomplex_top.data_i_o[12] top.ciccomplex_top.data_i_o[11] top.ciccomplex_top.data_i_o[10] top.ciccomplex_top.data_i_o[9] top.ciccomplex_top.data_i_o[8] top.ciccomplex_top.data_i_o[7] top.ciccomplex_top.data_i_o[6] top.ciccomplex_top.data_i_o[5] top.ciccomplex_top.data_i_o[4] top.ciccomplex_top.data_i_o[3] top.ciccomplex_top.data_i_o[2] top.ciccomplex_top.data_i_o[1] top.ciccomplex_top.data_i_o[0]
+@20000
+-
+-
+[pattern_trace] 1
+[pattern_trace] 0
